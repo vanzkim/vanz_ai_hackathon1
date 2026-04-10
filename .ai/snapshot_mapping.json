@@ -1,0 +1,10 @@
+{
+  "mappings": [
+    {
+      "message_id": "INT_1",
+      "conversation_id": "2081f826-092d-4068-9ed0-8a269218e604",
+      "content": "Create a red sphere",
+      "snapshot_message_type": 0
+    }
+  ]
+}

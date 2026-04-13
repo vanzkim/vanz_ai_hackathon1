@@ -23,6 +23,12 @@
       "conversation_id": "1477cafa-c443-456a-82a2-9fea762041fc",
       "content": "현재의 씬에 Buto 패키지를 통해서 안개효과를 넣는 방법은?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "3cbeb745-4a31-479c-b0cf-fa0be16112fb",
+      "conversation_id": "1477cafa-c443-456a-82a2-9fea762041fc",
+      "content": "현재 씬(`Hespital_EXAMPLE.unity`)에서 **Buto** 패키지를 통해 안개 효과(Volumetric Fog)를 설정하는 단계별 방법은 다음과 같습니다.\n\n### 1. URP Renderer Feature 설정\nButo는 URP의 렌더링 파이프라인에 추가 기능을 삽입하여 작동하므로, 먼저 렌더러 설정을 변경해야 합니다.\n1.  **Project** 창에서 현재 프로젝트의 렌더러 설정 파일인 **`Assets/Settings/PC_Renderer.asset`** 파일을 선택합니다.\n2.  **Inspector** 창 하단의 **`Renderer Features`** 섹션에서 **`Add Render Feature`** 버튼을 클릭합니다.\n3.  목록에서 **`Buto Render Feature`**를 선택하여 추가합니다.\n\n### 2. Volume Component를 통한 안개 추가\n안개의 밀도, 색상 등 세부 설정을 관리하기 위해 Volume 시스템을 사용합니다.\n1.  씬에 이미 **Global Volume**이 있다면 해당 오브젝트를 선택하고, 없다면 새로 생성합니다 (`GameObject > Volume > Global Volume`).\n2.  Volume 컴포넌트의 **Profile**에서 **`Add Override`** 버튼을 클릭합니다.\n3.  **`OccaSoftware > Buto` > `Buto Volumetric Fog`**를 선택하여 추가합니다.\n4.  추가된 `Buto Volumetric Fog` 항목 내에서 **`Mode`**를 `On`으로 변경하고, `Fog Density`, `Height Fog` 등의 값을 조절하여 안개 효과를 활성화합니다.\n\n### 3. 라이팅 연동 (선택 사항)\n안개가 씬 내의 개별 광원(Point Light, Spot Light 등)과 상호작용하게 하려면 추가 설정이 필요합니다.\n*   **추가 광원 설정:** 씬의 라이트 오브젝트를 선택한 뒤 **`Add Component`**를 통해 **`Buto Light`** 컴포넌트를 추가하면 안개 속에서 해당 조명이 산란되는 효과를 얻을 수 있습니다.\n*   **메인 라이트:** 별도의 컴포넌트 없이도 Volume 설정 내의 `Directional Lighting` 옵션을 통해 메인 태양광의 영향을 조절할 수 있습니다.\n\n### 4. 기타 유용한 컴포넌트\n*   **특정 카메라 제외:** UI 전용 카메라 등에서 안개 효과를 끄고 싶다면, 해당 카메라 오브젝트에 **`Disable Buto Rendering`** 컴포넌트를 추가하세요.\n*   **국소 안개 설정:** 씬의 특정 구역에만 안개를 더하거나 빼고 싶을 경우, **`GameObject > Rendering > Buto Fog Density Mask`**를 생성하여 배치할 수 있습니다 [1].\n\n더 자세한 정보나 API 활용법은 패키지에 포함된 **`Packages/com.occasoftware.buto/Readme.md`** 파일이나 공식 문서(https://docs.occasoftware.com/)를 참고하시기 바랍니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -17,6 +17,12 @@
       "conversation_id": "72024a91-9692-4a08-9ccd-a9b2924b6015",
       "content": "안내해주신 모든 절차를 자동화하여 실행했습니다.\n\n### 진행된 작업 내역:\n1.  **URP 패키지 보호**: `HE_HDRP_AbandonedHospital` 내부에 있던 `URP_HE_AbandonedHospital.unitypackage` 파일을 `Assets/` 루트 폴더로 안전하게 이동시켰습니다.\n2.  **HDRP 디렉토리 삭제**: 지침에 따라 기존 `HE_HDRP_AbandonedHospital` 폴더를 완전히 삭제했습니다.\n3.  **패키지 임포트 실행**: 현재 Unity 에디터에 **Import Package** 창이 활성화되었습니다.\n\n### 남은 작업 (사용자 확인 필요):\n*   에디터에 뜬 창에서 **[Import]** 버튼을 눌러 모든 파일을 가져와 주세요.\n*   임포트가 완료되면 `HE_URP_AbandonedHospital` 폴더가 생성되고 모든 자산이 나타날 것입니다.\n*   프로젝트 용량 최적화를 위해 다음 파일들은 수동으로 삭제해 주시는 것을 권장합니다:\n    *   `Assets/URP_HE_AbandonedHospital.unitypackage`\n    *   `Assets/Editor/AbandonedHospitalURPConverter.cs` (자동화용으로 생성된 스크립트)\n\n즐거운 개발 되시길 바랍니다! :)",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "1477cafa-c443-456a-82a2-9fea762041fc",
+      "content": "현재의 씬에 Buto 패키지를 통해서 안개효과를 넣는 방법은?",
+      "snapshot_message_type": 0
     }
   ]
 }

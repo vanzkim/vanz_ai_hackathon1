@@ -1,0 +1,12 @@
+{
+    "asset": "a3006c2948a8145cdb3bf4ccf7745284",
+    "fileName": "019d86eb-d78a-7700-af73-c571117dc1b4.pose.json",
+    "prompt": "The action of walking back and forth in the same place while contemplating, terryfied.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 372556785,
+    "w3CTraceId": "de4237d9b4e0f39e7abd1a7a1c3dd229",
+    "feedback": 0,
+    "isTrimmed": false
+}

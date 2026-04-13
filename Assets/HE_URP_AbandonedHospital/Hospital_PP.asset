@@ -1230,8 +1230,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0.05
   fogDensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 60
   anisotropy:
     m_OverrideState: 0
     m_Value: 0.37
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_Value: 5.6
   baseHeight:
     m_OverrideState: 1
-    m_Value: -10
+    m_Value: -0.03
   attenuationBoundarySize:
     m_OverrideState: 1
     m_Value: 1

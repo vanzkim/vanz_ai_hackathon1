@@ -1,0 +1,12 @@
+{
+    "asset": "a3006c2948a8145cdb3bf4ccf7745284",
+    "fileName": "019d86ea-9784-70ae-93fb-d8b760e5ed47.pose.json",
+    "prompt": "sit down to knee",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 981692023,
+    "w3CTraceId": "68f84880e7d2a90d74acbfca7091c170",
+    "feedback": 0,
+    "isTrimmed": false
+}

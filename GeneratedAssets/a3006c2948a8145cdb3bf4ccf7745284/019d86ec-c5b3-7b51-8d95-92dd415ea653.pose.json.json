@@ -1,0 +1,12 @@
+{
+    "asset": "a3006c2948a8145cdb3bf4ccf7745284",
+    "fileName": "019d86ec-c5b3-7b51-8d95-92dd415ea653.pose.json",
+    "prompt": "The action of walking in a circle in the same place while contemplating",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 775721750,
+    "w3CTraceId": "7a044d850a0768748d30d5819e8b82a9",
+    "feedback": 0,
+    "isTrimmed": false
+}

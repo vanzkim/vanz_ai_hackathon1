@@ -53,6 +53,12 @@
       "conversation_id": "89071947-82fe-433a-a79d-9f959bf0c7cf",
       "content": "The shader warning you encountered is related to the **Buto Volumetric Fog** package. In Metal (macOS/iOS), the shader compiler is particularly strict about ensuring all code paths return a value and that variables are initialized before use. The warning was triggered because the `GetRayDirectionCompute` and `GetRayLengthCompute` functions had return statements inside `if` blocks that the compiler couldn't guarantee would always be executed.\n\nI have fixed this by refactoring the functions in `Packages/com.occasoftware.buto/Shaders/Resources/Common.hlsl` to use a single return pattern and initializing the results with default values. This should resolve the shader warning and prevent any related driver-level stutters.\n\n### Is it related to the Editor slowness?\nWhile the shader warning could cause minor stutters during compilation, it is likely **not the primary cause** of persistent editor slowness in your project. Based on the console logs, there is another significant factor:\n\nThe project is using a package called **`com.unity.game-data-collection`** (located at `/Users/beomjoo.kim/Downloads/package 2`). This package is configured to:\n1. **Automatically capture snapshots** (Git commits) whenever a conversation message is sent or received.\n2. **Automatically push to origin** (Git push) immediately after.\n\nThese Git operations involve staging all project changes, committing, and network activity. Since these happen on every interaction with the Assistant, they are likely causing the \"very slow\" experience you are noticing.\n\n**Recommendation:**\nIf you wish to improve the Editor performance, you can disable the \"Auto Upload\" feature in the **Snapshotting Settings** window (accessible via the `Game Data Collection` UI) or by checking the settings for that package.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "a5e552f2-2370-4e24-a133-7f304d8b23e5",
+      "content": "there is performance issue in this scene. how can I examine the origin of this problem?",
+      "snapshot_message_type": 0
     }
   ]
 }

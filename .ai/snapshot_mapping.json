@@ -35,6 +35,12 @@
       "conversation_id": "1477cafa-c443-456a-82a2-9fea762041fc",
       "content": "설정을 해봐도 안개가 너무 엷게만 보여진다. 좀더 짙게 할 수는 없나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "de00ce1b-554d-4aba-b03b-de2fa030c807",
+      "conversation_id": "1477cafa-c443-456a-82a2-9fea762041fc",
+      "content": "**Buto**에서 안개가 너무 엷게 느껴진다면, Volume Component의 `Buto Volumetric Fog` 설정에서 다음 파라미터들을 조정하여 밀도와 가시성을 높일 수 있습니다.\n\n### 1. 핵심 밀도 설정 (Fog Density)\n가장 직접적으로 안개를 짙게 만드는 설정입니다.\n*   **`Fog Density`**: 이 값을 높이면 전체적인 안개의 밀도가 상승합니다. 기본값보다 훨씬 높은 값(예: 20~50 이상)으로 테스트해 보세요.\n*   **`Max Distance Volumetric`**: 안개가 렌더링되는 최대 거리입니다. 이 값이 너무 크면 안개가 넓게 퍼져 엷게 보일 수 있으므로, 값을 줄여서 카메라 근처에 안개를 집중시킬 수 있습니다.\n\n### 2. 높이 기반 감쇠 조절 (Height Fog)\n안개가 바닥에 깔리거나 특정 높이에서 사라지는 방식을 결정합니다.\n*   **`Base Height`**: 안개가 시작되는 기준 높이(Y축)입니다. 씬의 지면 높이에 맞춰 조절하세요.\n*   **`Attenuation Boundary Size`**: 안개가 위쪽으로 갈수록 흐려지는 영역의 크기입니다. 이 값을 **작게(1~2 등)** 설정하면 안개가 특정 높이까지 아주 빽빽하게 차 있는 것처럼 보입니다.\n\n### 3. 노이즈 및 디테일 설정 (Noise)\n안개가 뭉게구름처럼 뭉쳐있거나 흩어져 있는 정도를 조절합니다.\n*   **`Noise Intensity` (또는 `Noise Texture` 관련 설정)**: 노이즈 값이 크면 안개 사이사이에 구멍이 뚫려 엷게 보일 수 있습니다. 노이즈 강도를 낮추거나 `Gain` 값을 조절하여 안개를 더 꽉 채워 보이게 할 수 있습니다.\n*   **`Octaves`**: 디테일을 높여주지만, 너무 높으면 안개가 잘게 쪼개져 보일 수 있습니다.\n\n### 4. 조명 및 그림자 영향 (Lighting)\n*   **`Density In Light` / `Density In Shadow`**: 밝은 곳과 어두운 곳의 안개 밀도를 따로 조절할 수 있습니다. 두 값을 모두 높여서 조명 조건과 상관없이 짙은 안개를 유지하도록 설정해 보세요.\n*   **`Lit Color` / `Shadowed Color`**: 안개의 색상이 배경색과 비슷하면 엷게 느껴질 수 있습니다. 색상 대비를 주어 안개의 존재감을 키울 수 있습니다.\n\n**팁:** 만약 설정을 변경해도 변화가 미미하다면, **`PC_Renderer.asset`**에 추가한 **`Buto Render Feature`**가 체크되어 활성화 상태인지, 그리고 씬의 **`Global Volume`**의 `Weight` 값이 1인지 다시 한번 확인해 보시기 바랍니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

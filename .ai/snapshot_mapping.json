@@ -203,6 +203,12 @@
       "conversation_id": "09762a0c-bc2a-4c85-aed1-3a555e1825c9",
       "content": "APV and Bake please",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "1acacf9e-cc79-4502-848d-d669be552fa5",
+      "conversation_id": "09762a0c-bc2a-4c85-aed1-3a555e1825c9",
+      "content": "요청하신 대로 **Adaptive Probe Volumes (APV)**를 설정하고 **라이트맵 베이크(Bake)**를 완료했습니다.\n\n### 작업 내용 요약\n1.  **APV(Adaptive Probe Volumes) 추가**:\n    *   씬 전체 크기(가로/세로/높이 약 29m x 13m x 23m)를 자동으로 계산하여 해당 영역을 덮는 **Adaptive Probe Volume** 오브젝트를 생성했습니다.\n    *   이제 플레이어나 움직이는 사물들도 구워진 라이트의 간접광 효과를 자연스럽게 받을 수 있습니다.\n2.  **라이트맵 베이크 실행**:\n    *   `Lightmapping.Bake()` 명령을 통해 씬의 모든 정적 오브젝트와 라이트를 기반으로 라이트맵과 APV 데이터를 생성했습니다.\n\n### 결과 확인 및 최적화 효과\n*   **퍼포먼스**: 28개의 실시간 라이트 연산이 제거되고 미리 계산된 라이트맵을 사용하므로, GPU 부하가 크게 줄어들고 프레임 레이트(FPS)가 상승했을 것입니다.\n*   **비주얼**: 실시간 라이트에서는 표현하기 어려운 부드러운 간접광(Indirect Light)과 벽/천장의 그림자가 자연스럽게 표현됩니다.\n\n**참고**: 만약 씬에서 오브젝트를 옮기거나 조명의 위치를 바꾸면 다시 베이크를 해야 데이터가 갱신됩니다. 현재 라이팅 상태가 마음에 드시는지 확인해보시기 바랍니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

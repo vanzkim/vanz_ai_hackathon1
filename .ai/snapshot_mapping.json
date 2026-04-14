@@ -161,6 +161,12 @@
       "conversation_id": "1e40d09e-b68d-42ac-a1a9-114f365fea20",
       "content": "네, 프로젝트 창으로 드래그하여 프리팹(Prefab)으로 만드는 방법이 맞습니다. 하지만 단순히 드래그하기 전에, 기존 원본 프리팹과의 연결을 정리하고 커스텀 버전을 안전하게 만드는 **가장 권장되는 절차**는 다음과 같습니다.\n\n### 추천하는 작업 순서\n\n1.  **오브젝트 복제 (Duplicate):**\n    *   Hierarchy(계층 구조) 창에서 `PlayerArmature`를 선택하고 `Ctrl + D` (Mac은 `Cmd + D`)를 눌러 복제합니다.\n    *   복제된 오브젝트의 이름을 `PlayerArmature_Custom` 등으로 변경합니다.\n\n2.  **프리팹 연결 해제 (Unpack Prefab):**\n    *   현재 `PlayerArmature`는 원본 프리팹(`James_Player_Armature.prefab`)과 연결된 상태입니다. 커스텀 버전을 독립적으로 관리하려면 연결을 끊어주는 것이 좋습니다.\n    *   복제한 오브젝트를 우클릭하고 **Prefab > Unpack Completely**를 선택합니다. 이렇게 하면 이 오브젝트는 원본 프리팹의 영향을 받지 않는 독립적인 상태가 됩니다.\n\n3.  **아이템 제거 및 수정:**\n    *   원하시는 대로 자식 오브젝트나 컴포넌트를 삭제하거나 수정합니다.\n\n4.  **새 프리팹으로 저장:**\n    *   수정이 완료된 `PlayerArmature_Custom` 오브젝트를 Hierarchy 창에서 Project(프로젝트) 창의 원하는 폴더로 드래그 앤 드롭합니다.\n    *   그러면 수정된 상태 그대로의 새로운 프리팹 자산이 생성됩니다.\n\n### 주의 사항\n*   **참조 확인:** `ThirdPersonController` 스크립트에는 `CinemachineCameraTarget`과 같은 변수가 있습니다. 오브젝트를 복제하고 수정할 때, 이 변수들이 여전히 자기 자신 내부의 오브젝트(예: `PlayerCameraRoot`)를 잘 가리키고 있는지 한 번 확인해 주세요. (보통은 복제 시 자동으로 내부 참조로 유지됩니다.)\n*   **시네머신 설정:** 만약 씬에 `Cinemachine Virtual Camera`가 있다면, 그 카메라의 **Follow**와 **Look At** 대상이 새로 만든 `PlayerArmature_Custom` 또는 그 자식인 `PlayerCameraRoot`를 바라보도록 업데이트해줘야 카메라가 정상적으로 따라갑니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "1e40d09e-b68d-42ac-a1a9-114f365fea20",
+      "content": "복제한 캐릭터가 이것인데 이것은 아직 프리팹이 아니라서 언팩할수 없다",
+      "snapshot_message_type": 0
     }
   ]
 }

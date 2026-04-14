@@ -239,6 +239,12 @@
       "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
       "content": "고치겠다. 라이드모드는 뭘로 하는게 좋은지 알려달라. 쉐도우마스크, baked indirect, subtractive 는 어떻게 다르고 뭘쓰는게 좋은가",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "43bed9fd-cce0-42cc-a6bc-f40b5f4d9f6d",
+      "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
+      "content": "라이트모드 설정에 대해 고민 중이시군요. \"Horror Hospital\"이라는 배경과 데스크톱(StandaloneOSX) 환경을 고려할 때, **Shadowmask** 모드를 가장 추천드립니다.\n\n각 모드의 차이점과 추천 이유를 정리해 드립니다.\n\n### 1. 라이트 모드 비교 (Mixed Lighting)\n\n| 모드 | 특징 | 장점 | 단점 |\n| :--- | :--- | :--- | :--- |\n| **Shadowmask** (추천) | 정적 오브젝트의 그림자와 간접광을 모두 베이킹합니다. | 실시간 라이트의 하이라이트(Specular)를 유지하면서도 그림자 연산 비용이 매우 낮습니다. | 쉐도우마스크 텍스처를 위한 추가 메모리가 필요합니다. |\n| **Baked Indirect** | 간접광(반사광)만 베이킹하고, 직사광과 그림자는 실시간으로 처리합니다. | 움직이는 물체에 대해 가장 정확한 실시간 그림자를 제공합니다. | 실시간 그림자 연산량이 많아 성능 부하가 가장 큽니다. |\n| **Subtractive** | 모든 빛과 그림자를 라이트맵에 구워버립니다. | 성능이 가장 좋지만 품질이 가장 낮습니다. 하이라이트가 사라집니다. | 주로 저사양 모바일 기기용입니다. 공포 게임의 분위기에는 적합하지 않습니다. |\n\n### 2. 왜 Shadowmask인가?\n공포 게임인 **Horror Hospital**은 복도나 방에 많은 전등(Spot/Point Light)이 배치될 가능성이 높습니다.\n*   **성능**: 수많은 라이트의 그림자를 실시간으로 계산하면 프레임이 급격히 떨어지지만, Shadowmask를 쓰면 정적 벽면의 그림자는 미리 구워져 있어 매우 가볍습니다.\n*   **품질**: 주인공(Dynamic Object)이 지나갈 때 실시간 그림자가 베이킹된 그림자와 자연스럽게 섞입니다. 또한 전등의 반짝이는 하이라이트(Specular)가 유지되어 금속 재질이나 바닥의 질감이 잘 살아납니다.\n\n---\n\n### 3. 고치는 방법 (수동 단계)\n\n현재 발견된 `L_Horror_HospitalSettings.lighting` 에셋의 설정을 다음과 같이 변경하시면 됩니다.\n\n1.  **Project 창**에서 `Assets/L_Horror_HospitalSettings.lighting` 파일을 선택합니다.\n2.  **Inspector 창**에서 **Baked Global Illumination** 체크박스를 **활성화(True)**합니다. (이게 꺼져 있어서 Realtime으로 오버라이드 되었던 것입니다.)\n3.  **Lighting Mode** 드롭다운 메뉴에서 **Shadowmask**를 선택합니다.\n4.  **Lighting 창**(Window > Rendering > Lighting) 하단의 **Generate Lighting** 버튼을 눌러 라이트를 새로 굽습니다.\n\n### 4. 에이전트 모드 활용\n만약 이 설정을 자동으로 변경하고 라이트 베이킹까지 한 번에 수행하고 싶으시다면, **에이전트 모드로 전환**해 주세요. 제가 직접 에셋 설정을 변경하고 베이킹 프로세스를 시작해 드릴 수 있습니다. (참고: 베이킹 중에는 유니티가 일시적으로 응답하지 않을 수 있습니다.)",
+      "snapshot_message_type": 1
     }
   ]
 }

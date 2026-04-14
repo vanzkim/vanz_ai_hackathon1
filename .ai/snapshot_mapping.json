@@ -101,6 +101,12 @@
       "conversation_id": "296c608f-e15e-4038-9389-9a2f3c523264",
       "content": "작성된 클린업 계획이 승인되었습니다. 계획서(`Assets/Plans/cleanup-james-non-urp.md`)에 따라 HDRP/Built-in 어셋 삭제 및 URP 의존성 보존 작업을 진행할까요?\n\n**실행 시 수행될 주요 작업:**\n1.  URP James가 참조하는 HDRP 신체 머티리얼을 안전한 곳으로 이동\n2.  사용하지 않는 `Built-in` 및 `HDRP` 폴더(머티리얼, 프리팹) 삭제\n3.  불필요한 씬 파일 정리\n\n실행을 원하시면 \"진행해줘\"라고 말씀해 주세요.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "296c608f-e15e-4038-9389-9a2f3c523264",
+      "content": "진행해줘",
+      "snapshot_message_type": 0
     }
   ]
 }

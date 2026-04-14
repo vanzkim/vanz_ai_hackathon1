@@ -221,6 +221,12 @@
       "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
       "content": "lightmode가 realtime으로 override 되어 있다고 한다. 어떤 스크립트가 그렇게 하는지 찾아달라",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
+      "content": "잠깐 멈춰봐. 어떤 스크립트나 설정이 라이트 설정을 오버라이드 하고 있는지 알아내는게 이렇게 오래 걸리는 복잡한 작업인가?",
+      "snapshot_message_type": 0
     }
   ]
 }

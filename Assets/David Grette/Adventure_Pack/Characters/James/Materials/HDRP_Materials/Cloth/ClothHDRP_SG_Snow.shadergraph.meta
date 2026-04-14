@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 80226df633b603540a42aa601118f684
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292347
+  packageName: Adventure Character James - Survival, Survivor, RPG, Shooter, Action
+  packageVersion: 1.0
+  assetPath: Assets/David Grette/Adventure_Pack/Characters/James/Materials/HDRP_Materials/Cloth/ClothHDRP_SG_Snow.shadergraph
+  uploadId: 683209

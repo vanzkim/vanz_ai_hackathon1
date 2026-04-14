@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5a84150a8b232b54b935d9a345000aeb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 36300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292347
+  packageName: Adventure Character James - Survival, Survivor, RPG, Shooter, Action
+  packageVersion: 1.0
+  assetPath: Assets/David Grette/Scenes/James_HDRP/OcclusionCullingData.asset
+  uploadId: 683209

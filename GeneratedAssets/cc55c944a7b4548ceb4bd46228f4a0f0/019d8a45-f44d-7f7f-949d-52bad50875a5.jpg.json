@@ -1,0 +1,27 @@
+{
+    "asset": "cc55c944a7b4548ceb4bd46228f4a0f0",
+    "fileName": "019d8a45-f44d-7f7f-949d-52bad50875a5.jpg",
+    "prompt": "Clear night sky with twinkling stars, a beautiful milky way, and a subtle moon glow. Deep blue and purple nebula clouds, high quality, cinematic lighting.",
+    "negativePrompt": "",
+    "model": "b6e4038c-d863-467d-bb74-4ad8cfd22665",
+    "modelName": "Cinematic",
+    "customSeed": -1,
+    "w3CTraceId": "ba1f619eb7bdc02418a61296ed8f61ea",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

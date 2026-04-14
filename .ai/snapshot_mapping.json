@@ -251,6 +251,12 @@
       "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
       "content": "이 볼륨에서 효과를 줘도 전혀 적용이 안되는데",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "3778122f-e5ce-4e45-8876-05e7ea405876",
+      "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
+      "content": "\"Sky and Fog Global Volume\" 오브젝트에서 효과가 적용되지 않는 원인을 분석한 결과, 몇 가지 결정적인 이유를 발견했습니다.\n\n### 1. 볼륨 프로필에 효과가 비활성화되어 있거나 없습니다.\n현재 이 볼륨에 할당된 프로필(`Sky and Fog Settings Profile`, InstanceID: 70618)을 조사한 결과:\n*   **Fog(안개)나 Sky(하늘) 관련 컴포넌트가 아예 들어있지 않습니다.** 이름은 'Sky and Fog'이지만, 실제로는 Bloom, Color Adjustments, Vignette 등만 들어 있습니다. 효과를 보시려면 프로필에 `Fog`나 `Skybox` 컴포넌트를 직접 **추가(Add Override)**하셔야 합니다.\n*   들어있는 효과 중 **`Bloom`**은 현재 **`active: false`**로 꺼져 있습니다. 체크박스가 해제되어 있으면 값을 아무리 조절해도 화면에 나타나지 않습니다.\n\n### 2. 프로젝트 내에 동일한 이름의 프로필 에셋이 너무 많습니다.\n현재 프로젝트에는 `Sky and Fog Settings Profile`이라는 이름을 가진 에셋이 **8개나 존재**합니다. \n*   현재 씬의 볼륨에 실제로 연결된 에셋은 `Assets/Hivemind/HorrorHospital/URP/Scenes/L_Horror_Hospital/` 경로에 있는 파일입니다. \n*   만약 다른 폴더(James_HDRP 등)에 있는 동일한 이름의 파일을 수정하고 계신다면 씬에는 아무런 변화가 없습니다. 반드시 인스펙터에서 **Profile** 칸을 클릭하여 현재 수정 중인 파일이 맞는지 확인해 주세요.\n\n### 3. 외부 안개 패키지(Buto)와의 충돌 가능성\n현재 렌더러 설정(`PC_Renderer`)에 **ButoRenderFeature**가 활성화되어 있습니다.\n*   **Buto**는 자체적인 Volumetric Fog 시스템을 사용하므로, 유니티 기본 `Fog` 오버라이드와 충돌하거나 이를 무시할 수 있습니다.\n*   Buto 효과를 쓰시려면 볼륨 프로필에 **`Buto Volumetric Fog`** 오버라이드를 추가하고 설정을 조절하셔야 합니다.\n\n### 4. 카메라 설정 확인\n카메라 설정은 정상적으로 되어 있습니다. (`Post Processing` 체크됨, `Volume Mask`가 Default 레이어를 포함함)\n\n---\n\n**해결 방법:**\n1.  **인스펙터 확인**: `Sky and Fog Global Volume` 오브젝트를 선택하고, Profile 에셋을 더블클릭하여 정확한 파일을 열었는지 확인하세요.\n2.  **컴포넌트 추가**: 프로필 하단의 `Add Override` 버튼을 눌러 원하는 효과(예: `Fog`, `Bloom`, 또는 `Buto Volumetric Fog`)가 목록에 있는지, 그리고 체크박스가 켜져 있는지 확인하세요.\n3.  **우선순위(Priority)**: 혹시 다른 볼륨이 덮어쓰고 있을 수 있으니, 이 볼륨의 **Priority**를 `1` 이상으로 높여보세요.\n\n에이전트 모드로 전환해 주시면, 제가 직접 컴포넌트를 추가하거나 잘못된 설정을 바로 잡아드릴 수 있습니다. 무엇을 도와드릴까요?",
+      "snapshot_message_type": 1
     }
   ]
 }

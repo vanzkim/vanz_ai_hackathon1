@@ -149,6 +149,12 @@
       "conversation_id": "1e40d09e-b68d-42ac-a1a9-114f365fea20",
       "content": "이 오브젝트의 역할은 무엇인가",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "5148f0f1-f67e-4cd8-93d5-192a1fd0b96e",
+      "conversation_id": "1e40d09e-b68d-42ac-a1a9-114f365fea20",
+      "content": "`PlayerArmature` 오브젝트는 이 프로젝트에서 **메인 플레이어 캐릭터** 역할을 수행합니다.\n\n이 오브젝트는 Unity의 **Starter Assets (Third Person Controller)**를 기반으로 구성되어 있으며, 주요 기능은 다음과 같습니다:\n\n1.  **캐릭터 제어 (Movement Logic):** `ThirdPersonController` 스크립트와 `CharacterController` 컴포넌트를 통해 플레이어의 이동(걷기, 달리기), 점프, 중력 적용 등의 물리적 움직임을 처리합니다.\n2.  **애니메이션 관리:** `Animator` 컴포넌트를 사용하여 캐릭터의 상태(Idle, Run, Jump 등)에 따른 애니메이션을 재생합니다.\n3.  **입력 처리 (Input Handling):** `PlayerInput`과 `StarterAssetsInputs` 시스템을 통해 키보드, 마우스 또는 게임패드로부터 오는 사용자 입력을 받아 제어 로직에 전달합니다.\n4.  **카메라 타겟:** 자식 오브젝트인 `PlayerCameraRoot`는 일반적으로 시네머신(Cinemachine) 카메라가 추적하고 바라보는 대상(Follow & LookAt Target)으로 사용됩니다.\n5.  **시각적 모델 및 리깅:** 자식 오브젝트인 `Geometry`(메시)와 `Skeleton`(뼈대)을 통해 캐릭터의 외형과 움직임을 시각적으로 표현합니다.\n6.  **물리 상호작용:** `BasicRigidBodyPush` 스크립트가 포함되어 있어, 플레이어가 씬 내의 다른 Rigidbody 오브젝트를 밀 수 있는 기능을 제공합니다.\n\n결론적으로, 이 오브젝트는 `James_URP` 씬에서 사용자가 직접 조종하는 **플레이어 본체**입니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -215,6 +215,12 @@
       "conversation_id": "09762a0c-bc2a-4c85-aed1-3a555e1825c9",
       "content": "이런 메시지가 뜬다. 어쩌면 이 씬에 있는 스크립트가 리얼타임을 강제하고 있는지 모른다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
+      "content": "lightmode가 realtime으로 override 되어 있다고 한다. 어떤 스크립트가 그렇게 하는지 찾아달라",
+      "snapshot_message_type": 0
     }
   ]
 }

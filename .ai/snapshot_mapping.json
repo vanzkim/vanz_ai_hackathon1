@@ -143,6 +143,12 @@
       "conversation_id": "4d3a0f1d-2ac9-491e-ac7e-ddb33cbbd278",
       "content": "실행해",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "1e40d09e-b68d-42ac-a1a9-114f365fea20",
+      "content": "이 오브젝트의 역할은 무엇인가",
+      "snapshot_message_type": 0
     }
   ]
 }

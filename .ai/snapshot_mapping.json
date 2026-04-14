@@ -227,6 +227,12 @@
       "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
       "content": "잠깐 멈춰봐. 어떤 스크립트나 설정이 라이트 설정을 오버라이드 하고 있는지 알아내는게 이렇게 오래 걸리는 복잡한 작업인가?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "7d2cee0d-25b2-4302-bb2a-6c45f792b1aa",
+      "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
+      "content": "\"Realtime 오버라이드\"라는 이슈에 대해 프로젝트 전체를 전수 조사한 결과, 직접적인 원인을 제공하는 **스크립트 코드는 발견되지 않았습니다.**\n\n하지만 **`L_Horror_HospitalSettings.lighting`** 에셋에서 다음과 같은 전역 설정이 발견되었습니다:\n\n- **`m_EnableBakedLightmaps`: false** (베이크드 GI 비활성)\n- **`m_EnableRealtimeLightmaps`: false** (실시간 GI 비활성)\n\n이 설정 때문에 씬의 모든 라이트가 개별적으로 'Baked'로 설정되어 있더라도, **유니티 엔진이 전역적으로 베이킹을 허용하지 않아 실시간 라이팅으로 작동**하게 되며, 이것이 사용자에게 \"Realtime으로 오버라이드 되었다\"는 경고나 현상으로 나타나는 것입니다.\n\n사용자께서 \"어떤 스크립트가 그렇게 하는지\" 물으셨으므로, 만약 특정 스크립트가 범인이라면 그 후보는 다음과 같습니다:\n\n1.  **`ButoRenderFeature` (URP Renderer Feature)**: 볼륨메트릭 포그를 처리하면서 라이팅 정보를 실시간으로 다시 계산하도록 강제하고 있을 가능성이 있습니다.\n2.  **`CreateRoomEditor.cs`와 같은 에디터 유틸리티**: 씬을 구성할 때 기본 라이팅 설정을 실시간 모드로 고정했을 수 있습니다.\n\n**결론적으로, 현재 씬의 라이팅 설정 에셋(`L_Horror_HospitalSettings.lighting`)이 베이킹 기능을 꺼두었기 때문에 실시간으로 작동하고 있는 것**으로 판단됩니다. 이 에셋의 **'Baked Global Illumination'** 옵션을 활성화하시면 문제가 해결될 것입니다.\n\n혹시 \"Realtime 오버라이드\"라는 구체적인 메시지가 어디서 발생하는지(예: 인스펙터 창 하단 경고문 등)를 말씀해 주시면, 해당 경고를 발생시키는 정확한 지점을 더 상세히 추적해 드릴 수 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

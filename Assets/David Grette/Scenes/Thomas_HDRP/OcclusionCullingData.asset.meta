@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5a84150a8b232b54b935d9a345000aeb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 36300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287130
+  packageName: Adventure Character Thomas - Survival, Survivor, RPG, Shooter, Action
+  packageVersion: 1.0
+  assetPath: Assets/David Grette/Scenes/Thomas_HDRP/OcclusionCullingData.asset
+  uploadId: 669648

@@ -791,6 +791,12 @@
       "conversation_id": "c941f7e4-5ddc-44fe-bdc7-5e4be962b0c0",
       "content": "이 캐릭터가 조작해도 안움직이는 이유?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "625cc88b-799e-4b2d-9a4e-d860ab327c14",
+      "conversation_id": "c941f7e4-5ddc-44fe-bdc7-5e4be962b0c0",
+      "content": "캐릭터 `SK_Modern_Man_Controller`가 조작에 반응하지 않는 주된 이유는 **입력 시스템(Input System)의 액션이 활성화(Enable)되지 않았기 때문**입니다.\n\n상세한 분석 결과는 다음과 같습니다:\n\n### 1. 입력 액션이 비활성화 상태임\n현재 이 캐릭터에 사용 중인 `ThirdPersonController.cs` 스크립트는 Unity 6의 새로운 `InputSystem.actions` API를 사용하여 \"Move\"와 \"Look\" 액션을 찾고 있습니다. 하지만 조사 결과, 해당 액션들이 **비활성화(Disabled)** 상태인 것으로 확인되었습니다.\n*   Unity의 새로운 Input System에서 `InputAction`은 코드에서 `Enable()`을 호출하거나 `PlayerInput` 컴포넌트 등을 통해 활성화하지 않으면 입력값을 받지 못합니다.\n*   현재 `ThirdPersonController.cs` 스크립트의 `Awake` 함수에는 액션을 찾는 코드는 있지만, 이를 활성화하는 `Enable()` 호출이 누락되어 있습니다.\n\n### 2. PlayerInput 컴포넌트 부재\n일반적으로 입력 액션을 자동으로 관리해주는 `PlayerInput` 컴포넌트가 캐릭터나 씬에 존재하지 않습니다. 이 때문에 액션의 상태(활성화/비활성화)를 관리해줄 주체가 없는 상태입니다.\n\n---\n\n### 해결 방법\n\n이 문제를 해결하기 위해 다음 방법 중 하나를 시도해 보세요:\n\n#### 방법 A: 스크립트 수정 (권장)\n`ThirdPersonController.cs` 스크립트에 `OnEnable`과 `OnDisable` 함수를 추가하여 액션을 수동으로 활성화합니다.\n\n```csharp\nprivate void OnEnable()\n{\n    _moveAction?.Enable();\n    _lookAction?.Enable();\n}\n\nprivate void OnDisable()\n{\n    _moveAction?.Disable();\n    _lookAction?.Disable();\n}\n```\n\n#### 방법 B: 에이전트 모드 활용\n\"에이전트 모드로 전환해서 이 스크립트를 수정해줘\"라고 요청하시면, 제가 직접 코드를 수정하여 캐릭터가 움직이도록 설정해 드릴 수 있습니다.\n\n### 추가 확인 사항\n*   **Grounded 상태:** 현재 캐릭터의 `CharacterController.isGrounded` 값이 `False`로 나오고 있습니다. 캐릭터가 지면에 닿아 있지 않거나 바닥 콜라이더와의 설정 문제로 인해 이동 로직이 정상 작동하지 않을 수 있으니, 캐릭터가 바닥에 잘 배치되어 있는지 확인해 보세요.\n*   **Main Camera:** 스크립트가 `Camera.main`을 참조하고 있습니다. 씬 내에 `MainCamera` 태그가 붙은 카메라가 활성화되어 있는지 확인해 주세요.",
+      "snapshot_message_type": 1
     }
   ]
 }

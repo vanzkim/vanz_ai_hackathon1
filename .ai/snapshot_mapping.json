@@ -509,6 +509,12 @@
       "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
       "content": "루트 모션(Root Motion)을 적용하려면 크게 두 곳의 설정을 확인해야 합니다. 현재 사용 중인 `Player_James` 오브젝트에는 `PlayerMovement` 스크립트가 직접 이동을 계산하고 있으므로, 루트 모션을 활성화하면 스크립트 이동과 충돌이 발생할 수 있습니다.\n\n상황에 맞춰 다음 두 가지 설정을 확인해 주세요.\n\n### 1. Animator 컴포넌트 설정\n오브젝트(`Player_James`)에 부착된 **Animator** 컴포넌트에서 루트 모션 사용 여부를 결정합니다.\n*   **Apply Root Motion**: 이 체크박스를 활성화하면 애니메이션에 포함된 실제 이동 데이터가 캐릭터의 위치값(Transform)에 직접 반영됩니다.\n*   **주의**: 현재 `PlayerMovement` 스크립트의 `HandleMovement` 함수에서 `CharacterController.Move`를 통해 캐릭터를 직접 이동시키고 있습니다. 루트 모션을 켜게 되면 **\"애니메이션 이동 + 스크립트 이동\"**이 합쳐져 캐릭터가 너무 빠르게 움직이거나 떨리는 현상이 발생할 수 있습니다.\n\n### 2. 애니메이션 클립(FBX/Anim) Inspector 설정\n애니메이션 클립 자체에서 루트 데이터를 어떻게 처리할지 설정해야 합니다. (Project 창에서 해당 애니메이션 파일을 선택 후 Inspector 확인)\n*   **Root Transform Rotation / Position (Y) / Position (XZ)** 섹션을 확인하세요.\n*   **Bake Into Pose**: 이 항목을 **체크**하면 해당 축의 이동/회전 값이 캐릭터의 좌표를 실제로 옮기지 않고 애니메이션 내부의 시각적 움직임으로만 처리됩니다. (현재 스크립트 제어 방식에 적합)\n*   **Bake Into Pose**를 **해제**하면 해당 축의 움직임이 '루트 모션' 데이터로 추출되어, Animator의 `Apply Root Motion`이 켜져 있을 때 실제 캐릭터를 이동시킵니다.\n\n### 추천하는 적용 방식\n사용 중인 `PlayerMovement.cs` 스크립트 구조를 유지하면서 루트 모션을 활용하고 싶다면 두 가지 선택지가 있습니다:\n\n1.  **스크립트 중심 (현재 방식 유지)**:\n    *   애니메이션 클립 설정에서 모든 **Bake Into Pose**를 체크합니다.\n    *   Animator의 **Apply Root Motion**은 끕니다.\n    *   장점: 스크립트에서 속도(`walkSpeed`)를 정밀하게 제어하기 쉽습니다.\n\n2.  **루트 모션 중심 (정교한 발맞춤)**:\n    *   애니메이션 클립 설정에서 **Root Transform Position (XZ)**의 **Bake Into Pose**를 해제합니다.\n    *   Animator의 **Apply Root Motion**을 켭니다.\n    *   `PlayerMovement.cs` 스크립트의 `HandleMovement` 내 `_controller.Move` 로직을 주석 처리하거나 `OnAnimatorMove()` 이벤트를 사용하여 애니메이션의 속도 데이터를 받아오도록 수정해야 합니다.\n\n새로 만든 walk 모션의 보폭에 맞춰 이동 속도를 결정하고 싶다면 **2번 방식**이 시각적으로 가장 자연스럽습니다. 직접적인 이동 제어가 필요하다면 **1번 방식**을 권장합니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
+      "content": "지금 새로운 walk_tired2를 적용해도 키보드를 누르면 원점에서 멀리 떨어진 모션이 축력되는 문제가 있다.",
+      "snapshot_message_type": 0
     }
   ]
 }

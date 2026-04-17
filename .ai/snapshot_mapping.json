@@ -701,6 +701,12 @@
       "conversation_id": "e7e6c501-844d-4c11-bef0-36428c738492",
       "content": "`SK_Modern_Man` 캐릭터에 `Idle` 및 `Walk` 애니메이션이 동작하도록 설정을 완료했습니다.\n\n### **변경 사항:**\n1.  **애니메이터 컨트롤러 생성:** `Assets/Animation/ModernManController.controller`를 생성했습니다.\n2.  **블렌드 트리(Blend Tree) 설정:** \n    *   `Speed` 파라미터(float)를 추가했습니다.\n    *   `Speed`가 **0**일 때는 `idle_normal`이 재생됩니다.\n    *   `Speed`가 **1**일 때는 `walk_tired`가 재생됩니다.\n3.  **캐릭터 할당:** 씬(`Hespital_EXAMPLE_copy`)에 있는 `SK_Modern_Man` 오브젝트에 위 애니메이터 컨트롤러를 연결하고, 휴머노이드 아바타(`SK_Modern_ManAvatar`)가 올바르게 설정되어 있는지 확인했습니다.\n4.  **루프 설정:** `idle_normal`과 `walk_tired` 애니메이션이 반복 재생되도록 `Loop Time`이 활성화되어 있음을 확인했습니다.\n\n이제 게임을 실행하면 기본적으로 **Idle** 상태가 재생되며, 애니메이터 창에서 `Speed` 값을 조절하여 **Walk** 상태로 부드럽게 전환되는 것을 확인하실 수 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "e7e6c501-844d-4c11-bef0-36428c738492",
+      "content": "3인칭 카메라 시스템도 적용해줘",
+      "snapshot_message_type": 0
     }
   ]
 }

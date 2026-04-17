@@ -29,6 +29,7 @@ public class ThirdPersonController : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        Debug.Log($"OnMove called: {moveInput}");
     }
 
     private void Update()
@@ -39,12 +40,12 @@ public class ThirdPersonController : MonoBehaviour
 
     private void Move()
     {
-        Vector3 direction = new Vector3(moveInput.x, 0, moveInput.y).normalized;
+        Vector3 direction = new Vector3(moveInput.x, 0, moveInput.y);
 
         if (direction.magnitude >= 0.1f)
         {
             // Calculate movement direction relative to camera
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + (cameraTransform != null ? cameraTransform.eulerAngles.y : 0);
             float angle = Mathf.LerpAngle(transform.eulerAngles.y, targetAngle, Time.deltaTime * rotationSpeed);
             transform.rotation = Quaternion.Euler(0, angle, 0);
 

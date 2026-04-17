@@ -713,6 +713,12 @@
       "conversation_id": "e7e6c501-844d-4c11-bef0-36428c738492",
       "content": "`SK_Modern_Man` 캐릭터를 위한 **3인칭 카메라 시스템**과 **플레이어 컨트롤러** 설정을 완료했습니다.\n\n### **적용 사항:**\n\n1.  **시네머신(Cinemachine) 카메라 설정:**\n    *   **Main Camera:** `CinemachineBrain` 컴포넌트를 추가하여 시네머신 시스템이 작동하도록 설정했습니다.\n    *   **CM 3rd Person Camera:** 캐릭터를 따라다니는 3인칭 전용 카메라를 생성했습니다.\n        *   **Follow/LookAt:** `SK_Modern_Man`을 대상으로 설정했습니다.\n        *   **Over-the-shoulder:** 어깨 너머로 보는 시점을 위해 오프셋을 조정했습니다.\n        *   **Collision:** 장애물에 카메라가 가려지지 않도록 기본 설정을 포함했습니다.\n\n2.  **플레이어 컨트롤러 (ThirdPersonController.cs):**\n    *   캐릭터가 카메라가 바라보는 방향을 기준으로 이동하고 회전할 수 있도록 제어 스크립트를 생성하여 부착했습니다.\n    *   **이동:** WASD 키(또는 게임패드)로 이동하며, 이동 시 이전에 설정한 `Walk` 애니메이션이 자동으로 재생됩니다.\n    *   **중력:** 바닥에 붙어 있을 수 있도록 기본적인 중력 로직을 포함했습니다.\n\n3.  **입력 시스템(Input System) 연결:**\n    *   기존 프로젝트의 `InputSystem_Actions` 에셋을 활용하여 `Move`와 `Look` 입력을 캐릭터에 연결했습니다.\n    *   `CharacterController`를 추가하여 물리적 충돌 및 이동 처리를 최적화했습니다.\n\n### **확인 방법:**\n*   **이동:** `W, A, S, D` 키로 캐릭터를 움직여보세요. 이동 속도에 따라 `Idle`과 `Walk` 애니메이션이 전환됩니다.\n*   **카메라 회전:** 마우스를 움직여 카메라 시점을 회전할 수 있습니다. (시네머신 입력 설정에 따라 인스펙터에서 `Look` 액션 할당이 추가로 필요할 수 있습니다.)\n*   **컴포넌트 조절:** `SK_Modern_Man` 오브젝트의 `ThirdPersonController` 컴포넌트에서 `Move Speed`나 `Rotation Speed`를 원하는 대로 수정할 수 있습니다.\n\n이제 게임을 실행(Play)하면 3인칭 시점에서 캐릭터를 직접 조작하실 수 있습니다!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "773eba66-b6aa-4976-bbc1-8f00048dba45",
+      "conversation_id": "e7e6c501-844d-4c11-bef0-36428c738492",
+      "content": "캐릭터가 움직이지 않았던 원인은 **계층 구조의 중복 및 컴포넌트 분산** 때문이었습니다.\n\n### **발견된 문제점:**\n*   씬 내에 `SK_Modern_Man`이라는 이름의 오브젝트가 2개 중첩되어 있었습니다.\n    *   **부모 오브젝트:** `Animator`와 메쉬(Mesh), 뼈대(Skeleton)를 가지고 있었지만 조작 스크립트가 없었습니다.\n    *   **자식 오브젝트:** 조작 스크립트(`ThirdPersonController`)와 `CharacterController`를 가지고 있었지만, 메쉬나 애니메이터가 없어 이 오브젝트만 따로 투명하게 움직이고 있었던 상태였습니다.\n    *   또한, 자식 오브젝트의 스크립트가 부모의 `Animator`를 찾지 못해 애니메이션도 갱신되지 않았습니다.\n\n### **해결 조치:**\n1.  **컴포넌트 통합:** 자식 오브젝트에 있던 `CharacterController`, `PlayerInput`, `ThirdPersonController`를 모두 최상위 부모 오브젝트(`SK_Modern_Man`)로 옮겼습니다.\n2.  **구조 정리:** 불필요하게 중복되었던 자식 오브젝트를 제거하여 하나의 루트 오브젝트에서 모든 제어가 이루어지도록 정리했습니다.\n3.  **카메라 연결:** 조작 스크립트가 카메라의 방향을 기준으로 이동할 수 있도록 `Main Camera`를 명시적으로 연결했습니다.\n\n이제 게임을 실행(Play)하면 캐릭터 전체(메쉬와 뼈대 포함)가 WASD 입력에 따라 정상적으로 이동하고, `Speed` 값에 맞춰 애니메이션이 부드럽게 재생되는 것을 확인하실 수 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

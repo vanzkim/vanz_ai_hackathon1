@@ -67,6 +67,8 @@ MonoBehaviour:
       - rid: 4998178873534054412
       - rid: 4998178873534054413
       - rid: 4998178873534054414
+      - rid: 4998179035469578540
+      - rid: 4998179035469578541
     m_RuntimeSettings:
       m_List: []
   m_AssetVersion: 10
@@ -278,6 +280,33 @@ MonoBehaviour:
         _skyBoxMesh: {fileID: 4300000, guid: 0529e6c5f6dea8c4a8c2835ed7de57cb, type: 2}
         _sixFaceSkyBoxMesh: {fileID: 4300000, guid: a80925ceebd011741b42509226cefc74, type: 2}
         _buildLightGridShader: {fileID: 7200000, guid: 16e47c1641bd0104e92b624601457bb0, type: 3}
+    - rid: 4998179035469578540
+      type: {class: SurfaceCacheRenderPipelineResourceSet, ns: UnityEngine.Rendering, asm: Unity.SurfaceCache.Runtime}
+      data:
+        m_Version: 2
+        m_TemporalFilteringShader: {fileID: 7200000, guid: c23523f04780d754f927b9daf4f975b9, type: 3}
+        m_SpatialFilteringShader: {fileID: 7200000, guid: 63e59de460463bb4c9d64bc58051d12c, type: 3}
+        m_RestirEstimationShader: {fileID: 7200000, guid: b5dbdcea251f42c4a9b8721877f436bf, type: 3}
+        m_RisEstimationComputeShader: {fileID: -6772857160820960102, guid: 713f6141bd66a134383b787f2eaa7c11, type: 3}
+        m_RisEstimationRayTracingShader: {fileID: -5126288278712620388, guid: 713f6141bd66a134383b787f2eaa7c11, type: 3}
+        m_ScrollingShader: {fileID: 7200000, guid: 47bbc3edf61978b498603cc2a1b87eea, type: 3}
+        m_DefragShader: {fileID: 7200000, guid: a183a2d0b1da4904fb3bd71c6111ebb1, type: 3}
+        m_EvictionShader: {fileID: 7200000, guid: c9f2aeed6ef396f4d9134e4da1edfe19, type: 3}
+        m_UniformEstimationComputeShader: {fileID: -6772857160820960102, guid: 94a39d12848d8d64ca962a72b74e7c50, type: 3}
+        m_UniformEstimationRayTracingShader: {fileID: -5126288278712620388, guid: 94a39d12848d8d64ca962a72b74e7c50, type: 3}
+        m_RestirCandidateTemporalComputeShader: {fileID: -6772857160820960102, guid: ad3a9f9982f8c4f4a839a78955e78458, type: 3}
+        m_RestirCandidateTemporalRayTracingShader: {fileID: -5126288278712620388, guid: ad3a9f9982f8c4f4a839a78955e78458, type: 3}
+        m_RestirSpatialShader: {fileID: 7200000, guid: 8bf708594b6a9224b9a0915f3db08c5d, type: 3}
+    - rid: 4998179035469578541
+      type: {class: SurfaceCacheRenderPipelineResourceSet, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
+      data:
+        m_Version: 6
+        m_FallbackMaterial: {fileID: 2100000, guid: 8a239b3da89050c4e89ac06b168fc684, type: 2}
+        m_AllocationShader: {fileID: 7200000, guid: 3d9fc4c0ae8e22f49a8ebefad82718d9, type: 3}
+        m_ScreenResolveLookupShader: {fileID: 7200000, guid: 4d271c06564c6784392d81f949558e5c, type: 3}
+        m_ScreenResolveUpsamplingShader: {fileID: 7200000, guid: 7c302ee1d7410a6458981a5f329520b4, type: 3}
+        m_DebugShader: {fileID: 7200000, guid: 4d40202dfa5473d44bcdc97e00d74703, type: 3}
+        m_FlatNormalResolutionShader: {fileID: 7200000, guid: 134e9451a58aaba43ba713adbd103d92, type: 3}
     - rid: 6852985685364965376
       type: {class: URPShaderStrippingSetting, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
       data:

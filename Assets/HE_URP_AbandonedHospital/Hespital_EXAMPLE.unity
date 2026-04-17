@@ -36664,6 +36664,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2265f3d9814e69643a19276e274e3334, type: 3}
   m_PrefabInstance: {fileID: 23580563}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1208621933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6707062184035774991, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
+  m_PrefabInstance: {fileID: 1688506895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1211434763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45932,6 +45937,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 990ce72a0d81a894eab224409d2249db, type: 3}
+--- !u!1 &1517562952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3492520778955633412, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
+  m_PrefabInstance: {fileID: 1688506895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1517562954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517562952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
+  Priority:
+    Enabled: 1
+    m_Value: 10
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 1208621933}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 1
+  Lens:
+    FieldOfView: 40
+    OrthographicSize: 0
+    NearClipPlane: 0.2
+    FarClipPlane: 800
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 0
+      SensorSize: {x: 0, y: 0}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 0
+      Iso: 0
+      ShutterSpeed: 0
+      Aperture: 0
+      BladeCount: 0
+      Curvature: {x: 0, y: 0}
+      BarrelClipping: 0
+      Anamorphism: 0
+  BlendHint: 0
 --- !u!4 &1519260229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c0890b4c4a0a7d94c8d4726326e01ce8, type: 3}
@@ -51847,6 +51900,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 971472203994424748, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
+      propertyPath: orthographic size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2181602078921373923, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
       propertyPath: m_Name
       value: PlayerOne_character
@@ -51906,6 +51963,10 @@ PrefabInstance:
     - target: {fileID: 3836296053138877931, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.0430166
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864652377189869303, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
+      propertyPath: m_ComponentOwner
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3632576128982293516, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
@@ -51971,9 +52032,14 @@ PrefabInstance:
     - {fileID: 3632576130130515725, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
     - {fileID: 3632576128608569931, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
     - {fileID: 3632576128090821177, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
-    m_RemovedGameObjects: []
+    - {fileID: 4864652377189869303, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 9069249537045406722, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3492520778955633412, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1517562954}
   m_SourcePrefab: {fileID: 100100000, guid: 795f7ad910f234e758389403abfd9a92, type: 3}
 --- !u!4 &1688557747 stripped
 Transform:

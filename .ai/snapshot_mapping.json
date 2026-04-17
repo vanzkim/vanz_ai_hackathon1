@@ -335,6 +335,12 @@
       "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
       "content": "캐릭터 오브젝트 `PlayerOne_character`의 자식인 `PlayerFollowCamera`에 있던 구버전 시네머신(Cinemachine) 컴포넌트들을 최신 버전인 **Cinemachine 3.x** 규격에 맞춰 업데이트를 완료했습니다.\n\n### 주요 변경 사항\n1.  **컴포넌트 현대화**: 기존의 `CinemachineVirtualCamera`(Legacy)를 최신 버전의 주축인 **`CinemachineCamera`** 컴포넌트로 교체했습니다.\n2.  **구조 단순화**: 시네머신 3.0+ 표준에 따라, 별도의 자식 오브젝트(`cm`)에 분리되어 있던 `Cinemachine3rdPersonFollow`와 `CinemachineBasicMultiChannelPerlin`(Noise) 컴포넌트들을 `PlayerFollowCamera` 메인 오브젝트에 직접 부착하여 관리가 용이하도록 구조를 개선했습니다.\n3.  **기능 및 설정 유지**: 기존 카메라의 모든 설정값을 완벽하게 이식했습니다.\n    *   **대상(Targets)**: `PlayerCameraRoot`를 Follow 타겟으로 유지\n    *   **렌즈(Lens)**: FOV 40, Near 0.2, Far 800 설정 유지\n    *   **3인칭 추적(3rd Person Follow)**: 카메라 거리(4), 숄더 오프셋, 댐핑 값 등 동일하게 적용\n    *   **노이즈(Noise)**: `Handheld_normal_mild` 프로필 및 강도 설정 유지\n\n이제 해당 캐릭터는 유니티 6의 최신 시네머신 시스템 기능을 온전히 활용할 수 있는 상태입니다. 콘솔 로그 확인 결과 에러 없이 정상적으로 업데이트되었음을 확인했습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "a43c1f28-38da-47d7-bee2-31685328d829",
+      "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
+      "content": "I've fixed the issue where the camera wasn't following the character.\n\n### 원인 분석 (Root Cause)\n업데이트 전에는 `Main Camera` 오브젝트가 `PlayerOne_character` 프리팹 자식으로 포함되어 있었습니다. 구버전 시네머신에서는 이 구조에서도 어느 정도 작동했으나, **Cinemachine 3.x**에서는 카메라의 계층 구조가 캐릭터와 묶여 있을 경우 트랜스폼 계산 충돌이 발생하여 시네머신이 카메라의 위치를 올바르게 제어하지 못하는 현상이 발생했습니다. (실제로 확인 결과, 카메라가 목표 거리인 4m가 아닌 1.06m 지점에 고정되어 있었습니다.)\n\n### 해결 방법 (Fix)\n1.  **계층 구조 분리**: `Main Camera`를 캐릭터 오브젝트 내부에서 꺼내어 씬의 최상위(Scene Root)로 이동시켰습니다. (기존 카메라를 비활성화하고 동일한 설정을 가진 새 카메라를 루트에 생성했습니다.)\n2.  **컴포넌트 재구성**:\n    *   **`CinemachineCamera`**: `Follow` 및 `LookAt` 타겟을 다시 설정했습니다.\n    *   **`CinemachineThirdPersonFollow`**: 기존 3인칭 추적 설정을 복구했습니다 (거리 4m, 숄더 오프셋 (1, 0, 0) 등).\n    *   **`CinemachineRotationComposer`**: 3.x 표준에 맞춰 카메라 회전을 위한 에임 컴포넌트를 추가했습니다.\n    *   **`CinemachineBasicMultiChannelPerlin`**: 기존에 사용하던 `Handheld_normal_mild` 노이즈 프로필을 다시 적용했습니다.\n\n### 최종 확인\n현재 `Main Camera`와 캐릭터(`PlayerCameraRoot`) 사이의 거리가 설정값인 **4m**를 정확히 유지하며 추적하고 있음을 확인했습니다. 이제 캐릭터가 움직이면 카메라가 설정된 오프셋을 유지하며 정상적으로 따라갑니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

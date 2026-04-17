@@ -581,6 +581,12 @@
       "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
       "content": "플레이어 아마추어에는 아무런 지오메트리도 없다.",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "f63724a4-0318-4103-be96-61c3b31a5089",
+      "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
+      "content": "확인 결과, 말씀하신 대로 **`PlayerArmature.prefab`**은 현재 뼈대(Rig)와 로직(스크립트)만 들어있고 실제 눈에 보이는 메쉬(Geometry)가 연결되어 있지 않은 상태입니다. 이는 보통 캐릭터 모델을 자유롭게 교체할 수 있도록 설계된 \"컨테이너\"용 프리팹이기 때문입니다.\n\n반면, `James` 캐릭터 모델들은 공통적으로 **`SK_JamesAvatar`**를 사용하는데, 이 아바타의 기반이 되는 FBX 파일 자체가 **루트 본(Root Bone)이 270도 회전**되어 있는 \"비표준\" 상태입니다. 이것이 모든 애니메이션 오차의 근본 원인입니다.\n\n정상적인 캐릭터로 테스트하시려면 다음 방법을 추천드립니다.\n\n### 1. 표준 로봇 모델 (`Armature.fbx`) 사용 (가장 확실한 방법)\n프로젝트에 포함된 유니티 표준 규격 모델을 직접 배치하여 테스트해 보세요.\n*   **경로**: `Assets/David Grette/StarterAssets/ThirdPersonController/Character/Models/Armature.fbx`\n*   **특징**: 이 모델은 뼈대 회전값이 (0, 0, 0)으로 완벽하게 초기화되어 있어, 어떤 AI 생성 애니메이션을 넣어도 파고들거나 튀지 않습니다.\n*   **방법**: 이 FBX를 씬에 드래그한 뒤, `PlayerArmature.prefab`에 있는 컴포넌트들(`Animator`, `CharacterController`, `ThirdPersonController` 등)을 복사해서 붙여넣으시면 됩니다.\n\n### 2. James 캐릭터를 꼭 써야 하는 경우\n만약 'James'의 외형이 반드시 필요하다면, 현재의 FBX 구조상 제가 이전에 설정해 드린 **`Bake Into Pose`**와 **`Level (높이 보정)`** 설정을 수동으로 계속 유지하며 사용하는 수밖에 없습니다. (또는 3D 툴에서 FBX의 축을 교정해서 다시 가져와야 합니다.)\n\n### 추천 진행 방향\n먼저 **`Armature.fbx` (로봇 모델)**를 배치해서 카메라와 애니메이션이 얼마나 깔끔하게 작동하는지 확인해 보시는 것을 권장합니다. \n\n이 모델에서 모든 것이 정상이라면, 이후에 \"표준 규격(Y-Up, Z-Forward)\"으로 제작된 다른 캐릭터 모델을 구해서 교체하시면 향후 개발 과정에서 스트레스 없이 작업하실 수 있습니다. 로봇 모델로 교체해서 다시 테스트해 보시겠습니까?",
+      "snapshot_message_type": 1
     }
   ]
 }

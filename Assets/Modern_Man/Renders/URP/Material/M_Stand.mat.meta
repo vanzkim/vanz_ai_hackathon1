@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: def8bbf71e7d4d5195aea88d6bd336f6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288031
+  packageName: Modern_man
+  packageVersion: 1.0
+  assetPath: Assets/Modern_Man/Renders/URP/Material/M_Stand.mat
+  uploadId: 672450

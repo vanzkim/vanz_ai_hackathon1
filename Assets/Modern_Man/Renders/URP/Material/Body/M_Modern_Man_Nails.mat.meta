@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e1d0aa9d06544b38f1210f8eb4fb06b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288031
+  packageName: Modern_man
+  packageVersion: 1.0
+  assetPath: Assets/Modern_Man/Renders/URP/Material/Body/M_Modern_Man_Nails.mat
+  uploadId: 672450

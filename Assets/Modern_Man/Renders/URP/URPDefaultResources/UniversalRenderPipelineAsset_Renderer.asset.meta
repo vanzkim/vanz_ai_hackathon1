@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ef8496f56d124ff1b159f69dd2e6786a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288031
+  packageName: Modern_man
+  packageVersion: 1.0
+  assetPath: Assets/Modern_Man/Renders/URP/URPDefaultResources/UniversalRenderPipelineAsset_Renderer.asset
+  uploadId: 672450

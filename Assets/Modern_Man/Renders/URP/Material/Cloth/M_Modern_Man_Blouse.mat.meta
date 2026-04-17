@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b3c41e46b3bc4d43b594595cd553db13
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288031
+  packageName: Modern_man
+  packageVersion: 1.0
+  assetPath: Assets/Modern_Man/Renders/URP/Material/Cloth/M_Modern_Man_Blouse.mat
+  uploadId: 672450

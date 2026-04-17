@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e2de6406998f4f9283780ab20bd40342
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288031
+  packageName: Modern_man
+  packageVersion: 1.0
+  assetPath: Assets/Modern_Man/Renders/URP/SkyBox.mat
+  uploadId: 672450

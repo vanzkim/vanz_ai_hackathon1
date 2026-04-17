@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 59be50b0ef874ecb87e80edca55cb5d6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288031
+  packageName: Modern_man
+  packageVersion: 1.0
+  assetPath: Assets/Modern_Man/Renders/URP/Material/Cloth/M_Modern_Man_Pants.mat
+  uploadId: 672450

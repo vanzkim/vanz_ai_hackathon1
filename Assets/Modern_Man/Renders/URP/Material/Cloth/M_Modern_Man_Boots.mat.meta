@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ff99f1f5ea7b469fa84b9839305ad844
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288031
+  packageName: Modern_man
+  packageVersion: 1.0
+  assetPath: Assets/Modern_Man/Renders/URP/Material/Cloth/M_Modern_Man_Boots.mat
+  uploadId: 672450

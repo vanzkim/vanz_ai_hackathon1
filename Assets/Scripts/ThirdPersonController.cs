@@ -48,6 +48,18 @@ public class ThirdPersonController : MonoBehaviour
         _lookAction = InputSystem.actions.FindAction("Look");
     }
 
+    private void OnEnable()
+    {
+        _moveAction?.Enable();
+        _lookAction?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _moveAction?.Disable();
+        _lookAction?.Disable();
+    }
+
     private void Start()
     {
         _cinemachineTargetYaw = cinemachineCameraTarget.transform.rotation.eulerAngles.y;

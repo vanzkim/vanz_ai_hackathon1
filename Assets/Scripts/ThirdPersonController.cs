@@ -28,21 +28,24 @@ public class ThirdPersonController : MonoBehaviour
     private float _cinemachineTargetPitch;
 
     // Components
-    private PlayerInput _playerInput;
     private Animator _animator;
     private CharacterController _controller;
     private Camera _mainCamera;
 
+    private InputAction _moveAction;
+    private InputAction _lookAction;
+
     private Vector2 _move;
     private Vector2 _look;
-    private bool _isCurrentDeviceMouse;
 
     private void Awake()
     {
         _mainCamera = Camera.main;
         _controller = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
-        _playerInput = GetComponent<PlayerInput>();
+        
+        _moveAction = InputSystem.actions.FindAction("Move");
+        _lookAction = InputSystem.actions.FindAction("Look");
     }
 
     private void Start()
@@ -52,6 +55,9 @@ public class ThirdPersonController : MonoBehaviour
 
     private void Update()
     {
+        _move = _moveAction.ReadValue<Vector2>();
+        _look = _lookAction.ReadValue<Vector2>();
+
         ApplyGravity();
         Move();
     }
@@ -61,23 +67,12 @@ public class ThirdPersonController : MonoBehaviour
         CameraRotation();
     }
 
-    private void OnMove(InputValue value)
-    {
-        _move = value.Get<Vector2>();
-        Debug.Log($"Input Move: {_move}");
-    }
-
-    private void OnLook(InputValue value)
-    {
-        _look = value.Get<Vector2>();
-        Debug.Log($"Input Look: {_look}");
-    }
-
     private void CameraRotation()
     {
         if (_look.sqrMagnitude >= 0.01f)
         {
-            float deltaTimeMultiplier = _playerInput.currentControlScheme == "Keyboard&Mouse" ? 1.0f : Time.deltaTime;
+            bool isMouse = _lookAction.activeControl?.device is Mouse;
+            float deltaTimeMultiplier = isMouse ? 1.0f : Time.deltaTime;
 
             _cinemachineTargetYaw += _look.x * deltaTimeMultiplier;
             _cinemachineTargetPitch += _look.y * deltaTimeMultiplier;

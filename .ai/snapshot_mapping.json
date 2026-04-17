@@ -671,6 +671,12 @@
       "conversation_id": "6e7f2f4c-6d4d-439e-a2c6-e3f4cb53bae3",
       "content": "지금 카메라를 선택하면 directional light 에 pivot point 가 지정되는데 무슨 문제이지?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "e5b7a4bc-aa74-4334-b642-b43ff8d50afd",
+      "conversation_id": "6e7f2f4c-6d4d-439e-a2c6-e3f4cb53bae3",
+      "content": "카메라를 선택했을 때 Directional Light(현재 씬에서는 이름만 Directional Light이고 실제로는 **Spot Light**로 설정되어 있음)에 피벗 포인트(또는 기즈모)가 나타나는 현상은 주로 다음과 같은 이유로 발생합니다:\n\n### 1. **시네머신(Cinemachine)의 대상 설정**\n프로젝트 내에 `Cinemachine` 관련 에셋들이 존재합니다. 만약 현재 카메라가 시네머신 브레인(`CinemachineBrain`)을 가지고 있고, 어떤 가상 카메라(`CinemachineCamera` 또는 `Virtual Camera`)가 **Directional Light**를 **Look At** 또는 **Follow** 대상으로 지정하고 있다면, 카메라를 선택했을 때 해당 대상의 위치에 피벗이나 가이드라인이 표시될 수 있습니다.\n\n### 2. **기즈모(Gizmos) 공유 및 선택 버그**\n현재 씬의 **Directional Light**는 이름과 달리 `Light Type`이 **Spot**으로 설정되어 있습니다. 스팟 라이트는 범위와 방향을 나타내는 복잡한 기즈모를 가집니다.\n*   만약 카메라와 라이트가 매우 가까이 있거나 겹쳐져 있다면, 클릭 시 의도치 않게 두 오브젝트가 함께 선택되거나 라이트의 기즈모가 우선적으로 표시될 수 있습니다.\n*   **해결 방법:** 씬 뷰 상단의 **Gizmos** 메뉴에서 `Light` 기즈모를 끄거나, 계층 구조(Hierarchy)에서 정확히 'Camera'만 선택되었는지 확인하세요.\n\n### 3. **라이트가 카메라의 자식으로 설정됨 (확인 필요)**\n검사 결과로는 두 오브젝트 모두 루트(Root)에 있는 것으로 나오지만, 만약 사용자가 실수로 드래그하여 부모-자식 관계가 형성되었다면 부모인 카메라를 선택했을 때 자식인 라이트의 피벗이 함께 보일 수 있습니다. (다시 한 번 Hierarchy 창에서 화살표를 확인해 보세요.)\n\n### 4. **물리적 위치 및 레이아웃**\n현재 카메라 위치는 `(17.0, -1.78, 17.29)`이고 라이트 위치는 `(1.4, 3.3, -0.1)`입니다. 거리가 꽤 떨어져 있음에도 피벗이 지정된다면, 이는 논리적인 연결(스크립트 참조 등)이 있을 가능성이 높습니다.\n\n---\n\n**점검해볼 사항:**\n1.  **계층 구조 확인:** 카메라 이름 왼쪽에 삼각형 아이콘이 있고 그 안에 'Directional Light'가 들어있는지 확인하세요.\n2.  **시네머신 확인:** 카메라 오브젝트에 `CinemachineBrain` 컴포넌트가 있다면, 씬에 있는 가상 카메라들이 무엇을 바라보고(Look At) 있는지 확인하세요.\n3.  **라이트 타입 수정:** 이름은 'Directional Light'인데 속성이 'Spot'으로 되어 있습니다. 이것이 의도된 것이 아니라면 Inspector 창에서 `Type`을 다시 `Directional`로 변경해 보세요.\n\n문제가 지속된다면, 카메라를 선택했을 때의 **Inspector 창 하단**에 라이트와 관련된 스크립트나 참조가 있는지 확인해 보시기 바랍니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -305,6 +305,12 @@
       "conversation_id": "0ec4f50f-c148-4452-a270-8dc97f4b7509",
       "content": "지금쓰고 있는 유니티 버전에서 surface cahed GI 기능을 켤수 있나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "b3ce943d-e355-440e-b7a4-52ea3fd2cc83",
+      "conversation_id": "0ec4f50f-c148-4452-a270-8dc97f4b7509",
+      "content": "현재 사용 중인 **Unity 6 (6000.4.1f1)** 버전의 **URP(Universal Render Pipeline)** 환경에서는 **Surface Cached GI** 기능을 활성화하여 실무에 사용할 수 없습니다.\n\n그 이유는 다음과 같습니다:\n\n### 1. 기능 가용성 (Availability)\n*   **현재 상태:** Surface Cached GI(또는 Realtime GI via Surface Cache)는 유니티의 **Dynamic GI 로드맵**에 포함된 최신 기술로, 현재 버전(6000.4.x)에서는 정식으로 제공되지 않습니다.\n*   **로드맵 일정:** 유니티 팀은 **Unity 6.5** 버전에서 테스트 가능(Testable) 상태로 공개하고, **Unity 6.7** 버전에서 URP용으로 정식 지원(Production-ready)하는 것을 목표로 하고 있습니다 [1, 2].\n*   **실험적 시도:** 일부 내부 빌드나 GitHub 마스터 브랜치에서 `SURFACE_CACHE`라는 스크립트 정의(Script Define)를 통해 기능을 켜보려는 시도가 있었으나, 현재 배포된 표준 빌드에서는 필요한 코어 모듈(PathTracing 등)이 포함되어 있지 않아 정상적으로 작동하지 않습니다 [6].\n\n### 2. 현재 프로젝트의 렌더 파이프라인 (URP)\n현재 프로젝트는 `PC_RPAsset`이라는 **Universal Render Pipeline Asset**을 사용하고 있습니다. URP는 고정된 베이킹 기반의 GI가 주력이었으며, 실시간 Dynamic GI 솔루션인 Surface Cache 방식은 아직 개발 단계에 있습니다.\n\n---\n\n### 대신 사용할 수 있는 기술: Adaptive Probe Volumes (APV)\n현재 Unity 6에서 가장 권장되는 차세대 GI 솔루션은 **Adaptive Probe Volumes (APV)**입니다. \n\n*   **역할:** 기존의 라이트 프로브(Light Probes)를 대체하는 훨씬 정밀하고 효율적인 방식입니다.\n*   **장점:** 넓은 지형을 자동으로 프로브로 채워주며, 베이킹된 라이팅을 씬의 정적/동적 오브젝트에 고품질로 반영합니다.\n*   **설정 방법:** `Project Settings > Graphics > Adaptive Probe Volumes`에서 활성화한 후, 씬에 `Adaptive Probe Volume` 컴포넌트를 추가하여 사용할 수 있습니다.\n\n### 요약\n결론적으로 **Surface Cached GI**는 현재 사용하시는 버전(6000.4)보다 더 이후의 버전(6.5 이상)에서나 실험적으로 사용 가능할 예정입니다. 현재로서는 Unity 6의 주력 GI 기술인 **Adaptive Probe Volumes (APV)**를 적극 활용하시는 것이 가장 좋은 대안입니다.\n\n더 자세한 로드맵 정보는 [유니티 공식 디스커션의 Dynamic GI 로드맵 페이지](https://discussions.unity.com/t/feedback-request-changes-to-unitys-dynamic-gi-roadmap/1660897)를 통해 확인하실 수 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

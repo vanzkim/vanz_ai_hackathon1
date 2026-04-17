@@ -755,6 +755,12 @@
       "conversation_id": "2808abf9-7219-4752-a681-41336af9255a",
       "content": "이 오류는 뭐지",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "745d62d9-84ec-4c6a-83ce-2db641a6d572",
+      "conversation_id": "2808abf9-7219-4752-a681-41336af9255a",
+      "content": "이 경고는 Unity 6에서 도입된 **'Project-wide Actions(프로젝트 전역 액션)'** 시스템과 관련된 것입니다.\n\n### 오류(경고)의 의미\n이미지에서 사용 중인 `InputSystem_Actions` 에셋은 현재 프로젝트 설정(Project Settings)에서 **프로젝트 전역 액션**으로 등록되어 있습니다. \n\n*   **프로젝트 전역 액션:** 게임 어디서든 `InputSystem.actions`를 통해 접근할 수 있는 싱글톤(Singleton) 인스턴스입니다.\n*   **Player Input 컴포넌트:** 개별 캐릭터나 플레이어가 자신만의 입력 상태(어떤 맵이 활성화되었는지 등)를 독립적으로 관리하기 위해 만들어진 컴포넌트입니다.\n\n전역 싱글톤 에셋을 `Player Input`에 할당하면, 여러 명의 플레이어가 같은 에셋을 공유하게 되어 입력 맵의 활성화/비활성화 상태가 꼬일 수 있기 때문에 Unity가 권장하지 않는다고 경고하는 것입니다.\n\n---\n\n### 해결 방법\n\n가장 권장되는 해결 방법은 다음 중 하나를 선택하는 것입니다.\n\n#### 방법 1: `Player Input` 컴포넌트 없이 코드에서 직접 사용 (Unity 6 권장)\n싱글 플레이어 게임이라면 굳이 `Player Input` 컴포넌트를 쓸 필요가 없습니다. \n`InputSystem_Actions`가 전역으로 등록되어 있다면, 스크립트에서 바로 다음과 같이 사용할 수 있습니다.\n\n```csharp\nusing UnityEngine;\nusing UnityEngine.InputSystem;\n\npublic class PlayerController : MonoBehaviour\n{\n    void Update()\n    {\n        // 전역 액션에서 직접 찾아서 사용\n        Vector2 moveInput = InputSystem.actions.FindAction(\"Move\").ReadValue<Vector2>();\n        \n        if (InputSystem.actions.FindAction(\"Jump\").WasPressedThisFrame())\n        {\n            // 점프 로직\n        }\n    }\n}\n```\n\n#### 방법 2: `Player Input` 전용 에셋 만들기\n`Player Input` 컴포넌트를 계속 사용하고 싶다면(예: 로컬 멀티플레이어 구현 등), 전역 에셋이 아닌 별도의 에셋을 할당해야 합니다.\n\n1.  `Assets/InputSystem_Actions` 에셋을 선택하고 **Ctrl+D (복제)** 하여 이름을 `PlayerActions` 등으로 바꿉니다.\n2.  `Player Input` 컴포넌트의 **Actions** 필드에 방금 만든 복제본(`PlayerActions`)을 드래그하여 할당합니다.\n3.  이렇게 하면 전역 설정과 분리되어 경고가 사라집니다.\n\n#### 방법 3: 경고 내용대로 스크립트에서 수동 관리\n경고 메시지에 적힌 대로, 게임 시작 시 모든 맵을 끄고 필요한 맵만 켜는 코드를 작성하면 경고를 무시하고 사용할 수 있지만, 구조상 **방법 1이나 2를 더 권장**합니다.\n\n**요약:** 단순한 싱글 플레이 게임이라면 `Player Input` 컴포넌트를 지우고 코드에서 `InputSystem.actions`를 사용하는 것이 Unity 6의 의도에 가장 부합합니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

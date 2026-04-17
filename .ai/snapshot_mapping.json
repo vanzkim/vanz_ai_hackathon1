@@ -491,6 +491,12 @@
       "conversation_id": "294c7782-b79e-4b99-ba64-2edd60f8f0a8",
       "content": "다음은 WASD 로 이동하고 마우스로 시선조정하는 기능이다.",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "52fc2330-9c57-454a-aca1-5db6c2fffd45",
+      "conversation_id": "294c7782-b79e-4b99-ba64-2edd60f8f0a8",
+      "content": "`Player_James` 캐릭터에 WASD 이동 및 마우스 시선 조정 기능을 구현했습니다.\n\n### 적용된 내용:\n\n1.  **입력 시스템 설정**:\n    *   `Assets/Animation/Player_James_Input.inputactions` 파일을 생성했습니다.\n    *   **이동(Move)**: WASD 키 (Vector2)\n    *   **시선(Look)**: 마우스 델타 (Vector2)\n2.  **이동 스크립트(`PlayerMovement.cs`) 구현**:\n    *   **WASD 이동**: 카메라가 바라보는 방향을 기준으로 캐릭터가 이동합니다.\n    *   **마우스 회전**: 마우스 좌우 움직임에 따라 캐릭터가 회전하며, 상하 움직임에 따라 카메라의 상하 각도가 조절됩니다.\n    *   **애니메이션 연동**: 이동 속도에 따라 애니메이터의 `Speed` 파라미터를 실시간으로 업데이트하여 `idle_normal`과 `walk_tired`가 자연스럽게 섞입니다.\n3.  **물리 및 카메라 구성**:\n    *   **CharacterController**: 캐릭터의 물리 충돌 및 이동을 담당합니다.\n    *   **CameraTarget**: 시선 처리를 위한 기준점(머리 높이)을 캐릭터 자식으로 생성했습니다.\n    *   **Cinemachine**: 새로운 `PlayerCinemachineCamera`를 생성하여 캐릭터를 부드럽게 추적하도록 설정했습니다.\n\n### 조작 방법:\n*   **W/A/S/D**: 이동\n*   **마우스 이동**: 시선 회전 및 상하 각도 조절\n\n이제 게임을 실행(Play)하시면 마우스와 키보드로 캐릭터를 직접 조종하며 지친 듯 걷는 모습을 확인하실 수 있습니다. 추가로 점프나 달리기 같은 기능이 필요하시면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+    "asset": "dba7dd71ffbce4c0db977123a67b00b2",
+    "fileName": "019d99c7-87a1-79d9-9c57-849049aab64b.pose.json",
+    "prompt": "tired and staggered walk, middle aged man",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1082917683,
+    "w3CTraceId": "60fcc5576fa7195a43be8c46f88f8d7b",
+    "feedback": 0,
+    "isTrimmed": false
+}

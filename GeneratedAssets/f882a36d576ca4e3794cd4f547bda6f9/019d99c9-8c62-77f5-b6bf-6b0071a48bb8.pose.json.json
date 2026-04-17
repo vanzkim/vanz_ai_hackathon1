@@ -1,0 +1,12 @@
+{
+    "asset": "f882a36d576ca4e3794cd4f547bda6f9",
+    "fileName": "019d99c9-8c62-77f5-b6bf-6b0071a48bb8.pose.json",
+    "prompt": "middle aged man very tired walking, barely crawling ",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 90893277,
+    "w3CTraceId": "da70ff9794bf7385e5788b82322e0348",
+    "feedback": 0,
+    "isTrimmed": false
+}

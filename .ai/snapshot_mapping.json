@@ -341,6 +341,12 @@
       "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
       "content": "I've fixed the issue where the camera wasn't following the character.\n\n### 원인 분석 (Root Cause)\n업데이트 전에는 `Main Camera` 오브젝트가 `PlayerOne_character` 프리팹 자식으로 포함되어 있었습니다. 구버전 시네머신에서는 이 구조에서도 어느 정도 작동했으나, **Cinemachine 3.x**에서는 카메라의 계층 구조가 캐릭터와 묶여 있을 경우 트랜스폼 계산 충돌이 발생하여 시네머신이 카메라의 위치를 올바르게 제어하지 못하는 현상이 발생했습니다. (실제로 확인 결과, 카메라가 목표 거리인 4m가 아닌 1.06m 지점에 고정되어 있었습니다.)\n\n### 해결 방법 (Fix)\n1.  **계층 구조 분리**: `Main Camera`를 캐릭터 오브젝트 내부에서 꺼내어 씬의 최상위(Scene Root)로 이동시켰습니다. (기존 카메라를 비활성화하고 동일한 설정을 가진 새 카메라를 루트에 생성했습니다.)\n2.  **컴포넌트 재구성**:\n    *   **`CinemachineCamera`**: `Follow` 및 `LookAt` 타겟을 다시 설정했습니다.\n    *   **`CinemachineThirdPersonFollow`**: 기존 3인칭 추적 설정을 복구했습니다 (거리 4m, 숄더 오프셋 (1, 0, 0) 등).\n    *   **`CinemachineRotationComposer`**: 3.x 표준에 맞춰 카메라 회전을 위한 에임 컴포넌트를 추가했습니다.\n    *   **`CinemachineBasicMultiChannelPerlin`**: 기존에 사용하던 `Handheld_normal_mild` 노이즈 프로필을 다시 적용했습니다.\n\n### 최종 확인\n현재 `Main Camera`와 캐릭터(`PlayerCameraRoot`) 사이의 거리가 설정값인 **4m**를 정확히 유지하며 추적하고 있음을 확인했습니다. 이제 캐릭터가 움직이면 카메라가 설정된 오프셋을 유지하며 정상적으로 따라갑니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "294c7782-b79e-4b99-ba64-2edd60f8f0a8",
+      "content": "이 캐릭터의 걷기 모션을 바꾸고 싶다 어떻게 하면 되나",
+      "snapshot_message_type": 0
     }
   ]
 }

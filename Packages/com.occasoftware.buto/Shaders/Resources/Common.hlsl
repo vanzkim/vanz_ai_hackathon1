@@ -178,26 +178,27 @@ float4x4 os_WorldToCamera;
 float3 os_CameraForward;
 float3 GetRayDirectionCompute(float2 uv)
 {
-  float3 rayDirection = os_CameraForward;
-  if (!IsOrthographicPerspective())
+  if (IsOrthographicPerspective())
   {
-    float3 viewVector = mul(os_CameraInvProjection, float4((uv * 2.0) - 1.0, 0.0, 1.0)).xyz;
-    viewVector = mul(os_CameraToWorld, float4(viewVector, 0.0)).xyz;
-    rayDirection = viewVector / (length(viewVector) + 1e-7);
+    return os_CameraForward;
   }
-  return rayDirection;
+  float3 viewVector = mul(os_CameraInvProjection, float4((uv * 2.0) - 1.0, 0.0, 1.0)).xyz;
+	viewVector = mul(os_CameraToWorld, float4(viewVector, 0.0)).xyz;
+	float3 rayDirection = viewVector;
+
+	rayDirection = viewVector / length(viewVector);
+	return rayDirection;
 }
 
 float GetRayLengthCompute(float2 uv)
 {
-  float rayLength = 1.0;
-  if (!IsOrthographicPerspective())
+  if (IsOrthographicPerspective())
   {
-    float3 viewVector = mul(os_CameraInvProjection, float4(uv * 2.0 - 1.0, 0.0, 1.0)).xyz;
-    viewVector = mul(os_CameraToWorld, float4(viewVector, 0.0)).xyz;
-    rayLength = length(viewVector);
+    return 1.0;
   }
-  return rayLength;
+	float3 viewVector = mul(os_CameraInvProjection, float4(uv * 2.0 - 1.0, 0.0, 1.0)).xyz;
+	viewVector = mul(os_CameraToWorld, float4(viewVector, 0.0)).xyz;
+	return length(viewVector);
 }
 
 float cameraFarPlane;

@@ -815,6 +815,12 @@
       "conversation_id": "b84baa43-9f3e-45e3-9957-0879e6da3b85",
       "content": "이 캐릭터를 다른 씬에 가져가서 똑같이 움직이게 하고 싶으면?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "261f94ae-744b-43e2-b291-576efe51949f",
+      "conversation_id": "b84baa43-9f3e-45e3-9957-0879e6da3b85",
+      "content": "현재 `scene_two`에 있는 `SK_Modern_Man` 캐릭터를 다른 씬에서도 똑같이 움직이게 하려면, 캐릭터 구성 요소와 로직이 포함된 **프리팹(Prefab)**을 사용하고 필요한 카메라/입력 설정을 맞추면 됩니다.\n\n분석 결과, 이 캐릭터는 `ThirdPersonController` 스크립트와 `Cinemachine` 카메라 시스템을 통해 동작하고 있습니다.\n\n### 다른 씬에서 캐릭터를 사용하기 위한 단계:\n\n1.  **캐릭터 프리팹 배치**\n    *   새 씬을 엽니다.\n    *   `Assets/Character/SK_Modern_Man_Controller.prefab` 파일을 새 씬의 Hierarchy 창으로 드래그 앤 드롭합니다.\n    *   이 프리팹에는 이미 `Animator`, `CharacterController`, `ThirdPersonController`가 모두 포함되어 있어 기본적인 로직이 내장되어 있습니다.\n\n2.  **입력 시스템(Input System) 확인**\n    *   이 캐릭터는 유니티의 **New Input System**을 사용합니다. 프로젝트 전반에 설정되어 있으므로 별도의 추가 작업은 필요 없으나, 동작하지 않는 경우 `Project Settings > Input System Package`에서 `Move`, `Look` 등의 액션이 정의된 에셋이 활성화되어 있는지 확인하세요.\n\n3.  **카메라 설정 (Cinemachine)**\n    *   캐릭터가 움직이는 것을 보려면 `scene_two`와 동일한 카메라 설정이 필요합니다.\n    *   **Main Camera**: 씬의 `Main Camera`에 `Cinemachine Brain` 컴포넌트가 있는지 확인하세요 (없으면 추가).\n    *   **Cinemachine Camera**: 씬에 `Cinemachine Camera`를 생성하고, **Follow** 대상에 캐릭터 하위에 있는 `CameraTarget` 오브젝트를 연결하세요.\n    *   `scene_two`에 있는 `CM ThirdPerson Camera` 오브젝트를 프리팹화하여 가져오거나, 설정을 복사해서 사용하면 가장 정확합니다.\n\n4.  **애니메이션 확인**\n    *   프리팹에 `Assets/Animation/CharacterController.controller`가 `Animator` 컴포넌트에 할당되어 있는지 확인하세요. (이미 프리팹에 포함되어 있을 것입니다.)\n\n**참고:**\n사용자가 선택한 `SK_Modern_Man` (ID: -12240)은 메시(Mesh)를 담고 있는 자식 오브젝트입니다. 실제로 이동과 회전을 담당하는 것은 그 부모인 `SK_Modern_Man_Controller` 프리팹이므로, 반드시 **부모 프리팹 전체**를 다른 씬으로 가져가야 합니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

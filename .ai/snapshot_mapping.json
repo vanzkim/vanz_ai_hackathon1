@@ -719,6 +719,12 @@
       "conversation_id": "e7e6c501-844d-4c11-bef0-36428c738492",
       "content": "캐릭터가 움직이지 않았던 원인은 **계층 구조의 중복 및 컴포넌트 분산** 때문이었습니다.\n\n### **발견된 문제점:**\n*   씬 내에 `SK_Modern_Man`이라는 이름의 오브젝트가 2개 중첩되어 있었습니다.\n    *   **부모 오브젝트:** `Animator`와 메쉬(Mesh), 뼈대(Skeleton)를 가지고 있었지만 조작 스크립트가 없었습니다.\n    *   **자식 오브젝트:** 조작 스크립트(`ThirdPersonController`)와 `CharacterController`를 가지고 있었지만, 메쉬나 애니메이터가 없어 이 오브젝트만 따로 투명하게 움직이고 있었던 상태였습니다.\n    *   또한, 자식 오브젝트의 스크립트가 부모의 `Animator`를 찾지 못해 애니메이션도 갱신되지 않았습니다.\n\n### **해결 조치:**\n1.  **컴포넌트 통합:** 자식 오브젝트에 있던 `CharacterController`, `PlayerInput`, `ThirdPersonController`를 모두 최상위 부모 오브젝트(`SK_Modern_Man`)로 옮겼습니다.\n2.  **구조 정리:** 불필요하게 중복되었던 자식 오브젝트를 제거하여 하나의 루트 오브젝트에서 모든 제어가 이루어지도록 정리했습니다.\n3.  **카메라 연결:** 조작 스크립트가 카메라의 방향을 기준으로 이동할 수 있도록 `Main Camera`를 명시적으로 연결했습니다.\n\n이제 게임을 실행(Play)하면 캐릭터 전체(메쉬와 뼈대 포함)가 WASD 입력에 따라 정상적으로 이동하고, `Speed` 값에 맞춰 애니메이션이 부드럽게 재생되는 것을 확인하실 수 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "fcf5e1f5-4224-4fec-aec7-2f4430a54dbd",
+      "content": "이 오류들 확인해줘",
+      "snapshot_message_type": 0
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+    "asset": "210c241a8bef649928e3ba3ec9ce7f6b",
+    "fileName": "019d9a69-75ec-799b-9b00-19fc06b1e803.pose.json",
+    "prompt": "tired idle motion. deep breathing, looking down\n",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1217229476,
+    "w3CTraceId": "536d3d84ae6983cd47b08e38d0d13324",
+    "feedback": 0,
+    "isTrimmed": false
+}

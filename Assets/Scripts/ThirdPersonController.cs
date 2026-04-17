@@ -64,11 +64,13 @@ public class ThirdPersonController : MonoBehaviour
     private void OnMove(InputValue value)
     {
         _move = value.Get<Vector2>();
+        Debug.Log($"Input Move: {_move}");
     }
 
     private void OnLook(InputValue value)
     {
         _look = value.Get<Vector2>();
+        Debug.Log($"Input Look: {_look}");
     }
 
     private void CameraRotation()

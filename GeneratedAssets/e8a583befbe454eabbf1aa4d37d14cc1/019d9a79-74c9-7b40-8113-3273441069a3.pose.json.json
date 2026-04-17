@@ -1,0 +1,12 @@
+{
+    "asset": "e8a583befbe454eabbf1aa4d37d14cc1",
+    "fileName": "019d9a79-74c9-7b40-8113-3273441069a3.pose.json",
+    "prompt": "man walk, tired",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1006518405,
+    "w3CTraceId": "4f40d6fb37bf51d1714755f37cb18ea7",
+    "feedback": 0,
+    "isTrimmed": false
+}

@@ -707,6 +707,12 @@
       "conversation_id": "e7e6c501-844d-4c11-bef0-36428c738492",
       "content": "3인칭 카메라 시스템도 적용해줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "720accdc-d0a8-4d5b-a635-1759fa74ed5d",
+      "conversation_id": "e7e6c501-844d-4c11-bef0-36428c738492",
+      "content": "`SK_Modern_Man` 캐릭터를 위한 **3인칭 카메라 시스템**과 **플레이어 컨트롤러** 설정을 완료했습니다.\n\n### **적용 사항:**\n\n1.  **시네머신(Cinemachine) 카메라 설정:**\n    *   **Main Camera:** `CinemachineBrain` 컴포넌트를 추가하여 시네머신 시스템이 작동하도록 설정했습니다.\n    *   **CM 3rd Person Camera:** 캐릭터를 따라다니는 3인칭 전용 카메라를 생성했습니다.\n        *   **Follow/LookAt:** `SK_Modern_Man`을 대상으로 설정했습니다.\n        *   **Over-the-shoulder:** 어깨 너머로 보는 시점을 위해 오프셋을 조정했습니다.\n        *   **Collision:** 장애물에 카메라가 가려지지 않도록 기본 설정을 포함했습니다.\n\n2.  **플레이어 컨트롤러 (ThirdPersonController.cs):**\n    *   캐릭터가 카메라가 바라보는 방향을 기준으로 이동하고 회전할 수 있도록 제어 스크립트를 생성하여 부착했습니다.\n    *   **이동:** WASD 키(또는 게임패드)로 이동하며, 이동 시 이전에 설정한 `Walk` 애니메이션이 자동으로 재생됩니다.\n    *   **중력:** 바닥에 붙어 있을 수 있도록 기본적인 중력 로직을 포함했습니다.\n\n3.  **입력 시스템(Input System) 연결:**\n    *   기존 프로젝트의 `InputSystem_Actions` 에셋을 활용하여 `Move`와 `Look` 입력을 캐릭터에 연결했습니다.\n    *   `CharacterController`를 추가하여 물리적 충돌 및 이동 처리를 최적화했습니다.\n\n### **확인 방법:**\n*   **이동:** `W, A, S, D` 키로 캐릭터를 움직여보세요. 이동 속도에 따라 `Idle`과 `Walk` 애니메이션이 전환됩니다.\n*   **카메라 회전:** 마우스를 움직여 카메라 시점을 회전할 수 있습니다. (시네머신 입력 설정에 따라 인스펙터에서 `Look` 액션 할당이 추가로 필요할 수 있습니다.)\n*   **컴포넌트 조절:** `SK_Modern_Man` 오브젝트의 `ThirdPersonController` 컴포넌트에서 `Move Speed`나 `Rotation Speed`를 원하는 대로 수정할 수 있습니다.\n\n이제 게임을 실행(Play)하면 3인칭 시점에서 캐릭터를 직접 조작하실 수 있습니다!",
+      "snapshot_message_type": 1
     }
   ]
 }

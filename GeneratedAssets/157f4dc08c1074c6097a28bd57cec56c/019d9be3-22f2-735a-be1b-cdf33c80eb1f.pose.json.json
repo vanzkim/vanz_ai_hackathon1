@@ -1,0 +1,12 @@
+{
+    "asset": "157f4dc08c1074c6097a28bd57cec56c",
+    "fileName": "019d9be3-22f2-735a-be1b-cdf33c80eb1f.pose.json",
+    "prompt": "scared, manly, look around, shout",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 580973433,
+    "w3CTraceId": "f3d779cc3db27066c1aaea1293e6b808",
+    "feedback": 0,
+    "isTrimmed": false
+}

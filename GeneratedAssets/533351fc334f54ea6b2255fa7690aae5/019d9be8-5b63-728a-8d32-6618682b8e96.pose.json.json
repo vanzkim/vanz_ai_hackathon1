@@ -1,0 +1,12 @@
+{
+    "asset": "533351fc334f54ea6b2255fa7690aae5",
+    "fileName": "019d9be8-5b63-728a-8d32-6618682b8e96.pose.json",
+    "prompt": "staggered walking",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 163003010,
+    "w3CTraceId": "d6fd2cccbf05081bc0015fdcb3b42b64",
+    "feedback": 0,
+    "isTrimmed": false
+}

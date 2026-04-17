@@ -263,6 +263,12 @@
       "conversation_id": "c9fa145e-0148-4542-bbe5-6a9aed77c710",
       "content": "\"HospitalVolume\" 오브젝트에서 효과가 적용되지 않는 원인을 분석했습니다. 현재 설정에서 몇 가지 문제점을 발견했습니다:\n\n### 1. **Bloom Threshold(임계값) 수치가 너무 높습니다.**\n*   현재 `HospitalVolume`의 Bloom 설정에서 **Threshold가 14.3**으로 되어 있습니다.\n*   보통 0.9 ~ 1.1 정도가 적당합니다. 14.3은 화면에 아주 강렬한 빛(태양 등)이 있지 않는 한 효과가 전혀 나타나지 않는 수치입니다. 이 값을 **1.0** 정도로 낮춰보세요.\n\n### 2. **볼륨 간의 우선순위(Priority) 충돌**\n*   현재 씬에는 `HospitalVolume`과 기존의 `Sky and Fog Global Volume`이 둘 다 존재하며, 두 볼륨 모두 **Priority가 0**으로 같습니다.\n*   우선순위가 같으면 효과가 섞이거나 의도치 않게 가려질 수 있습니다. `HospitalVolume`의 **Priority를 1 이상**(예: 10)으로 높여서 이 볼륨이 가장 먼저 적용되도록 설정하세요.\n\n### 3. **씬 뷰(Scene View)의 포스트 프로세싱 토글 확인**\n*   만약 게임 뷰가 아닌 **씬 뷰**에서 확인 중이시라면, 씬 뷰 상단 툴바에 있는 **'Post-Processing' 아이콘(원 모양 아이콘)**이 켜져 있는지 확인해 주세요. 이게 꺼져 있으면 에디터 화면에서는 효과가 보이지 않습니다.\n\n### 4. **카메라의 볼륨 마스크(Volume Mask)**\n*   현재 메인 카메라의 Volume Mask는 `Default` 레이어만 보도록 설정되어 있습니다. 다행히 `HospitalVolume`도 `Default` 레이어에 있어 이 부분은 문제가 없지만, 나중에 레이어를 바꾸실 경우 카메라의 **Volume Mask** 설정도 함께 확인해야 합니다.\n\n### 5. **Buto(부토) 비활성화 확인**\n*   현재 `PC_Renderer`에서 `ButoRenderFeature`는 정상적으로 **비활성화(Active: False)** 되어 있음을 확인했습니다.\n\n---\n\n**추천 조치:**\n1.  `HospitalVolume`의 **Priority**를 **10**으로 변경하세요.\n2.  `Bloom`의 **Threshold**를 **1.0**으로, **Intensity**를 **1.0** 이상으로 설정해 보세요.\n3.  `Vignette`의 **Intensity**를 **0.5** 정도로 높여서 화면 가장자리가 어두워지는지 즉시 확인해 보세요.\n\n이 수치들을 제가 직접 변경해 드릴까요? 원하신다면 말씀해 주세요.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "0ec4f50f-c148-4452-a270-8dc97f4b7509",
+      "content": "씬 템플릿의 역할은?",
+      "snapshot_message_type": 0
     }
   ]
 }

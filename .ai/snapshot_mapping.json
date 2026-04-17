@@ -323,6 +323,12 @@
       "conversation_id": "4c3007ea-1ed4-413d-b1aa-5f82db8ef2f0",
       "content": "`PlayerOne_character` 오브젝트 및 하위 계층에 있는 모든 Spring Bone 관련 컴포넌트(63개)를 성공적으로 제거했습니다.\n\n제거된 주요 컴포넌트:\n*   **SpringManager**: 전체적인 흔들림 효과를 관리하는 상위 컴포넌트\n*   **SpringBone**: 머리카락, 배낭, 자켓 등 개별 부위의 물리 흔들림 효과를 담당하는 컴포넌트\n*   **SpringCapsuleCollider**: 물리 충돌을 처리하기 위해 설정된 콜라이더들\n\n이제 해당 캐릭터의 머리카락이나 장신구 등은 더 이상 물리 법칙에 의해 흔들리지 않는 고정된 상태가 됩니다. 추가로 확인해 본 결과, Dynamic Bone이나 기타 유사한 물리 스크립트도 남아있지 않음을 확인했습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "5a201d5c-f558-41ca-8452-89da0d74b01f",
+      "content": "이 캐릭터 오브젝트에 있는 cinemachine 관련 어셋들이 ourdated 되어 있다. 최신 버전으로 같은 기능을 유지하면서 업데이트 해줘",
+      "snapshot_message_type": 0
     }
   ]
 }

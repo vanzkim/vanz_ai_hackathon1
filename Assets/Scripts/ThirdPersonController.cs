@@ -9,6 +9,7 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] private float rotationSmoothTime = 0.12f;
     [SerializeField] private float speedChangeRate = 10.0f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float lookSensitivity = 1.0f;
 
     [Header("Cinemachine")]
     [SerializeField] private GameObject cinemachineCameraTarget;

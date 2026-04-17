@@ -365,6 +365,12 @@
       "conversation_id": "294c7782-b79e-4b99-ba64-2edd60f8f0a8",
       "content": "캐릭터(**PlayerOne_character**)의 기본 걷기 모션이 `walk_tired` 애니메이션으로 성공적으로 변경되었습니다.\n\n**변경 내용:**\n*   **애니메이터 컨트롤러**: `StarterAssetsThirdPerson`\n*   **상태**: `Idle Walk Run Blend` (Blend Tree)\n*   **수정된 모션**: 임계값(Threshold) 2인 지점의 애니메이션을 기존 `Walk_N`에서 `walk_tired`로 교체하였습니다.\n\n이제 게임을 플레이하시면 캐릭터가 평소보다 지친 듯한 걸음걸이로 걷는 것을 확인하실 수 있습니다. 추가로 수정이 필요하시거나 다른 모션(예: 달리기 등)도 바꾸고 싶으시면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "9480635b-cd8f-41b1-8b77-7c1ea3bfc7d6",
+      "conversation_id": "294c7782-b79e-4b99-ba64-2edd60f8f0a8",
+      "content": "캐릭터의 걷기 모션을 원래 상태인 `Walk_N`으로 되돌렸습니다.\n\n**변경 내용:**\n*   **애니메이터 컨트롤러**: `StarterAssetsThirdPerson`\n*   **상태**: `Idle Walk Run Blend` (Blend Tree)\n*   **수정된 모션**: `walk_tired`로 변경되었던 임계값(Threshold) 2인 지점의 애니메이션을 다시 원래의 `Walk_N`으로 교체하였습니다.\n\n이제 캐릭터는 다시 정상적인 속도로 걷게 됩니다. 다른 도움이 필요하시면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

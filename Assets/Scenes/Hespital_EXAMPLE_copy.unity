@@ -32624,6 +32624,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2815227925233143711, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: CameraSide
       value: 0.508
@@ -32683,6 +32691,22 @@ PrefabInstance:
     - target: {fileID: 3604915395847042175, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Name
       value: Controll_System
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_FocalLength
+      value: 21.982569
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_SensorSize.x
+      value: 21.946
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_SensorSize.y
+      value: 16.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5324318061848895758, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Enabled

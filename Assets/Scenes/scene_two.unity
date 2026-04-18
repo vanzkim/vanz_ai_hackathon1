@@ -339,13 +339,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362151986}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.8139726, y: -0.5303877, z: -0.025998525, w: 0.23550273}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.843, y: -161.784, z: -110.445}
 --- !u!114 &1362151989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +558,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.91630006
+      objectReference: {fileID: 0}
+    - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5521802
+      objectReference: {fileID: 0}
+    - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.929039
+      objectReference: {fileID: 0}
     - target: {fileID: 3000537854724312379, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.7442
@@ -601,6 +613,14 @@ PrefabInstance:
     - target: {fileID: 3604915395847042175, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Name
       value: Controll_System
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9015419529092320542, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: Target.LookAtTarget

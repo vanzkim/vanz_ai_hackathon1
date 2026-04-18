@@ -30668,6 +30668,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a782c8181f63bb446bc1e1ed0f2ec1ed, type: 3}
   m_PrefabInstance: {fileID: 68159116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1033977136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2306910572413360286, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+  m_PrefabInstance: {fileID: 1075205322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1033977141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033977136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416c630a5e9c84c279d85c6b271377b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraScrollZoom
+  zoomSensitivity: 0.5
+  minDistance: 1
+  maxDistance: 10
+  smoothTime: 0.1
 --- !u!1001 &1035790144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32479,7 +32500,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2306910572413360286, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1033977141}
   m_SourcePrefab: {fileID: 100100000, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
 --- !u!4 &1076160898 stripped
 Transform:

@@ -893,6 +893,12 @@
       "conversation_id": "52058b7b-7cd7-446d-b010-ec401a0ff73b",
       "content": "buto를 지우고 싶어서 패키지 매니저에서 Remove를 했는데 지워지지 않습니다. 어떻게 해야 하나요?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "3cc0a4ca-6164-4ff2-b84c-a561e5307820",
+      "conversation_id": "52058b7b-7cd7-446d-b010-ec401a0ff73b",
+      "content": "Package Manager에서 'Remove'를 시도했음에도 Buto가 남아있는 이유는, 해당 패키지가 **Embedded Package(내장 패키지)** 형식으로 프로젝트의 `Packages` 폴더 내에 직접 저장되어 있기 때문입니다.\n\n현재 프로젝트 구조를 확인한 결과, `Packages/com.occasoftware.buto` 폴더가 물리적으로 존재하고 있습니다. 내장 패키지는 Package Manager의 UI 명령만으로는 폴더 자체가 삭제되지 않는 경우가 많습니다.\n\n### 🛠 해결 방법\n\nButo를 완전히 제거하려면 다음 단계를 따라주세요.\n\n**1. 물리적 폴더 삭제 (가장 중요)**\n*   유니티 에디터의 **Project 창**에서 최상위 `Packages` 폴더를 확인합니다.\n*   `Buto` 또는 `com.occasoftware.buto` 폴더를 찾아 마우스 우클릭 후 **Delete**를 눌러 직접 삭제해 주세요.\n*   (에디터에서 안 보인다면) 프로젝트가 저장된 폴더의 `Packages/` 경로로 들어가서 해당 폴더를 수동으로 삭제해야 합니다.\n\n**2. 볼륨 프로파일에서 컴포넌트 제거**\n*   패키지를 지우기 전이나 후에, 볼륨 프로파일(`Hospital_PP`)에 들어있는 **Buto Volumetric Fog** 오버라이드를 제거해야 합니다.\n*   **이유:** 패키지만 지우면 볼륨 프로파일에 \"Missing (MonoScript)\" 오류가 남게 되어 프로젝트가 지저분해질 수 있습니다.\n*   `Assets/HE_URP_AbandonedHospital/Hospital_PP.asset` 파일을 선택하고 인스펙터 창에서 `Buto Volumetric Fog` 항목의 우측 상단 점 세 개(⋮) 메뉴를 눌러 **Remove**를 클릭하세요.\n\n**3. 프로젝트 정리**\n*   폴더 삭제 후 유니티로 돌아오면 라이브러리를 다시 로드합니다. 이때 상단 메뉴의 **Assets > Recheck Outvoted Assets** 또는 프로젝트 재시작을 통해 잔여 데이터가 없는지 확인하세요.\n\n**요약:** Package Manager 대신 **Project 창의 `Packages` 폴더 내에서 직접 삭제**하는 것이 정답입니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

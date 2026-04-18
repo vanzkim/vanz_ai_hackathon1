@@ -63555,6 +63555,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Modern_Man_Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 3572773347829277678, guid: f6314d2e7324e4973a1216e842d7b72f, type: 3}
+      propertyPath: gravity
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572773347829277678, guid: f6314d2e7324e4973a1216e842d7b72f, type: 3}
+      propertyPath: topClamp
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572773347829277678, guid: f6314d2e7324e4973a1216e842d7b72f, type: 3}
+      propertyPath: bottomClamp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572773347829277678, guid: f6314d2e7324e4973a1216e842d7b72f, type: 3}
+      propertyPath: lookSensitivity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8164541811438261493, guid: f6314d2e7324e4973a1216e842d7b72f, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0

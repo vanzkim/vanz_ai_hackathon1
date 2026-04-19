@@ -953,6 +953,12 @@
       "conversation_id": "191af145-7ed1-4101-888c-3821c1a8bb97",
       "content": "Why is the selected frame slow?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "54a0c227-5fa4-4eaa-9f3c-d7ce5243c11d",
+      "conversation_id": "191af145-7ed1-4101-888c-3821c1a8bb97",
+      "content": "The analysis of [Frame 1275](profiler://frame/1274) shows a massive performance spike, with a total frame time of **1006.33ms**, exceeding the 16.67ms target by over 989ms.\n\n### Bottleneck Identification\nThe slowdown is entirely caused by Editor-side overhead on the **Main Thread**:\n\n*   **[EditorLoop](profiler://frame/1274/threadName/Main%20Thread/rawIndex/456/name/EditorLoop)**: 1002.93ms (99.7% of frame time).\n    *   This sample has high **Self Time**, indicating that the Main Thread is blocked by a task within the Editor update loop that isn't further broken down into sub-samples (likely a blocking I/O or native operation).\n\n### Root Cause: Game Data Collection Snapshot\nConsole logs and project metadata confirm that the `com.unity.game-data-collection` package (located at `/Users/beomjoo.kim/Downloads/package 2`) triggered a background snapshot process during this frame. The logs explicitly track the progress of this operation:\n\n1.  **Saving Assets**: `[Game Data Collection] Saving scenes and assets...`\n2.  **Scene Serialization**: `[Game Data Collection] Saving scenes for snapshot...`\n3.  **Git Operations**: `[Game Data Collection] Staging all changes...` and `[Game Data Collection] Committing snapshot...`\n\nThe `1002.93ms` stall in `EditorLoop` corresponds to the synchronous parts of these operations—specifically `AssetDatabase.SaveAssets()` and the execution of external Git commands—which block the Editor's Main Thread while serializing the project state.\n\n### Recommendation\nThis is a transient Editor-only spike and will not affect the performance of a standalone build. To reduce these spikes during development:\n*   Disable automatic snapshots in the **Game Data Collection** settings if applicable.\n*   Avoid manual saves or snapshot triggers during performance-sensitive profiling sessions.\n*   Ensure the project is stored on a high-speed SSD to minimize the time taken by `AssetDatabase.SaveAssets()`.",
+      "snapshot_message_type": 1
     }
   ]
 }

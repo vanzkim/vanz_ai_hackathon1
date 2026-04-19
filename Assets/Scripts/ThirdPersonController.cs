@@ -45,8 +45,25 @@ public class ThirdPersonController : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         
-        _moveAction = InputSystem.actions.FindAction("Move");
-        _lookAction = InputSystem.actions.FindAction("Look");
+        // Find actions specifically in the "Player" map to avoid conflicts
+        var playerMap = InputSystem.actions.FindActionMap("Player");
+        if (playerMap != null)
+        {
+            _moveAction = playerMap.FindAction("Move");
+            _lookAction = playerMap.FindAction("Look");
+            playerMap.Enable(); // Ensure the map is enabled
+        }
+        else
+        {
+            // Fallback to global search if map not found
+            _moveAction = InputSystem.actions.FindAction("Move");
+            _lookAction = InputSystem.actions.FindAction("Look");
+        }
+        
+        if (_animator != null)
+        {
+            _animator.applyRootMotion = false; // Usually should be false for script-controlled movement
+        }
     }
 
     private void OnEnable()
@@ -87,8 +104,8 @@ public class ThirdPersonController : MonoBehaviour
             bool isMouse = _lookAction.activeControl?.device is Mouse;
             float deltaTimeMultiplier = isMouse ? 1.0f : Time.deltaTime;
 
-            _cinemachineTargetYaw += _look.x * deltaTimeMultiplier;
-            _cinemachineTargetPitch += _look.y * deltaTimeMultiplier;
+            _cinemachineTargetYaw += _look.x * lookSensitivity * deltaTimeMultiplier;
+            _cinemachineTargetPitch += _look.y * lookSensitivity * deltaTimeMultiplier;
         }
 
         // Clamp rotations

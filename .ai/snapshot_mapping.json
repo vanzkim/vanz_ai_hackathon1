@@ -1127,6 +1127,12 @@
       "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
       "content": "enforce t pose 실행했지만 상태가 좋아지지 않는다. 참고로 사용하는 캐릭터의 인스펙터 창을 확인해 달라",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_8",
+      "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
+      "content": "enforce t pose 실행했지만 상태가 좋아지지 않는다. 참고로 사용하는 캐릭터의 인스펙터 창을 확인해 달라",
+      "snapshot_message_type": 0
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+    "asset": "17e1b82988e27416b978c67a03b698bc",
+    "fileName": "019da2eb-8d92-7ad1-8f49-38a49cd14f46.pose.json",
+    "prompt": "shaking head, very fast, ",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1517043626,
+    "w3CTraceId": "7b121dc1c3165794fff156a21d54a43c",
+    "feedback": 0,
+    "isTrimmed": false
+}

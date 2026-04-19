@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.075
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e021b4c809a781e468c2988c016ebbea, type: 3}
   m_Name: ColorLookup
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   texture:
     m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: d0d0d3ca920a39c40bed4e206098637c, type: 3}
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   color:
     m_OverrideState: 0
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -969,21 +969,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd486065ce11414fa40e631affc4900, type: 3}
   m_Name: ProbeVolumesOptions
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.ProbeVolumesOptions
-  active: 0
+  active: 1
   normalBias:
     m_OverrideState: 1
     m_Value: 1.294
   viewBias:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.531
   scaleBiasWithMinProbeDistance:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   samplingNoise:
     m_OverrideState: 0
     m_Value: 0.1
   animateSamplingNoise:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   leakReductionMode:
     m_OverrideState: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0.1
   occlusionOnlyReflectionNormalization:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   intensityMultiplier:
     m_OverrideState: 0
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   skipIterations:
     m_OverrideState: 0
     m_Value: 1

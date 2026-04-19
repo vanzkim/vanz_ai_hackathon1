@@ -35295,9 +35295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416c630a5e9c84c279d85c6b271377b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraScrollZoom
-  zoomSensitivity: 0.5
-  minDistance: 1
-  maxDistance: 10
+  zoomSensitivity: 1
+  minDistance: 1.5
+  maxDistance: 5
   smoothTime: 0.1
 --- !u!1001 &1035790144
 PrefabInstance:

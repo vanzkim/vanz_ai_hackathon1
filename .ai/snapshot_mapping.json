@@ -977,6 +977,12 @@
       "conversation_id": "191af145-7ed1-4101-888c-3821c1a8bb97",
       "content": "자동 스냅샷 간격을 조절하는 방법 알아?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "ace486d9-de57-4eb8-8e8f-303b372e84a8",
+      "conversation_id": "191af145-7ed1-4101-888c-3821c1a8bb97",
+      "content": "코드 분석 결과, **Game Data Collection** 패키지는 특정 \"시간 간격(Interval)\"에 따라 스냅샷을 찍는 것이 아니라, **AI Assistant와의 대화 이벤트**에 반응하여 작동하는 방식입니다.\n\n즉, 고정된 시간 간격을 조절하는 설정은 따로 없으며, 다음과 같은 상황에서 자동으로 스냅샷(데이터 저장 및 Git 커밋)이 생성됩니다:\n1.  사용자가 AI Assistant에게 메시지를 보냈을 때 (User Message Complete)\n2.  AI Assistant가 답변을 마쳤을 때 (Assistant Message Complete)\n\n만약 이로 인한 성능 저하를 줄이고 싶다면, 아래의 설정을 확인하거나 기능을 일시적으로 끌 수 있습니다.\n\n### 1. 설정 창 열기\n유니티 상단 메뉴에서 다음 경로를 통해 설정 창을 열 수 있습니다:\n*   **AI Assistant > Internals > Data Collection > Snapshotting Settings**\n\n### 2. 주요 설정 항목\n설정 창(Snapshotting Settings)에서 다음 항목들을 제어할 수 있습니다:\n*   **Game Creation Recording**: 이 체크박스를 해제하면 자동 기록 기능의 일부를 비활성화할 수 있습니다.\n*   **Auto Upload**: 스냅샷 생성 후 서버로 자동 업로드하는 기능입니다. 이 기능이 켜져 있으면 `PushToOrigin` 작업까지 추가되어 더 긴 멈춤 현상이 발생할 수 있으므로, 성능 측정이 필요할 때는 이 옵션을 끄는 것이 좋습니다.\n\n### 3. 권장 해결책\n현재 스파이크(Spike)가 발생하는 근본 원인은 스냅샷 생성 시 호출되는 `AssetDatabase.SaveAssets()` 작업입니다. \n*   **중요한 성능 테스트 중에는** AI Assistant 창을 닫거나 대화를 멈추면 자동으로 스냅샷이 생성되지 않습니다.\n*   만약 대화 중에도 멈춤을 방지하고 싶다면, 현재 제공되는 패키지 구조상 **Snapshotting Settings**에서 기능을 비활성화하는 것이 가장 확실한 방법입니다.\n\n요약하자면, **시간 기반의 간격 설정은 없으며, AI Assistant와의 상호작용이 있을 때마다 발생**하므로 대화 빈도를 조절하거나 설정 창에서 기능을 끄는 방식으로 관리하실 수 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

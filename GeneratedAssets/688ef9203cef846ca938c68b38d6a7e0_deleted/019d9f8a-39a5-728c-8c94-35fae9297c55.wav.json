@@ -1,0 +1,14 @@
+{
+    "asset": "688ef9203cef846ca938c68b38d6a7e0",
+    "fileName": "019d9f8a-39a5-728c-8c94-35fae9297c55.wav",
+    "prompt": "low whistling wind background ambience, seamless loop, soft and atmospheric",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "8f44b95b566e347c647e4199fb2e36e6",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

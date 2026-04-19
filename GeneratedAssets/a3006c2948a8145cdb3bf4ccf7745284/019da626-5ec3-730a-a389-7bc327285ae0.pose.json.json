@@ -1,0 +1,12 @@
+{
+    "asset": "a3006c2948a8145cdb3bf4ccf7745284",
+    "fileName": "019da626-5ec3-730a-a389-7bc327285ae0.pose.json",
+    "prompt": "A person lying unconscious on the ground suddenly snaps their eyes open and gasps sharply, chest heaving upward. After a moment of frozen shock, they begin a slow, agonizing struggle to rise. They push the ground with trembling arms, their body feeling heavy and uncoordinated. As they transition to a seated position, they reach up with a shaky hand to clutch their throbbing head, wincing in intense pain with a slight stagger in their posture.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 559368923,
+    "w3CTraceId": "d4d1df49d9aceb9207ec65c08fcaf1c3",
+    "feedback": 0,
+    "isTrimmed": false
+}

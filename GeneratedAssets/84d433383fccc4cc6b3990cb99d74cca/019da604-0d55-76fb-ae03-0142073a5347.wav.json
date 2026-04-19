@@ -1,0 +1,14 @@
+{
+    "asset": "84d433383fccc4cc6b3990cb99d74cca",
+    "fileName": "019da604-0d55-76fb-ae03-0142073a5347.wav",
+    "prompt": "girl crying, shouting, 'it's you!!!'",
+    "negativePrompt": "",
+    "model": "6be7790d-b2f4-4fe0-8ca2-76ddaaf94361",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "18f9243f3efdca1b0dac9482bc429099",
+    "feedback": 0,
+    "duration": 4.300000190734863,
+    "autoTrim": false,
+    "hasReference": false
+}

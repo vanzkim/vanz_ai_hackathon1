@@ -105,8 +105,8 @@ public class ThirdPersonController : MonoBehaviour
             float deltaTimeMultiplier = isMouse ? 1.0f : Time.deltaTime;
 
             _cinemachineTargetYaw += _look.x * lookSensitivity * deltaTimeMultiplier;
-            _cinemachineTargetPitch += _look.y * lookSensitivity * deltaTimeMultiplier;
-        }
+            _cinemachineTargetPitch -= _look.y * lookSensitivity * deltaTimeMultiplier;
+            }
 
         // Clamp rotations
         _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);

@@ -935,6 +935,12 @@
       "conversation_id": "2db37249-7b79-4d45-86a3-fb3bd4cdb6cc",
       "content": "마우스 카메라 상하가 반전되어 있는데",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "3f938f51-4244-4036-b860-6f1823ac6db0",
+      "conversation_id": "2db37249-7b79-4d45-86a3-fb3bd4cdb6cc",
+      "content": "마우스 상하 조작이 반전되어 있던 문제를 해결했습니다.\n\n`ThirdPersonController.cs` 스크립트 내의 `CameraRotation` 로직에서 마우스 Y축 입력 값을 더하는 방식에서 빼는 방식(`+=`를 `-=`로 변경)으로 수정하였습니다. 이제 마우스를 위로 움직이면 위를 보고, 아래로 움직이면 아래를 보게 됩니다.\n\n추가로 더 조정이 필요한 부분이 있으면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

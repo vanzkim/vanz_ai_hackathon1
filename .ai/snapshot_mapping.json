@@ -995,6 +995,12 @@
       "conversation_id": "d29a4a72-f2c2-43ee-b44a-07171bf01dc1",
       "content": "타임라인 컷씬을 여러 개 만드는 방법은 기본적으로 **첫 번째를 만들 때와 완전히 동일한 과정을 반복**하시면 됩니다. 구조적으로는 '붕어빵 틀(Asset)'과 '붕어빵 기계(Director)'의 관계라고 이해하시면 쉽습니다.\n\n현재 프로젝트의 `Assets/Timeline` 폴더를 확인해보니 이미 `Intro.playable`, `CameraMovement_Test.playable` 등 여러 타임라인 에셋이 생성되어 있는 것을 확인했습니다.\n\n### 1. 여러 개의 컷씬을 만드는 기본 순서 (반복)\n\n1.  **타임라인 에셋 생성 (Asset):**\n    *   `Project` 창에서 우클릭 -> `Create` -> `Timeline`을 선택하여 새로운 `.playable` 파일을 만듭니다. (예: `BossScene.playable`, `Ending.playable`)\n2.  **플레이어블 디렉터 준비 (Director):**\n    *   씬(Scene) 내에 빈 GameObject를 만들거나 기존 오브젝트를 선택합니다.\n    *   `Playable Director` 컴포넌트를 추가합니다.\n    *   위에서 만든 `Timeline Asset`을 `Playable` 슬롯에 할당합니다.\n3.  **트랙 구성 및 바인딩 (Editing):**\n    *   `Timeline` 창을 열고 `Animation Track`, `Activation Track`, `Audio Track` 등을 추가합니다.\n    *   각 트랙에 씬 내의 실제 오브젝트(캐릭터, 카메라 등)를 드래그하여 연결(Binding)합니다.\n\n---\n\n### 2. 여러 컷씬을 관리하는 전략\n\n컷씬이 많아질 경우 보통 다음 두 가지 방식 중 하나를 선택합니다:\n\n*   **방식 A: 개별 오브젝트 방식 (추천)**\n    *   각 컷씬마다 전용 GameObject(예: `Cutscene_Intro`, `Cutscene_Battle`)를 만들고 각각 `Playable Director`를 붙입니다.\n    *   특정 시점에 해당 오브젝트를 활성화하거나 스크립트에서 `.Play()`를 호출하여 실행합니다.\n    *   **장점:** 관리가 직관적이고 씬 내 배치가 쉽습니다.\n\n*   **방식 B: 매니저 교체 방식**\n    *   하나의 `Playable Director`만 두고, 상황에 따라 스크립트로 `playableAsset` 필드만 교체합니다.\n    *   **장점:** 메모리 관리에 유리할 수 있으나, 오브젝트 바인딩을 매번 새로 설정해야 하는 번거로움이 있습니다.\n\n---\n\n### 3. 추가 팁 (프로젝트 환경 기준)\n\n*   **시네머신 활용:** 현재 프로젝트에 **Cinemachine (3.1.6)**이 설치되어 있습니다. 카메라 컷씬을 만드실 때는 타임라인에서 `Cinemachine Track`을 추가하여 여러 가상 카메라(Virtual Camera)를 부드럽게 전환하는 것이 가장 효율적입니다.\n*   **시그널(Signals):** 컷씬 도중에 특정 코드 로직을 실행해야 한다면 `Signal Track`을 사용하여 컷씬의 특정 시점에 이벤트를 발생시킬 수 있습니다.\n\n**결론적으로, 순서는 똑같습니다.** `Project` 창에서 에셋을 새로 만들고, `Scene`에서 `Playable Director`에 연결하는 과정을 반복하시면 됩니다. \n\n직접 구현하시다가 특정 연출(예: 카메라 전환, 애니메이션 동기화 등)에서 막히는 부분이 있으면 말씀해 주세요! 필요하시다면 에이전트 모드로 전환하여 제가 직접 타임라인 구조를 잡아드릴 수도 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "d29a4a72-f2c2-43ee-b44a-07171bf01dc1",
+      "content": "타임라인 하나당 playable director가 붙은 게임오브젝트 하나씩 있어야 하나?",
+      "snapshot_message_type": 0
     }
   ]
 }

@@ -947,6 +947,12 @@
       "conversation_id": "2db37249-7b79-4d45-86a3-fb3bd4cdb6cc",
       "content": "마우스 카메라 이동 속도는 **`Player_Model`** 오브젝트에 붙어 있는 **`ThirdPersonController`** 컴포넌트에서 직접 수정하실 수 있습니다.\n\n### 수정 방법 (에디터 인스펙터 기준):\n1.  **Hierarchy** 창에서 `Player_Model` 오브젝트를 선택합니다.\n2.  **Inspector** 창에서 `ThirdPersonController` 스크립트 컴포넌트를 찾습니다.\n3.  **`Look Sensitivity`** (조작 감도) 항목의 수치를 조절하세요.\n    *   현재 설정값은 **0.5**입니다.\n    *   마우스 이동이 너무 느리다면 이 값을 **1.0 ~ 2.0** 정도로 높여보세요.\n\n### 스크립트에서 수정하려면:\n`Assets/Scripts/ThirdPersonController.cs` 파일의 12번 라인에 있는 변수 기본값을 변경하시면 됩니다.\n```csharp\n[SerializeField] private float lookSensitivity = 1.0f; // 기본값을 여기서 수정 가능\n```\n\n지금 바로 인스펙터에서 값을 변경하면서 가장 편안한 속도를 찾아보시기 바랍니다!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "191af145-7ed1-4101-888c-3821c1a8bb97",
+      "content": "Why is the selected frame slow?",
+      "snapshot_message_type": 0
     }
   ]
 }

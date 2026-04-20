@@ -708,6 +708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landscape
       objectReference: {fileID: 0}
+    - target: {fileID: 1267737573521167719, guid: d162a311617354886a13ad59e474ae8b, type: 3}
+      propertyPath: m_RenderAlignment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1302644312028851427, guid: d162a311617354886a13ad59e474ae8b, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.36

@@ -1223,6 +1223,12 @@
       "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
       "content": "Match Offsets to Scene GameObject 는 매뉴얼에도 안나와 있는데 출처를 알려줄수 있나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_17",
+      "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
+      "content": "애니메이션 클립 인스펙터 창의 clip transform offsets 는 어떨때 쓰는것인가",
+      "snapshot_message_type": 0
     }
   ]
 }

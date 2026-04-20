@@ -1403,6 +1403,12 @@
       "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
       "content": "현재 구조상 게임을 시작하고 오프닝씬에서 스타트 버튼을 눌러서 scene_hospital 을 로드해서 플레이 하려면 어떻게 해야하지?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
+      "content": "현재 구조상 게임을 시작하고 오프닝씬에서 스타트 버튼을 눌러서 scene_hospital 을 로드해서 플레이 하려면 어느씬에서 시작하고 어떤 설정을 해야 하지?",
+      "snapshot_message_type": 0
     }
   ]
 }

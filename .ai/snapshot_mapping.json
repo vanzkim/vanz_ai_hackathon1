@@ -1769,6 +1769,12 @@
       "conversation_id": "751d4baf-1fdc-4a8a-a972-fccfba3fbae9",
       "content": "스프라이드가 3인칭 카메라를 향하지 않는다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "7aa514b0-97b0-4d99-a4a4-7e7ddc794df6",
+      "content": "이 캐릭터의 Sit-Wait-Motion을 적용해서 계속 앉아있게 해줘요.",
+      "snapshot_message_type": 0
     }
   ]
 }

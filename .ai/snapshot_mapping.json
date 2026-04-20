@@ -1259,6 +1259,12 @@
       "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
       "content": "캐릭터 자체의 위치와 애니메이션 클립의 위치가 서로 간섭해서 조절이 어려운것 같다. 이 문제를 해결하는 추천방법은 뭔가",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_21",
+      "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
+      "content": "이 게임에 들어갈 오프닝 씬 등 추가 씬이 필요한데 이렇게 다수의 씬을 때에 따라 로드하고 관리하려면 일종의 매니저가 필요한가",
+      "snapshot_message_type": 0
     }
   ]
 }

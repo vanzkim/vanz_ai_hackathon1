@@ -1763,6 +1763,12 @@
       "conversation_id": "751d4baf-1fdc-4a8a-a972-fccfba3fbae9",
       "content": "`WindySnowParticles2` 오브젝트의 파티클 렌더러 설정을 **빌보드(Billboard)** 모드로 수정하였습니다. 이제 파티클들이 항상 카메라를 정면으로 바라보게 되어, 눈송이가 정상적인 형태로 보이게 됩니다.\n\n 추가로 작업이 필요하신 부분이 있으면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "751d4baf-1fdc-4a8a-a972-fccfba3fbae9",
+      "content": "스프라이드가 3인칭 카메라를 향하지 않는다",
+      "snapshot_message_type": 0
     }
   ]
 }

@@ -1811,6 +1811,12 @@
       "conversation_id": "0c7ab37e-3276-4bd4-83e1-9ef7521b42ca",
       "content": "이 컷씬이 끝나고 난후 Player_Model 이 활성화 되는데 그때 리깅된 뼈대가 뒤틀려지는 현상이 있다. 예상할 수 있는 원인은?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "29121395-6607-4f18-a6ac-8d17ede1b96b",
+      "conversation_id": "0c7ab37e-3276-4bd4-83e1-9ef7521b42ca",
+      "content": "컷씬 종료 후 `Player_Model` 활성화 시 리깅된 뼈대가 뒤틀려 보이는 현상의 가장 유력한 원인은 **Animator 컴포넌트의 Avatar 설정 오류**로 분석됩니다.\n\n### 🔍 조사 결과 및 원인 분석\n\n1.  **Avatar 설정 미스매치 (결정적 원인)**\n    *   씬 내의 `Player_Model` 오브젝트(InstanceID: 150436)의 자식 메시는 `SK_SURVMAN_BODY_FULL` 등 **남성형 모델(Man)** 기반으로 구성되어 있습니다.\n    *   하지만 해당 오브젝트의 `Animator` 컴포넌트의 `Avatar` 속성은 현재 **`SK_SurvGirl_AllPartsTogetherAvatar` (여성형)**로 설정되어 있습니다.\n    *   **결과:** 애니메이터가 여성형 리깅 데이터(Muscle 리터겟팅)를 남성형 골격에 강제로 적용하려고 시도하면서, 뼈대의 회전값이 어긋나고 메시가 뒤틀리는(Spaghetti limbs) 현상이 발생합니다.\n\n2.  **활성화 타이밍 문제**\n    *   컷씬(`Intro_Timeline`) 중에는 `Player_Cutscene`이라는 별도의 모델(정상적으로 남성형 Avatar 설정됨)이 보여지며, `Player_Model`은 비활성화 상태입니다.\n    *   `CutsceneManager.EndCutscene` 메서드가 실행되면서 `Player_Model`이 활성화되고 `Animator`가 동작을 시작하는 순간, 위의 Avatar 미스매치가 시각적으로 드러나게 됩니다.\n\n3.  **컴포넌트 간의 간섭 가능성**\n    *   `Player_Model`에는 `ThirdPersonController`와 `CharacterController`가 포함되어 있습니다. 만약 Avatar가 수정된 후에도 미세한 뒤틀림이 있다면, `CharacterController`가 지면과의 충돌을 해결하려 할 때 애니메이터의 IK(Foot IK 등)가 충돌하여 일시적인 보정 왜곡이 생길 수 있습니다. (현재 Animator의 `Culling Mode`가 `Cull Update Transforms`로 되어 있어, 첫 프레임 업데이트가 지연될 수 있음)\n\n### ✅ 해결 방법\n\n1.  **Avatar 수정 (가장 먼저 수행)**\n    *   `scene_hospital` 씬에서 `Player_Model` 오브젝트를 선택합니다.\n    *   `Animator` 컴포넌트의 `Avatar` 필드에 있는 `SK_SurvGirl_AllPartsTogetherAvatar`를 **`SK_SurvMan_AllPartsTogetherAvatar`**로 변경합니다.\n    *   만약 이 오브젝트가 원래 여성 캐릭터여야 한다면, 자식 메시와 골격을 여성형 모델(`SK_SurvGirl`)로 교체해야 합니다.\n\n2.  **Animator 설정 최적화**\n    *   `Animator`의 `Culling Mode`를 `Always Animate`로 변경하여, 활성화 시점이나 카메라 전환 시점에 골격 업데이트가 누락되지 않도록 설정해 보시기 바랍니다.\n\n3.  **프리팹 오버라이드 확인**\n    *   현재 `Player_Model`은 프리팹 인스턴스이지만 Avatar 설정이 씬에서 오버라이드(수정)된 상태입니다. 프리팹 원본(`Assets/Character/Player_Model.prefab`)의 설정을 확인하고 필요하다면 `Revert` 하거나 올바른 Avatar로 `Apply` 하시기 바랍니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

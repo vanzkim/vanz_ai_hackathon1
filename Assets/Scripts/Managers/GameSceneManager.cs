@@ -92,24 +92,11 @@ public class GameSceneManager : MonoBehaviour
         _fadeImage.raycastTarget = true;
         yield return Fade(1f);
         
-        // Disable current camera to prevent conflicts
-        if (Camera.main != null) Camera.main.enabled = false;
-
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
-
-        // Set the newly loaded scene as active
-        Scene loadedScene = SceneManager.GetSceneByName(sceneName);
-        if (loadedScene.IsValid())
-        {
-            SceneManager.SetActiveScene(loadedScene);
-        }
-
-        // Give a little extra time for Cinemachine and Timeline to sync up
-        yield return new WaitForSeconds(0.2f);
 
         yield return Fade(0f);
         _fadeImage.raycastTarget = false;

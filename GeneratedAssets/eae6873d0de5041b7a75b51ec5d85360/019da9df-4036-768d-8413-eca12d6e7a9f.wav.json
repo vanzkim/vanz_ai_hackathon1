@@ -1,0 +1,14 @@
+{
+    "asset": "b834ba519b9074287a8e1ec530eacf26",
+    "fileName": "019da9df-4036-768d-8413-eca12d6e7a9f.wav",
+    "prompt": "\"Hey! He's Awake!\"",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "d3d7e5a493b4567303441bb078da7f86",
+    "feedback": 0,
+    "duration": 6.199999809265137,
+    "autoTrim": false,
+    "hasReference": false
+}

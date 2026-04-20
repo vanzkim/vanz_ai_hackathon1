@@ -1703,6 +1703,12 @@
       "conversation_id": "9cd9d8ce-1a1f-4db7-b718-8979d3d70fe6",
       "content": "그리는 texture 는  어디서 선택하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_6",
+      "conversation_id": "9cd9d8ce-1a1f-4db7-b718-8979d3d70fe6",
+      "content": "그리는 texture 는 어디서 선택하나",
+      "snapshot_message_type": 0
     }
   ]
 }

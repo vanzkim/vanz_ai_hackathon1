@@ -102,6 +102,16 @@ public class GameSceneManager : MonoBehaviour
         _fadeImage.raycastTarget = false;
     }
 
+    public IEnumerator FadeIn()
+    {
+        yield return Fade(0f);
+    }
+
+    public IEnumerator FadeOut()
+    {
+        yield return Fade(1f);
+    }
+
     private IEnumerator Fade(float targetAlpha)
     {
         float startAlpha = _fadeImage.color.a;

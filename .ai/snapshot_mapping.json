@@ -1313,6 +1313,12 @@
       "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
       "content": "오프닝 씬에 타이틀 이미지 파일을 넣으려면?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_4",
+      "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
+      "content": "오프닝 씬에 타이틀 이미지 파일을 넣으려면?",
+      "snapshot_message_type": 0
     }
   ]
 }

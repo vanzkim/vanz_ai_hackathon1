@@ -1253,6 +1253,12 @@
       "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
       "content": "apply scene ofset 을 클릭하니까 캐릭터다 다른 곳으로 점프한다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_20",
+      "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
+      "content": "캐릭터 자체의 위치와 애니메이션 클립의 위치가 서로 간섭해서 조절이 어려운것 같다. 이 문제를 해결하는 추천방법은 뭔가",
+      "snapshot_message_type": 0
     }
   ]
 }

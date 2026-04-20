@@ -60,17 +60,14 @@ namespace VanzAI.Managers
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // 씬 전환 시 이전 씬의 파괴된 오브젝트 참조를 끊고 재탐색한다.
-            _activeCutscenePlayer = null;
-            gameplayPlayer = null;
-            mainGameplayCamera = null;
-            ResolveSceneReferences();
+            // Unity의 == null 연산자는 파괴된 Object도 null로 평가하므로
+            // 이전 씬에서 destroy된 참조는 자연스럽게 null로 잡힌다.
+            // 진행 중인 컷씬 상태(_activeCutscenePlayer)나 이미 비활성화된
+            // gameplayPlayer를 강제로 덮어쓰지 않는다. 활성/비활성 제어는
+            // StartCutscene/EndCutscene에서만 수행한다.
 
-            // 중요: 씬 로드 시점에 활성 컷씬 모델이 없다면 게임플레이 플레이어를 즉시 활성화하여 조작권을 보장함.
-            if (gameplayPlayer != null && _activeCutscenePlayer == null)
-            {
-                gameplayPlayer.SetActive(true);
-            }
+            // 파괴/부재 참조만 새 씬에서 재탐색
+            ResolveSceneReferences();
         }
 
         /// <summary>
@@ -123,7 +120,13 @@ namespace VanzAI.Managers
             ResolveSceneReferences();
             _activeCutscenePlayer = cutscenePlayer;
 
-            // 1. 모든 'Player' 태그 오브젝트를 찾아 비활성화 (컷씬 모델 제외)
+            // 1. gameplayPlayer를 명시적으로 비활성화 (Tag 미설정 프리팹에도 안전)
+            if (gameplayPlayer != null && gameplayPlayer != _activeCutscenePlayer)
+            {
+                gameplayPlayer.SetActive(false);
+            }
+
+            // 2. 'Player' 태그가 붙은 보조 오브젝트도 비활성화 (중복 플레이어 제거)
             var allPlayers = GameObject.FindGameObjectsWithTag(VanzConstants.PlayerTag);
             foreach (var p in allPlayers)
             {
@@ -133,7 +136,7 @@ namespace VanzAI.Managers
                 }
             }
 
-            // 2. 컷씬 모델 활성화 및 위치 동기화
+            // 3. 컷씬 모델 활성화 및 위치 동기화
             if (_activeCutscenePlayer != null)
             {
                 if (gameplayPlayer != null)

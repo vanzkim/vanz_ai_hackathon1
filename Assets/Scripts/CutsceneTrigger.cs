@@ -149,12 +149,11 @@ namespace VanzAI.Triggers
         {
             if (!isRunning) return; // 이미 정리됨
 
-            if (cutscenePlayer != null)
-            {
-                // CutsceneManager는 내부에서 null-safe하게 동작한다.
-                CutsceneManager.Instance.EndCutscene();
-            }
-            else
+            // CutsceneManager는 내부에서 null-safe하게 동작한다.
+            // cutscenePlayer가 할당되어 있다면 해당 모델의 위치를 플레이어에게 복사한다.
+            CutsceneManager.Instance.EndCutscene(cutscenePlayer);
+
+            if (cutscenePlayer == null)
             {
                 SetPlayerComponentsEnabled(true);
             }

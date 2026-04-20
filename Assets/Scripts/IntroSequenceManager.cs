@@ -80,7 +80,7 @@ namespace VanzAI.Sequences
         {
             if (director != introDirector) return;
             // 범용 시스템을 통해 조작권 반환 및 위치 동기화 처리
-            CutsceneManager.Instance.EndCutscene();
+            CutsceneManager.Instance.EndCutscene(cutscenePlayer);
         }
     }
 }

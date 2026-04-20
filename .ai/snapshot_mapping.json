@@ -1787,6 +1787,12 @@
       "conversation_id": "7aa514b0-97b0-4d99-a4a4-7e7ddc794df6",
       "content": "그냥 이 캐릭터 를 위한 캐릭터 컨트롤러를 따로 만드는게 낫지 않나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "0ebc8957-923e-4f7c-beae-fb1bd5835d22",
+      "conversation_id": "7aa514b0-97b0-4d99-a4a4-7e7ddc794df6",
+      "content": "네, 맞습니다. 특히 이 캐릭터가 다른 플레이어 캐릭터와 달리 **복잡한 이동 로직 없이 계속 앉아만 있어야 하는 상황**이라면, 전용 애니메이터 컨트롤러를 새로 만드는 것이 구조적으로 훨씬 깔끔하고 명확한 방법입니다.\n\n현재 `CharacterController`는 플레이어와 다른 캐릭터들이 공유하고 있어 수정 시 다른 캐릭터에게도 영향을 줄 수 있기 때문에, 이 캐릭터만을 위한 단순한 컨트롤러를 만드는 것이 좋습니다.\n\n### 직접 설정하시는 방법:\n\n1.  **컨트롤러 생성:** 프로젝트 창(Project)에서 우클릭 후 `Create > Animator Controller`를 선택하여 새 컨트롤러를 만듭니다. (이름 예: `SitOnlyController`)\n2.  **애니메이터 편집:**\n    *   새 컨트롤러를 더블 클릭하여 **Animator 창**을 엽니다.\n    *   창 안의 빈 공간에 우클릭하여 `Create State > Empty`를 선택합니다.\n    *   생성된 상태(State)의 이름을 `Sit`으로 변경합니다.\n    *   인스펙터 창의 **Motion** 슬롯에 `Assets/Animation/sit_wait.anim` 클립을 드래그하여 할당합니다. (이 상태가 주황색으로 표시되며 기본 상태가 됩니다.)\n3.  **캐릭터에 적용:**\n    *   하이어라키(Hierarchy)에서 `SK_SurvGirl_Combination09 Variant`를 선택합니다.\n    *   **Animator** 컴포넌트의 **Controller** 자리에 방금 만든 `SitOnlyController`를 할당합니다.\n\n이렇게 하면 해당 캐릭터는 게임 시작 시 바로 `sit_wait` 애니메이션을 재생하며 루프로 계속 앉아 있게 됩니다.\n\n**도움이 필요하신가요?**\n만약 제가 직접 컨트롤러를 생성하고, 애니메이션을 연결한 뒤 캐릭터에게 적용까지 완료하길 원하신다면 **에이전트 모드(Agent Mode)**로 전환해 주세요. 바로 처리해 드릴 수 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

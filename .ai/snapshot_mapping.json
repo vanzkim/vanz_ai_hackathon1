@@ -1373,6 +1373,12 @@
       "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
       "content": "오프닝 씬에 요청하신 `white exit.png` 파일을 게임 타이틀로 추가했습니다!\n\n### 작업 내용:\n1.  **이미지 설정:** `Assets/images/white exit.png` 파일을 UI에서 사용할 수 있도록 Sprite 형식으로 확인 및 설정했습니다.\n2.  **타이틀 배치:** `OpeningScene`의 Canvas 중앙 상단에 'GameTitle' 오브젝트를 생성하고 이미지를 할당했습니다.\n3.  **정렬:** 타이틀 이미지가 배경보다 앞에, 그리고 시작 버튼과 적절히 어우러지도록 레이어 순서를 조정했습니다.\n4.  **비율 유지:** 이미지의 원래 비율이 깨지지 않도록 **Preserve Aspect** 옵션을 활성화했습니다.\n\n이제 오프닝 씬을 재생하시면 배경 위에 멋진 타이틀 로고가 나타나는 것을 확인하실 수 있습니다. 타이틀의 크기나 위치 조절이 더 필요하시면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_9",
+      "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
+      "content": "하얀색 박스만 보여 타이틀은 안보여",
+      "snapshot_message_type": 0
     }
   ]
 }

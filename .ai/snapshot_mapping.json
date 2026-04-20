@@ -1295,6 +1295,12 @@
       "conversation_id": "561a2a94-6bc0-48f0-9b4e-8a51aa48f8dd",
       "content": "10미터 넓이(10x10m)의 사막 지형을 성공적으로 생성했습니다.\n\n### 구현 사항:\n1.  **지형 생성**: Unity의 기본 Plane(10x10m 사이즈)을 사용하여 정확한 크기의 사막 바닥을 배치했습니다.\n2.  **모래 재질(Material)**: AI를 통해 생성한 고해상도 모래 텍스처(DesertSand.mat)를 적용했습니다. 자연스러운 디테일을 위해 Tiling 값을 조절하여 모래 물결이 세밀하게 표현되도록 설정했습니다.\n3.  **환경 설정(Skybox)**: 끝없이 펼쳐진 사막과 맑은 하늘을 담은 커스텀 스카이박스(DesertSky_V2.png)를 제작하여 적용했습니다.\n4.  **조명(Lighting)**: 사막의 뜨거운 태양 느낌을 주기 위해 따뜻한 톤의 Directional Light를 배치하고 강도를 최적화했습니다.\n\n현재 씬에 `DesertGround` 오브젝트가 배치되어 있으며, `Assets/Materials`와 `Assets/Skyboxes` 폴더에서 관련 에셋을 확인하실 수 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "561a2a94-6bc0-48f0-9b4e-8a51aa48f8dd",
+      "content": "터레인 기능을 써서 요철을 표현하는 것은 불가능 한가",
+      "snapshot_message_type": 0
     }
   ]
 }

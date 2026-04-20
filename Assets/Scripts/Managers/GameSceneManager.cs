@@ -75,6 +75,9 @@ public class GameSceneManager : MonoBehaviour
         rt.anchorMin = Vector2.zero;
         rt.anchorMax = Vector2.one;
         rt.sizeDelta = Vector2.zero;
+        rt.anchoredPosition = Vector2.zero;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
         
         _fadeImage.raycastTarget = false;
     }

@@ -15,7 +15,6 @@ public class EndingSequenceManager : MonoBehaviour
     public AudioSource endingMusic;
     public string openingSceneName = "OpeningScene";
 
-    private bool sequenceStarted = false;
     private bool triggerHit = false;
 
     void Start()

@@ -27,15 +27,15 @@ namespace VanzAI.Triggers
         [SerializeField] private bool oneShot = true;
 
         [Header("Player Swapping")]
-        [Tooltip("컷씬 동안 조작용 플레이어 대신 사용할 전용 모델 (있을 경우만)")]
+        [Tooltip("컷씬 동안 조작용 플레이어 대신 사용할 전용 모델 (있을 경우만). 이 값이 세팅되면 disableDuringCutscene는 무시됨.")]
         [SerializeField] private GameObject cutscenePlayer;
 
         [Header("Player Detection")]
         [Tooltip("빈 값이 아니면 루트 혹은 충돌 오브젝트의 이름이 이 값과 일치해야 함. 기본: Player_Model")]
-        [SerializeField] private string playerName = "Player_Model";
+        [SerializeField] private string playerName = VanzConstants.PlayerModelName;
 
         [Tooltip("빈 값이 아니면 루트 혹은 충돌 오브젝트의 태그가 이 값과 일치해야 함.")]
-        [SerializeField] private string playerTag = "Player";
+        [SerializeField] private string playerTag = VanzConstants.PlayerTag;
 
         [Header("Timeline (Mode: Timeline / Both)")]
         [SerializeField] private PlayableDirector director;
@@ -55,6 +55,7 @@ namespace VanzAI.Triggers
 
         private bool hasPlayed;
         private bool isRunning;
+        private bool subscribed; // director.stopped 구독 상태 추적
 
         private void OnTriggerEnter(Collider other)
         {
@@ -116,17 +117,41 @@ namespace VanzAI.Triggers
                 SetPlayerComponentsEnabled(false);
             }
 
-            director.stopped += OnDirectorStopped;
+            Subscribe();
             director.Play();
+        }
+
+        private void Subscribe()
+        {
+            if (subscribed || director == null) return;
+            director.stopped += OnDirectorStopped;
+            subscribed = true;
+        }
+
+        private void Unsubscribe()
+        {
+            if (!subscribed || director == null) return;
+            director.stopped -= OnDirectorStopped;
+            subscribed = false;
         }
 
         private void OnDirectorStopped(PlayableDirector pd)
         {
             if (pd != director) return;
-            director.stopped -= OnDirectorStopped;
+            Unsubscribe();
+            CleanupAndFinish();
+        }
+
+        /// <summary>
+        /// 컷씬 종료 공통 처리. 정상 종료/중단 모두에서 호출 가능.
+        /// </summary>
+        private void CleanupAndFinish()
+        {
+            if (!isRunning) return; // 이미 정리됨
 
             if (cutscenePlayer != null)
             {
+                // CutsceneManager는 내부에서 null-safe하게 동작한다.
                 CutsceneManager.Instance.EndCutscene();
             }
             else
@@ -151,7 +176,20 @@ namespace VanzAI.Triggers
 
         private void OnDisable()
         {
-            if (director != null) director.stopped -= OnDirectorStopped;
+            // 구독 해제. 실행 중이었다면 상태 복원까지 처리한다.
+            Unsubscribe();
+            if (isRunning)
+            {
+                CleanupAndFinish();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            Unsubscribe();
+            // OnDestroy 단계에선 플레이어 상태 복원이 오히려 위험(파괴된 참조 가능)
+            // Finish만 호출하여 isRunning 플래그 정리.
+            if (isRunning) Finish();
         }
     }
 }

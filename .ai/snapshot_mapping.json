@@ -1805,6 +1805,12 @@
       "conversation_id": "7aa514b0-97b0-4d99-a4a4-7e7ddc794df6",
       "content": "`SK_SurvGirl_Combination09 Variant` 캐릭터를 위해 전용 애니메이터 컨트롤러를 생성하고 앉아 있는 동작을 적용했습니다.\n\n### 작업 내용:\n1.  **전용 컨트롤러 생성:** `Assets/Animation/SitWaitController.controller`를 새로 제작했습니다.\n2.  **애니메이션 설정:** \n    *   `SitWait` 상태를 기본 상태(Default State)로 설정했습니다.\n    *   여기에 `sit_wait.anim` 클립을 할당했습니다. 이 클립은 이미 **루프(Loop)** 설정이 되어 있어 캐릭터가 계속 앉아 있게 됩니다.\n3.  **캐릭터에 적용:** `SK_SurvGirl_Combination09 Variant` 게임 오브젝트의 Animator 컴포넌트에 이 새로운 컨트롤러를 연결했습니다.\n\n### 확인 결과:\n*   캐릭터와 애니메이션 모두 **Humanoid** 리깅 방식을 사용하고 있어 동작이 정상적으로 호환됩니다.\n*   이제 게임을 실행하거나 해당 씬(`EndingScene`)이 시작되면 캐릭터는 즉시 앉아 있는 동작을 수행하며 이를 유지하게 됩니다.\n\n현재 캐릭터가 벤치 앞에 서 있는 위치에 있으므로, 만약 벤치 위에 정확히 앉히고 싶으시다면 캐릭터의 **Transform(위치/회전)** 값을 약간 조정해 주시면 됩니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "0c7ab37e-3276-4bd4-83e1-9ef7521b42ca",
+      "content": "이 컷씬이 끝나고 난후 Player_Model 이 활성화 되는데 그때 리깅된 뼈대가 뒤틀려지는 현상이 있다. 예상할 수 있는 원인은?",
+      "snapshot_message_type": 0
     }
   ]
 }

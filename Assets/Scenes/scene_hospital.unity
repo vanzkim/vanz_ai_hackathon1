@@ -13252,6 +13252,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &349931007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6128425951258423686, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
+  m_PrefabInstance: {fileID: 3866035330344388617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &350370580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9e66d32d4808240478c355390ffe5670, type: 3}
@@ -36622,6 +36627,17 @@ MonoBehaviour:
   minDistance: 1
   maxDistance: 3
   smoothTime: 0.3
+--- !u!114 &1033977145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9015419529092320542, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+  m_PrefabInstance: {fileID: 1075205322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033977136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1001 &1035790144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43109,8 +43125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f86d66b6e46741d1a2201045093bf20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Managers.CutsceneManager
-  gameplayPlayer: {fileID: 0}
-  mainGameplayCamera: {fileID: 0}
+  gameplayPlayer: {fileID: 349931007}
+  mainGameplayCamera: {fileID: 1033977145}
 --- !u!4 &1192404367
 Transform:
   m_ObjectHideFlags: 0
@@ -74828,7 +74844,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1466584078032439036, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
   m_PrefabInstance: {fileID: 3866035330344388617}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 349931007}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cd9b5c6885d046b6bd53ad13bae3684, type: 3}

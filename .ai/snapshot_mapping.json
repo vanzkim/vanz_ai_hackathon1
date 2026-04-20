@@ -1193,6 +1193,12 @@
       "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
       "content": "Apply Transform Offsets 시에 정확히 캐릭터를 배치하려면 어떤 툴을 써야 하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_14",
+      "conversation_id": "2ca66fd1-0c0c-450f-ae69-d59bf902d1fd",
+      "content": "match offset to scene game object 라는 메뉴를 못찾겠다",
+      "snapshot_message_type": 0
     }
   ]
 }

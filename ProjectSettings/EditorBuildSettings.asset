@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OpeningScene.unity
     guid: 0d3093fc93d794b199fdb4c4746cf2ad
   - enabled: 1
-    path: Assets/Scenes/Hespital_EXAMPLE_copy.unity
+    path: Assets/Scenes/scene_hospital.unity
     guid: 9aa6014e879e34e59a7e3d1f6c424033
   - enabled: 1
     path: Assets/Scenes/EndingScene.unity

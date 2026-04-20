@@ -1499,6 +1499,12 @@
       "conversation_id": "5fa66ae7-60cc-4360-8cd2-d36485e55427",
       "content": "Intro cutscene 이 끝난 후 Player_Model 이 활성화 되어 조작가능해 지려면 어떻게 하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "d1e33d3a-bd63-422a-8ae1-e19284c35e6d",
+      "conversation_id": "5fa66ae7-60cc-4360-8cd2-d36485e55427",
+      "content": "인트로 컷씬(`Intro_Timeline`)이 종료된 후, 조작 가능한 플레이어 모델(`Player_Model`)을 활성화하고 제어권을 넘겨주기 위해 `IntroSequenceManager` 시스템을 구축했습니다.\n\n### 적용된 해결책:\n\n1.  **새 스크립트 생성 (`Assets/Scripts/IntroSequenceManager.cs`)**:\n    *   `Intro_Timeline`의 재생이 끝나는 시점(`stopped` 이벤트)을 감지합니다.\n    *   컷씬용 플레이어(`Player_Cutscene`)의 위치와 회전값을 실제 플레이어 모델(`Player_Model`)에 동기화한 뒤, 컷씬 모델은 끄고 실제 모델은 켭니다.\n    *   시네머신 카메라(`CM ThirdPerson Camera`)가 새로 활성화된 플레이어의 `PlayerCameraRoot`를 추적하도록 `Follow`와 `LookAt` 대상을 즉시 업데이트합니다.\n    *   플레이어 모델의 태그를 `Player`로 설정하여 게임 내 다른 시스템(예: 트리거)이 인식할 수 있게 합니다.\n\n2.  **`Intro_Timeline` 오브젝트 설정**:\n    *   `IntroSequenceManager` 컴포넌트를 추가하고 다음과 같이 연결했습니다.\n        *   **Intro Director**: 자기 자신 (`Intro_Timeline`)\n        *   **Cutscene Player**: `Player_Cutscene`\n        *   **Gameplay Player**: `Player_Model`\n        *   **Player Camera**: `CM ThirdPerson Camera`\n\n3.  **플레이어 컨트롤러 확인**:\n    *   `Player_Model`에 부착된 `ThirdPersonController`가 자신의 자식인 `PlayerCameraRoot`를 제대로 참조하고 있는지 확인 및 보정했습니다.\n\n### 작동 방식:\n1.  씬이 시작되면 `Intro_Timeline`이 재생됩니다. (이때 `Player_Model`은 비활성화 상태입니다.)\n2.  인트로 영상이 끝나면 `IntroSequenceManager`가 작동하여 모델을 교체하고 카메라를 연결합니다.\n3.  이제 플레이어는 인트로가 끝난 지점에서 바로 캐릭터를 조작할 수 있게 됩니다.\n\n이후 컷씬을 수정하시려면 `Intro_Timeline` 오브젝트에 연결된 각 참조들이 올바른지 인스펙터에서 확인하시면 됩니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

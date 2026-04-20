@@ -13252,6 +13252,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &349931007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6128425951258423686, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
+  m_PrefabInstance: {fileID: 3866035330344388617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &350370580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9e66d32d4808240478c355390ffe5670, type: 3}
@@ -21110,6 +21115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 571006503}
   - component: {fileID: 571006504}
+  - component: {fileID: 571006505}
   m_Layer: 0
   m_Name: Intro_Timeline
   m_TagString: Untagged
@@ -21164,6 +21170,22 @@ PlayableDirector:
     - 07afaac1-d48c-4fe1-9e91-f14c2feae5c6: {fileID: 308278755}
     - 8beffcc0-db40-4803-9c85-ff760bc7f826: {fileID: 0}
     - d710f2a4-7e7a-472c-95f9-587ca02a78a0: {fileID: 1799567925}
+--- !u!114 &571006505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571006502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2ceea30899f4897972f877f86d9ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Sequences.IntroSequenceManager
+  introDirector: {fileID: 571006504}
+  cutscenePlayer: {fileID: 6877956579380772220}
+  gameplayPlayer: {fileID: 349931007}
+  playerCamera: {fileID: 1033977145}
 --- !u!1001 &572990508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36606,6 +36628,17 @@ MonoBehaviour:
   minDistance: 1
   maxDistance: 3
   smoothTime: 0.3
+--- !u!114 &1033977145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9015419529092320542, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
+  m_PrefabInstance: {fileID: 1075205322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033977136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1001 &1035790144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38464,31 +38497,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.065956
+      value: -10.07715
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.696662
+      value: 7.815532
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.8536906
+      value: -1.9777641
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.41301042
+      value: -0.94934744
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.019411236
+      value: -0.007990871
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9095084
+      value: 0.31411624
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.04289712
+      value: -0.0025842078
       objectReference: {fileID: 0}
     - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Antialiasing
@@ -38560,7 +38593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: field of view
-      value: 25.5
+      value: 60.000004
       objectReference: {fileID: 0}
     - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_FocalLength
@@ -74766,7 +74799,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1466584078032439036, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
   m_PrefabInstance: {fileID: 3866035330344388617}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 349931007}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cd9b5c6885d046b6bd53ad13bae3684, type: 3}

@@ -1775,6 +1775,12 @@
       "conversation_id": "7aa514b0-97b0-4d99-a4a4-7e7ddc794df6",
       "content": "이 캐릭터의 Sit-Wait-Motion을 적용해서 계속 앉아있게 해줘요.",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "d2675867-1095-4b1e-a19b-dc00e92bce32",
+      "conversation_id": "7aa514b0-97b0-4d99-a4a4-7e7ddc794df6",
+      "content": "`SK_SurvGirl_Combination09 Variant` 캐릭터에게 `Sit-Wait-Motion`을 적용하여 계속 앉아 있게 하려면, 현재 사용 중인 **Animator Controller**(`CharacterController`)를 수정하거나, 해당 캐릭터 전용 **Animator Override Controller**를 사용하는 것이 좋습니다.\n\n프로젝트 내에서 `sit_wait.anim` (Instance ID: -111776) 클립을 찾았으며, 이 클립은 **Loop Time**이 활성화되어 있어 캐릭터가 계속 앉아 있는 동작을 유지하기에 적합합니다.\n\n### 추천하는 방법 (Animator Override Controller 사용)\n`CharacterController`는 다른 캐릭터(예: `Player_Model`, `SK_Modern_Man`)도 공유하고 있으므로, 이 캐릭터만 앉게 하려면 **Override Controller**를 사용하는 것이 가장 안전합니다.\n\n1.  **Project 창**에서 우클릭 후 `Create > Animator Override Controller`를 선택하여 새 에셋을 만듭니다. (이름 예: `SitOverrideController`)\n2.  새로 만든 에셋의 인스펙터 창에서 **Controller** 슬롯에 기존의 `CharacterController`를 드래그 앤 드롭합니다.\n3.  아래에 나타나는 **Animation Clips** 목록 중 `Idle` 항목에 프로젝트의 `sit_wait.anim` 클립을 할당합니다.\n4.  하이어라키(Hierarchy) 창의 `SK_SurvGirl_Combination09 Variant` 오브젝트를 선택하고, **Animator** 컴포넌트의 **Controller** 슬롯에 방금 만든 `SitOverrideController`를 할당합니다.\n\n### 현재 프로젝트 상태 요약:\n*   **캐릭터:** `SK_SurvGirl_Combination09 Variant` (Instance ID: -110530)\n*   **현재 컨트롤러:** `CharacterController` (Idle 상태로 `idle_scared` 클립 사용 중)\n*   **앉기 애니메이션:** `Assets/Animation/sit_wait.anim` (Loop 활성화됨)\n\n**참고:** 제가 직접 이 작업을 수행하도록 하려면 **에이전트 모드(Agent Mode)**로 전환해 주세요. 그러면 자동으로 Override Controller를 생성하고 캐릭터에게 적용해 드릴 수 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

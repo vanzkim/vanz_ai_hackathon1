@@ -37,7 +37,7 @@ public class GameSceneManager : MonoBehaviour
         return type switch
         {
             SceneType.Opening => "OpeningScene",
-            SceneType.Hospital => "Hespital_EXAMPLE_copy",
+            SceneType.Hospital => "scene_hospital",
             SceneType.Ending => "EndingScene",
             _ => "OpeningScene"
         };

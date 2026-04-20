@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.Playables;
-using Unity.Cinemachine;
+using VanzAI.Managers;
 
 namespace VanzAI.Sequences
 {
     /// <summary>
-    /// 인트로 컷씬이 끝난 후 컷씬용 플레이어를 비활성화하고,
-    /// 실제 조작 가능한 플레이어 모델을 활성화하며 카메라를 연결합니다.
+    /// 인트로 전용 처리를 위해 CutsceneManager를 활용하는 브릿지 스크립트.
     /// </summary>
     public class IntroSequenceManager : MonoBehaviour
     {
@@ -15,15 +14,17 @@ namespace VanzAI.Sequences
 
         [Header("Players")]
         [SerializeField] private GameObject cutscenePlayer;
-        [SerializeField] private GameObject gameplayPlayer;
-
-        [Header("Camera")]
-        [SerializeField] private CinemachineCamera playerCamera;
 
         private void Awake()
         {
             if (introDirector == null)
                 introDirector = GetComponent<PlayableDirector>();
+            
+            // 시작하자마자 컷씬 모드로 진입 (Gameplay Player 숨김)
+            if (introDirector != null && introDirector.playOnAwake)
+            {
+                CutsceneManager.Instance.StartCutscene(cutscenePlayer);
+            }
         }
 
         private void OnEnable()
@@ -40,37 +41,8 @@ namespace VanzAI.Sequences
 
         private void OnIntroFinished(PlayableDirector director)
         {
-            Debug.Log("[IntroSequenceManager] Intro finished. Activating Gameplay Player.");
-
-            // 1. 플레이어 전환 및 위치 동기화
-            if (cutscenePlayer != null && gameplayPlayer != null)
-            {
-                gameplayPlayer.transform.position = cutscenePlayer.transform.position;
-                gameplayPlayer.transform.rotation = cutscenePlayer.transform.rotation;
-                
-                cutscenePlayer.SetActive(false);
-                gameplayPlayer.SetActive(true);
-            }
-
-            // 2. 카메라 타겟 업데이트
-            if (playerCamera != null && gameplayPlayer != null)
-            {
-                // PlayerCameraRoot 자식을 찾아서 Follow/LookAt 설정
-                Transform target = gameplayPlayer.transform.Find("PlayerCameraRoot");
-                if (target == null) target = gameplayPlayer.transform;
-
-                playerCamera.Follow = target;
-                playerCamera.LookAt = target;
-                
-                // 카메라 우선순위 상향
-                playerCamera.Priority.Value = 10;
-            }
-
-            // 3. 게임플레이 플레이어 태그 확인
-            if (gameplayPlayer != null && !gameplayPlayer.CompareTag("Player"))
-            {
-                gameplayPlayer.tag = "Player";
-            }
+            // 범용 시스템을 통해 조작권 반환 및 위치 동기화 처리
+            CutsceneManager.Instance.EndCutscene();
         }
     }
 }

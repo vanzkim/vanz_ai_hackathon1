@@ -13252,11 +13252,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &349931007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6128425951258423686, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
-  m_PrefabInstance: {fileID: 3866035330344388617}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &350370580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9e66d32d4808240478c355390ffe5670, type: 3}
@@ -21184,8 +21179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Sequences.IntroSequenceManager
   introDirector: {fileID: 571006504}
   cutscenePlayer: {fileID: 6877956579380772220}
-  gameplayPlayer: {fileID: 349931007}
-  playerCamera: {fileID: 1033977145}
 --- !u!1001 &572990508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32703,6 +32696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Triggers.CutsceneTrigger
   mode: 0
   oneShot: 1
+  cutscenePlayer: {fileID: 0}
   playerName: Player_Model
   playerTag: 
   director: {fileID: 1191176896}
@@ -36628,17 +36622,6 @@ MonoBehaviour:
   minDistance: 1
   maxDistance: 3
   smoothTime: 0.3
---- !u!114 &1033977145 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9015419529092320542, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
-  m_PrefabInstance: {fileID: 1075205322}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033977136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1001 &1035790144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43097,6 +43080,52 @@ PlayableDirector:
     - 5de4b0e2-2519-4803-b796-5dd9a546bacf: {fileID: 337578849}
     - d0a31cd3-09fa-401e-ad35-00992d3bf054: {fileID: 1127253975}
     - 35a72e1e-1a34-4568-a64f-8a902947cef3: {fileID: 75353713}
+--- !u!1 &1192404365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1192404367}
+  - component: {fileID: 1192404366}
+  m_Layer: 0
+  m_Name: CutsceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1192404366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192404365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f86d66b6e46741d1a2201045093bf20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Managers.CutsceneManager
+  gameplayPlayer: {fileID: 0}
+  mainGameplayCamera: {fileID: 0}
+--- !u!4 &1192404367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192404365}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1193078816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74799,7 +74828,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1466584078032439036, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
   m_PrefabInstance: {fileID: 3866035330344388617}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349931007}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cd9b5c6885d046b6bd53ad13bae3684, type: 3}
@@ -77753,3 +77782,4 @@ SceneRoots:
   - {fileID: 6877956579380772219}
   - {fileID: 1553343819}
   - {fileID: 660031415}
+  - {fileID: 1192404367}

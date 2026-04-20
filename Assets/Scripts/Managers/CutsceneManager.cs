@@ -78,44 +78,37 @@ namespace VanzAI.Managers
         /// </summary>
         private void ResolveSceneReferences()
         {
+            var scene = SceneManager.GetActiveScene();
+            // scene.isLoaded 체크를 제거하여 Awake/Start 시점에도 탐색 허용
+            var roots = scene.GetRootGameObjects();
+
             if (gameplayPlayer == null)
             {
-                // GameObject.Find는 활성 객체만 찾으므로, 씬 루트부터 전수 조사 (비활성 대응)
-                var scene = SceneManager.GetActiveScene();
-                if (scene.isLoaded)
+                foreach (var root in roots)
                 {
-                    var roots = scene.GetRootGameObjects();
-                    foreach (var root in roots)
+                    if (root.name == VanzConstants.PlayerModelName)
                     {
-                        if (root.name == VanzConstants.PlayerModelName)
-                        {
-                            gameplayPlayer = root;
-                            break;
-                        }
-                        var found = FindChildRecursive(root.transform, VanzConstants.PlayerModelName);
-                        if (found != null)
-                        {
-                            gameplayPlayer = found.gameObject;
-                            break;
-                        }
+                        gameplayPlayer = root;
+                        break;
+                    }
+                    var found = FindChildRecursive(root.transform, VanzConstants.PlayerModelName);
+                    if (found != null)
+                    {
+                        gameplayPlayer = found.gameObject;
+                        break;
                     }
                 }
             }
 
             if (mainGameplayCamera == null)
             {
-                var scene = SceneManager.GetActiveScene();
-                if (scene.isLoaded)
+                foreach (var root in roots)
                 {
-                    var roots = scene.GetRootGameObjects();
-                    foreach (var root in roots)
+                    var found = FindChildRecursive(root.transform, VanzConstants.GameplayCameraName);
+                    if (found != null)
                     {
-                        var found = FindChildRecursive(root.transform, VanzConstants.GameplayCameraName);
-                        if (found != null)
-                        {
-                            mainGameplayCamera = found.GetComponent<CinemachineCamera>();
-                            break;
-                        }
+                        mainGameplayCamera = found.GetComponent<CinemachineCamera>();
+                        break;
                     }
                 }
             }
@@ -126,26 +119,28 @@ namespace VanzAI.Managers
         /// </summary>
         public void StartCutscene(GameObject cutscenePlayer)
         {
-            // Lazy-resolve: 씬 로드 콜백이 늦게 와도 여기서 안전망 확보
-            if (gameplayPlayer == null) ResolveSceneReferences();
-
+            // 무조건 최신 참조를 다시 확인
+            ResolveSceneReferences();
             _activeCutscenePlayer = cutscenePlayer;
 
-            if (gameplayPlayer != null)
+            // 1. 모든 'Player' 태그 오브젝트를 찾아 비활성화 (컷씬 모델 제외)
+            var allPlayers = GameObject.FindGameObjectsWithTag(VanzConstants.PlayerTag);
+            foreach (var p in allPlayers)
             {
-                // 위치 동기화 (컷씬 모델이 시작할 위치로 게임플레이 모델이 먼저 이동해 있으면 자연스러움)
-                if (_activeCutscenePlayer != null)
+                if (p != _activeCutscenePlayer)
+                {
+                    p.SetActive(false);
+                }
+            }
+
+            // 2. 컷씬 모델 활성화 및 위치 동기화
+            if (_activeCutscenePlayer != null)
+            {
+                if (gameplayPlayer != null)
                 {
                     _activeCutscenePlayer.transform.position = gameplayPlayer.transform.position;
                     _activeCutscenePlayer.transform.rotation = gameplayPlayer.transform.rotation;
-                    _activeCutscenePlayer.SetActive(true);
                 }
-
-                gameplayPlayer.SetActive(false);
-            }
-            else if (_activeCutscenePlayer != null)
-            {
-                // gameplayPlayer 부재 시에도 컷씬 모델은 활성화(예: Opening 직후 인트로)
                 _activeCutscenePlayer.SetActive(true);
             }
         }
@@ -156,47 +151,63 @@ namespace VanzAI.Managers
         /// <param name="cutsceneActor">사용되었던 컷씬 전용 모델. null 가능.</param>
         public void EndCutscene(GameObject cutsceneActor = null)
         {
-            if (gameplayPlayer == null) ResolveSceneReferences();
+            // 무조건 최신 참조 다시 확인
+            ResolveSceneReferences();
             
-            if (gameplayPlayer == null)
-            {
-                // 여전히 없으면 컷씬 모델만 정리하고 종료
-                var actorToHide = cutsceneActor ?? _activeCutscenePlayer;
-                if (actorToHide != null)
-                {
-                    actorToHide.SetActive(false);
-                }
-                _activeCutscenePlayer = null;
-                Debug.LogWarning("[CutsceneManager] EndCutscene: gameplayPlayer not found in current scene.");
-                return;
-            }
-
             var finalActor = cutsceneActor ?? _activeCutscenePlayer;
-            if (finalActor != null)
+
+            if (gameplayPlayer != null)
             {
-                // CharacterController가 있는 경우 텔레포트 시 물리 연산 간섭 방지를 위해 일시 비활성화
-                var cc = gameplayPlayer.GetComponent<CharacterController>();
-                if (cc != null) cc.enabled = false;
+                if (finalActor != null)
+                {
+                    // CharacterController가 있는 경우 텔레포트 시 물리 연산 간섭 방지를 위해 일시 비활성화
+                    var cc = gameplayPlayer.GetComponent<CharacterController>();
+                    if (cc != null) cc.enabled = false;
 
-                // 위치 및 회전 동기화 (컷씬이 끝난 지점에서 플레이어 재등장)
-                gameplayPlayer.transform.position = finalActor.transform.position;
-                gameplayPlayer.transform.rotation = finalActor.transform.rotation;
+                    // 위치 및 회전 동기화 (컷씬이 끝난 지점에서 플레이어 재등장)
+                    gameplayPlayer.transform.position = finalActor.transform.position;
+                    gameplayPlayer.transform.rotation = finalActor.transform.rotation;
 
-                if (cc != null) cc.enabled = true;
+                    if (cc != null) cc.enabled = true;
 
-                finalActor.SetActive(false);
+                    finalActor.SetActive(false);
+                }
+
+                gameplayPlayer.SetActive(true);
             }
 
-            gameplayPlayer.SetActive(true);
-
-            // 카메라 타겟 다시 연결 (중첩 구조 대응: 재귀 탐색)
+            // --- 카메라 복구 로직 강화 ---
             if (mainGameplayCamera != null)
             {
-                Transform target = FindChildRecursive(gameplayPlayer.transform, VanzConstants.PlayerCameraRootName);
-                if (target == null) target = gameplayPlayer.transform;
+                // 1. 카메라 오브젝트 활성화
+                mainGameplayCamera.gameObject.SetActive(true);
 
-                mainGameplayCamera.Follow = target;
-                mainGameplayCamera.LookAt = target;
+                // 2. 타겟 재설정
+                Transform target = null;
+                if (gameplayPlayer != null)
+                {
+                    target = FindChildRecursive(gameplayPlayer.transform, VanzConstants.PlayerCameraRootName);
+                    if (target == null) target = gameplayPlayer.transform;
+                }
+
+                if (target != null)
+                {
+                    mainGameplayCamera.Follow = target;
+                    mainGameplayCamera.LookAt = target;
+                }
+
+                // 3. 우선순위를 높여서 즉시 전환 유도 (타임라인 카메라보다 높게)
+                mainGameplayCamera.Priority = 100;
+
+                // 4. CinemachineBrain 활성화 확인
+                var brain = Camera.main != null ? Camera.main.GetComponent<CinemachineBrain>() : null;
+                if (brain != null) brain.enabled = true;
+
+                Debug.Log($"[CutsceneManager] Camera restored: Priority={mainGameplayCamera.Priority}");
+            }
+            else
+            {
+                Debug.LogWarning("[CutsceneManager] Gameplay Camera not found, skipped restoration.");
             }
 
             _activeCutscenePlayer = null;

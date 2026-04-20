@@ -1343,6 +1343,12 @@
       "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
       "content": "진행해",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "7d1396e7-85c3-4971-8845-25af35bbe138",
+      "conversation_id": "110d4773-ac63-4520-86bd-4796d8cf2211",
+      "content": "네, 알겠습니다! 현재 저는 **읽기 전용(Read-only) 모드**로 접속되어 있어 직접 파일을 수정하거나 씬에 물체를 배치하는 것이 제한되어 있습니다.\n\n오프닝 씬에 타이틀 이미지를 적용하려면 아래의 **에디터 상단 혹은 우측 하단에 있는 [Agent Mode] (또는 에이전트 모드) 스위치를 켜주세요.** \n\n스위치를 켜주시면 제가 즉시 다음 작업을 수행하겠습니다:\n\n1.  **이미지 설정:** `TitleBackground.png`를 UI에서 쓸 수 있는 **Sprite** 형식으로 자동 변경합니다.\n2.  **배경 배치:** `OpeningScene`의 Canvas에 이미지를 넣고, 화면에 꽉 차도록(Stretch) 설정합니다.\n3.  **레이어 정리:** 'Start' 버튼이 이미지에 가려지지 않도록 맨 앞으로 가져옵니다.\n\n**지금 바로 스위치를 켜고 \"시작해줘\"라고 말씀해 주시면 바로 완료해 드리겠습니다!**\n\n---\n**직접 하시는 것이 편하시다면 아래 순서를 따라해 주세요:**\n1.  `Assets/Textures/TitleBackground.png` 클릭 -> Inspector에서 **Texture Type**을 **Sprite (2D and UI)**로 변경 -> **Apply**.\n2.  `OpeningScene` 열기 -> Canvas 우클릭 -> **UI > Image** 생성 (이름: Background).\n3.  생성된 Background의 **Source Image**에 `TitleBackground` 할당.\n4.  RectTransform의 **Anchor Preset**을 **Alt+클릭**으로 가장 오른쪽 아래(stretch-stretch) 선택.\n5.  Hierarchy에서 Background 오브젝트를 `StartButton` 위로 드래그하여 순서 조정.",
+      "snapshot_message_type": 1
     }
   ]
 }

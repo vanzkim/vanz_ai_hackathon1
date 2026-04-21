@@ -1961,6 +1961,12 @@
       "conversation_id": "c90da48c-6e91-4d1b-80c3-11f6bc2ca14a",
       "content": "`Monster_GreyLady` 캐릭터와 `Test` 타임라인을 연결하여 즉시 모션 테스트를 할 수 있도록 환경 설정을 완료했습니다.\n\n### 적용된 변경 사항:\n1.  **MotionTester 생성**: Hierarchy 창에 `MotionTester`라는 새로운 오브젝트를 만들고 `Test` 타임라인 에셋을 할당했습니다.\n2.  **캐릭터 바인딩**: `Monster_GreyLady` 캐릭터를 타임라인의 **Monster Track**에 자동으로 연결했습니다. 이제 타임라인에서 애니메이션을 넣으면 이 캐릭터가 움직입니다.\n3.  **카메라 포커스**: Scene 뷰의 카메라를 `Monster_GreyLady` 캐릭터 쪽으로 이동시켜 동작을 바로 확인할 수 있게 했습니다.\n\n### 테스트 방법:\n1.  Hierarchy 창에서 **`MotionTester`** 오브젝트를 클릭하세요.\n2.  하단의 **Timeline 창**을 확인하면 캐릭터가 연결된 것을 보실 수 있습니다.\n3.  타임라인 창의 `Preview` 버튼을 누르고, 재생 바를 움직여서 캐릭터의 동작을 확인해 보세요.\n\n이제 타임라인 트랙에 다른 애니메이션 클립들을 드래그 앤 드롭하여 자유롭게 테스트해 보실 수 있습니다!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_4",
+      "conversation_id": "c90da48c-6e91-4d1b-80c3-11f6bc2ca14a",
+      "content": "여전히 dimmed 되서 프리뷰가 눌러지지 않는다",
+      "snapshot_message_type": 0
     }
   ]
 }

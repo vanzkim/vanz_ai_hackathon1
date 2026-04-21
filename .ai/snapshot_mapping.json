@@ -1991,6 +1991,12 @@
       "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
       "content": "Unity 6 및 URP 환경에서 캐릭터를 타임라인(Timeline)의 애니메이션 트랙에 등록하고 프리뷰하는 전체 과정을 설명해 드리겠습니다. 말씀하신 대로 **Playable Director**는 타임라인 데이터와 씬의 오브젝트를 연결해 주는 핵심 컴포넌트입니다.\n\n### 1. 준비 단계\n*   **캐릭터 모델:** 씬에 배치된 캐릭터 오브젝트에는 반드시 **Animator** 컴포넌트가 있어야 합니다. (Controller가 비어있어도 타임라인이 직접 제어하므로 괜찮습니다.)\n*   **Timeline Asset 생성:** `Project` 창에서 우클릭 > `Create` > `Timeline`을 선택하여 타임라인 에셋(예: `CharacterSequence.playable`)을 만듭니다.\n\n### 2. Playable Director 설정 (핵심)\n**Playable Director**는 타임라인을 실행하는 \"플레이어\" 역할을 합니다.\n1.  씬에 빈 게임 오브젝트(예: `TimelineManager`)를 생성하거나 캐릭터 본체에 추가합니다.\n2.  해당 오브젝트에 **Playable Director** 컴포넌트를 추가합니다.\n3.  `Playable Director`의 **Playable** 슬롯에 아까 만든 `Timeline Asset`을 드래그하여 할당합니다.\n\n### 3. Timeline 창 열기 및 트랙 추가\n1.  상단 메뉴에서 `Window` > `Sequencing` > `Timeline`을 선택하여 타임라인 창을 엽니다.\n2.  씬에서 `Playable Director`가 붙어 있는 오브젝트를 선택하면 타임라인 창에 해당 에셋의 내용이 표시됩니다.\n3.  타임라인 창의 왼쪽 리스트 영역에서 우클릭하거나 `+` 버튼을 눌러 **Animation Track**을 추가합니다.\n\n### 4. 캐릭터 바인딩 (Binding)\n타임라인 에셋은 \"어떤 트랙이 있다\"는 정보만 가집니다. \"어떤 캐릭터가 움직일지\"는 씬의 인스턴스와 연결(Binding)해야 합니다.\n1.  방금 만든 `Animation Track` 왼쪽에 있는 빈 슬롯(None으로 표시됨)으로 씬에 있는 **캐릭터 오브젝트**를 드래그합니다.\n2.  그러면 `Playable Director` 컴포넌트의 `Bindings` 리스트에 자동으로 해당 캐릭터가 등록됩니다.\n\n### 5. 애니메이션 클립 배치 및 프리뷰\n1.  사용할 애니메이션 클립(`.anim` 또는 FBX 내 포함된 클립)을 `Animation Track` 위로 드래그하여 배치합니다.\n2.  **프리뷰(Preview) 모드:** 타임라인 창 상단의 `Preview` 버튼이 활성화되어 있는지 확인합니다.\n3.  **스크러빙(Scrubbing):** 타임라인의 타임바(흰색 선)를 마우스로 좌우로 드래그하면 씬 뷰에서 캐릭터가 애니메이션되는 모습을 실시간으로 확인할 수 있습니다.\n\n---\n\n### 💡 팁\n*   **Timeline Window 고정:** 씬의 다른 오브젝트를 선택해도 타임라인 창이 바뀌지 않게 하려면 타임라인 창 오른쪽 상단의 자물쇠 아이콘(Lock)을 클릭하세요.\n*   **Root Motion:** 캐릭터가 제자리에서만 움직인다면, Animation Track의 설정(톱니바퀴 아이콘)에서 `Apply Root Motion` 체크 여부를 확인해 보세요.\n\n현재 프로젝트(`vanz_ai_hackathon1`) 내에 특정 캐릭터나 애니메이션 에셋이 이미 있다면, 제가 직접 해당 에셋들의 경로를 찾아 더 구체적인 단계별 가이드를 드릴 수도 있습니다. 확인이 필요하시면 말씀해 주세요.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_7",
+      "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
+      "content": "애니메이션 트랙에 빈 슬롯이 없다.",
+      "snapshot_message_type": 0
     }
   ]
 }

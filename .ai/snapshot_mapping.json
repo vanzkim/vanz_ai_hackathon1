@@ -1883,6 +1883,12 @@
       "conversation_id": "3a8efaa1-2958-4f59-ac8e-242577b3ab6d",
       "content": "navmesh 베이크 하는 방법 차근차근 알려줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "3619efff-de1d-4e8f-9c6b-1e2c9ed643ba",
+      "conversation_id": "3a8efaa1-2958-4f59-ac8e-242577b3ab6d",
+      "content": "Unity 6(6000.4.1f1) 버전에서는 두 가지 방법(기존의 Navigation 창 방식과 최신 NavMesh Surface 방식)이 가능합니다. 가장 직관적이고 보편적인 **기존(Legacy) 방식**부터 차근차근 설명해 드릴게요.\n\n### 1단계: 바닥과 장애물을 'Static'으로 설정하기\nAI가 길을 찾으려면 어떤 오브젝트가 \"밟고 다닐 수 있는 바닥\"인지, 어떤 것이 \"피해야 할 장애물\"인지 알아야 합니다.\n\n1.  **바닥(Ground/Floor)** 오브젝트를 클릭하세요.\n2.  **Inspector(인스펙터) 창** 오른쪽 상단에 있는 **Static** 체크박스 옆의 작은 화살표를 누릅니다.\n3.  **Navigation Static**을 체크하세요 (이미 체크되어 있다면 그대로 두세요).\n4.  벽이나 기둥 등 **장애물**이 될 오브젝트들도 똑같이 **Navigation Static**으로 설정합니다.\n\n### 2단계: Navigation 창 열기\n1.  상단 메뉴에서 **Window > AI > Navigation (Obsolete)** 또는 **Navigation**을 클릭합니다.\n    *   *참고: Unity 6에서는 이 창이 'Obsolete(구식)'로 표시될 수 있지만, 여전히 가장 간단하게 베이크할 수 있는 방법입니다.*\n2.  그러면 인스펙터 창 옆에 **Navigation**이라는 새로운 탭이 생깁니다.\n\n### 3단계: 베이크(Bake) 실행\n1.  Navigation 창 상단에서 **Bake** 탭을 선택합니다.\n2.  여러 설정값(Agent Radius: 몸집 크기, Agent Height: 키 등)이 보일 텐데, 일단 기본값으로 두셔도 좋습니다.\n3.  오른쪽 하단의 **Bake** 버튼을 누릅니다.\n\n### 4단계: 결과 확인 (파란색 영역)\n*   베이크가 완료되면 **Scene(씬) 뷰** 바닥에 **파란색 면**이 생깁니다.\n*   이 파란색 영역이 바로 AI(GreyLady)가 돌아다닐 수 있는 \"길\"입니다. 파란색이 보이지 않는다면 씬 뷰 우측 하단의 `Gizmos` 메뉴에서 `NavMesh`가 켜져 있는지 확인하세요.\n\n---\n\n### 만약 최신 방식(NavMesh Surface)을 쓰고 싶다면?\nUnity 6에서는 이 방식이 더 권장되기도 합니다. 위 방법으로 잘 안 될 경우 시도해 보세요:\n\n1.  씬에 빈 오브젝트(Create Empty)를 하나 만들고 이름을 `NavMeshManager`라고 짓습니다.\n2.  이 오브젝트에 **NavMesh Surface** 컴포넌트를 추가합니다.\n    *   *컴포넌트가 검색되지 않는다면, Window > Package Manager에서 'AI Navigation' 패키지를 설치해야 합니다.*\n3.  `NavMesh Surface` 컴포넌트의 **Bake** 버튼만 누르면 됩니다. 이 방식은 오브젝트를 일일이 Static으로 설정하지 않아도 씬 전체를 분석해 길을 만들어줍니다.\n\n**팁:** 베이크 후에 몬스터(GreyLady)를 파란색 영역 위로 옮겨놓고 게임을 실행하면, 플레이어를 향해 걷거나 대쉬하기 시작할 거예요! 🏃‍♀️!",
+      "snapshot_message_type": 1
     }
   ]
 }

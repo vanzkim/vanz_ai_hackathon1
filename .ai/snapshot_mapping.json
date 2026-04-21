@@ -2171,6 +2171,18 @@
       "conversation_id": "26e61cbc-cabf-453c-b17b-8dabd8cdac34",
       "content": "네, **`autoPlayOnAwake`를 다시 활성화하고 수동으로 수정한 우선순위(Priority)를 원래대로(0으로) 돌려놓으면** 완벽하게 처음 상태로 돌아갑니다.\n\n하지만 주의하실 점이 하나 있습니다.\n\n### 원래 상태로 복구할 때 체크리스트\n\n1.  **IntroSequenceManager**: `Auto Play On Awake`를 다시 **체크(true)** 합니다.\n2.  **CM ThirdPerson Camera**: 우선순위(Priority)를 다시 **0**으로 되돌립니다.\n    *   만약 이 값을 **10**으로 유지한 채 인트로를 켜면, 인트로 카메라들(Priority 0)보다 플레이어 카메라가 우선순위가 높아서 **인트로 영상이 나오지 않고 바로 플레이어 화면이 보일 수 있습니다.** \n    *   (물론 타임라인의 Cinemachine Track이 강제로 카메라를 점유하면 보이기도 하지만, 가장 안전한 방식은 원래대로 0으로 두는 것입니다.)\n\n### 원래 시스템의 동작 설계\n이 프로젝트의 원래 설계는 다음과 같습니다:\n1.  **씬 시작**: 모든 카메라의 우선순위가 **0**입니다.\n2.  **인트로 재생**: 타임라인이 실행되면서 인트로 전용 카메라들을 사용합니다.\n3.  **인트로 종료**: `IntroSequenceManager`가 `CutsceneManager.EndCutscene()`을 호출합니다.\n4.  **카메라 전환**: `EndCutscene()` 코드 내부에서 `mainGameplayCamera.Priority = 100;`을 실행하여, 플레이어 카메라가 가장 높은 우선순위를 갖게 되고 자연스럽게 화면이 전환됩니다.\n\n**결론적으로:** \n플레이테스트 중에만 플레이어 카메라의 우선순위를 높여서 확인하시고, 나중에 인트로를 다시 사용하고 싶을 때는 **우선순위를 다시 0으로 낮추고** 자동 재생을 켜시면 됩니다. 그러면 `CutsceneManager`가 인트로가 끝나는 시점에 알아서 우선순위를 100으로 올려줄 것입니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "907b62f0-2443-44fa-a821-348539460fc6",
+      "content": "이 박스콜라이더는 트리거용으로만 있는데도 플레이어가 통과 할 수 없는 이유는?",
+      "snapshot_message_type": 0
+    },
+    {
+      "message_id": "eaba4ffb-9aa1-4b96-9437-6527dd48cc26",
+      "conversation_id": "907b62f0-2443-44fa-a821-348539460fc6",
+      "content": "프로젝트 내부를 분석한 결과, **MonsterA_Trigger** 오브젝트 자체에는 `Is Trigger`가 체크된 `BoxCollider` 하나만 존재하며, 설정상으로는 플레이어를 물리적으로 막지 않아야 정상입니다.\n\n그럼에도 플레이어가 통과하지 못하는 가장 유력한 원인들은 다음과 같습니다:\n\n### 1. 다른 투명한 콜라이더와의 중복 (가장 유력)\n트리거의 위치(`X: -0.3, Y: 0, Z: -2.13`) 주변을 조사해본 결과, 트리거와 거의 같은 공간에 **물리적인 콜라이더(Is Trigger가 꺼진)**를 가진 다른 오브젝트들이 다수 존재합니다:\n*   **desk_C**, **wallA**, **stool** 등의 오브젝트들이 트리거 주변에 배치되어 있습니다. \n*   특히 **MonsterA_Trigger**의 가로 크기(Scale X)가 **4.12**로 상당히 넓기 때문에, 트리거를 통과하려 할 때 옆에 있는 책상(`desk_C`)이나 벽(`wallA`)의 히트박스에 플레이어가 걸리고 있을 가능성이 높습니다.\n\n### 2. CharacterController의 특성\n현재 플레이어(`Player_Model`)는 **CharacterController**를 사용하고 있습니다.\n*   `CharacterController`는 일반적인 Rigidbody와 달리 물리 엔진에 의해 밀려나지 않고 코드로 이동을 제어하는데, 이동 경로상에 아주 작은 턱(Step Offset)이나 미세하게 겹친 정적 콜라이더가 있으면 통과하지 못하고 멈추는 특성이 있습니다.\n*   트리거 자체가 아니라, 트리거가 배치된 바닥면(`floorPlane`)이나 주변 구조물의 콜라이더가 트리거와 정밀하게 맞물려 있어 `CharacterController`가 '벽'으로 인식하고 있을 수 있습니다.\n\n### 3. NavMesh Obstacle 확인\n만약 플레이어가 **NavMeshAgent**를 사용하여 이동 중이라면, 해당 오브젝트나 주변 오브젝트에 **NavMesh Obstacle** 컴포넌트가 있는지 확인해 보세요. 물리 콜라이더가 트리거이더라도 `NavMesh Obstacle`이 있으면 AI 경로는 그곳을 지나갈 수 없는 구역으로 판단합니다.\n\n### **해결 방법 제안**\n1.  **Scene 뷰에서 Gizmos 확인**: 에디터 상단의 **Gizmos** 버튼이 켜져 있는지 확인하고, 플레이 중 트리거 박스 안에 다른 초록색 선(물리 콜라이더)이 겹쳐 보이지 않는지 확인해 보세요.\n2.  **레이어(Layer) 분리**: `MonsterA_Trigger`의 레이어를 전용 레이어(예: `Trigger`)로 바꾸고, **Project Settings > Physics**의 **Layer Collision Matrix**에서 플레이어와 해당 레이어의 충돌을 아예 꺼보시기 바랍니다.\n3.  **오브젝트 일시 비활성화**: 테스트 시 `MonsterA_Trigger`를 비활성화(`Inspector` 상단 체크박스 해제)한 상태에서도 통과가 안 된다면, 범인은 이 트리거가 아니라 주변에 배치된 다른 보이지 않는 구조물입니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

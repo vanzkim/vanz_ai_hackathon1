@@ -2429,6 +2429,12 @@
       "conversation_id": "64e07ea0-db69-40f5-83ca-0bdb9f583226",
       "content": "convex 옵션은 내가 껏다. bake 부분만 너가 해달라",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "db07f814-8e1a-40f9-99e2-e05d2dc4a3b9",
+      "conversation_id": "64e07ea0-db69-40f5-83ca-0bdb9f583226",
+      "content": "요청하신 대로 씬 내의 모든 **NavMesh Surface**(총 119개)를 대상으로 재빌드(Bake)를 완료했습니다.\n\n이제 계단(`stairsHall`)의 Mesh Collider가 실제 형상대로 NavMesh에 반영되었을 것입니다. 다음 사항을 마지막으로 확인해 보세요:\n\n1.  **플레이어 이동 테스트:** 이제 캐릭터가 계단을 통과하거나 턱에 걸리지 않고 정상적으로 올라가는지 확인해 보시기 바랍니다.\n2.  **Step Offset 확인:** 만약 여전히 계단 첫 칸에서 막힌다면, 플레이어의 `Character Controller` 컴포넌트에서 **Step Offset** 값을 조금 더 높여(예: 0.3 -> 0.45) 보시는 것을 추천합니다.\n\n추가로 도움이 필요하시면 언제든 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -2417,6 +2417,12 @@
       "conversation_id": "64e07ea0-db69-40f5-83ca-0bdb9f583226",
       "content": "유니티6에는 navigation에 bake가 없다. nav surface로 옮겨 갔다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "756d0bf1-bbaa-4164-844e-1c90a5d123e5",
+      "conversation_id": "64e07ea0-db69-40f5-83ca-0bdb9f583226",
+      "content": "맞습니다. 유니티 6(AI Navigation 패키지)에서는 기존의 'Navigation Static' 설정과 전역 Bake 방식 대신 **NavMesh Surface** 컴포넌트를 사용하는 방식으로 바뀌었습니다.\n\n현재 프로젝트를 확인해 보니 여러 `floorPlane` 오브젝트에 `NavMeshSurface` 컴포넌트가 분산되어 배치되어 있습니다. 계단(`stairsHall`) 영역의 경로를 갱신하려면 다음 절차를 따르시면 됩니다.\n\n### NavMesh 재빌드 방법 (Unity 6 기준)\n\n1.  **NavMesh Surface 찾기**\n    *   계단 근처나 씬 전체를 관리하는 **NavMesh Surface** 컴포넌트가 포함된 오브젝트를 선택합니다. (현재 씬의 여러 `floorPlane` 오브젝트들에 이 컴포넌트가 붙어 있는 것을 확인했습니다.)\n2.  **Bake 버튼 클릭**\n    *   인스펙터 창의 `NavMesh Surface` 컴포넌트 하단에 있는 **Bake** 버튼을 누릅니다.\n3.  **수집 방식(Collect Objects) 확인**\n    *   만약 계단이 NavMesh에 포함되지 않는다면, 해당 컴포넌트의 `Collect Objects` 설정이 **All Game Objects**로 되어 있는지 확인하십시오. (이미 확인한 결과, 대부분 `All Game Objects`로 설정되어 있어 Bake 버튼만 누르면 씬 전체의 변경사항이 반영될 것입니다.)\n4.  **기하 구조(Use Geometry) 확인**\n    *   현재 설정이 **Render Meshes**로 되어 있습니다. 이는 콜라이더가 아닌 실제 '보이는 모양(Mesh Renderer)'을 기준으로 길을 만듭니다. 계단 메쉬 자체가 복잡하다면 이를 기준으로 NavMesh가 생성될 것입니다.\n\n### 추가 확인 사항 (계단 통과 문제)\n만약 NavMesh를 다시 구웠는데도 캐릭터(Player)가 계단을 못 올라간다면, 이는 NavMesh 문제가 아니라 **물리 충돌(Physics)** 문제입니다. 아까 확인한 데이터에서 다음 두 가지를 꼭 먼저 수정해 보세요:\n\n*   **Mesh Collider의 Convex 체크 해제:** `stairsHall` 오브젝트의 Mesh Collider에서 `Convex`가 켜져 있으면 계단 사이가 꽉 막힌 경사면처럼 인식되어 못 올라갈 확률이 매우 높습니다. 이 옵션을 **꺼주셔야** 합니다.\n*   **Step Offset 조정:** 플레이어의 `Character Controller`에서 `Step Offset`을 계단 한 칸의 높이보다 높게(예: 0.4 이상) 설정해야 부드럽게 턱을 넘을 수 있습니다.\n\n**요약:** \n1. `stairsHall`의 **Mesh Collider -> Convex**를 끈다.\n2. `NavMesh Surface` 컴포넌트에서 **Bake**를 다시 실행한다. \n\n만약 이 과정이 번거로우시다면, 제가 **Agent 모드**에서 대신 `Convex` 옵션을 끄고 `NavMesh`를 다시 구워드릴 수 있습니다. 필요하시면 말씀해 주세요. 주세요.",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -1,0 +1,14 @@
+{
+    "asset": "e1417668856bc437b9482204ee5d37fc",
+    "fileName": "019dada0-1961-7cda-a1d7-9340eb6c2460.wav",
+    "prompt": "Hyperventilating, Sudden gasp, Hyperventilating, waking up, heavy panting, labored breathing, frantic inhaling",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "952f69d78cbfcfd40a2ba4ee96146c5b",
+    "feedback": 0,
+    "duration": 5.800000190734863,
+    "autoTrim": false,
+    "hasReference": false
+}

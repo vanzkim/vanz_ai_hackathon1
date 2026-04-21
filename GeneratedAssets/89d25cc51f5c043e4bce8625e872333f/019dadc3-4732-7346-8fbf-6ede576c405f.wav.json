@@ -1,0 +1,14 @@
+{
+    "asset": "89d25cc51f5c043e4bce8625e872333f",
+    "fileName": "019dadc3-4732-7346-8fbf-6ede576c405f.wav",
+    "prompt": "A haunting, ethereal female voice echoing from a great distance, saying the phrase 'It’s you! You are here!'. The sound is dreamlike and surreal, layered with heavy cinematic reverb that makes the voice drift like a ghostly apparition. The delivery is bitter, with an airy, memory or a psychological hallucination.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "e582c182a9c7b50c18863e795a840bb2",
+    "feedback": 0,
+    "duration": 8.899999618530274,
+    "autoTrim": false,
+    "hasReference": false
+}

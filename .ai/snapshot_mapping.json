@@ -2261,6 +2261,12 @@
       "conversation_id": "24727347-53d7-40ac-a980-7cd27c86d34a",
       "content": "이 캐릭터가 player 를 따라올때 막히는 콜라이더가 주변에 없어도 계속 걸려서 천천히 오는 느낌이다. 원인이 뭘까?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "d3564fb1-b3c4-4294-af7a-cc0e91af98f5",
+      "conversation_id": "24727347-53d7-40ac-a980-7cd27c86d34a",
+      "content": "`Monster_GreyLady` 캐릭터가 장애물이 없는데도 걸리거나 느리게 이동하는 현상은 주로 **Animator의 Root Motion과 NavMeshAgent 간의 충돌** 때문일 가능성이 매우 높습니다.\n\n분석한 주요 원인과 해결 방법은 다음과 같습니다:\n\n### 1. Root Motion과 NavMeshAgent의 충돌 (가장 유력)\n현재 `Monster_GreyLady` 객체의 **Animator** 컴포넌트에서 **Apply Root Motion**이 **Checked(true)**로 설정되어 있습니다.\n*   **원인:** `NavMeshAgent`는 코드에서 설정한 속도(`walkSpeed`: 2.0, `dashSpeed`: 6.0)로 캐릭터를 이동시키려 하지만, `Apply Root Motion`이 켜져 있으면 **애니메이션 파일에 저장된 이동 거리**가 우선적으로 캐릭터의 위치를 결정하게 됩니다. \n*   만약 재생 중인 애니메이션(예: 걷기)의 실제 이동 속도가 `NavMeshAgent`의 설정 속도보다 느리면, 캐릭터가 뒤에서 잡아당겨지는 듯한 느낌이나 천천히 끊기며 이동하는 현상이 발생합니다.\n*   **해결 방법:** \n    1.  `Monster_GreyLady` 오브젝트를 선택합니다.\n    2.  **Animator** 컴포넌트에서 **Apply Root Motion** 체크를 **해제**합니다. \n    3.  이제 캐릭터의 이동은 오직 `NavMeshAgent`의 `Speed` 값에 의해서만 결정됩니다.\n\n### 2. NavMeshAgent의 가속도 및 회전 설정\n현재 `NavMeshAgent`의 설정값 중 일부가 부자연스러운 움직임을 유발할 수 있습니다.\n*   **Acceleration (가속도):** 현재 **12.0**으로 설정되어 있습니다. 이 값이 낮으면 목표 지점까지 속도가 붙는 데 시간이 걸려 답답하게 느껴질 수 있습니다. (필요 시 20~30 정도로 높여보세요.)\n*   **Obstacle Avoidance Quality:** 현재 **High Quality**로 설정되어 있습니다. 주변에 다른 캐릭터나 복잡한 지형이 있을 경우, 회피 계산을 너무 정밀하게 하느라 경로가 미세하게 끊길 수 있습니다. **Medium**이나 **Good**으로 낮추어 테스트해보는 것도 방법입니다.\n\n### 3. Obstacle Avoidance Radius (회피 반경)\n*   **NavMeshAgent Radius:** 현재 **0.5**입니다.\n*   캐릭터의 실제 외형이나 `Capsule Collider`보다 `NavMeshAgent`의 `Radius`가 크면, 시각적으로는 뚫려 있는 공간이라도 에이전트 입장에서는 \"지나갈 수 없는 좁은 길\"로 판단하여 멈칫거릴 수 있습니다. `Radius`를 **0.3~0.4** 정도로 살짝 줄여보시기 바랍니다.\n\n### 4. 코드상의 거리 체크 로직 (`MonsterChase.cs`)\n작성된 `UpdateAnimation` 로직을 보면 다음과 같은 부분이 있습니다:\n```csharp\nbool hasReachedPlayer = distance <= agent.stoppingDistance + 0.2f;\n```\n*   `agent.stoppingDistance`는 `Start` 함수에서 **0.5**로 강제 설정되는데, 만약 플레이어와 조금만 가까워져도 이 조건에 걸려 애니메이션이 멈추거나 상태가 변하면서 이동이 부자연스러워 보일 수 있습니다.\n\n---\n\n**요약 추천 조치:**\n가장 먼저 **Animator의 Apply Root Motion을 끄고** 테스트해 보세요. 이것만으로도 \"천천히 오거나 걸리는 느낌\"이 즉시 해결될 확률이 높습니다. 만약 직접 수정을 원하시면 **에이전트 모드**로 전환하여 제가 설정을 변경해 드릴 수도 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

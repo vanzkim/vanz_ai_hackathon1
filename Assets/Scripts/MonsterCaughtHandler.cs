@@ -90,19 +90,12 @@ public class MonsterCaughtHandler : MonoBehaviour
     {
         Debug.Log("[MonsterCaughtHandler] Restarting player and monster positions.");
 
-        // 몬스터 위치 초기화
-        var agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        if (agent != null)
+        // 몬스터 추격 다시 활성화 및 초기 위치로 복귀 시작
+        var monsterChase = GetComponent<MonsterChase>();
+        if (monsterChase != null)
         {
-            agent.enabled = false;
-            transform.position = monsterStartPos;
-            transform.rotation = monsterStartRot;
-            agent.enabled = true;
-        }
-        else
-        {
-            transform.position = monsterStartPos;
-            transform.rotation = monsterStartRot;
+            monsterChase.enabled = true;
+            monsterChase.ResetMonster();
         }
 
         GameObject player = GameObject.Find("Player_Model");
@@ -119,10 +112,6 @@ public class MonsterCaughtHandler : MonoBehaviour
 
             if (cc != null) cc.enabled = true;
         }
-        
-        // 몬스터 추격 다시 활성화 (필요하다면)
-        var monsterChase = GetComponent<MonsterChase>();
-        if (monsterChase != null) monsterChase.enabled = true;
 
         isCaught = false;
     }

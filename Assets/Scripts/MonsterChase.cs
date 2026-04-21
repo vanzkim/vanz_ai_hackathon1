@@ -17,6 +17,10 @@ public class MonsterChase : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private bool isResetting = false;
+
     // Animator Parameter Hashes
     private static readonly int IsWalkingHash = Animator.StringToHash("IsWalking");
     private static readonly int IsDashingHash = Animator.StringToHash("IsDashing");
@@ -25,12 +29,14 @@ public class MonsterChase : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
     }
 
     void Start()
     {
         if (agent == null) agent = GetComponent<NavMeshAgent>();
-        agent.stoppingDistance = 0.5f; // Get closer to player
+        agent.stoppingDistance = 0.5f;
 
         if (playerTransform == null)
         {
@@ -44,6 +50,12 @@ public class MonsterChase : MonoBehaviour
 
     void Update()
     {
+        if (isResetting)
+        {
+            CheckIfReturned();
+            return;
+        }
+
         if (playerTransform == null) return;
 
         float distance = Vector3.Distance(transform.position, playerTransform.position);
@@ -61,8 +73,37 @@ public class MonsterChase : MonoBehaviour
             WalkChase();
         }
 
-        // Update animator parameters based on speed or state
         UpdateAnimation(distance);
+    }
+
+    public void ResetMonster()
+    {
+        isResetting = true;
+        agent.isStopped = false;
+        agent.speed = walkSpeed;
+        agent.SetDestination(initialPosition);
+        
+        if (animator != null)
+        {
+            animator.SetBool(IsWalkingHash, true);
+            animator.SetBool(IsDashingHash, false);
+        }
+    }
+
+    private void CheckIfReturned()
+    {
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            isResetting = false;
+            agent.isStopped = true;
+            transform.rotation = initialRotation;
+
+            if (animator != null)
+            {
+                animator.SetBool(IsWalkingHash, false);
+                animator.SetBool(IsDashingHash, false);
+            }
+        }
     }
 
     private void WalkChase()
@@ -82,7 +123,6 @@ public class MonsterChase : MonoBehaviour
     private void StopChase()
     {
         agent.isStopped = true;
-        // Optionally rotate to face player
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         direction.y = 0;
         if (direction != Vector3.zero)
@@ -95,22 +135,13 @@ public class MonsterChase : MonoBehaviour
     {
         if (animator == null) return;
 
-        // Determine if we are actively chasing
-        bool isChasing = distance <= detectionRange;
+        // Determine if the agent is actively moving
+        bool isMoving = agent.velocity.magnitude > 0.1f && !agent.isStopped;
         
-        // Use a small buffer to check if we've reached the player
-        bool hasReachedPlayer = distance <= agent.stoppingDistance + 0.2f;
-
-        // If we are chasing and haven't reached the player, we should be animating
-        bool shouldAnimateMoving = isChasing && !hasReachedPlayer;
-        
-        // Or if the agent is physically moving
-        bool isMoving = shouldAnimateMoving || agent.velocity.magnitude > 0.1f;
-
         bool isDashing = isMoving && distance <= dashRange;
         bool isWalking = isMoving && !isDashing;
 
         animator.SetBool(IsWalkingHash, isWalking);
         animator.SetBool(IsDashingHash, isDashing);
     }
-}
+    }

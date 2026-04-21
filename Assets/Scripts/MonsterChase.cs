@@ -12,7 +12,7 @@ public class MonsterChase : MonoBehaviour
     public float walkSpeed = 2.0f;
     public float dashSpeed = 6.0f;
     public float dashRange = 5.0f;
-    public float stoppingDistance = 1.5f;
+    public float detectionRange = 15.0f;
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -45,7 +45,7 @@ public class MonsterChase : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, playerTransform.position);
 
-        if (distance <= stoppingDistance)
+        if (distance > detectionRange)
         {
             StopChase();
         }

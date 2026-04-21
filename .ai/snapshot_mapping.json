@@ -1907,6 +1907,12 @@
       "conversation_id": "3a8efaa1-2958-4f59-ac8e-242577b3ab6d",
       "content": "navigation 에 bake 버튼이 없다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "b7fc647c-2a97-45da-961c-52ea26fd2692",
+      "conversation_id": "3a8efaa1-2958-4f59-ac8e-242577b3ab6d",
+      "content": "Unity 6에서는 기존의 **Navigation(Obsolete)** 창에서 **Bake** 탭이 사라졌거나, 아예 새로운 **AI Navigation** 시스템으로 바뀌었을 확률이 높습니다.\n\n가장 빠르고 확실한 해결 방법은 **`NavMesh Surface` 컴포넌트**를 직접 사용하는 것입니다. 이 방식은 버튼 하나로 씬 전체의 길을 만들어주며, Unity 6에서 권장되는 최신 방식입니다.\n\n### 해결 방법: `NavMesh Surface`로 베이크하기\n\n1.  **빈 오브젝트 만들기**:\n    *   Hierarchy(계층 구조) 창에서 마우스 우클릭 -> **Create Empty**를 누릅니다.\n    *   이름을 `NavMesh_Manager` 정도로 지어주세요.\n\n2.  **컴포넌트 추가**:\n    *   방금 만든 `NavMesh_Manager`를 클릭하고, **Inspector(인스펙터)** 창에서 **Add Component** 버튼을 누릅니다.\n    *   검색창에 **NavMesh Surface**라고 입력해서 추가하세요.\n    *   *(만약 검색이 안 된다면: 상단 메뉴 `Window > Package Manager` -> `Unity Registry` 선택 -> `AI Navigation`을 검색해서 **Install** 하시면 됩니다.)*\n\n3.  **베이크(Bake) 버튼 누르기**:\n    *   `NavMesh Surface` 컴포넌트 중간쯤을 보시면 커다란 **Bake** 버튼이 있습니다.\n    *   그 버튼을 누르기만 하면 됩니다!\n\n### 왜 이 방식이 더 좋은가요?\n*   **오브젝트를 일일이 Static으로 안 바꿔도 됩니다**: `Collect Objects` 설정이 기본적으로 `All`로 되어 있어, 씬에 있는 모든 바닥과 장애물을 자동으로 인식합니다.\n*   **여러 바닥 대응**: 바닥이 여러 개로 쪼개져 있어도 상관없이 하나의 커다란 길로 합쳐줍니다.\n*   **실시간 업데이트**: 나중에 지형이 바뀌어도 이 버튼만 다시 누르면 즉시 길을 다시 계산합니다.\n\n**베이크 후 확인**:\n버튼을 누른 후 **Scene 뷰**를 보세요. 바닥들이 **파란색**으로 덮였다면 성공입니다! 이제 몬스터가 그 파란색 길을 따라 플레이어를 추격할 준비가 끝났습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

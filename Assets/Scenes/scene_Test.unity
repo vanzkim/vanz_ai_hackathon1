@@ -442,12 +442,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: dashRange
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: detectionRange
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 606965228}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2003,6 +2003,12 @@
       "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
       "content": "타임라인 애니메이션 트랙의 왼쪽에서 **\"None (Animator)\"**와 같은 빈 슬롯이 보이지 않는 이유는, 현재 타임라인 창이 **\"에셋(Asset)\" 모드**로 열려 있기 때문일 확률이 가장 높습니다.\n\n유니티 타임라인에는 두 가지 상태가 있습니다:\n\n1.  **에셋(Asset) 모드 (슬롯 안 보임):** Project 창에서 `.playable` 파일을 클릭했을 때입니다. 이 상태에서는 트랙 구조만 편집할 수 있고, 어떤 캐릭터를 연결할지는 알 수 없기 때문에 빈 슬롯이 나타나지 않습니다.\n2.  **인스턴스(Instance) 모드 (슬롯 보임):** Hierarchy(계층 구조) 창에서 **Playable Director가 붙어 있는 오브젝트**를 클릭했을 때입니다. 이 상태가 되어야 비로소 \"이 트랙에 씬의 어떤 캐릭터를 넣을 것인가?\"를 결정하는 슬롯이 나타납니다.\n\n### 해결 방법\n\n1.  **Hierarchy에서 오브젝트 선택:**\n    현재 프로젝트를 확인해 보니 다음 오브젝트들에 `Playable Director`가 이미 추가되어 있습니다. 이 중 하나를 클릭해 보세요:\n    *   **`MotionTester`** 오브젝트 (현재 `Test.playable` 연결됨)\n    *   **`Intro_Timeline`** 오브젝트 (현재 `Intro.playable` 연결됨)\n    *   **`Meet_white`** 오브젝트\n\n2.  **Timeline 창 확인:**\n    Hierarchy에서 위 오브젝트를 선택한 상태에서 Timeline 창을 보면, 애니메이션 트랙 왼쪽에 **None (Animator)** 라는 빈 슬롯이 나타날 것입니다.\n\n3.  **드래그 앤 드롭:**\n    이제 씬에 있는 **캐릭터(Animator가 있는 오브젝트)**를 그 **None (Animator)** 슬롯으로 드래그하면 연결이 완료됩니다.\n\n### 만약 그래도 보이지 않는다면?\n*   **자물쇠(Lock) 아이콘 확인:** 타임라인 창 오른쪽 상단에 있는 **자물쇠 아이콘**이 잠겨 있는지 확인하세요. 만약 다른 에셋을 본 상태로 잠겨 있다면, 현재 선택한 오브젝트의 내용이 표시되지 않습니다. 자물쇠를 풀고 다시 오브젝트를 선택해 보세요.\n*   **트랙 종류 확인:** 혹시 트랙을 만들 때 `Animation Track`이 아닌 다른 트랙(Activation Track 등)을 만들지 않았는지 확인해 주세요.\n\n**요약:** Project 창의 파일을 누르지 마시고, **Hierarchy 창에 있는 오브젝트(예: MotionTester)**를 클릭하시면 빈 슬롯이 나타납니다!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_8",
+      "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
+      "content": "캐릭터를 타임라인이 아닌 playable director에 넣으라는 뜻인가",
+      "snapshot_message_type": 0
     }
   ]
 }

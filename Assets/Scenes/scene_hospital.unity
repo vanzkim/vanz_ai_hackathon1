@@ -52232,10 +52232,12 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -3164961226555350489, guid: 0099530ae3e534115ab878dafcec1f17, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 1470217936}
-  - key: {fileID: -7022842096566608043, guid: 0099530ae3e534115ab878dafcec1f17, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 1470217936}
+  - key: {fileID: -1059090499136391004, guid: 0099530ae3e534115ab878dafcec1f17, type: 2}
+    value: {fileID: 1470217939}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1400180405
@@ -55115,6 +55117,11 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1470217939 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 8d9a081da81d44e0fbbfa1a36f6825d6, type: 3}
+  m_PrefabInstance: {fileID: 1470217935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1470718068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 306fde77f10bf8d44bcd385d5d892492, type: 3}

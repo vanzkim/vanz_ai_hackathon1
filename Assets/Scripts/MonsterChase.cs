@@ -20,6 +20,8 @@ public class MonsterChase : MonoBehaviour
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private bool isResetting = false;
+    private Vector3 lastTargetPosition;
+    private const float targetMoveThreshold = 0.2f;
 
     // Animator Parameter Hashes
     private static readonly int IsWalkingHash = Animator.StringToHash("IsWalking");
@@ -31,13 +33,18 @@ public class MonsterChase : MonoBehaviour
         animator = GetComponent<Animator>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+        
+        // Initial setup for agent responsiveness
+        if (agent != null)
+        {
+            agent.acceleration = 40f;
+            agent.autoBraking = false;
+            agent.stoppingDistance = 0.5f;
+        }
     }
 
     void Start()
     {
-        if (agent == null) agent = GetComponent<NavMeshAgent>();
-        agent.stoppingDistance = 0.5f;
-
         if (playerTransform == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag(playerTag);
@@ -64,13 +71,23 @@ public class MonsterChase : MonoBehaviour
         {
             StopChase();
         }
-        else if (distance <= dashRange)
-        {
-            DashChase();
-        }
         else
         {
-            WalkChase();
+            // Only update destination if player has moved significantly
+            if (Vector3.Distance(playerTransform.position, lastTargetPosition) > targetMoveThreshold)
+            {
+                lastTargetPosition = playerTransform.position;
+                agent.SetDestination(playerTransform.position);
+            }
+
+            if (distance <= dashRange)
+            {
+                DashChase();
+            }
+            else
+            {
+                WalkChase();
+            }
         }
 
         UpdateAnimation(distance);
@@ -81,6 +98,7 @@ public class MonsterChase : MonoBehaviour
         isResetting = true;
         agent.isStopped = false;
         agent.speed = walkSpeed;
+        agent.autoBraking = true; // Use auto-braking for returning to base
         agent.SetDestination(initialPosition);
         
         if (animator != null)
@@ -96,6 +114,7 @@ public class MonsterChase : MonoBehaviour
         {
             isResetting = false;
             agent.isStopped = true;
+            agent.autoBraking = false;
             transform.rotation = initialRotation;
 
             if (animator != null)
@@ -110,14 +129,12 @@ public class MonsterChase : MonoBehaviour
     {
         agent.isStopped = false;
         agent.speed = walkSpeed;
-        agent.SetDestination(playerTransform.position);
     }
 
     private void DashChase()
     {
         agent.isStopped = false;
         agent.speed = dashSpeed;
-        agent.SetDestination(playerTransform.position);
     }
 
     private void StopChase()
@@ -135,8 +152,8 @@ public class MonsterChase : MonoBehaviour
     {
         if (animator == null) return;
 
-        // Determine if the agent is actively moving
-        bool isMoving = agent.velocity.magnitude > 0.1f && !agent.isStopped;
+        // More robust movement detection: check if agent is trying to move and has some velocity
+        bool isMoving = !agent.isStopped && (agent.velocity.magnitude > 0.2f || agent.remainingDistance > agent.stoppingDistance);
         
         bool isDashing = isMoving && distance <= dashRange;
         bool isWalking = isMoving && !isDashing;

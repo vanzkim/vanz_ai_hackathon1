@@ -440,6 +440,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
+      propertyPath: dashRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
+      propertyPath: detectionRange
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

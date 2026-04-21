@@ -2105,6 +2105,12 @@
       "conversation_id": "989ab32e-7157-4ef8-be34-ce2b41fdef3b",
       "content": "grey lady controller 를 공유하면 안된다. 각 몬스터들은 고유의 모션이 있기 때문이다.",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "dd49b3d8-7b8a-4c15-bd67-58e63a562e92",
+      "conversation_id": "989ab32e-7157-4ef8-be34-ce2b41fdef3b",
+      "content": "각 몬스터가 고유의 애니메이션을 사용할 수 있도록 **개별 Animator Controller**를 생성하여 적용했습니다. 이제 모든 몬스터가 Grey Lady와 동일한 추격 및 잡기 로직을 수행하면서도, 각자 고유의 모션을 출력합니다.\n\n### 수행 내용:\n\n1.  **독립된 컨트롤러 생성 및 적용**:\n    *   **Midnight\\_Marionette**: `Marionette_Chase.controller`를 새로 생성하여 적용했습니다.\n    *   **Two\\_horns**: `TwoHorns_Chase.controller`를 새로 생성하여 적용했습니다.\n    *   기존에 `GreyLady_Controller`를 공유하던 설정을 해제하여 각 몬스터의 모션이 섞이지 않도록 분리했습니다.\n\n2.  **몬스터별 고유 애니메이션 연결**:\n    *   **Midnight\\_Marionette**: 해당 모델 폴더에 있는 `clip0`(Idle)과 `Walking` 애니메이션을 사용하도록 설정했습니다.\n    *   **Two\\_horns**: 모델 고유의 `Idle_11` 모션을 대기 상태로 설정하고, 걷기 모션은 해당 모델에 적합한 동작을 연결했습니다.\n\n3.  **기능 호환성 유지**:\n    *   새로 생성한 모든 컨트롤러에 `IsWalking` 및 `IsDashing` 파라미터를 추가하고 전이(Transition) 구조를 설계하여, `MonsterChase` 스크립트의 로직이 정상적으로 애니메이션을 제어할 수 있도록 했습니다.\n\n4.  **컴포넌트 설정 확인**:\n    *   `MonsterChase`, `MonsterCaughtHandler`, `NavMeshAgent` 등의 모든 컴포넌트가 각 몬스터에 맞게 독립적으로 유지되도록 재검증을 완료했습니다.\n\n이제 모든 몬스터가 고유의 움직임을 유지하면서 Grey Lady와 동일하게 플레이어를 추격하고 포획하는 기능을 수행합니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

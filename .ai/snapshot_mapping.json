@@ -1877,6 +1877,12 @@
       "conversation_id": "3a8efaa1-2958-4f59-ac8e-242577b3ab6d",
       "content": "`Monster_GreyLady`가 플레이어를 추격하는 로직과 애니메이터 컨트롤러 설정을 완료했습니다.\n\n### 작업 내용:\n1.  **MonsterChase.cs 스크립트 생성 및 적용**:\n    *   **걷기(Walk)**: 기본 이동 속도로 플레이어를 추격합니다.\n    *   **대쉬(Dash)**: 플레이어와 일정 거리(`dashRange`, 기본값 5) 이내로 가까워지면 속도를 높여 빠르게 접근합니다.\n    *   **정지(Stop)**: 플레이어와 매우 가까워지면(`stoppingDistance`, 기본값 1.5) 추격을 멈추고 플레이어를 바라봅니다.\n    *   `NavMeshAgent`를 사용하여 장애물을 회피하며 이동하도록 설계되었습니다.\n\n2.  **애니메이터 컨트롤러(`GreyLady_Controller`) 생성**:\n    *   `Assets/Animations/GreyLady_Controller.controller` 경로에 생성되었습니다.\n    *   **상태(States)**: `Idle`, `Walk`, `Dash` 상태가 구성되어 있습니다.\n    *   **파라미터**: `IsWalking` (Bool), `IsDashing` (Bool) 변수로 상태 전환이 제어됩니다.\n\n3.  **컴포넌트 자동 설정**:\n    *   `Monster_GreyLady` 오브젝트에 `Animator`, `NavMeshAgent`, `MonsterChase` 스크립트를 부착하고 컨트롤러를 연결했습니다.\n    *   `Player_Model`의 태그가 \"Player\"임을 확인하여 자동으로 타겟팅하도록 설정했습니다.\n\n### 다음 단계 (사용자 작업):\n1.  **애니메이션 클립 할당**:\n    *   `Assets/Animations/GreyLady_Controller`를 더블 클릭하여 Animator 창을 엽니다.\n    *   `Walk` 상태와 `Dash` 상태 노드를 각각 클릭하고, **Motion** 칸에 원하는 이동/대쉬 애니메이션 클립을 드래그해서 넣어주세요.\n2.  **NavMesh 굽기 (Bake)**:\n    *   현재 씬에 NavMesh 데이터가 감지되지 않았습니다. AI가 움직이려면 바닥 오브젝트를 **Static**으로 설정한 후, `Window > AI > Navigation` 메뉴에서 **Bake**를 눌러 길찾기 데이터를 생성해야 합니다.\n3.  **수치 조정**:\n    *   `Monster_GreyLady` 오브젝트의 `MonsterChase` 컴포넌트에서 `Walk Speed`, `Dash Speed`, `Dash Range` 등을 원하는 난이도에 맞춰 조정할 수 있습니다.\n\n이제 플레이어가 움직이면 몬스터가 거리에 따라 걷거나 뛰며 쫓아오게 됩니다. 추가로 공격 모션 등이 필요하면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "54206135-3f90-4215-bda4-a669aa0c37f6",
+      "conversation_id": "3a8efaa1-2958-4f59-ac8e-242577b3ab6d",
+      "content": "navmesh 베이크 하는 방법 차근차근 알려줘",
+      "snapshot_message_type": 0
     }
   ]
 }

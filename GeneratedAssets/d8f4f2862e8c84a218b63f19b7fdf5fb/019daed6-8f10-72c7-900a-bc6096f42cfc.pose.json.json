@@ -1,0 +1,12 @@
+{
+    "asset": "d8f4f2862e8c84a218b63f19b7fdf5fb",
+    "fileName": "019daed6-8f10-72c7-900a-bc6096f42cfc.pose.json",
+    "prompt": "The grotesque creature is suspended in the air, floating forward with an eerie, supernatural momentum. Its spine remains unnaturally hunched, defying aerodyamics. Both arms are stiffly thrust forward, palms open, with fingers spastically clawing the air as if reaching for prey. The head is craned upward and slightly tilted, exhibiting constant, sharp twitches. The legs hang limply below, with bent knees and toes pointed downward, swaying slightly in a disturbing, lifeless manner. The overall movement is not a smooth flight, but a slightly jerky, supernatural drift.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 136192959,
+    "w3CTraceId": "07762867d6967275e12bfcd144764ea9",
+    "feedback": 0,
+    "isTrimmed": false
+}

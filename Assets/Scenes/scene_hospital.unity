@@ -21182,7 +21182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Sequences.IntroSequenceManager
   introDirector: {fileID: 571006504}
   cutscenePlayer: {fileID: 6877956579380772220}
-  autoPlayOnAwake: 1
+  autoPlayOnAwake: 0
 --- !u!1001 &572990508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38495,31 +38495,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.07715
+      value: -15.065956
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.815532
+      value: -12.696662
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.9777641
+      value: 2.8536906
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.94934744
+      value: -0.41301042
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.007990871
+      value: 0.019411236
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.31411624
+      value: 0.9095084
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0025842078
+      value: 0.04289712
       objectReference: {fileID: 0}
     - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Antialiasing
@@ -38591,7 +38591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: field of view
-      value: 60.000004
+      value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_FocalLength
@@ -52652,7 +52652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0335e99a7976e4b788494b1255d5bde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterChase
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 2063898370}
   playerTag: Player
   walkSpeed: 2
   dashSpeed: 6
@@ -75116,6 +75116,11 @@ MonoBehaviour:
 --- !u!95 &2063898369 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 623597463500403014, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
+  m_PrefabInstance: {fileID: 3866035330344388617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2063898370 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6793497803696597820, guid: 8f315866e5e2345e0aaeb44fc6898b3b, type: 3}
   m_PrefabInstance: {fileID: 3866035330344388617}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2067382819

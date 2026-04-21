@@ -2147,6 +2147,12 @@
       "conversation_id": "26e61cbc-cabf-453c-b17b-8dabd8cdac34",
       "content": "현재 `scene_hospital` 씬에서 `intro_timeline`이 자동으로 재생되는 이유는 **PlayableDirector** 컴포넌트의 설정과 이를 관리하는 **IntroSequenceManager** 스크립트 때문입니다.\n\n자동 재생을 끄려면 다음 단계를 따라주세요.\n\n### 1. Inspector에서 직접 끄기 (권장)\n씬 하이어라키에서 다음 오브젝트를 찾아 설정을 변경합니다.\n\n1.  **오브젝트 선택**: `CutScenes` 하위의 **`Intro_Timeline`** 오브젝트를 선택합니다.\n2.  **Playable Director 컴포넌트**:\n    *   **Initial State** 항목을 **`Paused`**로 변경합니다. (또는 \"Play On Awake\" 체크박스가 있다면 해제합니다.)\n3.  **Intro Sequence Manager 컴포넌트**:\n    *   **`Auto Play On Awake`** 체크박스가 해제되어 있는지 확인합니다. (현재 데이터상으로는 `false`로 되어 있으나, 스크립트 로직상 이 옵션이 켜져 있으면 코드가 강제로 재생을 시작합니다.)\n\n### 2. 스크립트 제어 확인\n해당 오브젝트에 부착된 `IntroSequenceManager.cs` 스크립트는 다음과 같이 동작합니다:\n*   `autoPlayOnAwake`가 `true`일 경우, `Awake()` 시점에 `PlayIntro()`를 호출하여 타임라인을 재생합니다.\n*   타임라인 자체의 \"Play On Awake\" 설정과 스크립트의 \"Auto Play\" 설정이 충돌하지 않도록 스크립트에서 `introDirector.playOnAwake = false;`를 강제하고 있지만, 가장 확실한 방법은 위에서 언급한 두 설정을 모두 비활성화하는 것입니다.\n\n### 요약\n*   **오브젝트**: `Intro_Timeline`\n*   **해제할 항목**: \n    *   `Playable Director` -> `Initial State`를 `Paused`로 변경\n    *   `Intro Sequence Manager` -> `Auto Play On Awake` 체크 해제\n\n나중에 수동으로 재생하고 싶다면, 다른 스크립트에서 `IntroSequenceManager.PlayIntro()` 메서드를 호출하면 됩니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "26e61cbc-cabf-453c-b17b-8dabd8cdac34",
+      "content": "씬을 실행하면 바로 Main camera가 Player_model의 3인칭 카메라로 역할하는 것을 기대하는데 원래 위치에서 움직이지 않는 문제가 있다",
+      "snapshot_message_type": 0
     }
   ]
 }

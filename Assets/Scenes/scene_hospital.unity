@@ -38495,31 +38495,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.065956
+      value: -10.07715
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.696662
+      value: 7.815532
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.8536906
+      value: -1.9777641
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.41301042
+      value: -0.94934744
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.019411236
+      value: -0.007990871
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9095084
+      value: 0.31411624
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.04289712
+      value: -0.0025842078
       objectReference: {fileID: 0}
     - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Antialiasing
@@ -38591,7 +38591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: field of view
-      value: 25.5
+      value: 60.000004
       objectReference: {fileID: 0}
     - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_FocalLength
@@ -52620,11 +52620,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_GreyLady
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8d9a081da81d44e0fbbfa1a36f6825d6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c393891133504413dbd2e713a89a82fa, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d9a081da81d44e0fbbfa1a36f6825d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1470217938}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d9a081da81d44e0fbbfa1a36f6825d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1470217937}
   m_SourcePrefab: {fileID: 100100000, guid: 8d9a081da81d44e0fbbfa1a36f6825d6, type: 3}
+--- !u!1 &1470217936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d9a081da81d44e0fbbfa1a36f6825d6, type: 3}
+  m_PrefabInstance: {fileID: 1470217935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1470217937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470217936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0335e99a7976e4b788494b1255d5bde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterChase
+  playerTransform: {fileID: 0}
+  playerTag: Player
+  walkSpeed: 2
+  dashSpeed: 6
+  dashRange: 5
+  stoppingDistance: 1.5
+--- !u!195 &1470217938
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470217936}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 12
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &1470718068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 306fde77f10bf8d44bcd385d5d892492, type: 3}

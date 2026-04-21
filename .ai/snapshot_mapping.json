@@ -2255,6 +2255,12 @@
       "conversation_id": "e3a45538-6880-40b9-9c64-5da39a465ad5",
       "content": "씬 내에 존재하는 **119개의 NavMeshSurface**를 모두 감지하여 Rebake를 완료했습니다.\n\n이제 물리 콜라이더가 `MeshCollider`에서 `BoxCollider`로 변경된 데이터가 NavMesh에도 모두 반영되었습니다.\n\n### **최종 상태 요약**\n1.  **Collider 최적화:** `CG` 오브젝트 하위의 875개 메시 콜라이더를 박스 콜라이더로 교체하여 물리 성능을 최적화했습니다.\n2.  **NavMesh 갱신:** 변경된 물리 지오메트리에 맞춰 모든 NavMesh Surface를 다시 구웠습니다.\n\n물리 연산 효율과 AI 길찾기 안정성이 모두 개선된 상태입니다. 추가로 확인이 필요한 사항이 있으시면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "24727347-53d7-40ac-a980-7cd27c86d34a",
+      "content": "이 캐릭터가 player 를 따라올때 막히는 콜라이더가 주변에 없어도 계속 걸려서 천천히 오는 느낌이다. 원인이 뭘까?",
+      "snapshot_message_type": 0
     }
   ]
 }

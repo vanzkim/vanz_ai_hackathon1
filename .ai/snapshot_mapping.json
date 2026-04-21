@@ -2015,6 +2015,12 @@
       "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
       "content": "정확히는 **\"Timeline 창의 슬롯에 넣는 행위가 사실상 Playable Director에 등록하는 것\"**입니다.\n\n조금 더 명확하게 설명해 드릴게요. 유니티 타임라인은 두 부분으로 나뉩니다:\n\n1.  **Timeline Asset (프로젝트 창의 파일):** \"어떤 트랙들이 있고 어떤 애니메이션 클립이 배치되어 있는가\"라는 **설계도**입니다. 여기에는 실제 씬의 캐릭터 정보가 없습니다.\n2.  **Playable Director (씬의 컴포넌트):** \"그 설계도의 1번 트랙에는 이 캐릭터를, 2번 트랙에는 저 조명을 연결해라\"라는 **실행 장치**입니다. 이 연결 정보를 **'바인딩(Binding)'**이라고 부릅니다.\n\n### 결론적으로 어떻게 하면 되나요?\n\n사용자님은 **Timeline 창**에서 작업하시면 됩니다. 다만, **선택을 잘해야 슬롯이 보입니다.**\n\n1.  **준비:** Hierarchy(계층 구조) 창에서 `Playable Director` 컴포넌트가 붙어 있는 오브젝트(예: `MotionTester`)를 **클릭**합니다.\n2.  **확인:** 그러면 Timeline 창에 설계도 내용이 뜨면서 왼쪽 트랙 이름 옆에 **None (Animator)** 라는 슬롯이 나타납니다.\n3.  **드래그:** 씬에 있는 캐릭터를 이 **None (Animator)** 슬롯으로 드래그합니다.\n4.  **결과:** 이렇게 드래그하면, 실제 데이터는 **Playable Director 컴포넌트 내부의 'Bindings' 리스트**에 자동으로 저장됩니다.\n\n---\n\n### 직접 확인해보기\n지금 `MotionTester`라는 오브젝트를 선택하고 인스펙터(Inspector) 창을 보시면, `Playable Director` 컴포넌트 안에 **Bindings**라는 항목이 있을 것입니다.\n*   Timeline 창의 슬롯에 캐릭터를 넣으면, 이 인스펙터의 리스트가 자동으로 채워집니다.\n*   반대로 인스펙터에서 직접 넣어도 Timeline 창의 슬롯이 채워집니다.\n\n즉, **Timeline 창의 슬롯은 Playable Director의 Bindings 리스트를 시각적으로 보여주는 창구**일 뿐입니다. 타임라인 창에서 빈 슬롯이 안 보였던 이유는 `Playable Director`를 선택하지 않아서 그 연결 창구가 열리지 않았기 때문입니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_9",
+      "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
+      "content": "하지만 스크린샷에서 보는 것 처럼 animation track 에는 넣을 수 있는 슬롯이 보이지 않는다. 물론 네 말대로 MotionTester를 선택한 상태고 playabledirector도 거기에 존재한다.",
+      "snapshot_message_type": 0
     }
   ]
 }

@@ -1859,6 +1859,12 @@
       "conversation_id": "86610487-7882-42d0-83fd-2bc34019f02e",
       "content": "output 채널은 어떻게 설정하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "dec55a93-4b34-4ae3-96ee-6898d5c5d705",
+      "conversation_id": "86610487-7882-42d0-83fd-2bc34019f02e",
+      "content": "현재 프로젝트에는 **Audio Mixer**가 생성되어 있지 않습니다. Unity에서 출력 채널(Output Channel)을 설정하려면 다음 단계를 따라주세요:\n\n### 1. Audio Mixer 생성 및 그룹 설정\n1.  **Project 창**에서 마우스 우클릭 -> **Create > Audio Mixer**를 선택하여 이름을 `MainMixer`로 지정합니다.\n2.  생성된 `MainMixer`를 더블 클릭하여 **Audio Mixer 창**을 엽니다.\n3.  **Groups** 섹션에서 `Master` 아래에 있는 **+** 버튼을 눌러 새로운 그룹을 만들고 이름을 `BGM`으로 지정합니다.\n\n### 2. Audio Source에 출력 채널(Output) 연결\n1.  **Hierarchy 창**에서 제가 이전에 만들어둔 **BGM_Manager** 오브젝트를 선택합니다.\n2.  **Audio Source** 컴포넌트의 **Output** 필드를 찾습니다. (현재 'None (Audio Mixer Group)'으로 되어 있을 것입니다.)\n3.  방금 만든 `BGM` 그룹을 해당 필드에 드래그 앤 드롭하거나, 필드 옆의 작은 동그라미 아이콘을 눌러 `BGM (MainMixer)`를 선택합니다.\n\n### 왜 이렇게 하나요?\n이렇게 설정하면 `MainMixer` 창에서 **BGM 그룹의 볼륨 슬라이더**만 조절하여 배경음악의 크기를 일괄 제어할 수 있으며, 나중에 효과음(SFX) 채널을 따로 만들어 각각의 볼륨을 독립적으로 조절하거나 리버브(Reverb) 같은 오디오 효과를 채널별로 다르게 적용할 수 있어 관리가 매우 편리해집니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

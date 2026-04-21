@@ -29,6 +29,9 @@ public class MonsterChase : MonoBehaviour
 
     void Start()
     {
+        if (agent == null) agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = 0.5f; // Get closer to player
+
         if (playerTransform == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag(playerTag);
@@ -92,10 +95,22 @@ public class MonsterChase : MonoBehaviour
     {
         if (animator == null) return;
 
-        bool isMoving = !agent.isStopped && agent.velocity.magnitude > 0.1f;
-        bool isDashing = isMoving && distance <= dashRange;
+        // Determine if we are actively chasing
+        bool isChasing = distance <= detectionRange;
+        
+        // Use a small buffer to check if we've reached the player
+        bool hasReachedPlayer = distance <= agent.stoppingDistance + 0.2f;
 
-        animator.SetBool(IsWalkingHash, isMoving && !isDashing);
+        // If we are chasing and haven't reached the player, we should be animating
+        bool shouldAnimateMoving = isChasing && !hasReachedPlayer;
+        
+        // Or if the agent is physically moving
+        bool isMoving = shouldAnimateMoving || agent.velocity.magnitude > 0.1f;
+
+        bool isDashing = isMoving && distance <= dashRange;
+        bool isWalking = isMoving && !isDashing;
+
+        animator.SetBool(IsWalkingHash, isWalking);
         animator.SetBool(IsDashingHash, isDashing);
     }
 }

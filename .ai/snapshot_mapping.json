@@ -2135,6 +2135,12 @@
       "conversation_id": "10350e60-4340-472a-ac8c-9984e165651c",
       "content": "천정 오브젝트에서 네브메쉬를 제거하는 작업을 완료했습니다.\n\n### 작업 내용:\n1.  **NavMeshModifier 적용**: `roundCeiling` 및 `SM_Modular_Ceiling` 계열의 모든 프리팹(총 20개)에 `NavMeshModifier` 컴포넌트를 추가하고 **Ignore From Build**를 활성화했습니다.\n2.  **GI(라이팅) 유지**: 말씀하신 대로 오브젝트의 **Static 플래그(Contribute GI 등)는 전혀 수정하지 않았습니다.** 따라서 APV나 라이트맵 등 라이팅 계산에는 이전과 동일하게 참여합니다.\n3.  **네브메쉬 재빌드**: 씬 내의 모든 `NavMeshSurface`(119개)를 다시 Bake하여 변경 사항을 적용했습니다.\n4.  **검증**: 천정 위치에서 네브메쉬 데이터를 샘플링해 본 결과, 더 이상 네브메쉬가 감지되지 않음을 확인했습니다.\n\n이제 AI들이 천정을 걸어 다니는 일 없이 바닥에서만 정상적으로 이동할 것입니다. 추가로 도움이 필요하신 부분이 있으면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_6",
+      "conversation_id": "26e61cbc-cabf-453c-b17b-8dabd8cdac34",
+      "content": "이 씬이 시작하면 intro_timeline 이 자동 플레이 되는데 auto play를 끄는법은?",
+      "snapshot_message_type": 0
     }
   ]
 }

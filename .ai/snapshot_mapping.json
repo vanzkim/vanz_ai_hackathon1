@@ -2153,6 +2153,12 @@
       "conversation_id": "26e61cbc-cabf-453c-b17b-8dabd8cdac34",
       "content": "씬을 실행하면 바로 Main camera가 Player_model의 3인칭 카메라로 역할하는 것을 기대하는데 원래 위치에서 움직이지 않는 문제가 있다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "8199443e-1ad8-4591-80aa-bc3564c55d02",
+      "conversation_id": "26e61cbc-cabf-453c-b17b-8dabd8cdac34",
+      "content": "현재 카메라가 플레이어를 따라가지 않고 고정된 위치에 있는 이유는, **모든 가상 카메라의 우선순위(Priority)가 동일(0)하여 시네머신(Cinemachine)이 엉뚱한 카메라(주로 인트로용 카메라 `introcCS0`)를 활성 카메라로 선택**하고 있기 때문입니다.\n\n원래는 인트로 타임라인이 끝나면 `CutsceneManager`가 플레이어 카메라의 우선순위를 100으로 높여주도록 설계되어 있으나, 이전 질문에서 **자동 재생을 끄면서 이 우선순위 전환 로직이 실행되지 않게 된 것**이 원인입니다.\n\n### 해결 방법\n\n다음 단계에 따라 설정을 변경하면 카메라가 바로 플레이어를 추적하게 됩니다.\n\n1.  **플레이어 카메라 우선순위 상향**:\n    *   Hierarchy에서 `Controll_System` -> **`CM ThirdPerson Camera`** 오브젝트를 선택합니다.\n    *   Inspector의 `Cinemachine Camera` 컴포넌트에서 **Priority** 값을 **10** (또는 0보다 큰 값)으로 변경합니다.\n    *   이렇게 하면 씬 시작 시 다른 인트로 카메라들(Priority 0)보다 우선순위가 높아져 즉시 이 카메라가 활성화됩니다.\n\n2.  **불필요한 카메라 비활성화 (선택 사항)**:\n    *   인트로를 사용하지 않을 계획이라면 `CutScenes` 하위에 있는 `introcCS0`, `introcCS1`, `CinemachineCamera_white1` 등의 가상 카메라 오브젝트를 **비활성화(Disable)** 하거나 삭제해도 무방합니다.\n\n### 왜 이런 현상이 발생했나요?\n*   현재 씬에는 4개의 가상 카메라가 있으며 모두 `Priority`가 `0`입니다.\n*   시네머신은 우선순위가 같을 경우 내부적인 순서에 따라 카메라를 정하는데, 현재는 `introcCS0`가 선택되어 있습니다. (`CinemachineBrain` 확인 결과)\n*   `CutsceneManager.cs` 코드를 확인해보니, 컷씬이 끝날 때(`EndCutscene`)만 `mainGameplayCamera.Priority = 100`을 실행하도록 되어 있어, 자동 재생을 끄면 이 코드가 호출되지 않아 우선순위가 0으로 남게 됩니다.\n\n위의 1번 방법(Priority 수정)이 가장 깔끔하고 안전한 해결책입니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -1853,6 +1853,12 @@
       "conversation_id": "86610487-7882-42d0-83fd-2bc34019f02e",
       "content": "현재 장면(`OpeningScene`)에 지정하신 사운드를 배경음악으로 재생할 수 있도록 설정을 완료했습니다.\n\n**작업 내용:**\n1.  **BGM_Manager 생성**: 장면에 배경음악을 관리할 새로운 GameObject를 생성했습니다.\n2.  **AudioSource 설정**:\n    *   `Assets/Audio/music.wav` 파일을 자동으로 찾아 할당했습니다.\n    *   **Loop**: 체크됨 (음악이 반복 재생됩니다).\n    *   **Play On Awake**: 체크됨 (장면이 시작되자마자 재생됩니다).\n    *   **Volume**: 0.5 (적절한 기본 볼륨으로 설정).\n\n만약 다른 사운드 파일을 사용하고 싶으시다면, Hierarchy에서 `BGM_Manager` 오브젝트를 선택한 후 Inspector의 `AudioSource` 컴포넌트에 있는 `AudioClip` 필드에 원하시는 파일을 드래그 앤 드롭하여 간편하게 교체하실 수 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "86610487-7882-42d0-83fd-2bc34019f02e",
+      "content": "output 채널은 어떻게 설정하나",
+      "snapshot_message_type": 0
     }
   ]
 }

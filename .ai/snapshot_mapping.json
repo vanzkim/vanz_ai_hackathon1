@@ -2237,6 +2237,12 @@
       "conversation_id": "e3a45538-6880-40b9-9c64-5da39a465ad5",
       "content": "이렇게 변경한 후 navmesh 도 새로 빌드해야하겠지?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "3370dc0a-beda-4ffe-bbf7-565bd0a8edde",
+      "conversation_id": "e3a45538-6880-40b9-9c64-5da39a465ad5",
+      "content": "네, **새로 빌드(Rebake)하시는 것을 강력히 권장합니다.**\n\n그 이유는 다음과 같습니다.\n\n### **1. 지오메트리 인식 방식의 변화**\nNavMesh를 빌드할 때 'Mesh Renderer' 기반으로 빌드하느냐 'Physics Collider' 기반으로 빌드하느냐에 따라 다르지만, 많은 경우 **Physics Collider** 설정을 사용하거나, 설령 Mesh 기반이라 하더라도 **Box Collider로 인해 바뀐 \"물리적 부피\"**를 NavMesh가 인지해야 합니다.\n*   **Mesh Collider:** 복잡하거나 오목한 공간(예: 테이블 아래, 뚫린 프레임 사이)을 통과할 수 있다고 판단했을 수 있습니다.\n*   **Box Collider:** 이제 그 공간이 꽉 찬 박스로 인식되므로, AI 캐릭터가 박스를 뚫고 지나가려다 물리적으로 막히는 현상을 방지하려면 NavMesh도 이를 반영하여 해당 구역을 '이동 불가'로 업데이트해야 합니다.\n\n### **2. 충돌 일관성 유지**\nAI 에이전트(`NavMeshAgent`)가 길을 찾을 때는 NavMesh를 따라가지만, 실제 이동 중에 물리적 충돌은 Collider와 일어납니다. NavMesh는 뚫려 있는데 Collider가 막고 있다면 AI가 제자리에서 계속 벽에 비비는 현상이 발생할 수 있습니다.\n\n### **3. Unity 6 환경 (AI Navigation)**\n현재 프로젝트가 Unity 6라면 `NavMeshSurface` 컴포넌트를 사용 중일 가능성이 높습니다. 이 컴포넌트는 보통 **Physics Colliders**를 기반으로 굽도록 설정되는 경우가 많으므로, 이 경우 반드시 Rebake가 필요합니다.\n\n---\n\n### **확인 및 빌드 방법**\n1.  **Navigation(Obsolete)** 창 또는 **NavMesh Surface** 컴포넌트를 찾습니다.\n2.  `Object` 탭에서 `Navigation Static`이 제대로 체크되어 있는지 확인합니다. (이미 되어 있을 것입니다.)\n3.  **Bake** 버튼을 눌러 다시 빌드합니다.\n\n만약 씬에 `NavMeshSurface` 컴포넌트가 있다면, 제가 스크립트로 **전체 NavMesh를 다시 굽는 작업(Rebake)**을 대신 수행해 드릴 수도 있습니다. 진행해 드릴까요?",
+      "snapshot_message_type": 1
     }
   ]
 }

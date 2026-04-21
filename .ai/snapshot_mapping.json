@@ -1967,6 +1967,12 @@
       "conversation_id": "c90da48c-6e91-4d1b-80c3-11f6bc2ca14a",
       "content": "여전히 dimmed 되서 프리뷰가 눌러지지 않는다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_5",
+      "conversation_id": "c90da48c-6e91-4d1b-80c3-11f6bc2ca14a",
+      "content": "여전히 dimmed 되서 프리뷰가 눌러지지 않는다",
+      "snapshot_message_type": 0
     }
   ]
 }

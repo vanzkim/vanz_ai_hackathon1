@@ -2087,6 +2087,12 @@
       "conversation_id": "989ab32e-7157-4ef8-be34-ce2b41fdef3b",
       "content": "`Two_horns` 오브젝트에 `Monster_GreyLady`와 동일한 추격 및 충돌 처리 기능을 적용했습니다.\n\n### 적용 사항 요약:\n1.  **애니메이터 설정**: `Two_horns`의 Animator에 `GreyLady_Controller`를 할당했습니다. 이 컨트롤러에는 추격 로직에서 사용하는 `IsWalking` 및 `IsDashing` 파라미터가 포함되어 있습니다.\n2.  **이동 및 네비게이션**:\n    *   `NavMeshAgent` 컴포넌트를 추가하고 `Monster_GreyLady`와 동일한 설정(속도 2, 가속도 12, 회전 속도 120, 높이 2, 반경 0.5)을 적용했습니다.\n    *   `MonsterChase` 스크립트를 추가하여 `Player_Model`을 추격하도록 설정했습니다 (Walk Speed: 2, Dash Speed: 6, Detection Range: 15).\n3.  **충돌 및 상태 처리**:\n    *   `CapsuleCollider`를 추가하고 `Is Trigger`를 활성화하여 플레이어 감지가 가능하게 했습니다.\n    *   `Rigidbody`를 추가하고 `Is Kinematic`을 활성화하여 물리 연산 간섭을 방지했습니다.\n    *   `MonsterCaughtHandler` 스크립트를 추가하고, 플레이어에게 잡혔을 때 이동할 위치로 `Point_restart`를 설정했습니다.\n\n이제 `Two_horns` 몬스터도 Grey Lady와 똑같이 플레이어를 감지하고 추격하며, 충돌 시 지정된 위치로 플레이어를 재시작 시킵니다.\n\n### 적용된 컴포넌트 상세:\n*   **Animator**: `GreyLady_Controller` 적용\n*   **MonsterChase**: 플레이어(`Player_Model`) 타겟팅 및 추격 속도 설정 완료\n*   **MonsterCaughtHandler**: 재시작 포인트(`Point_restart`) 연결 완료\n*   **NavMeshAgent**: 네비게이션 데이터 동기화 완료\n*   **CapsuleCollider & Rigidbody**: 트리거 충돌 설정 완료",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "989ab32e-7157-4ef8-be34-ce2b41fdef3b",
+      "content": "이 몬스터도 같은 역할을 하게 해줘",
+      "snapshot_message_type": 0
     }
   ]
 }

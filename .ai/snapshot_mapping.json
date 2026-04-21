@@ -2021,6 +2021,12 @@
       "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
       "content": "하지만 스크린샷에서 보는 것 처럼 animation track 에는 넣을 수 있는 슬롯이 보이지 않는다. 물론 네 말대로 MotionTester를 선택한 상태고 playabledirector도 거기에 존재한다.",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "73b9bdaa-8dae-4b20-88ae-224948242edf",
+      "conversation_id": "d17cff80-adbc-4f0d-998e-52d3c013fa37",
+      "content": "보내주신 스크린샷을 보니 원인을 바로 알 수 있습니다!\n\n스샷의 오른쪽 상단을 보시면 **자물쇠(Padlock) 아이콘이 잠겨(Locked) 있습니다.**\n\n### 원인\n타임라인 창이 **잠겨 있으면**, Hierarchy에서 `MotionTester`를 선택하더라도 타임라인 창이 해당 오브젝트의 정보로 갱신되지 않습니다. 현재 화면은 `Test`라는 **'설계도(Asset)' 파일 그 자체**만 보여주고 있는 상태라 캐릭터를 넣을 수 있는 슬롯이 나오지 않는 것입니다.\n\n### 해결 방법 (순서대로 따라해 주세요)\n\n1.  **자물쇠 해제:** 타임라인 창 오른쪽 상단의 **자물쇠 아이콘**을 클릭하여 **열린 상태**로 만듭니다.\n2.  **오브젝트 재선택:** Hierarchy 창에서 `MotionTester` 오브젝트를 **다시 한 번 클릭**합니다.\n3.  **슬롯 확인:** 이제 `Animation Track`이라는 글자 왼쪽에 **None (Animator)** 라고 쓰인 빈 사각형 슬롯이 나타날 것입니다. \n4.  **캐릭터 드래그:** 그 슬롯에 캐릭터를 드래그해서 넣으시면 됩니다.\n\n### 왜 슬롯이 생기나요?\n자물쇠를 풀고 `MotionTester`를 선택하면, 유니티는 \"아, 이 설계도(`Test`)를 실제로 `MotionTester`라는 오브젝트에서 실행하려고 하는구나!\"라고 인식합니다. 그제서야 **\"그럼 이 트랙에 연결할 실제 캐릭터는 누구야?\"**라고 물어보는 슬롯(Binding Slot)을 보여주게 됩니다.\n\n지금 바로 자물쇠를 풀고 `MotionTester`를 다시 클릭해 보세요! 슬롯이 바로 나타날 것입니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

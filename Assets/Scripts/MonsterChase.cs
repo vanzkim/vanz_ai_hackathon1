@@ -67,7 +67,23 @@ public class MonsterChase : MonoBehaviour
             return;
         }
 
-        if (playerTransform == null) return;
+        if (playerTransform == null || agent == null) return;
+
+        // Recovery: If agent is not on NavMesh, try to warp it back
+        if (!agent.isOnNavMesh)
+        {
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(transform.position, out hit, 2.0f, NavMesh.AllAreas))
+            {
+                agent.Warp(hit.position);
+            }
+            else
+            {
+                // If still not on NavMesh, we can't do pathfinding
+                UpdateAnimation(0f);
+                return;
+            }
+        }
 
         float distance = Vector3.Distance(transform.position, playerTransform.position);
 
@@ -77,16 +93,19 @@ public class MonsterChase : MonoBehaviour
         }
         else
         {
-            agent.isStopped = false;
-            agent.SetDestination(playerTransform.position);
-            
-            if (distance <= dashRange)
+            if (agent.isOnNavMesh)
             {
-                agent.speed = dashSpeed;
-            }
-            else
-            {
-                agent.speed = walkSpeed;
+                agent.isStopped = false;
+                agent.SetDestination(playerTransform.position);
+                
+                if (distance <= dashRange)
+                {
+                    agent.speed = dashSpeed;
+                }
+                else
+                {
+                    agent.speed = walkSpeed;
+                }
             }
         }
 
@@ -96,10 +115,26 @@ public class MonsterChase : MonoBehaviour
     public void ResetMonster()
     {
         isResetting = true;
-        agent.isStopped = false;
-        agent.speed = walkSpeed;
-        agent.autoBraking = true;
-        agent.SetDestination(initialPosition);
+        if (agent != null && agent.isActiveAndEnabled)
+        {
+            // Ensure on NavMesh before setting properties
+            if (!agent.isOnNavMesh)
+            {
+                NavMeshHit hit;
+                if (NavMesh.SamplePosition(initialPosition, out hit, 5.0f, NavMesh.AllAreas))
+                {
+                    agent.Warp(hit.position);
+                }
+            }
+
+            if (agent.isOnNavMesh)
+            {
+                agent.isStopped = false;
+                agent.speed = walkSpeed;
+                agent.autoBraking = true;
+                agent.SetDestination(initialPosition);
+            }
+        }
         
         if (animator != null)
         {
@@ -110,7 +145,7 @@ public class MonsterChase : MonoBehaviour
 
     private void CheckIfReturned()
     {
-        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        if (agent != null && agent.isOnNavMesh && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             isResetting = false;
             agent.isStopped = true;
@@ -127,7 +162,11 @@ public class MonsterChase : MonoBehaviour
 
     private void StopChase()
     {
-        agent.isStopped = true;
+        if (agent != null && agent.isOnNavMesh)
+        {
+            agent.isStopped = true;
+        }
+        
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         direction.y = 0;
         if (direction != Vector3.zero)

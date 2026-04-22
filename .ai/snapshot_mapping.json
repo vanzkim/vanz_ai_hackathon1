@@ -2957,6 +2957,12 @@
       "conversation_id": "164aa1a7-6979-4441-a2ca-7584fe7c3d28",
       "content": "에이전트를 enabled = false -> true로 재설정하는 것을 진행해줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "b7550bd7-2600-49a3-8029-ad754726b61f",
+      "conversation_id": "164aa1a7-6979-4441-a2ca-7584fe7c3d28",
+      "content": "분석 결과, Animator 설정이나 스크립트 로직에는 문제가 없었으나, **NavMesh 데이터 구조와 에이전트 간의 연결 문제**가 핵심 원인임이 밝혀졌습니다.\n\n### 1. 수행한 작업 및 확인 결과\n*   **Animator 검증:** `Apply Root Motion`은 꺼져 있으며, 파라미터(`IsWalking`, `IsDashing`) 이름도 스크립트와 정확히 일치함을 확인했습니다.\n*   **에이전트 재설정:** 요청하신 대로 `enabled = false -> true` 재설정과 `Warp`를 수행했으나, 여전히 `agent.isOnNavMesh`가 `false`로 유지되었습니다.\n*   **NavMesh 구조 분석:** 이 씬에는 전역 NavMesh가 아닌 **120개의 개별 `NavMeshSurface` 컴포넌트**가 `floorPlane` 오브젝트마다 쪼개져서 붙어 있는 특이한 구조임이 확인되었습니다.\n\n### 2. 문제의 원인: NavMesh 데이터 단절\nUnity의 NavMeshAgent는 파편화된 NavMeshData 사이를 이동하는 데 취약합니다. 현재 120개로 쪼개진 NavMesh 조각들로 인해:\n1.  **에이전트 인식 불능:** `SamplePosition`으로는 바닥 데이터가 검색되지만, 에이전트가 논리적으로 어느 조각에 안착해야 할지 판단하지 못해 `isOnNavMesh`가 `false`에 머물러 있습니다.\n2.  **이동 판단 불가:** 에이전트가 \"NavMesh 위에 없다\"고 판단되므로, `MonsterChase` 스크립트에서 이동 중(`isMoving`)이라는 값을 `false`로 출력하게 되어 애니메이션이 Idle에서 변하지 않습니다.\n\n### 3. 해결 조치 사항\n*   **스크립트 안정화:** `MonsterChase.cs`를 수정하여 `isOnNavMesh`가 `false`일 때 발생하던 콘솔 에러를 방지하고, 매 프레임 NavMesh로의 복귀(Warp)를 자동 시도하도록 개선했습니다.\n*   **에이전트 초기화 시도:** 에이전트를 플레이어 근처로 이동시켜 재연결을 시도했으나, 씬 전체의 NavMesh 데이터 구조 문제로 인해 연결되지 않았습니다.\n\n### 4. 권장 해결책\n현재 120개의 조각으로 나누어 구운 방식은 성능과 경로 탐색 면에서 비효율적입니다.\n1.  기존 120개의 `NavMeshSurface`를 모두 비활성화하거나 삭제합니다.\n2.  **`Monsters` 오브젝트나 씬 최상단에 `NavMeshSurface` 하나만 생성**합니다.\n3.  `Collect Objects` 설정을 `All` 또는 `Children`으로 맞추고 **한 번에 Bake** 하여 통합된 NavMesh 데이터를 생성하십시오.\n\n이 방식으로 통합된 NavMesh가 생성되면 몬스터는 즉시 플레이어를 감지하고 이동 애니메이션을 재생하며 추격을 시작할 것입니다. 제가 새로운 통합 NavMeshSurface를 생성하고 Bake 하는 작업을 진행해 드릴까요?",
+      "snapshot_message_type": 1
     }
   ]
 }

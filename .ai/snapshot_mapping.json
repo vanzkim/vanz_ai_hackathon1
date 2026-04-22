@@ -2531,6 +2531,12 @@
       "conversation_id": "d4293090-192f-466c-a31e-7cd9ec28491f",
       "content": "메인 카메라(`Main Camera`)에 **AudioListener** 컴포넌트를 추가했습니다. 이제 게임 내에서 소리가 정상적으로 출력될 것입니다. \n\n혹시 여전히 소리가 나지 않는다면 다른 오디오 소스들의 볼륨이나 오디오 클립 할당 여부를 추가로 점검해 보겠습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "1ee0f68a-5dc2-4ce7-b267-a8451f06a124",
+      "conversation_id": "d4293090-192f-466c-a31e-7cd9ec28491f",
+      "content": "열쇠(Keys)를 획득할 때 소리가 나지 않고 로직이 작동하지 않는 원인을 분석한 결과, **물리 시스템의 트리거(Trigger) 발생 조건이 충족되지 않았기 때문**으로 파악되었습니다.\n\n### **원인 분석**\n1.  **Rigidbody 누락 (핵심 원인)**:\n    *   현재 `Keys` 오브젝트에는 `BoxCollider`(Is Trigger 체크됨)와 `KeyPickup` 스크립트가 있지만, **Rigidbody** 컴포넌트가 없습니다.\n    *   Unity의 물리 시스템에서 `CharacterController`(플레이어)가 트리거(`OnTriggerEnter`)를 발생시키려면, **트리거가 있는 오브젝트(Keys)나 충돌하는 오브젝트(Player) 중 하나에는 반드시 Rigidbody가 있어야 합니다.**\n    *   현재 `Player_Model`과 `Keys` 모두 Rigidbody가 없기 때문에 `OnTriggerEnter` 이벤트 자체가 발생하지 않고 있습니다.\n\n2.  **로직 확인**:\n    *   `KeyPickup.cs` 스크립트와 `PlayerInventory.cs` 스크립트의 코드를 검토한 결과, 로직 자체는 올바르게 작성되어 있습니다.\n    *   플레이어의 태그(\"Player\")와 이름(\"Player_Model\")도 `VanzConstants`와 일치하여 트리거만 정상적으로 작동하면 소리 재생과 키 획득이 가능합니다.\n\n---\n\n### **해결 방법**\n`Keys` 오브젝트에 **Rigidbody** 컴포넌트를 추가하고 물리 엔진에 의해 움직이지 않도록 설정해야 합니다.\n\n**수동 조치 단계:**\n1.  **Hierarchy** 창에서 `Keys` 오브젝트(ID: 70390)를 선택합니다.\n2.  **Add Component**를 클릭하여 **Rigidbody**를 추가합니다.\n3.  추가된 Rigidbody 컴포넌트에서 다음 설정을 변경합니다:\n    *   **Use Gravity**: 체크 해제 (열쇠가 바닥으로 떨어지지 않게 함)\n    *   **Is Kinematic**: 체크 (물리 시뮬레이션에 의해 움직이지 않고 트리거만 감지하게 함)\n\n**에이전트 모드 제안:**\n\"에이전트 모드로 전환하시면 제가 직접 `Keys` 오브젝트에 Rigidbody를 추가하고 설정을 최적화하여, 열쇠 근처에 갔을 때 소리와 함께 획득 로직이 정상 작동하도록 수정해 드릴 수 있습니다.\"",
+      "snapshot_message_type": 1
     }
   ]
 }

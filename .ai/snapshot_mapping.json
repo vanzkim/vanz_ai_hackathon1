@@ -2807,6 +2807,12 @@
       "conversation_id": "14d0a1b3-68ca-40bd-a2f6-aa214f42f28c",
       "content": "요청하신 순서대로 씬 시작 시퀀스를 성공적으로 수정하였습니다.\n\n### 수행된 작업:\n1.  **HospitalStartController 스크립트 생성**: 사망 컷씬(`Death_Cutscene_Manager`)이 끝난 후 인트로(`Intro_Timeline`)가 실행되도록 제어하는 브릿지 스크립트를 생성하여 `Assets/Scripts/HospitalStartController.cs`에 저장했습니다.\n2.  **Player_Model 초기 비활성화**: 컷씬 상영 중 플레이어가 노출되지 않도록 `Player_Model` 게임 오브젝트를 씬 시작 시 비활성화 상태로 변경했습니다.\n3.  **IntroSequenceManager 설정**: `Intro_Timeline`이 씬 로드와 동시에 실행되지 않도록 `autoPlayOnAwake`를 `false`로 설정하고, 컨트롤러의 명령을 받을 수 있도록 컴포넌트를 활성화했습니다.\n4.  **시퀀스 컨트롤러 배치**: `StartSequenceController` 오브젝트를 생성하고, 사망 컷씬 디렉터와 인트로 매니저를 각각 연결하여 시퀀스 체인을 완성했습니다.\n\n### 최종 재생 순서:\n1.  **사망 컷씬(Death Cutscene)** 재생\n2.  사망 컷씬 종료 즉시 **인트로(Intro Timeline)** 재생\n3.  인트로 종료 시 **Player 모델 활성화** 및 조작권 반환\n\n이제 씬을 실행하면 의도하신 순서대로 시퀀스가 플레이됩니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "5ea17f7c-8115-4f26-96e6-6bd5dfc90b20",
+      "conversation_id": "14d0a1b3-68ca-40bd-a2f6-aa214f42f28c",
+      "content": "`Intro_Timeline`에 `Scream` 사운드 트랙을 성공적으로 추가했습니다.\n\n**수정 사항:**\n*   `Intro_Timeline` 타임라인 에셋에 새로운 **Audio Track**(\"Scream Track\")을 생성했습니다.\n*   해당 트랙에 `Scream.wav` 클립을 추가하여 타임라인 시작 지점(0초)부터 재생되도록 설정했습니다.\n*   클립의 길이는 원본 오디오 파일의 길이에 맞춰 자동으로 조정되었습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

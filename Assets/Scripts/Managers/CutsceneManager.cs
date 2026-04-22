@@ -36,6 +36,12 @@ namespace VanzAI.Managers
         private int _activeCutsceneCount = 0;
 
         /// <summary>
+        /// 몬스터가 추격을 시작할 수 있는지 여부.
+        /// 특정 이벤트(Meet_white) 이후에 true로 설정됩니다.
+        /// </summary>
+        public bool CanMonstersChase { get; set; } = false;
+
+        /// <summary>
         /// 현재 컷씬이 상영 중인지 여부. 
         /// 카운터가 0보다 크거나 컷씬 전용 모델이 활성화된 경우 true를 반환합니다.
         /// </summary>

@@ -61,7 +61,8 @@ public class MonsterChase : MonoBehaviour
 
     void Update()
     {
-        if (VanzAI.Managers.CutsceneManager.Instance.IsCutsceneActive)
+        // 컷씬 중이거나 아직 추격이 허용되지 않은 경우 (Meet_white 이전) 대기
+        if (!VanzAI.Managers.CutsceneManager.Instance.CanMonstersChase || VanzAI.Managers.CutsceneManager.Instance.IsCutsceneActive)
         {
             StopChase();
             UpdateAnimation(detectionRange + 1f); // Ensure idle animation
@@ -174,11 +175,15 @@ public class MonsterChase : MonoBehaviour
             agent.isStopped = true;
         }
         
-        Vector3 direction = (playerTransform.position - transform.position).normalized;
-        direction.y = 0;
-        if (direction != Vector3.zero)
+        // playerTransform이 없을 수 있으므로 체크
+        if (playerTransform != null)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * 5f);
+            Vector3 direction = (playerTransform.position - transform.position).normalized;
+            direction.y = 0;
+            if (direction != Vector3.zero)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * 5f);
+            }
         }
     }
 
@@ -196,4 +201,4 @@ public class MonsterChase : MonoBehaviour
         animator.SetBool(IsWalkingHash, isWalking);
         animator.SetBool(IsDashingHash, isDashing);
     }
-    }
+}

@@ -27085,6 +27085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Audio.CutsceneMusicTrigger
   musicClip: {fileID: 8300000, guid: 58a5b729e39dc4953aad6bd54fa38307, type: 3}
+  isMeetWhiteCutscene: 0
 --- !u!1 &572150182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e338a7ed4d4f51c4d909eafc612f6bbb, type: 3}
@@ -56396,6 +56397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Audio.CutsceneMusicTrigger
   musicClip: {fileID: 8300000, guid: 35aad4786bdf0416bbce98490e4ade80, type: 3}
+  isMeetWhiteCutscene: 0
 --- !u!1 &1192404365
 GameObject:
   m_ObjectHideFlags: 0
@@ -107779,7 +107781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: detectionRange
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: playerTransform

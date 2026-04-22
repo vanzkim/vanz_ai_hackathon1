@@ -2867,6 +2867,12 @@
       "conversation_id": "e211229f-6c67-4ae6-96bd-fa19c2a45b51",
       "content": "전체적으로 navmesh 한번더 구워줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "f3eceeac-653c-4632-bdab-310558a28d08",
+      "conversation_id": "e211229f-6c67-4ae6-96bd-fa19c2a45b51",
+      "content": "전체적인 NavMesh 베이킹을 완료했습니다.\n\n현재 씬에서 총 **120개의 NavMeshSurface** 컴포넌트를 찾아 각각 `BuildNavMesh()`를 실행하여 구워냈습니다. (주로 `floorPlane` 오브젝트들에 설정된 데이터들을 갱신했습니다.)\n\n추가로 확인이 필요한 부분이 있으시면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

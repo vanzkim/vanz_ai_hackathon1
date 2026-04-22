@@ -2771,6 +2771,12 @@
       "conversation_id": "e5fcf588-78e0-4a2e-a52c-ca3957748eba",
       "content": "전체적으로 navmesh 한번 더 구워줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "46544e10-5c5c-496f-a509-6a0596d31300",
+      "conversation_id": "e5fcf588-78e0-4a2e-a52c-ca3957748eba",
+      "content": "전체 씬의 NavMesh 베이킹을 완료했습니다.\n\n씬 내에 있는 120개의 `NavMeshSurface` 컴포넌트를 탐지하여 모두 베이킹을 다시 수행했습니다. (만약 `NavMeshSurface`가 없는 경우에는 기존의 정적 NavMesh 빌드 방식을 사용하도록 처리했습니다.)\n\n**작업 요약:**\n*   **탐지된 NavMeshSurface 수:** 120개\n*   **주요 대상:** `floorPlane`, `floorPlane_jamb` 등 바닥 오브젝트들\n*   **결과:** 모든 표면에 대해 NavMesh 데이터 갱신 완료",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -114,5 +114,21 @@ public class MonsterCaughtHandler : MonoBehaviour
         }
 
         isCaught = false;
+
+        // --- Monster_GreyLady 예외 처리 ---
+        if (gameObject.name == "Monster_GreyLady")
+        {
+            Debug.Log("[MonsterCaughtHandler] GreyLady caught player. Disabling GreyLady and Meet_white cutscene.");
+            
+            // Meet_white 컷씬 비활성화
+            GameObject meetWhite = GameObject.Find("Meet_white");
+            if (meetWhite != null)
+            {
+                meetWhite.SetActive(false);
+            }
+            
+            // 자기 자신(Monster_GreyLady) 비활성화
+            gameObject.SetActive(false);
+        }
         }
         }

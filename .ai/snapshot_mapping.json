@@ -2501,6 +2501,12 @@
       "conversation_id": "f8bd5887-c997-42c3-8b7d-d9caea2f3cee",
       "content": "네",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "8091896c-d3e0-4350-9c3b-b89212aed8ba",
+      "conversation_id": "f8bd5887-c997-42c3-8b7d-d9caea2f3cee",
+      "content": "전체적인 사운드 시스템 디자인 및 구현을 완료했습니다.\n\n### **구현 사항 요약**\n\n1.  **중앙 오디오 시스템 (`AudioManager`)**:\n    *   싱글톤 패턴으로 구현되어 씬 전환 시에도 유지됩니다.\n    *   배경음악(BGM)의 부드러운 교체(Fade In/Out)와 효과음(SFX) 재생을 관리합니다.\n2.  **플레이어 숨소리 시스템 (`PlayerBreathing`)**:\n    *   `Player_Model` 오브젝트에 부착되었습니다.\n    *   플레이어가 이동 중일 때 설정된 간격(3~8초)마다 3종의 거친 숨소리 중 하나를 무작위로 재생합니다.\n3.  **몬스터 비명 시스템 (`MonsterScream`)**:\n    *   몬스터(`Midnight_Marionette`) 오브젝트에 부착되었습니다.\n    *   `MonsterChase`의 감지 범위를 참조하여, 플레이어를 추격하기 시작할 때 한 번의 날카로운 비명을 재생합니다. 추격 범위 밖으로 나갔다가 다시 들어오면 다시 재생됩니다.\n4.  **컷씬 음악 시스템 (`CutsceneMusicTrigger`)**:\n    *   `Meet_white` 및 `Intro_Timeline` 오브젝트에 부착되었습니다.\n    *   타임라인 재생이 시작되면 전용 음악(`Meet_White_Music`, `Intro_Music`)이 시작되고, 컷씬이 끝나면 자동으로 중단됩니다.\n\n### **생성된 자산**\n*   **스크립트**: `AudioManager.cs`, `PlayerBreathing.cs`, `MonsterScream.cs`, `CutsceneMusicTrigger.cs`\n*   **사운드**: 숨소리 3종, 몬스터 비명 1종, 컷씬 음악 2종\n\n이제 게임을 플레이하시면 이동 중의 숨소리, 몬스터 조우 시의 비명, 그리고 컷씬에서의 몰입감 있는 음악을 확인하실 수 있습니다. 추가로 수정이 필요한 부분이 있다면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

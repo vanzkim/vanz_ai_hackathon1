@@ -17,7 +17,7 @@ namespace VanzAI.Managers
             {
                 if (_instance == null)
                 {
-                    _instance = Object.FindFirstObjectByType<CutsceneManager>();
+                    _instance = Object.FindAnyObjectByType<CutsceneManager>();
                     if (_instance == null)
                     {
                         GameObject go = new GameObject("CutsceneManager");

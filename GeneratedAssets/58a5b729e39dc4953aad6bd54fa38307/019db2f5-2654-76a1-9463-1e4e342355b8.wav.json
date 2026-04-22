@@ -1,0 +1,14 @@
+{
+    "asset": "58a5b729e39dc4953aad6bd54fa38307",
+    "fileName": "019db2f5-2654-76a1-9463-1e4e342355b8.wav",
+    "prompt": "Intro cinematic music, dramatic buildup, dark strings, hospital horror atmosphere",
+    "negativePrompt": "",
+    "model": "7df9b85a-1695-49f7-89bf-988208d5a3bc",
+    "modelName": "Meta MusicGen",
+    "customSeed": -1,
+    "w3CTraceId": "ca398f90cabeea8b7a1ab221754a671a",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

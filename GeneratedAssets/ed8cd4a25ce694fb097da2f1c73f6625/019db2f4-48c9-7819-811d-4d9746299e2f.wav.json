@@ -1,0 +1,14 @@
+{
+    "asset": "ed8cd4a25ce694fb097da2f1c73f6625",
+    "fileName": "019db2f4-48c9-7819-811d-4d9746299e2f.wav",
+    "prompt": "High-pitched supernatural monster scream, screeching, terrifying horror sound effect",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "ace1ed883fe4e3d7b5734642909592c7",
+    "feedback": 0,
+    "duration": 5.0,
+    "autoTrim": false,
+    "hasReference": false
+}

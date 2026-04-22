@@ -107687,7 +107687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461041591293842005, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.48
+      value: 19.47
       objectReference: {fileID: 0}
     - target: {fileID: 4461041591293842005, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: m_LocalPosition.y
@@ -107775,11 +107775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: walkSpeed
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: detectionRange
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7377212365199054630, guid: f2668bdb79ea04f3485f401d5d759d80, type: 3}
       propertyPath: playerTransform

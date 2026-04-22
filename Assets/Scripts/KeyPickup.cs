@@ -1,4 +1,5 @@
 using UnityEngine;
+using VanzAI.UI;
 
 namespace VanzAI.Triggers
 {
@@ -37,6 +38,12 @@ namespace VanzAI.Triggers
                 PlayerInventory.Instance.AddKey();
             }
 
+            // UI 알림 출력
+            if (NotificationManager.Instance != null)
+            {
+                NotificationManager.Instance.ShowNotification("Key obtained");
+            }
+
             // 소리 재생
             if (_audioSource != null && pickupSound != null)
             {
@@ -58,7 +65,7 @@ namespace VanzAI.Triggers
             
             // 일정 시간 후 오브젝트 파괴 (소리 재생 후)
             Destroy(gameObject, pickupSound != null ? pickupSound.length : 1f);
-            }
+        }
 
         private static bool IsPlayer(Collider other)
         {

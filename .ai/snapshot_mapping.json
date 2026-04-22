@@ -2633,6 +2633,12 @@
       "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
       "content": "잠깐! 뭔가 잘못되었어. IntrocCS는 다른 컷씬이야. 지금 만들려는 BigGirl Timeline과는 아무 상관없어",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "fdd623a4-ac00-42eb-aaf0-4acfad809b22",
+      "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
+      "content": "죄송합니다! `introcCS1`이 다른 컷씬용 카메라라는 점을 간과했습니다. 기존 카메라를 건드리지 않고 **BigGirl 타임라인 전용 카메라**를 새로 만들어 연결하는 것이 가장 안전합니다.\n\n직접 카메라 구도를 잡으시려면 다음 순서대로 진행해 주세요.\n\n### 1. 전용 가상 카메라 생성\n1.  **Hierarchy** 창 상단의 `+` 버튼을 누르거나 빈 공간을 우클릭합니다.\n2.  **Cinemachine > CinemachineCamera**를 선택하여 새 카메라를 만듭니다.\n3.  이름을 **`CM_BigGirl_Shot1`**으로 변경하여 다른 카메라와 구분합니다.\n\n### 2. 타임라인에 연결 (중요)\n1.  Hierarchy에서 **Timeline_BigGirl_Director**를 선택하여 타임라인 창을 엽니다.\n2.  타임라인 트랙의 `Cinemachine Track` 아래에 있는 `CinemachineShot` 클립을 클릭합니다.\n3.  **Inspector** 창의 `Virtual Camera` 항목에 방금 만든 **`CM_BigGirl_Shot1`**을 드래그해서 넣습니다.\n    *   *기존에 제가 연결했던 `introcCS1`은 여기서 제거(None)되거나 덮어씌워집니다.*\n\n### 3. 카메라 구도 잡기\n이제 질문하신 대로 직접 카메라를 잡으시면 됩니다.\n1.  Hierarchy에서 **`CM_BigGirl_Shot1`**을 선택합니다.\n2.  **Scene 뷰**에서 원하는 위치로 이동(W)하고 회전(E)시켜 구도를 잡습니다.\n3.  **팁:** Inspector 창에서 **[Solo]** 버튼을 누르면 이 카메라가 찍고 있는 화면만 Game 뷰에 고정되어 보여서 구도 잡기가 훨씬 편합니다.\n\n### 4. 촬영 대상 설정 (선택 사항)\n만약 특정 캐릭터나 `Big_Girl_Window`를 계속 쳐다보게 하고 싶다면:\n*   `CM_BigGirl_Shot1`의 Inspector에서 **Look At** 칸에 대상 오브젝트를 드래그해서 넣으세요. 그러면 카메라를 어디로 움직여도 항상 그 대상을 바라보게 됩니다.\n\n이 방식으로 진행하시면 기존 `introcCS1` 컷씬에는 영향을 주지 않고 새로운 컷씬을 안전하게 만드실 수 있습니다. 직접 하시기 번거로우시면 **에이전트 모드**로 전환해 달라고 요청해 주세요. 제가 이 과정을 자동으로 처리해 드릴 수도 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -61,6 +61,13 @@ public class MonsterChase : MonoBehaviour
 
     void Update()
     {
+        if (VanzAI.Managers.CutsceneManager.Instance.IsCutsceneActive)
+        {
+            StopChase();
+            UpdateAnimation(detectionRange + 1f); // Ensure idle animation
+            return;
+        }
+
         if (isResetting)
         {
             CheckIfReturned();

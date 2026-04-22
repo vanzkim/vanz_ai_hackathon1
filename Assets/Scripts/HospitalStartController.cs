@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Playables;
-using VanzAI.Sequences;
+using VanzAI.Managers;
 
 namespace VanzAI.Sequences
 {
@@ -22,6 +22,7 @@ namespace VanzAI.Sequences
                 deathDirector.stopped += OnDeathCutsceneFinished;
                 
                 // Death Cutscene 재생 시작
+                CutsceneManager.Instance.RegisterCutscene(true);
                 deathDirector.Play();
                 Debug.Log("[HospitalStartController] Starting Death Cutscene.");
             }
@@ -36,6 +37,7 @@ namespace VanzAI.Sequences
         {
             if (director == deathDirector)
             {
+                CutsceneManager.Instance.RegisterCutscene(false);
                 deathDirector.stopped -= OnDeathCutsceneFinished;
                 Debug.Log("[HospitalStartController] Death Cutscene finished. Starting Intro.");
                 StartIntro();

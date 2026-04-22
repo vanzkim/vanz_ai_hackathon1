@@ -3005,6 +3005,12 @@
       "conversation_id": "89993476-c2f6-40a7-b2da-64ec10bd6366",
       "content": "The implementation plan for pausing monster chasing during cutscenes has been approved and is located at `Assets/Plans/monster-chase-pause.md`. \n\nWould you like me to proceed with executing this plan? I will modify the following files to ensure that monsters stop their chase logic whenever a cutscene (including `Meet_white`) is active:\n1.  `Assets/Scripts/Managers/CutsceneManager.cs`\n2.  `Assets/Scripts/MonsterChase.cs`\n3.  `Assets/Scripts/Audio/CutsceneMusicTrigger.cs`\n4.  `Assets/Scripts/Sequences/HospitalStartController.cs`\n\nPlease confirm if I should start the implementation.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "8cd0bfcf-1972-4c1b-a285-36b230a35605",
+      "conversation_id": "89993476-c2f6-40a7-b2da-64ec10bd6366",
+      "content": "컷씬(`Meet_white` 포함)이 진행되는 동안 `MonsterChase` 스크립트의 추격 기능을 일시 중지하는 로직을 성공적으로 추가했습니다.\n\n### 변경 사항 요약:\n1.  **`CutsceneManager.cs`**: \n    *   컷씬 활성화 상태를 관리하기 위해 `_activeCutsceneCount` 카운터 시스템을 도입했습니다.\n    *   `IsCutsceneActive` 프로퍼티가 이 카운터와 `_activeCutscenePlayer` 상태를 모두 체크하도록 개선했습니다.\n    *   `StartCutscene` 및 `EndCutscene` 호출 시 자동으로 상태를 등록하도록 수정했습니다.\n2.  **`MonsterChase.cs`**: \n    *   `Update` 메서드 시작 부분에 `CutsceneManager.Instance.IsCutsceneActive` 체크를 추가했습니다.\n    *   컷씬 중에는 `StopChase()`를 호출하고 애니메이션을 Idle 상태로 강제한 뒤 로직을 중단합니다.\n3.  **`CutsceneMusicTrigger.cs`** ( `Meet_white` 등에 부착됨):\n    *   타임라인 재생(`OnPlayableDirectorPlayed`) 및 종료(`OnPlayableDirectorStopped`) 시점에 `CutsceneManager`에 상태를 등록/해제하도록 하여, 모델 스왑이 없는 컷씬도 추격 중지에 포함되도록 했습니다.\n4.  **`HospitalStartController.cs`**:\n    *   게임 시작 시의 `Death_Cutscene`도 `CutsceneManager`를 통해 추적되도록 하여 오프닝 중 몬스터가 움직이는 현상을 방지했습니다.\n\n이제 모든 컷씬 시스템이 통합되어 관리되므로, 새로운 컷씬을 추가하더라도 `CutsceneManager`를 통해 일관되게 몬스터 추격을 제어할 수 있습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

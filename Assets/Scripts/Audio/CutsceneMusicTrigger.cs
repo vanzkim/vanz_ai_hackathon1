@@ -35,6 +35,7 @@ namespace VanzAI.Audio
 
         private void OnPlayableDirectorPlayed(PlayableDirector director)
         {
+            CutsceneManager.Instance.RegisterCutscene(true);
             if (musicClip != null)
             {
                 AudioManager.Instance.PlayMusic(musicClip);
@@ -43,6 +44,7 @@ namespace VanzAI.Audio
 
         private void OnPlayableDirectorStopped(PlayableDirector director)
         {
+            CutsceneManager.Instance.RegisterCutscene(false);
             AudioManager.Instance.StopMusic();
         }
     }

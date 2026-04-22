@@ -2927,6 +2927,12 @@
       "conversation_id": "57e5dd75-bb85-4ccb-a26d-64baa301c4e7",
       "content": "I will increase the monster's detection range and update the script to target the active player object instead of an inactive one. Would you like me to continue?",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "164aa1a7-6979-4441-a2ca-7584fe7c3d28",
+      "content": "몬스터가 플레이어 가까이 와도 반응하여 따라오지 않는 원인을 다음과 같이 분석하였다. 이 가능성을 탐구해달라 \n스크립트를 분석한 결과, 몬스터가 idle에서 안 빠져나오는 원인으로 가능한 것들을 우선순위 순으로 정리했다.\n1. Animator 관련 문제 (가장 가능성 높음)\nApply Root Motion이 켜져 있음\nAnimator의 Apply Root Motion이 활성화되어 있으면 NavMeshAgent가 SetDestination을 호출해도 실제 transform 이동을 애니메이션 클립이 덮어쓴다. Idle 클립은 이동이 없으므로 agent.velocity.sqrMagnitude가 0.1을 넘지 못하고, isMoving이 계속 false → IsWalking/IsDashing이 false로 유지 → Idle 무한 반복. 해결: Animator 컴포넌트의 Apply Root Motion 체크 해제.\nAnimator Controller 파라미터 불일치\nAnimator Controller에 \"IsWalking\", \"IsDashing\"이라는 이름의 Bool 파라미터가 정확히 그대로 존재해야 한다. 대소문자 차이, 오타(\"isWalking\", \"Iswalking\"), Float/Trigger 타입으로 만든 경우 모두 작동 안 함. SetBool 호출 자체는 에러 없이 무시되므로 콘솔에도 안 찍힌다.\nIdle → Walking/Dashing 전이(Transition) 설정 오류\n\nIdle 상태에서 나가는 Transition이 없거나\nHas Exit Time이 체크되어 있어서 Exit Time까지 못 빠져나오거나\nTransition Duration이 너무 길거나\nConditions이 잘못 걸려 있을 가능성.\n\nAnimator가 자식 오브젝트에 있음\nGetComponent<Animator>()는 같은 GameObject만 찾는다. 모델 메시가 자식이고 Animator도 자식에 있으면 animator가 null이라 UpdateAnimation이 그냥 return 된다. GetComponentInChildren<Animator>()로 바꿔야 함.",
+      "snapshot_message_type": 0
     }
   ]
 }

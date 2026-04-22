@@ -3029,6 +3029,12 @@
       "conversation_id": "89993476-c2f6-40a7-b2da-64ec10bd6366",
       "content": "`Monster_GreyLady`에게 잡혔을 때의 예외 처리를 다시 적용했습니다.\n\n### 최종 적용 상태:\n*   **`MonsterCaughtHandler.cs`**: `RestartPlayer` 메서드 하단에 예외 로직이 복구되었습니다.\n    *   `Monster_GreyLady`에게 잡혀서 리스타트될 경우:\n        1.  씬에서 `\"Meet_white\"` 게임 오브젝트를 찾아 비활성화합니다.\n        2.  `Monster_GreyLady` 본인을 비활성화하여 씬에서 제거합니다.\n\n이와 더불어 이전에 작업했던 **모든 컷씬 중 추격 중지** 및 **`Meet_white` 이후 추격 활성화** 로직도 그대로 유지되고 있습니다. \n\n이제 리스타트 후에 `Monster_GreyLady`와 `Meet_white`가 중복으로 발생하지 않으며, 게임의 흐름이 의도하신 대로 매끄럽게 진행될 것입니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "e696e464-4e1e-4a8b-b983-2deb8feda214",
+      "content": "이 opening scene 의 타이틀과 UI가 고해상도 모니터에서 너무 작게 보이는 문제를 해결해야 한다",
+      "snapshot_message_type": 0
     }
   ]
 }

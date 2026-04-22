@@ -2453,6 +2453,12 @@
       "conversation_id": "64e07ea0-db69-40f5-83ca-0bdb9f583226",
       "content": "요청하신 대로 `wallA_transition` 및 `wallB_transition` 이름을 포함한 모든 오브젝트(총 26개)에서 **Box Collider를 제거**하고 **Mesh Collider로 복귀**시키는 작업을 완료했습니다.\n\n### 작업 내역\n*   **대상 오브젝트:** 26개 (`wallA_transition`, `wallB_transition` 시리즈 전체)\n*   **Box Collider 제거:** 총 25개 컴포넌트 삭제\n*   **Mesh Collider 설정:** \n    *   모든 대상에 Mesh Collider 추가 또는 활성화\n    *   `Convex` 옵션 해제 (통로를 막지 않도록 실제 메쉬 모양 사용)\n    *   오브젝트의 `Mesh Filter`에 있는 원본 메쉬를 콜라이더 메쉬로 자동 할당\n\n이제 계단 진입로를 가로막던 박스 형태의 물리 벽이 사라지고, 실제 벽 모양대로만 충돌이 발생하게 됩니다. 다시 한번 테스트해 보시기 바랍니다. 추가로 도움이 필요하시면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "3a0c6b7c-41da-4672-8acd-97671d4f71c0",
+      "conversation_id": "64e07ea0-db69-40f5-83ca-0bdb9f583226",
+      "content": "모든 **NavMesh Surface**(총 119개)를 현재의 물리 구조(Mesh Collider로 변경된 벽면 등)에 맞춰 다시 빌드(Bake) 완료했습니다.\n\n이제 계단 주변의 경로가 실제 벽과 계단 모양에 맞게 갱신되었습니다. 플레이어와 AI 모두 정상적으로 계단을 이용할 수 있을 것입니다. 테스트해보시고 다른 문제가 있다면 말씀해 주세요.",
+      "snapshot_message_type": 1
     }
   ]
 }

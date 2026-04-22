@@ -2615,6 +2615,12 @@
       "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
       "content": "내가 직접 카메라를 잡으려면 어떤 카메라를 선택하고 이동하면 되지?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_4",
+      "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
+      "content": "내가 직접 카메라를 잡으려면 어떤 카메라를 선택하고 이동하면 되지?",
+      "snapshot_message_type": 0
     }
   ]
 }

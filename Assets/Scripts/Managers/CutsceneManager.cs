@@ -34,6 +34,11 @@ namespace VanzAI.Managers
 
         private GameObject _activeCutscenePlayer;
 
+        /// <summary>
+        /// 현재 컷씬이 상영 중인지 여부 (컷씬 플레이어가 활성화되어 있는지 확인)
+        /// </summary>
+        public bool IsCutsceneActive => _activeCutscenePlayer != null && _activeCutscenePlayer.activeInHierarchy;
+
         private void Awake()
         {
             if (_instance != null && _instance != this)

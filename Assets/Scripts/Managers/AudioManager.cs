@@ -29,6 +29,15 @@ namespace VanzAI.Managers
         [Header("Settings")]
         [SerializeField] private float fadeDuration = 1.0f;
 
+        [Header("Whisper System")]
+        [SerializeField] private AudioClip[] whisperClips;
+        [SerializeField] private float whisperMinInterval = 5f;
+        [SerializeField] private float whisperMaxInterval = 15f;
+        [SerializeField] private float whisperVolume = 0.5f;
+        [SerializeField] private bool whispersEnabled = false;
+
+        private Coroutine _whisperCoroutine;
+
         private void Awake()
         {
             if (_instance != null && _instance != this)
@@ -45,6 +54,51 @@ namespace VanzAI.Managers
 
             _sfxSource = gameObject.AddComponent<AudioSource>();
             _sfxSource.playOnAwake = false;
+
+            if (whispersEnabled)
+            {
+                StartWhispers();
+            }
+        }
+
+        public void StartWhispers()
+        {
+            whispersEnabled = true;
+            if (_whisperCoroutine != null) StopCoroutine(_whisperCoroutine);
+            _whisperCoroutine = StartCoroutine(WhisperRoutine());
+            Debug.Log("[AudioManager] Whisper System started.");
+        }
+
+        public void StopWhispers()
+        {
+            whispersEnabled = false;
+            if (_whisperCoroutine != null)
+            {
+                StopCoroutine(_whisperCoroutine);
+                _whisperCoroutine = null;
+            }
+            Debug.Log("[AudioManager] Whisper System stopped.");
+        }
+
+        private IEnumerator WhisperRoutine()
+        {
+            while (whispersEnabled)
+            {
+                float delay = Random.Range(whisperMinInterval, whisperMaxInterval);
+                yield return new WaitForSeconds(delay);
+
+                // Check conditions before playing:
+                // 1. Not in a cutscene
+                // 2. We have clips to play
+                bool isInCutscene = CutsceneManager.Instance != null && CutsceneManager.Instance.IsCutsceneActive;
+
+                if (!isInCutscene && whisperClips != null && whisperClips.Length > 0)
+                {
+                    AudioClip clip = whisperClips[Random.Range(0, whisperClips.Length)];
+                    PlaySFXGlobal(clip, whisperVolume);
+                    Debug.Log($"[AudioManager] Playing whisper: {clip.name}");
+                }
+            }
         }
 
         public void PlayMusic(AudioClip clip, bool loop = true)

@@ -2729,6 +2729,12 @@
       "conversation_id": "3244714b-9c1f-408e-bb71-35b35687001c",
       "content": "네, `nightsky.png`는 이미 **Cubemap**으로 설정되어 있어 스카이박스로 바로 사용하실 수 있습니다.\n\n해당 에셋을 사용하여 스카이박스를 적용하기 위해 다음 과정을 완료했습니다:\n\n1.  **스카이박스 마테리얼 생성**: `Assets/Materials/Skybox_Nightsky.mat` 경로에 `Skybox/Cubemap` 셰이더를 사용하는 마테리얼을 생성했습니다.\n2.  **큐브맵 할당**: `nightsky` 큐브맵을 해당 마테리얼의 텍스처로 지정했습니다.\n3.  **씬에 적용**: 현재 활성화된 씬의 `RenderSettings.skybox`에 이 마테리얼을 할당하여 즉시 적용했습니다.\n\n현재 씬 뷰에서 밤하늘 스카이박스가 정상적으로 적용된 것을 확인하실 수 있습니다. 추가로 조절이 필요하시면 생성된 `Skybox_Nightsky` 마테리얼의 노출도(Exposure)나 회전(Rotation) 값을 변경해 보세요.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_4",
+      "conversation_id": "63b8eb8d-b967-4d55-9af4-071a067392d0",
+      "content": "버그가 있다. 확인하라",
+      "snapshot_message_type": 0
     }
   ]
 }

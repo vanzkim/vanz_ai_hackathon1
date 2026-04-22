@@ -33,11 +33,24 @@ namespace VanzAI.Managers
         [SerializeField] private CinemachineCamera mainGameplayCamera;
 
         private GameObject _activeCutscenePlayer;
+        private int _activeCutsceneCount = 0;
 
         /// <summary>
-        /// 현재 컷씬이 상영 중인지 여부 (컷씬 플레이어가 활성화되어 있는지 확인)
+        /// 현재 컷씬이 상영 중인지 여부. 
+        /// 카운터가 0보다 크거나 컷씬 전용 모델이 활성화된 경우 true를 반환합니다.
         /// </summary>
-        public bool IsCutsceneActive => _activeCutscenePlayer != null && _activeCutscenePlayer.activeInHierarchy;
+        public bool IsCutsceneActive => _activeCutsceneCount > 0 || (_activeCutscenePlayer != null && _activeCutscenePlayer.activeInHierarchy);
+
+        /// <summary>
+        /// 컷씬 활성화 상태를 수동으로 등록/해제합니다.
+        /// </summary>
+        public void RegisterCutscene(bool active)
+        {
+            if (active) _activeCutsceneCount++;
+            else _activeCutsceneCount = Mathf.Max(0, _activeCutsceneCount - 1);
+            
+            Debug.Log($"[CutsceneManager] RegisterCutscene({active}): Current Count = {_activeCutsceneCount}");
+        }
 
         private void Awake()
         {
@@ -121,6 +134,7 @@ namespace VanzAI.Managers
         /// </summary>
         public void StartCutscene(GameObject cutscenePlayer)
         {
+            RegisterCutscene(true);
             // 무조건 최신 참조를 다시 확인
             ResolveSceneReferences();
             _activeCutscenePlayer = cutscenePlayer;
@@ -159,6 +173,7 @@ namespace VanzAI.Managers
         /// <param name="cutsceneActor">사용되었던 컷씬 전용 모델. null 가능.</param>
         public void EndCutscene(GameObject cutsceneActor = null)
         {
+            RegisterCutscene(false);
             // 무조건 최신 참조 다시 확인
             ResolveSceneReferences();
             

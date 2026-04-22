@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using VanzAI.Managers;
 
 namespace VanzAI.Triggers
 {
@@ -11,6 +12,10 @@ namespace VanzAI.Triggers
         [Header("Settings")]
         [SerializeField] private float travelDuration = 2.0f;
         [SerializeField] private bool oneShot = false;
+
+        [Header("Audio")]
+        [SerializeField] private AudioClip elevatorSound;
+        [SerializeField] [Range(0f, 1f)] private float soundVolume = 1f;
 
         private bool _hasTriggered = false;
 
@@ -28,6 +33,12 @@ namespace VanzAI.Triggers
 
         private IEnumerator ElevatorSequence(GameObject player)
         {
+            // 0. Play Elevator Sound
+            if (elevatorSound != null && AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFXGlobal(elevatorSound, soundVolume);
+            }
+
             // 1. Fade Out
             if (GameSceneManager.Instance != null)
             {

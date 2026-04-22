@@ -2681,6 +2681,12 @@
       "conversation_id": "bbe6c84f-882f-4f82-9539-65ba5bf15051",
       "content": "한가지 기능을 추가해 달라. 이 트리거는 한번만 발동되는 것이다. 두번째 부터는 작동하지 않게 해달라",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "41d69c1e-6eae-4ac6-8fa8-ba297cf75d24",
+      "conversation_id": "bbe6c84f-882f-4f82-9539-65ba5bf15051",
+      "content": "소리가 나는데 오브젝트가 보이지 않는 이유는 **`TimedActivationTrigger` 컴포넌트의 `Target Object` 필드가 비어있기 때문**입니다. (현재 'None'으로 확인됨)\n\n이전에 자동 설정을 시도했으나 연결이 누락된 것으로 보입니다. 다음 순서대로 확인 및 수동 설정을 진행해 주세요:\n\n1.  **하이라키(Hierarchy)**에서 `Triggers/Trigger_BigGirl` 오브젝트를 선택합니다.\n2.  인스펙터의 **Timed Activation Trigger** 컴포넌트에서 **Target Object** 필드를 찾습니다.\n3.  하이라키에 있는 **Big_Girl_Window** 오브젝트를 마우스로 드래그하여 해당 필드에 넣어줍니다.\n4.  **Big_Girl_Window** 오브젝트 자체는 에디터에서 **비활성화(체크 해제)** 상태여야 트리거가 작동할 때 나타납니다.\n\n**참고**: `Big_Girl_Window` 오브젝트의 위치값이 Y축으로 매우 낮게(-99.41) 설정되어 있는 경우가 있습니다. 만약 활성화가 되었는데도 보이지 않는다면, 해당 오브젝트를 선택한 뒤 `F` 키를 눌러 위치가 플레이어 시야 범위 내(창문 밖 등)에 있는지 확인해 보시기 바랍니다.\n\n더욱 확실한 처리를 위해, 제가 에디터 상에서 해당 참조를 직접 연결하는 작업을 제안해 드릴 수 있습니다. (에이전트 모드 사용 시 가능)",
+      "snapshot_message_type": 1
     }
   ]
 }

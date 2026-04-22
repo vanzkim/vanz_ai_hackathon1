@@ -2843,6 +2843,12 @@
       "conversation_id": "14d0a1b3-68ca-40bd-a2f6-aa214f42f28c",
       "content": "적용해",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "5b2a5770-783c-4d7c-b75a-256b2a26ca06",
+      "conversation_id": "14d0a1b3-68ca-40bd-a2f6-aa214f42f28c",
+      "content": "트리거가 작동하지 않고 통과되지 않던 문제를 해결하기 위해 다음 조치들을 적용했습니다.\n\n### 수정 사항:\n1.  **물리 감지 활성화 (Rigidbody 추가)**: 유니티 물리 규칙에 따라 `CharacterController`를 사용하는 플레이어가 트리거를 인식할 수 있도록 `MonsterA_Trigger`에 **Rigidbody**를 추가하고 **Is Kinematic**을 체크했습니다. 이제 플레이어가 영역에 들어오면 컷씬이 정상적으로 실행됩니다.\n2.  **플레이어 감지 로직 유연화**: `CutsceneTrigger`가 특정 이름(`Player_Model`)뿐만 아니라 **`Player` 태그**를 가진 모든 오브젝트를 감지하도록 설정을 변경했습니다. 인트로 컷씬 이후의 플레이어 상태와 상관없이 안정적으로 작동합니다.\n3.  **가시성 및 충돌 정리**: 트리거의 `MeshRenderer`를 비활성화하여 게임 중에는 보이지 않도록 했으며, 트리거 자체가 물리적으로 플레이어를 막지 않도록 `isTrigger` 설정을 재확인했습니다.\n\n이제 해당 구역으로 이동하시면 `MonsterA_Trigger`가 정상적으로 작동하며 컷씬이 시작될 것입니다. 추가로 수정이 필요한 부분이 있다면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

@@ -3071,6 +3071,12 @@
       "conversation_id": "0817e8b9-e826-43de-80aa-502b125d27a2",
       "content": "이 사운드 파일(`don't believe.wav`)은 현재 프로젝트 내의 **Timeline(타임라인)** 시퀀스에서 사용되고 있습니다.\n\n상세한 위치와 용도는 다음과 같습니다:\n\n1.  **사용 위치 (타임라인 Asset):**\n    *   경로: `Assets/Timeline/New_Cutscene.playable`\n    *   해당 타임라인의 오디오 트랙에 클립으로 등록되어 있습니다.\n\n2.  **사용 중인 씬 및 오브젝트:**\n    *   씬: `scene_hospital.unity`\n    *   오브젝트: `CutScenes/Death_Cutscene_Manager`\n    *   이 오브젝트에 부착된 `PlayableDirector` 컴포넌트가 위 타임라인을 실행하며, 그 과정에서 해당 사운드가 재생됩니다.\n\n**요약:**\n이 사운드는 **`scene_hospital`** 씬의 **`Death_Cutscene_Manager`**가 실행하는 데스 컷씬(Death Cutscene)의 배경음 또는 효과음으로 사용되고 있습니다. 그 외에 일반적인 `AudioSource`나 스크립트에서 직접 참조하고 있는 곳은 발견되지 않았습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "0817e8b9-e826-43de-80aa-502b125d27a2",
+      "content": "타임라인 오디오 트랙의 볼륨을 줄이는 법",
+      "snapshot_message_type": 0
     }
   ]
 }

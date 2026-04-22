@@ -2993,6 +2993,12 @@
       "conversation_id": "164aa1a7-6979-4441-a2ca-7584fe7c3d28",
       "content": "`MonsterChase.cs` 스크립트의 `[RequireComponent(typeof(NavMeshAgent))]` 속성을 정상적으로 복구했습니다.\n\n### 최종 요약 및 확인\n1.  **Animator 문제 없음:** 분석해주신 모든 Animator 가설은 검증 결과 정상이며, 애니메이션이 나오지 않는 원인은 에이전트의 이동 판정(`isMoving = false`) 때문이었습니다.\n2.  **NavMesh 통합 완료:** 씬 내의 120개 파편화된 NavMeshSurface를 정리하고 하나로 통합된 `GLOBAL_UNIFIED_NAVMESH` 시스템을 구축했습니다.\n3.  **스크립트 로직 강화:** 에이전트가 NavMesh를 일시적으로 잃어도 스스로 복귀하여 추격을 재개할 수 있도록 로직을 수정했습니다.\n\n이제 하이어라키의 **`GLOBAL_UNIFIED_NAVMESH`** 오브젝트를 선택하고 인스펙터에서 **Bake** 버튼을 한 번만 더 눌러주시면, 몬스터가 정상적으로 플레이어를 따라오며 애니메이션이 작동할 것입니다. \n\n추가로 도움이 필요한 부분이 있으신가요?",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "89993476-c2f6-40a7-b2da-64ec10bd6366",
+      "content": "Meet_white를 비롯해서 모든 컷씬이 진행 될때는 MonsterChase 스크립트의 추격 기능을 잠시 꺼두는 로직을 추가해줘",
+      "snapshot_message_type": 0
     }
   ]
 }

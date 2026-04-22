@@ -29,16 +29,21 @@ namespace VanzAI.Triggers
             // VanzConstants.PlayerTag ("Player")를 사용하여 플레이어 확인
             if (other.CompareTag(VanzConstants.PlayerTag) || other.name.Contains("Player"))
             {
+                if (oneShot)
+                {
+                    _hasTriggered = true;
+                    // 트리거가 다시 발동되지 않도록 콜라이더를 즉시 비활성화합니다.
+                    var col = GetComponent<Collider>();
+                    if (col != null) col.enabled = false;
+                }
                 StartCoroutine(TriggerRoutine());
             }
         }
 
         private IEnumerator TriggerRoutine()
         {
-            _hasTriggered = true;
-
             // 오브젝트 활성화
-            if (targetObject != null)
+if (targetObject != null)
             {
                 targetObject.SetActive(true);
             }

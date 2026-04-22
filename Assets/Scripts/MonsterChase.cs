@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class MonsterChase : MonoBehaviour
 {
     [Header("Target Settings")]

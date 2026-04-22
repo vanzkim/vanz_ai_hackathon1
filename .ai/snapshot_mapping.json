@@ -2603,6 +2603,12 @@
       "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
       "content": "네가 일단 돌아가게만 설정해줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "87af0f34-1a3e-4ad3-b39d-41b15189ed91",
+      "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
+      "content": "타임라인이 정상적으로 동작하도록 기본적인 바인딩 설정을 완료했습니다. \n\n### 수행한 작업:\n1.  **디렉터 생성:** `Timeline_BigGirl_Director`라는 빈 게임 오브젝트를 생성하고 `PlayableDirector` 컴포넌트를 추가했습니다.\n2.  **타임라인 할당:** 해당 디렉터에 `Timeline_BigGirl` 에셋을 연결했습니다.\n3.  **카메라 바인딩:** \n    *   `Cinemachine Track`에 씬의 **Main Camera**를 연결했습니다.\n    *   빨간색으로 표시되던 `CinemachineShot` 클립에 씬에 있는 **introcCS1** 가상 카메라를 할당했습니다. 이제 타임라인을 재생하면 해당 카메라 구도로 화면이 보일 것입니다.\n\n### 확인 방법:\n1.  Hierarchy 창에서 **Timeline_BigGirl_Director** 오브젝트를 선택합니다.\n2.  Timeline 창 상단에 있는 **Preview** 버튼을 누르거나 재생 버튼을 눌러 카메라가 정상적으로 작동하는지 확인하세요.\n\n**참고:** `Activation Track`은 현재 어떤 오브젝트를 켜고 끌지 알 수 없어 비워두었습니다. 컷씬 중에 나타나거나 사라져야 할 캐릭터나 오브젝트가 있다면, 해당 오브젝트를 타임라인 왼쪽의 `Activation Track` 칸에 드래그하여 넣어주시면 됩니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

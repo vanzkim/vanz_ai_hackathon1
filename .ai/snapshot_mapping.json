@@ -3053,6 +3053,12 @@
       "conversation_id": "e696e464-4e1e-4a8b-b983-2deb8feda214",
       "content": "UI 크기 조정 작업이 완료되었습니다.\n\n**적용된 변경 사항:**\n1.  **CanvasScaler**: `ConstantPixelSize`에서 `ScaleWithScreenSize`로 변경되었습니다. (기준 해상도: 1920x1080, Match: 0.5)\n2.  **GameTitle**: 고해상도에 맞춰 크기가 **1200x600**으로 확대되었습니다.\n3.  **StartButton**: 가독성을 위해 크기가 **400x120**으로 확대되었습니다.\n4.  **Button Text**: 버튼 내 \"START GAME\" 텍스트의 폰트 크기가 **48**로 상향되었습니다.\n\n이제 고해상도 모니터에서도 타이틀과 버튼이 적절한 비율로 표시됩니다. 추가로 조정이 필요한 부분이 있다면 말씀해 주세요.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "0817e8b9-e826-43de-80aa-502b125d27a2",
+      "content": "이 라이트의 그림자 해상도를 올리고 싶다. 지금은 너무 지글지글 하다",
+      "snapshot_message_type": 0
     }
   ]
 }

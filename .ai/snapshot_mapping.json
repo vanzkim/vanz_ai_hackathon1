@@ -2591,6 +2591,12 @@
       "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
       "content": "타임라인 컷씬을 만들어야 한다. 현재 상태를 보고 시네머신 카메라를 이용하는 컷씬 만드는 순서를 알려줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "06e74496-8f6c-43bb-808d-da4f0b031a29",
+      "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
+      "content": "제공해주신 이미지와 현재 프로젝트 상태를 분석한 결과, **Timeline_BigGirl** 에셋에 `Cinemachine Track`은 생성되어 있으나, 실제 카메라 연결과 샷 설정이 완료되지 않은 상태(트랙의 빨간색 표시)입니다.\n\n현재 프로젝트의 **Main Camera**에는 이미 `CinemachineBrain`이 추가되어 있고, `introcCS1`, `CM ThirdPerson Camera` 등의 가상 카메라들이 준비되어 있습니다. 이를 활용하여 컷씬을 완성하는 순서는 다음과 같습니다.\n\n### 1. 시네머신 트랙 바인딩 (Binding)\n타임라인 윈도우에서 왼쪽의 `Cinemachine Track` 옆에 비어 있는 오브젝트 칸에 씬에 있는 **Main Camera**를 드래그 앤 드롭하세요.\n*   **이유:** 시네머신 트랙은 어떤 카메라(CinemachineBrain이 있는 카메라)를 제어할지 알아야 합니다. 현재 빨간색으로 표시되는 이유는 이 연결이 빠져있기 때문일 가능성이 높습니다.\n\n### 2. 가상 카메라(Virtual Camera) 할당\n이미지 속의 `CinemachineShot` 클립을 클릭한 후 **Inspector** 창을 확인하세요.\n*   **Virtual Camera** 필드가 'None'으로 되어 있을 것입니다. 여기에 씬에 이미 만들어진 카메라(예: `introcCS1` 또는 `CinemachineCamera_white1`)를 드래그해서 넣으세요.\n*   만약 새로운 구도가 필요하다면, 타임라인 트랙에서 마우스 우클릭 후 **Create Cinemachine Camera**를 선택해 새 카메라를 바로 만들 수 있습니다.\n\n### 3. 카메라 블렌딩(Blending) 및 연출\n여러 개의 샷을 이어 붙여 부드러운 전환을 만듭니다.\n*   **샷 추가:** 트랙 위에서 마우스 우클릭 > `Add Cinemachine Shot Clip`을 선택하여 클립을 추가합니다.\n*   **전환 효과:** 두 클립의 끝부분을 서로 겹치게(Overlap) 배치하면 카메라가 물리적으로 이동하며 부드럽게 섞이는(Ease In/Out) 효과가 자동으로 적용됩니다.\n\n### 4. 추가 팁: 애니메이션과 연동\n이미지에 있는 `Activation Track`은 특정 오브젝트를 컷씬 동안만 활성화(Active)할 때 사용됩니다.\n*   만약 캐릭터의 특정 동작과 함께 카메라를 움직이고 싶다면, `Animation Track`을 추가하여 캐릭터의 애니메이션과 카메라의 위치값을 동시에 제어할 수 있습니다.\n\n**현재 상태 요약:**\n*   **에셋 위치:** `Assets/Timeline/Timeline_BigGirl.playable`\n*   **필요 작업:** 1) Main Camera를 트랙에 바인딩, 2) 클립에 Virtual Camera 할당.\n\n이 단계를 마치면 타임라인의 빨간 줄이 사라지고 정상적으로 카메라 컷 연출이 가능해집니다. 추가로 특정 카메라 구도(예: 3인칭 팔로우, 경로 이동 등)를 설정하는 방법이 궁금하시면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

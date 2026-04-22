@@ -2753,6 +2753,12 @@
       "conversation_id": "b4bdc447-f943-4857-969e-35133657f5f9",
       "content": "몬스터에게 잡혔을 때 나오는 컷씬은 각 몬스터 오브젝트에 부착된 **`MonsterCaughtHandler`** 스크립트 또는 특정 구역의 **`CutsceneTrigger`**에서 설정할 수 있습니다.\n\n현재 프로젝트의 구성에 따른 상세 위치는 다음과 같습니다:\n\n### 1. 개별 몬스터 설정 (`MonsterCaughtHandler`)\n플레이어를 추격하는 몬스터가 직접 충돌했을 때 재생되는 컷씬은 해당 몬스터 오브젝트에서 관리합니다.\n*   **해당 오브젝트:** `Monster_GreyLady`, `Two_horns`, `Midnight_Marionette` 등 (`Monsters` 그룹 아래에 위치)\n*   **설정 방법:**\n    1.  계층 구조(Hierarchy)에서 몬스터 오브젝트를 선택합니다.\n    2.  인스펙터(Inspector) 창에서 **`MonsterCaughtHandler`** 컴포넌트를 찾습니다.\n    3.  **`Cutscene Director`** 항목에 재생할 **PlayableDirector**(타임라인이 포함된 오브젝트)를 드래그하여 할당합니다.\n    *   *참고: 현재 씬의 몬스터들은 이 항목이 `None`으로 되어 있어, 잡히면 컷씬 없이 즉시 리스타트 지점으로 이동하도록 설정되어 있을 수 있습니다.*\n\n### 2. 특정 구역 트리거 설정 (`CutsceneTrigger`)\n몬스터가 나타나거나 잡히는 연출이 특정 위치에서 발생하도록 설계된 경우입니다.\n*   **해당 오브젝트:** `Triggers` > **`MonsterA_Trigger`**\n*   **설정 방법:**\n    1.  `MonsterA_Trigger` 오브젝트를 선택합니다.\n    2.  **`CutsceneTrigger`** 컴포넌트의 **`Director`** 항목에 할당된 오브젝트(예: `Meet_white`)를 변경하거나, 해당 타임라인 에셋을 수정합니다.\n\n### 3. 관련 시스템 안내\n*   **컷씬 전용 모델:** `MonsterCaughtHandler`의 `Cutscene Player` 항목에 모델을 등록하면, 컷씬 재생 중에만 일반 플레이어 모델 대신 해당 모델을 사용하고 위치를 동기화해줍니다. (이 처리는 `CutsceneManager`에서 담당합니다.)\n*   **리스타트 위치:** 컷씬이 끝난 후 플레이어가 이동할 위치는 `MonsterCaughtHandler`의 **`Restart Point`** (현재 `Point_restart`로 설정됨)에서 변경할 수 있습니다.\n\n요약하자면, **몬스터 오브젝트의 `MonsterCaughtHandler` 컴포넌트에 있는 `Cutscene Director` 필드**를 확인하시면 됩니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "1bff4b5d-7944-45b4-83cb-69f1026c38f2",
+      "content": "elevator trigger 에 지정된 사운드 출력 기능을 넣어줘",
+      "snapshot_message_type": 0
     }
   ]
 }

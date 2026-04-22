@@ -47,6 +47,16 @@ public class MonsterChase : MonoBehaviour
             GameObject player = GameObject.FindGameObjectWithTag(playerTag);
             if (player != null) playerTransform = player.transform;
         }
+
+        // Snap to NavMesh if not already on it
+        if (agent != null && !agent.isOnNavMesh)
+        {
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                agent.Warp(hit.position);
+            }
+        }
     }
 
     void Update()
@@ -128,14 +138,14 @@ public class MonsterChase : MonoBehaviour
 
     private void UpdateAnimation(float distance)
     {
-        if (animator == null) return;
+        if (animator == null || agent == null) return;
 
-        // Simplified: If within detection range, we are either walking or dashing.
-        // No velocity or isStopped checks to avoid jitter.
+        // Use velocity and isOnNavMesh to determine if actually moving
+        bool isMoving = agent.isOnNavMesh && agent.velocity.sqrMagnitude > 0.1f;
         bool isInRange = distance <= detectionRange;
         
-        bool isDashing = isInRange && distance <= dashRange;
-        bool isWalking = isInRange && !isDashing;
+        bool isDashing = isInRange && distance <= dashRange && isMoving;
+        bool isWalking = isInRange && !isDashing && isMoving;
 
         animator.SetBool(IsWalkingHash, isWalking);
         animator.SetBool(IsDashingHash, isDashing);

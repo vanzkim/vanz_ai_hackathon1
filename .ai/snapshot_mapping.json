@@ -2921,6 +2921,12 @@
       "conversation_id": "57e5dd75-bb85-4ccb-a26d-64baa301c4e7",
       "content": "제자리걸음 문제를 해결하기 위해 다음 두 가지 작업을 완료했습니다.\n\n### **1. 스크립트 수정 (`MonsterChase.cs`)**\n*   **NavMesh Snap 추가:** `Start()` 메서드에서 몬스터가 내비메시 위에 있지 않을 경우, `NavMesh.Warp()`를 사용하여 자동으로 가장 가까운 내비메시 지점으로 스냅되도록 로직을 추가했습니다.\n*   **애니메이션 로직 개선:** 단순히 거리에 따라 애니메이션을 재생하던 방식에서, **실제 이동 속도(`agent.velocity`)가 있을 때만** 걷기/달리기 애니메이션이 출력되도록 수정했습니다. 이제 몬스터가 어떠한 이유로 멈춰 있다면 더 이상 제자리걸음을 하지 않습니다.\n\n### **2. 컴포넌트 설정 변경**\n*   **NavMeshAgent Radius 조정:** 기존에 너무 작게 설정되어 있던 `Radius` 값을 `0.06`에서 **`0.5`**로 변경하여 내비메시 에이전트가 보다 안정적으로 경로를 계산할 수 있도록 했습니다.\n*   **에디터 내 위치 강제 보정:** 현재 씬에서 몬스터의 위치를 즉시 가장 가까운 내비메시 지점(`3.23, 7.11, 0.05`)으로 이동시켜, 게임 시작 시 에이전트가 즉시 활성화될 수 있도록 조치했습니다.\n\n이제 플레이 모드에서 확인해 보시면 몬스터가 플레이어를 정상적으로 추격하며, 이동하지 않을 때는 애니메이션도 멈추는 것을 확인하실 수 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "6e02397c-7086-4418-814f-8b82006e37e4",
+      "conversation_id": "57e5dd75-bb85-4ccb-a26d-64baa301c4e7",
+      "content": "I will increase the monster's detection range and update the script to target the active player object instead of an inactive one. Would you like me to continue?",
+      "snapshot_message_type": 1
     }
   ]
 }

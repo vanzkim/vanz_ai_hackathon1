@@ -2909,6 +2909,12 @@
       "conversation_id": "57e5dd75-bb85-4ccb-a26d-64baa301c4e7",
       "content": "`NavMeshAgent.isOnNavMesh`가 `False`인 상황은 에이전트가 내비메시 데이터가 있는 구역 밖에 있거나, 물리적인 위치가 내비메시 표면에서 너무 떨어져 있을 때 발생합니다. 이를 수정하기 위한 방법들을 단계별로 안내해 드립니다.\n\n### **1. 코드에서 `NavMeshAgent.Warp()` 사용 (가장 확실한 방법)**\n`Transform.position`을 직접 수정하여 이동시키면 `NavMeshAgent`가 내비메시를 놓칠 수 있습니다. 런타임에 위치를 잡으려면 반드시 `Warp` 메서드를 사용해야 합니다.\n\n**`MonsterChase.cs`의 `Awake` 또는 `Start`에 추가:**\n```csharp\nvoid Start()\n{\n    if (agent != null)\n    {\n        // 1. 현재 위치에서 가장 가까운 내비메시 지점을 찾음 (반경 1.0f 내)\n        NavMeshHit hit;\n        if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))\n        {\n            // 2. 찾은 지점으로 에이전트를 강제 순간이동 및 내비메시 결합\n            agent.Warp(hit.position);\n        }\n        else\n        {\n            Debug.LogError($\"{gameObject.name} 근처에서 내비메시를 찾을 수 없습니다. 배치 위치를 확인하세요.\");\n        }\n    }\n}\n```\n\n---\n\n### **2. 유니티 에디터에서 수동 수정**\n\n#### **A. 내비메시 재베이크 (Re-bake)**\n현재 내비메시 데이터가 최신 상태가 아닐 수 있습니다.\n1. **Window > AI > Navigation (Obsolete)** 또는 **NavMesh Surface** 컴포넌트가 있는 오브젝트를 선택합니다.\n2. `Bake` 버튼을 눌러 내비메시를 다시 생성합니다.\n3. 씬 뷰에서 바닥에 **푸른색 영역(NavMesh)**이 정상적으로 몬스터 발밑에 표시되는지 확인합니다.\n\n#### **B. 몬스터 높이 및 위치 조정**\n몬스터가 바닥 콜라이더보다 약간 아래에 있거나 너무 높게 떠 있으면 내비메시 위에 있는 것으로 간주되지 않습니다.\n1. 씬 뷰에서 몬스터를 위아래로 살짝 움직여 보십시오.\n2. 몬스터의 발바닥이 내비메시 표면에 닿도록 배치합니다.\n\n---\n\n### **3. 설정 확인 (체크리스트)**\n\n*   **Agent Type 확인:** `NavMeshAgent` 컴포넌트의 **Agent Type**(기본값: Humanoid)이 내비메시를 구울 때 사용한 **NavMesh Surface**의 Agent Type과 일치하는지 확인하십시오. (조사 결과 둘 다 ID 0으로 일치하는 것으로 보이나, 커스텀 타입을 쓰신다면 재확인이 필요합니다.)\n*   **Layer 설정:** 내비메시가 구워진 바닥 오브젝트가 `Static`으로 설정되어 있거나, `NavMeshSurface` 컴포넌트가 포함된 레이어를 정상적으로 인식하고 있는지 확인하십시오.\n*   **Base Offset:** `NavMeshAgent` 컴포넌트의 `Base Offset` 값이 너무 크면 에이전트의 논리적 위치가 공중에 떠 있게 되어 내비메시를 인식하지 못할 수 있습니다. (현재 `0`으로 설정되어 있어 이 문제는 아닐 가능성이 높습니다.)\n\n### **요약**\n현재 몬스터의 위치와 내비메시 간의 거리가 **0.014**로 매우 가깝기 때문에, 위 코드의 **`agent.Warp()`**를 한 번만 실행해 주면 즉시 내비메시에 스냅(Snap)되어 문제가 해결될 것입니다.\n\nYou can switch to agent mode to have this done automatically.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_3",
+      "conversation_id": "57e5dd75-bb85-4ccb-a26d-64baa301c4e7",
+      "content": "이 방식 적용해줘",
+      "snapshot_message_type": 0
     }
   ]
 }

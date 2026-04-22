@@ -2459,6 +2459,12 @@
       "conversation_id": "64e07ea0-db69-40f5-83ca-0bdb9f583226",
       "content": "모든 **NavMesh Surface**(총 119개)를 현재의 물리 구조(Mesh Collider로 변경된 벽면 등)에 맞춰 다시 빌드(Bake) 완료했습니다.\n\n이제 계단 주변의 경로가 실제 벽과 계단 모양에 맞게 갱신되었습니다. 플레이어와 AI 모두 정상적으로 계단을 이용할 수 있을 것입니다. 테스트해보시고 다른 문제가 있다면 말씀해 주세요.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "bd1897ba-ab6a-4c1a-b117-5f2e42ee9cf3",
+      "content": "다음과 같은 시스템을 만들기 위한 계획을 세운다. 먼저 player 가 Trigger_WhiteExit 처음 건드렸을 때는 찰칵거리면서 문이 잠겨 있는 소리만 난다. 그리고 Keys 오브젝트 가까이 가면 열쇠 흔드는 소리가 나면서 키를 얻었다는 정보가 입력된다. 키를 얻었다는 정보를 가지고 다시 Trigger_WhiteExit에 가면 원래의 계획대로 EndingScene 단계로 넘어간다.",
+      "snapshot_message_type": 0
     }
   ]
 }

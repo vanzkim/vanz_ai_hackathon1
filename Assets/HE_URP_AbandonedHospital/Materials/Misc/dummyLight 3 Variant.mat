@@ -25,13 +25,13 @@ Material:
   m_Parent: {fileID: 2100000, guid: b0986e4ce3e75ea4f948f3bc4a6b01e8, type: 2}
   m_ModifiedSerializedProperties: 10
   m_ValidKeywords:
-  - _ALPHATEST_ON
   - _NORMALMAP
+  - _RECEIVE_SHADOWS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
@@ -49,14 +49,18 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 1
+    - _AlphaClip: 0
     - _Blend: 1
-    - _Cull: 1
+    - _Cull: 2
     - _Cutoff: 0.454
     - _DstBlend: 10
     - _DstBlendAlpha: 10
+    - _Metallic: 0.725
+    - _ReceiveShadows: 0
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    m_Colors: []
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.4117647}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.4117647}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

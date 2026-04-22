@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08142262d71fa4d859588a2d576bbce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndingSequenceManager
-  cutscene1UI: {fileID: 712034838}
-  cutscene2UI: {fileID: 775465628}
+  cutscene1UI: {fileID: 0}
+  cutscene2UI: {fileID: 0}
   player: {fileID: 329111540}
   creditsUI: {fileID: 1633445987}
   endingMusic: {fileID: 116642288}

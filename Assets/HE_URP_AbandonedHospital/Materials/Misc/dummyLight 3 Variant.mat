@@ -23,16 +23,15 @@ Material:
   m_Name: dummyLight 3 Variant
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: b0986e4ce3e75ea4f948f3bc4a6b01e8, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 10
   m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
-  - _EMISSION
+  - _ALPHATEST_ON
   - _NORMALMAP
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
@@ -50,7 +49,10 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Blend: 0
+    - _AlphaClip: 1
+    - _Blend: 1
+    - _Cull: 1
+    - _Cutoff: 0.454
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _SrcBlend: 1

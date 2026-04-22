@@ -2651,6 +2651,12 @@
       "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
       "content": "다른 컷씬에 영향을 주지 않도록 **BigGirl 전용 카메라**를 생성하고 모든 연결 설정을 마쳤습니다. 이제 바로 카메라를 잡으실 수 있습니다.\n\n### 준비된 상태:\n1.  **새 카메라 생성:** Hierarchy 창에 **`CM_BigGirl_Shot1`**이라는 이름의 가상 카메라가 만들어졌습니다.\n2.  **타임라인 연결:** `Timeline_BigGirl`의 카메라 트랙이 이 새로운 카메라만 사용하도록 바인딩을 업데이트했습니다. (기존 `introcCS1`과의 연결은 끊어졌으므로 안심하세요.)\n\n### 지금 바로 하실 일:\n1.  **Hierarchy** 창에서 **`CM_BigGirl_Shot1`** 오브젝트를 선택합니다.\n2.  **Scene 뷰**에서 마우스와 단축키(W, E)를 이용해 원하는 위치와 각도로 카메라를 이동시킵니다.\n3.  **팁:** 구도를 더 편하게 잡으려면 Inspector 창에 있는 **[Solo]** 버튼을 누르세요. Game 뷰에 해당 카메라의 화면이 고정되어 실시간으로 확인하며 작업할 수 있습니다.\n\n이제 `CM_BigGirl_Shot1`만 마음껏 움직여서 멋진 컷씬 구도를 잡아보세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_7",
+      "conversation_id": "b805d4df-17b7-45c9-b9b8-c86716b774fd",
+      "content": "작업 마쳤는데 이걸 게임뷰에서 확읺하려면 어떻게 하지? run 하지 않고 가능한가?",
+      "snapshot_message_type": 0
     }
   ]
 }

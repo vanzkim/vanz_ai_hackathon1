@@ -44,18 +44,21 @@ namespace VanzAI.Triggers
                 Debug.Log("[KeyPickup] Playing pickup sound.");
             }
 
-            // 시각적 피드백: 메쉬 비활성화 (소리가 들려야 하므로 오브젝트를 바로 파괴하지 않음)
+            // 시각적 및 물리적 피드백: 메쉬 및 콜라이더 비활성화
+            Collider col = GetComponent<Collider>();
+            if (col != null) col.enabled = false;
+
             MeshRenderer renderer = GetComponent<MeshRenderer>();
             if (renderer != null) renderer.enabled = false;
 
             MeshRenderer[] childRenderers = GetComponentsInChildren<MeshRenderer>();
             foreach (var r in childRenderers) r.enabled = false;
 
-            Debug.Log("[KeyPickup] Key collected.");
+            Debug.Log("[KeyPickup] Key collected and hidden.");
             
             // 일정 시간 후 오브젝트 파괴 (소리 재생 후)
             Destroy(gameObject, pickupSound != null ? pickupSound.length : 1f);
-        }
+            }
 
         private static bool IsPlayer(Collider other)
         {

@@ -3155,6 +3155,12 @@
       "conversation_id": "9669cf99-6cc7-479b-9013-0f2892437cd8",
       "content": "이 상태에서 내가 이 컷씬에 카메라 앵글을 잡으려면 어떤 오브젝트를 선택하여 조정해야 하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_7",
+      "conversation_id": "9669cf99-6cc7-479b-9013-0f2892437cd8",
+      "content": "이 상태에서 내가 이 컷씬에 카메라 앵글을 잡으려면 어떤 오브젝트를 선택하여 조정해야 하나",
+      "snapshot_message_type": 0
     }
   ]
 }

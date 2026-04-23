@@ -827,9 +827,11 @@ MonoBehaviour:
   whisperClips:
   - {fileID: 8300000, guid: ca9a9159dd0cd43baa16f0bf1dac34a1, type: 3}
   - {fileID: 8300000, guid: e3e0d2dfb1dd542f7992dddaa625ac72, type: 3}
-  whisperMinInterval: 8
-  whisperMaxInterval: 30
-  whisperVolume: 0.1
+  - {fileID: 8300000, guid: 0a793b370149d406692e57605d9aad23, type: 3}
+  - {fileID: 8300000, guid: 89d25cc51f5c043e4bce8625e872333f, type: 3}
+  whisperMinInterval: 6
+  whisperMaxInterval: 15
+  whisperVolume: 0.02
   whispersEnabled: 1
 --- !u!4 &13440686
 Transform:
@@ -9932,15 +9934,13 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 49ab205acd1864d79a3746458703cf6a, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 2565972646209247942, guid: 49ab205acd1864d79a3746458703cf6a, type: 2}
     value: {fileID: 56045193}
-  - key: {fileID: -7487956296139526592, guid: 49ab205acd1864d79a3746458703cf6a, type: 2}
-    value: {fileID: 1292277221}
   - key: {fileID: -1272036306067788461, guid: 49ab205acd1864d79a3746458703cf6a, type: 2}
     value: {fileID: 1702046963}
   m_ExposedReferences:
@@ -61039,7 +61039,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1292277220}
   - component: {fileID: 1292277222}
-  - component: {fileID: 1292277221}
   m_Layer: 0
   m_Name: CinemachineCamera_reloading
   m_TagString: Untagged
@@ -61062,28 +61061,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 186864243}
   m_LocalEulerAnglesHint: {x: 22.8, y: -145.662, z: -0.016}
---- !u!95 &1292277221
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292277219}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1292277222
 MonoBehaviour:
   m_ObjectHideFlags: 0

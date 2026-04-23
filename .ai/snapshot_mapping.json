@@ -3179,6 +3179,12 @@
       "conversation_id": "9669cf99-6cc7-479b-9013-0f2892437cd8",
       "content": "네, 정확합니다! **`Cinemachine Camera`**(구 버전의 Virtual Camera) 컴포넌트가 들어있는 오브젝트를 조정하는 것이 맞습니다.\n\n유니티 6(시네머신 3.0 이상)에서는 용어와 역할이 다음과 같이 구분됩니다.\n\n### 1. 시네머신 브레인 (Cinemachine Brain)\n*   **어디에 있나?**: 보통 **Main Camera** 오브젝트에 붙어 있습니다.\n*   **역할**: \"지휘자\"입니다. 여러 개의 가상 카메라 중 어떤 카메라를 화면에 보여줄지 선택하고, 카메라 사이를 부드럽게 전환(Blending)하는 역할만 합니다. \n*   **조정**: 직접 위치나 회전을 조정하지 않습니다.\n\n### 2. 시네머신 카메라 (Cinemachine Camera)\n*   **어디에 있나?**: 별도로 생성한 **가상 카메라 오브젝트**들에 붙어 있습니다. (유니티 6 이전 버전에서는 이름이 `Cinemachine Virtual Camera`였습니다.)\n*   **역할**: \"실제 촬영 기사\"입니다. 컷씬에서 우리가 원하는 **구도, 앵글, 초점 거리** 등의 데이터를 실제로 가지고 있는 오브젝트입니다.\n*   **조정**: **이 오브젝트를 선택해서 움직여야 앵글이 잡힙니다.**\n\n### 확인 방법\n1.  하이어라키 창에서 오브젝트를 클릭했을 때, 인스펙터 창에 **`Cinemachine Camera`**라는 컴포넌트가 보인다면 그게 바로 앵글을 잡는 주인공입니다.\n2.  타임라인의 **Cinemachine Track**에 올려져 있는 **클립(네모 박스)**을 클릭해 보세요. 인스펙터 창에 `Cinemachine Camera`라는 항목이 있고, 거기에 특정 오브젝트가 할당되어 있을 것입니다. 그 오브젝트를 조절하시면 됩니다.\n\n### 요약\n*   **Cinemachine Brain (Main Camera)**: 건드리지 마세요. (단순 출력용)\n*   **Cinemachine Camera (Virtual Camera)**: **이걸 움직여서 앵글을 잡으세요.**\n\n유니티 6에서는 시네머신이 3.x 버전으로 업데이트되면서 컴포넌트 이름이 `CinemachineVirtualCamera`에서 **`Cinemachine Camera`**로 더 간결하게 바뀌었으므로, 현재 보고 계신 것이 맞습니다. 해당 컴포넌트가 있는 오브젝트를 선택해 씬 뷰에서 원하는 위치로 옮겨보시기 바랍니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_9",
+      "conversation_id": "1ef7dafc-2f49-45cd-aba5-fa0f58427a9c",
+      "content": "카메라가 가까이 갔을때 오브젝트가 사라지는 현상은 어디서 고치지?",
+      "snapshot_message_type": 0
     }
   ]
 }

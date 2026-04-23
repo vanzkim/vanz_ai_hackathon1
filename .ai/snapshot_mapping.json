@@ -3101,6 +3101,12 @@
       "conversation_id": "9669cf99-6cc7-479b-9013-0f2892437cd8",
       "content": "유니티 6(버전 6000.x) 및 최신 타임라인 패키지(1.8.x)를 기준으로 검증한 결과, 질문하신 내용은 **여전히 정확하며 유효한 워크플로**입니다. 유니티 6에서도 타임라인의 오디오 트랙은 동일한 방식으로 바인딩(Binding)을 관리합니다.\n\n다음은 유니티 6 환경에서 확인된 세부 사항입니다:\n\n### 1. 유니티 6에서의 UI 위치 및 명칭\n유니티 6에서도 오디오 트랙에 `Audio Source`가 할당되지 않았을 때, 다음 두 가지 경로를 통해 이 기능을 발견할 수 있습니다.\n\n*   **타임라인 윈도우(Context Menu):** 오디오 트랙의 헤더(이름 부분)를 마우스 오른쪽 버튼으로 클릭하면 메뉴 하단에 **\"Add Audio Source on [GameObject Name]\"**이라는 항목이 나타납니다.\n*   **인스펙터 창(Inspector):** 타임라인 창에서 해당 오디오 트랙을 선택하면, 인스펙터 창의 'Track Binding' 필드 아래에 **\"Create Audio Source on [GameObject Name]\"**이라는 버튼이 활성화됩니다. \n\n이 기능들은 유니티 6에서도 [Timeline 1.8.12 버전의 공식 Changelog](https://docs.unity3d.com/Packages/com.unity.timeline@1.8/changelog/CHANGELOG.html) 및 워크플로에 포함되어 있으며, 타임라인이 포함된 오브젝트에 필요한 컴포넌트를 즉시 생성해주는 편의 기능입니다.\n\n### 2. 검증된 동작 방식 (Unity 6 기준)\n1.  **자동 생성**: 이 메뉴를 클릭하면 타임라인이 위치한 게임 오브젝트(Playable Director가 있는 오브젝트)에 `Audio Source` 컴포넌트가 즉시 추가됩니다.\n2.  **자동 연결**: 새로 생성된 `Audio Source`가 해당 오디오 트랙의 **Binding slot**에 자동으로 할당됩니다.\n3.  **호환성**: 유니티 6는 최신 **URP(Universal Render Pipeline)** 및 **New Input System** 환경에서도 타임라인 오디오 시스템을 그대로 유지하고 있어, 기존 방식대로 오디오 클립을 배치하고 공간 오디오(Spatial Blend) 등을 설정하는 데 문제가 없습니다.\n\n### 3. 유니티 6에서 주의할 점\n*   **컴포넌트 중복**: 이미 해당 오브젝트에 `Audio Source`가 여러 개 있을 경우, 'Add Audio Source'를 누르면 새로운 컴포넌트가 하나 더 추가됩니다. 특정한 오디오 소스를 사용하고 싶다면 위에서 설명한 **드래그 앤 드롭** 방식을 권장합니다.\n*   **씬 바인딩 보존**: 유니티 6에서는 타임라인 에셋 자체보다는 [Playable Director 컴포넌트](https://docs.unity3d.com/Packages/com.unity.timeline@1.8/manual/trk-header.html)가 씬의 객체(Audio Source)를 기억합니다. 따라서 'Add Audio Source'로 만든 연결은 해당 씬 내에서만 유지되며, 다른 씬에서 같은 타임라인 에셋을 쓸 때는 다시 연결해주어야 합니다.\n\n결론적으로, 사용자가 보신 **'Add Audio Source'**는 유니티 6에서도 복잡한 수동 설정 없이 오디오 트랙을 즉시 사용 가능하게 해주는 공식적이고 권장되는 단축 기능이 맞습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "9669cf99-6cc7-479b-9013-0f2892437cd8",
+      "content": "나는 이렇게 보인다. 어떤 것을 선택해서 Audio source 를 만들어야 하나",
+      "snapshot_message_type": 0
     }
   ]
 }

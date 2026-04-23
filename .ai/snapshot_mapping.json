@@ -3203,6 +3203,12 @@
       "conversation_id": "ec75e9a0-40e2-4a82-8642-b8191b024ece",
       "content": "`Reloading` 컷씬에서 소리는 들리는데 카메라가 원하는 곳을 비추지 않는 주요 원인은 **시네머신 카메라(Cinemachine Camera)의 설정 및 위치 문제**로 파악됩니다.\n\n분석된 세부 원인은 다음과 같습니다:\n\n### 1. 카메라의 물리적 위치 문제 (가장 유력)\n*   현재 **`CinemachineCamera_reloading`**의 월드 위치는 약 `(-14.6, -12.2, 2.3)`인 반면, 씬에 배치된 **Player**의 위치는 `(-30.4, -5.3, 14.5)` 부근입니다.\n*   카메라가 캐릭터로부터 상당히 멀리 떨어져 있으며, 특히 높이(Y축)가 캐릭터보다 약 **7유닛 아래**에 위치해 있어 바닥 밑이나 엉뚱한 공간을 비추고 있을 가능성이 매우 높습니다.\n\n### 2. 추적 대상(Target) 미설정\n*   `CinemachineCamera_reloading` 컴포넌트의 **Tracking Target**과 **Look At Target**이 모두 **None(null)**으로 되어 있습니다. \n*   카메라가 특정 대상을 바라보도록 설정되어 있지 않기 때문에, 타임라인에서 카메라가 활성화되더라도 캐릭터의 동작을 따라가지 못하고 고정된 빈 공간만 비추게 됩니다.\n\n### 3. 카메라 우선순위(Priority) 설정\n*   현재 플레이어용 카메라인 `CM ThirdPerson Camera`의 Priority는 **10**인 반면, 컷씬용 카메라의 Priority는 **0**으로 설정되어 있습니다.\n*   타임라인이 실행될 때는 타임라인의 설정이 우선되지만, 클립의 연결이나 활성화 방식에 따라 우선순위가 높은 플레이어 카메라가 계속 화면을 점유하려 할 수 있습니다.\n\n---\n\n### **해결 방법 제안**\n\n1.  **카메라 위치 조정**: `CinemachineCamera_reloading` 오브젝트를 선택하고, Scene 뷰에서 캐릭터가 잘 보이는 위치로 직접 이동시키거나 `Align With View` (Ctrl+Shift+F)를 사용하여 구도를 다시 잡으세요.\n2.  **대상(Target) 할당**: `CinemachineCamera_reloading` 컴포넌트의 **Look At** 필드에 캐릭터(또는 캐릭터의 머리/상체 오브젝트)를 드래그하여 할당하세요.\n3.  **타임라인 바인딩 확인**: 타임라인(ReloadingTimeline)의 Cinemachine Track에 `Main Camera`가 올바르게 바인딩되어 있는지, 그리고 클립 내에 `CinemachineCamera_reloading`이 할당되어 있는지 다시 한번 확인하시기 바랍니다.\n\n**에이전트 모드**로 전환하시면 제가 직접 카메라의 위치를 캐릭터 근처로 옮기고 타겟을 설정해 드릴 수 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "ec75e9a0-40e2-4a82-8642-b8191b024ece",
+      "content": "참고로 여기는 트래킹이나 캐릭터가 필요없는 씬이다. 단지 방의 한 구석을 비추고만 있으면 된다",
+      "snapshot_message_type": 0
     }
   ]
 }

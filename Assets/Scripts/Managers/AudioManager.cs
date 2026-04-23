@@ -105,12 +105,14 @@ namespace VanzAI.Managers
         {
             if (_musicSource.clip == clip && _musicSource.isPlaying) return;
 
+            Debug.Log($"[AudioManager] Playing music: {(clip != null ? clip.name : "null")}");
             StopAllCoroutines();
             StartCoroutine(FadeMusicCoroutine(clip, loop));
         }
 
         public void StopMusic()
         {
+            Debug.Log("[AudioManager] Stopping music.");
             StopAllCoroutines();
             StartCoroutine(FadeMusicCoroutine(null, false));
         }
@@ -118,6 +120,7 @@ namespace VanzAI.Managers
         public void PlaySFX(AudioClip clip, Vector3 position, float volume = 1f)
         {
             if (clip == null) return;
+            Debug.Log($"[AudioManager] Playing SFX: {clip.name} at {position}");
             AudioSource.PlayClipAtPoint(clip, position, volume);
         }
 

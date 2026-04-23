@@ -45,15 +45,18 @@ namespace VanzAI.Audio
 
         private void OnPlayableDirectorPlayed(PlayableDirector director)
         {
+            Debug.Log($"[CutsceneMusicTrigger] OnPlayableDirectorPlayed: {gameObject.name}");
             CutsceneManager.Instance.RegisterCutscene(true);
             if (musicClip != null)
             {
+                Debug.Log($"[CutsceneMusicTrigger] Playing Music: {musicClip.name}");
                 AudioManager.Instance.PlayMusic(musicClip);
             }
         }
 
         private void OnPlayableDirectorStopped(PlayableDirector director)
         {
+            Debug.Log($"[CutsceneMusicTrigger] OnPlayableDirectorStopped: {gameObject.name}");
             CutsceneManager.Instance.RegisterCutscene(false);
             
             // Meet_white 컷씬인 경우 전역 추격 플래그 활성화

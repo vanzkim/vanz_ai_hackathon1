@@ -44,6 +44,7 @@ namespace VanzAI.Player
             if (breathingClips == null || breathingClips.Length == 0) return;
 
             AudioClip clip = breathingClips[Random.Range(0, breathingClips.Length)];
+            Debug.Log($"[PlayerBreathing] Playing breath: {clip.name}");
             AudioManager.Instance.PlaySFX(clip, transform.position);
         }
 

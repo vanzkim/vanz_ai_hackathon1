@@ -3185,6 +3185,12 @@
       "conversation_id": "1ef7dafc-2f49-45cd-aba5-fa0f58427a9c",
       "content": "카메라가 가까이 갔을때 오브젝트가 사라지는 현상은 어디서 고치지?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "ed8f06a2-3777-4b62-bc2f-50274a3b835a",
+      "conversation_id": "1ef7dafc-2f49-45cd-aba5-fa0f58427a9c",
+      "content": "카메라가 가까이 갔을 때 오브젝트가 사라지는 현상은 보통 카메라의 **Near Clipping Plane (근접 클리핑 평면)** 설정 때문입니다. 이 값보다 카메라에 더 가까이 있는 오브젝트는 렌더링되지 않고 잘려 나가게(Clipping) 됩니다.\n\n현재 프로젝트 설정을 확인한 결과, 다음 위치에서 이 값을 수정할 수 있습니다:\n\n### 1. Cinemachine 카메라 설정 수정 (가장 권장)\n프로젝트에서 시네머신(Cinemachine)을 사용하고 있으므로, 활성화된 가상 카메라의 설정을 변경해야 합니다.\n*   **대상 오브젝트:** `Controll_System` 하위의 **`CM ThirdPerson Camera`** (또는 현재 사용 중인 가상 카메라)\n*   **위치:** Inspector 창의 `Cinemachine Camera` 컴포넌트 내 **`Lens`** 항목\n*   **수정할 값:** **`Near Clip Plane`**\n    *   현재 설정된 값은 `0.1`입니다. 이 값을 더 작게(예: `0.01`) 조정하면 카메라가 훨씬 더 가까이 가도 오브젝트가 사라지지 않습니다.\n\n### 2. 메인 카메라 설정 확인\n메인 카메라 자체의 설정도 영향을 줄 수 있습니다.\n*   **대상 오브젝트:** `Controll_System` 하위의 **`Main Camera`**\n*   **위치:** `Camera` 컴포넌트의 **`Clipping Planes` -> `Near`** 항목\n*   **참고:** 시네머신을 사용 중이라면 시네머신 가상 카메라의 `Lens` 설정이 이 값을 덮어쓰게 되므로, 1번 방법을 먼저 시도해 보세요.\n\n**주의사항:**\n`Near Clip Plane` 값을 너무 작게(예: 0.0001) 설정하면 멀리 있는 오브젝트들이 겹쳐 보일 때 지직거리는 현상(**Z-Fighting**)이 발생할 수 있으니, 적절한 값(보통 0.01 ~ 0.05 사이)으로 조절하며 확인해 보시는 것이 좋습니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

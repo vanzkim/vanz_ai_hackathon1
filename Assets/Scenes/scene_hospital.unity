@@ -9934,7 +9934,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 49ab205acd1864d79a3746458703cf6a, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -50206,31 +50206,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.768453
+      value: -16.161102
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.801059
+      value: -12.873065
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3082018
+      value: 0.35728455
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.2213738
+      value: -0.033940796
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.06291991
+      value: -0.0043393373
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.93622774
+      value: 0.99181527
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.26554182
+      value: -0.12301109
       objectReference: {fileID: 0}
     - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Antialiasing
@@ -61054,13 +61054,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292277219}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06291991, y: 0.93622774, z: -0.26554182, w: -0.2213738}
-  m_LocalPosition: {x: 1.703557, y: -18.408329, z: -7.665288}
+  m_LocalRotation: {x: -0.0043393373, y: 0.99181527, z: -0.12301109, w: -0.033940796}
+  m_LocalPosition: {x: 1.3109083, y: -20.480335, z: -7.616205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 186864243}
-  m_LocalEulerAnglesHint: {x: 22.8, y: -145.662, z: -0.016}
+  m_LocalEulerAnglesHint: {x: 18.438, y: -163.1, z: -0.016}
 --- !u!114 &1292277222
 MonoBehaviour:
   m_ObjectHideFlags: 0

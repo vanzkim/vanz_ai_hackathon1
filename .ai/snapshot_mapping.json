@@ -3131,6 +3131,12 @@
       "conversation_id": "9669cf99-6cc7-479b-9013-0f2892437cd8",
       "content": "sound source 의 audio generator 에는 뭘 넣어야 하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "48108305-a831-4321-ab5b-f04a156aa4d2",
+      "conversation_id": "9669cf99-6cc7-479b-9013-0f2892437cd8",
+      "content": "유니티 6(버전 6000.x)부터 도입된 새로운 용어와 시스템 때문에 혼동이 생길 수 있습니다. 유니티 6 매뉴얼에서는 소리를 발생시키는 소스를 통칭하여 **Audio Generator**라고 부릅니다.\n\n질문하신 **Audio Generator** 슬롯에는 실제 재생할 \"소리 데이터\"를 넣어야 하며, 주로 다음 두 가지 중 하나를 선택해서 넣습니다.\n\n### 1. 오디오 클립 (Audio Clip) - 가장 일반적\n가장 기본적으로 사용하는 형태입니다. 여러분이 프로젝트 폴더에 가지고 있는 **사운드 파일(.wav, .mp3, .ogg 등)**을 의미합니다.\n*   **넣어야 할 것**: 프로젝트 창에 있는 사운드 파일을 해당 칸으로 드래그 앤 드롭하세요.\n*   **특징**: 지정된 하나의 소리만 재생합니다.\n\n### 2. 오디오 랜덤 컨테이너 (Audio Random Container) - 유니티 6 신기능\n유니티 6에서 새로 추가된 강력한 기능입니다. 여러 개의 사운드 클립을 묶어서 재생할 때마다 무작위로 선택하거나 피치를 변형하는 등의 설정을 담은 에셋입니다.\n*   **넣어야 할 것**: 프로젝트 창에서 우클릭하여 `Create > Audio > Audio Random Container`를 만들어 설정한 후, 이 에셋을 해당 칸에 넣으세요.\n*   **특징**: 매번 같은 소리가 나면 지루할 수 있는 발소리, 총소리 등에 사용하면 좋습니다. 코드 작성 없이도 랜덤 기능을 구현할 수 있습니다.\n\n### 요약: 인스펙터에서 어떻게 보이나요?\n유니티 6의 [Audio Source 인스펙터](https://docs.unity3d.com/6000.3/Documentation/Manual/AudioSource-overview.html)를 보시면 보통 **Audio Clip** 또는 **Audio Resource**라고 표시된 칸이 있을 것입니다. 이곳이 바로 매뉴얼에서 말하는 **Audio Generator**를 넣는 위치입니다.\n\n**결론적으로:** \n지금 당장 소리를 재생하고 싶다면, 가지고 계신 **.wav나 .mp3 사운드 파일**을 그 칸에 넣으시면 됩니다. 만약 여러 소리를 섞어서 내고 싶다면 **Audio Random Container**를 만들어서 넣어보세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

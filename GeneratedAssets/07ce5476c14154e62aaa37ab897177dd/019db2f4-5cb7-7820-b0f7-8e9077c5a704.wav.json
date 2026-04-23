@@ -1,0 +1,14 @@
+{
+    "asset": "07ce5476c14154e62aaa37ab897177dd",
+    "fileName": "019db2f4-5cb7-7820-b0f7-8e9077c5a704.wav",
+    "prompt": "Gasping for air, exhausted person, horror atmosphere, soft wheeze",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "6097ad780a8b7fb6a866920ceb7725eb",
+    "feedback": 0,
+    "duration": 3.0,
+    "autoTrim": false,
+    "hasReference": false
+}

@@ -1,0 +1,14 @@
+{
+    "asset": "d66d2df7d31b04f9096547939ad0d284",
+    "fileName": "019dadd1-91c7-7a80-bc44-8a735432bc9a.wav",
+    "prompt": "A soulful and melancholic 1950s American jazz ballad. Featuring a deep, emotive female torch singer with a slight vibrato, accompanied by a slow-tempo upright bass and a soft, brushed snare drum. The audio quality is characterized by authentic vintage lo-fi textures, including heavy vinyl crackle, subtle turntable hiss, and the warm, compressed mid-range of an old AM radio broadcast.",
+    "negativePrompt": "",
+    "model": "7df9b85a-1695-49f7-89bf-988208d5a3bc",
+    "modelName": "Meta MusicGen",
+    "customSeed": -1,
+    "w3CTraceId": "c60a9aed7b588911c145bb1fed4b80ff",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

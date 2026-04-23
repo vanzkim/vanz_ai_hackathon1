@@ -1,0 +1,27 @@
+{
+    "asset": "d066c5910b8d64b04a3f733a79cf317b",
+    "fileName": "019daafe-659a-7f83-a400-af6491966ecd.png",
+    "prompt": "A single stylized white snowflake particle, symmetrical crystal design, soft edges, isolated on a solid black background for easy transparency extraction or alpha blending, high contrast.",
+    "negativePrompt": "",
+    "model": "856245a7-19a9-46f3-864c-899b31fd5f9f",
+    "modelName": "Nano Banana - T2i",
+    "customSeed": -1,
+    "w3CTraceId": "c6d0d475d2ed0b6bd53fe033183ee61b",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

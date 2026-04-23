@@ -1,0 +1,14 @@
+{
+    "asset": "67a3f6b8c477147dc9c34a298cf2d241",
+    "fileName": "019db376-2155-7b1f-b9a7-577c90f1eab9.wav",
+    "prompt": "elevator moving",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "9d427a8b7737d7473e27b7a605595cf7",
+    "feedback": 0,
+    "duration": 2.5,
+    "autoTrim": false,
+    "hasReference": false
+}

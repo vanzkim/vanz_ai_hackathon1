@@ -1,0 +1,14 @@
+{
+    "asset": "946942a115c03415cbbb28e980b1ff75",
+    "fileName": "019db7c4-8087-79aa-a6ea-18f00ff1e05e.wav",
+    "prompt": "Historical military cadence, drill sergeant yelling orders with heavy distortion, large battalion shouting back in unison, rhythmic heavy boot stomps on dirt, muffled grainy audio quality, vintage newsreel aesthetic, intense battlefield atmosphere, analog tape saturation, mono recording.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "60ff9ad7b0d26d314a58350dee58afa9",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

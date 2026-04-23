@@ -2,7 +2,7 @@
 
 <b>1. Core Project Baseline</b>
 Unless explicitly told otherwise, always operate under the following technical assumptions for this project:
-*   <b>Unity Version:</b> Unity 6 (6000.x) or latest LTS.
+*   <b>Unity Version:</b> Unity 6 (6000.4) or latest LTS.
 *   <b>Render Pipeline:</b> Universal Render Pipeline (URP). Always verify `GraphicsSettings.currentRenderPipeline` before creating materials or shaders.
 *   <b>Input System:</b> New Input System Package (com.unity.inputsystem). Use `PlayerInput` components and `InputAction` assets; avoid legacy `Input.GetKeyDown`.
 *   <b>UI System:</b> UI Toolkit (UXML/USS) for runtime and editor tools. Use uGUI only if the existing project hierarchy requires it.

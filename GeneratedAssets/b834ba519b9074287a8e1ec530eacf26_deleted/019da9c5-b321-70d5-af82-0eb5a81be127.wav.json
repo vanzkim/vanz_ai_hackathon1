@@ -1,0 +1,14 @@
+{
+    "asset": "b834ba519b9074287a8e1ec530eacf26",
+    "fileName": "019da9c5-b321-70d5-af82-0eb5a81be127.wav",
+    "prompt": "A woman sobbing in a distance in a large hall",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "5747c8ddd54e0ce124c06a02bac06d1b",
+    "feedback": 0,
+    "duration": 6.199999809265137,
+    "autoTrim": false,
+    "hasReference": false
+}

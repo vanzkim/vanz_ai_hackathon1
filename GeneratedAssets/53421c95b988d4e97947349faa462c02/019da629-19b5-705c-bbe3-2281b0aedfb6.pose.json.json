@@ -1,0 +1,12 @@
+{
+    "asset": "53421c95b988d4e97947349faa462c02",
+    "fileName": "019da629-19b5-705c-bbe3-2281b0aedfb6.pose.json",
+    "prompt": "A person is perched on the very edge of a chair, leaning their torso forward in a tense posture. They start by burying their face in their hands, rubbing their skin with a weary and confused motion. Suddenly, they pull their hands away and begin to frantically survey their surroundings. They snap their head to the left and right, then crane their neck upward to look at the ceiling before sharply glancing down at their feet. The entire upper body and shoulders twist in coordination with the head movements, capturing a vivid sense of disorientation and an urgent search for a familiar exit",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 847713682,
+    "w3CTraceId": "a3ef36167f15717923a905aabb54436d",
+    "feedback": 0,
+    "isTrimmed": false
+}

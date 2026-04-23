@@ -1,0 +1,27 @@
+{
+    "asset": "a843eca28208f43b397ad351022ccab5",
+    "fileName": "019da8b5-22b3-713e-b9de-e2307f4fcbaf.jpg",
+    "prompt": "Clear desert sky, bright sun, some distant sand dunes on the horizon, cinematic lighting, 8k resolution",
+    "negativePrompt": "",
+    "model": "b6290c67-53d6-43cc-9186-ef81564a137b",
+    "modelName": "Standard",
+    "customSeed": -1,
+    "w3CTraceId": "54e105ce6f9b3afcc3c0fc0c6176cee1",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

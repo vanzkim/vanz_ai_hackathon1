@@ -1,0 +1,12 @@
+{
+    "asset": "e0ed12c5fb7a09147add438bbf6d7f86",
+    "fileName": "019dab9b-3fa3-79d8-ad7e-93d1534ec7a3_Preview.jpg",
+    "prompt": "snow on rusted steel\n",
+    "negativePrompt": "",
+    "model": "1a149e0e-3482-46a2-be9b-de997b8829fb",
+    "modelName": "Realistic Textures 3.0",
+    "customSeed": 423438989,
+    "w3CTraceId": "1a54072a0331bece85babaf1a4fc3c1a",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

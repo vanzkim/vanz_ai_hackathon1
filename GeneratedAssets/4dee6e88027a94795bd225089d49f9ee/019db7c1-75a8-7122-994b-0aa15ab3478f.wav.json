@@ -1,0 +1,14 @@
+{
+    "asset": "4dee6e88027a94795bd225089d49f9ee",
+    "fileName": "019db7c1-75a8-7122-994b-0aa15ab3478f.wav",
+    "prompt": "Vintage military marching sound, large infantry unit rhythmic footsteps on gravel, rhythmic thudding of heavy boots, authentic WW2 documentary audio aesthetic, muffled drill sergeant commands in the distance, lo-fi analog quality, 1940s newsreel atmosphere, grainy tape hiss, mono recording.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "aaa797b1edd2e4cc6b1a0487030c0fd0",
+    "feedback": 0,
+    "duration": 4.800000190734863,
+    "autoTrim": false,
+    "hasReference": false
+}

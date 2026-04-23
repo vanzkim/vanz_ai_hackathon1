@@ -1,0 +1,14 @@
+{
+    "asset": "67a3f6b8c477147dc9c34a298cf2d241",
+    "fileName": "019db376-8b8f-7a8a-9f3b-1fddece0f6e9.wav",
+    "prompt": "very old elevator moving\n",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "c804045c1042741b27d56a960293ac45",
+    "feedback": 0,
+    "duration": 4.0,
+    "autoTrim": false,
+    "hasReference": false
+}

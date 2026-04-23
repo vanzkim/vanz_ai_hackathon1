@@ -1,0 +1,14 @@
+{
+    "asset": "e62faee671eb04613b133e3f129c6905",
+    "fileName": "019db2f4-493f-7f90-a33e-578bb7edd06e.wav",
+    "prompt": "Heavy breathing of a scared person, close-up, rhythmic, masculine, ragged breath",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "f8b4d7c329eba61644fafc2e99706f12",
+    "feedback": 0,
+    "duration": 3.0,
+    "autoTrim": false,
+    "hasReference": false
+}

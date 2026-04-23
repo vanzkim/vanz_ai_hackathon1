@@ -1,0 +1,14 @@
+{
+    "asset": "063b3441220224591977ae34a75d2286",
+    "fileName": "019db2e3-9761-7196-9ea9-16317f78397d.wav",
+    "prompt": "A sharp, metallic clicking sound of a locked door handle being rattled.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "41dc68678e7857e0063a602dd0be2b61",
+    "feedback": 0,
+    "duration": 2.0,
+    "autoTrim": false,
+    "hasReference": false
+}

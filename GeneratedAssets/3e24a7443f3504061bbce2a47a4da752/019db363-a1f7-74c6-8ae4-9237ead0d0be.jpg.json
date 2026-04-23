@@ -1,0 +1,27 @@
+{
+    "asset": "3e24a7443f3504061bbce2a47a4da752",
+    "fileName": "019db363-a1f7-74c6-8ae4-9237ead0d0be.jpg",
+    "prompt": "nightsky, few stars, snow mountain",
+    "negativePrompt": "",
+    "model": "b6290c67-53d6-43cc-9186-ef81564a137b",
+    "modelName": "Standard",
+    "customSeed": -1,
+    "w3CTraceId": "02ea17d93e05eff7730d8e1b231a2e06",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

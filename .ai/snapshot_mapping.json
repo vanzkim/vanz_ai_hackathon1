@@ -3329,6 +3329,12 @@
       "conversation_id": "6d3ff097-9baf-4920-bb93-8da09b5913af",
       "content": "컷씬이 끝난후에 player cutscene 이 감춰지고 player Model 만 남아 있어야 하는데 그런 기능이 현재 있나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "6d3ff097-9baf-4920-bb93-8da09b5913af",
+      "content": "15분 가까이 생각할 정도로 복잡한 질문인가? 어려우면 어떤 점이 어려운지 말해달라. 그럼 더 쉬운 길을 함께 찾을 수 있다.",
+      "snapshot_message_type": 0
     }
   ]
 }

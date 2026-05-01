@@ -1,0 +1,14 @@
+{
+    "asset": "2b50700b5e9e142e7a0a71e0aa137b39",
+    "fileName": "019de3e4-2202-702b-9f2f-be218c48902e.wav",
+    "prompt": "\"I am waiting. Right here... Even if what you have done is unforgivable, there are things we must face together...\"\n",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "adf7caeb342978153cb99e0c54b43206",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

@@ -50272,19 +50272,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.033940796
+      value: 0.887002
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0043393373
+      value: -0.15220717
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99181527
+      value: -0.4296791
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.12301109
+      value: -0.07373179
       objectReference: {fileID: 0}
     - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Antialiasing
@@ -61093,6 +61093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292277220}
   - component: {fileID: 1292277222}
+  - component: {fileID: 1292277223}
   m_Layer: 0
   m_Name: CinemachineCamera_reloading
   m_TagString: Untagged
@@ -61108,7 +61109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292277219}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0043393373, y: 0.99181527, z: -0.12301109, w: -0.033940796}
+  m_LocalRotation: {x: -0.15220717, y: -0.4296791, z: -0.07373179, w: 0.887002}
   m_LocalPosition: {x: 1.3109083, y: -20.480335, z: -7.616205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -61135,9 +61136,9 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
+    TrackingTarget: {fileID: 6877956579380772223}
+    LookAtTarget: {fileID: 6877956579380772223}
+    CustomLookAtTarget: 1
   Lens:
     FieldOfView: 31
     OrthographicSize: 10
@@ -61158,6 +61159,35 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &1292277223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292277219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotationComposer
+  Composition:
+    ScreenPosition: {x: 0, y: 0}
+    DeadZone:
+      Enabled: 0
+      Size: {x: 0.2, y: 0.2}
+    HardLimits:
+      Enabled: 0
+      Size: {x: 0.8, y: 0.8}
+      Offset: {x: 0, y: 0}
+  CenterOnActivate: 1
+  TargetOffset: {x: 0, y: 0, z: 0}
+  Damping: {x: 0.5, y: 0.5}
+  Lookahead:
+    Enabled: 0
+    Time: 0
+    Smoothing: 0
+    IgnoreY: 0
 --- !u!1 &1295589050 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 39a8b7f3fd901d24e9ca310eb8b54bec, type: 3}
@@ -108134,6 +108164,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &6877956579380772223 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7477598948972306683, guid: 31e234de9078b48929225a12db7cb57b, type: 3}
+  m_PrefabInstance: {fileID: 6877956579380772219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8754392257760465843
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,14 @@
+{
+    "asset": "8f41a4dd4090c483eb034049ec3f4c91",
+    "fileName": "019de3f6-da91-7d86-8869-6c4d20829ded.wav",
+    "prompt": "Sound of a man shivering and breathing heavily in extreme cold.  ",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "fd1aca5bf5c710f28fe199386d11f633",
+    "feedback": 0,
+    "duration": 5.099999904632568,
+    "autoTrim": false,
+    "hasReference": false
+}

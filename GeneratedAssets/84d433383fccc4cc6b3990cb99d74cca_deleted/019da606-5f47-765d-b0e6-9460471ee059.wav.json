@@ -1,0 +1,14 @@
+{
+    "asset": "84d433383fccc4cc6b3990cb99d74cca",
+    "fileName": "019da606-5f47-765d-b0e6-9460471ee059.wav",
+    "prompt": "'it's you!!!'",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "7cc200400f3cfa29417d82fdb37e609f",
+    "feedback": 0,
+    "duration": 4.900000095367432,
+    "autoTrim": false,
+    "hasReference": false
+}

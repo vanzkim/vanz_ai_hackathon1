@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de229-d007-7ff8-ac43-285357e5b8fa.pose.json",
+    "prompt": "A girl sitting hunched over in a chair, hands on lap, looking down. Hold the pose for 3 seconds. Then, slowly rotate the head and neck to look toward the upper right. Maintain the seated posture while only moving the upper torso and head to track an elevated target on the right. High fidelity skeletal movement",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1245442102,
+    "w3CTraceId": "5cd08df96170d9c1499559e3d2f49561",
+    "feedback": 0,
+    "isTrimmed": false
+}

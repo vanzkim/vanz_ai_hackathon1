@@ -1,0 +1,15 @@
+{
+    "asset": "59c17e4f087894a7cb52efcc83ed4571",
+    "fileName": "019de5ac-cddb-7d9f-8157-51ee4a209002.wav",
+    "prompt": "a mans's scream in terror\n",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 3.700000047683716,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}

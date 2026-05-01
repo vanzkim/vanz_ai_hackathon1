@@ -1,0 +1,12 @@
+{
+    "asset": "53421c95b988d4e97947349faa462c02",
+    "fileName": "019da62a-8d3c-76a5-8f56-27045544872b.pose.json",
+    "prompt": "A person is sitting on the very edge of a chair, leaning their torso slightly forward. After a few moments of complete stillness, they slowly and heavily begin to lift their head. With a deliberate, ponderous gaze, they scan the surroundings. The movement is slow and smooth; they rotate their head to the side, then gradually tilt it upward toward the ceiling, and finally lower it slowly to look at the ground. Every turn is accompanied by a subtle, weighted twist of the entire torso, expressing a deep sense of gravitational weight and disorientation in a measured pace.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1085133059,
+    "w3CTraceId": "9a4fa437696533d58714adc6f678f047",
+    "feedback": 0,
+    "isTrimmed": false
+}

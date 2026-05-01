@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de22c-cd89-70da-8af9-a0cce4dd3415.pose.json",
+    "prompt": "A young girl sitting hunched forward on a chair, hands on knees, gaze fixed downward. Static for the first 3 seconds, then a fluid head rotation towards the top right",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 833439012,
+    "w3CTraceId": "c2e73133a97585e311d42a58e1a00b26",
+    "feedback": 0,
+    "isTrimmed": false
+}

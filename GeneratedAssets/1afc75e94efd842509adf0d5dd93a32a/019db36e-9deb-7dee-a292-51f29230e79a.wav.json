@@ -1,0 +1,14 @@
+{
+    "asset": "1afc75e94efd842509adf0d5dd93a32a",
+    "fileName": "019db36e-9deb-7dee-a292-51f29230e79a.wav",
+    "prompt": "Ethereal whisper of a young girl, voice drifting from a distance, saying 'Don't believe what they say', haunting and airy vocal texture, heavy reverb, spacious echo, ghost-like quality, cinematic suspense, faint and muffled.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "2f4b4a4b2c443fdccab9dedd623ef0c9",
+    "feedback": 0,
+    "duration": 3.5,
+    "autoTrim": false,
+    "hasReference": false
+}

@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de229-65ad-709a-9a1c-b33fc736e1f0.pose.json",
+    "prompt": "Prompt:\nMotion Capture Data: A humanoid female character performing a seated sequence.\nPhase 1 (0-3s): Sitting on a chair, torso leaned forward at a 45-degree angle, both hands resting flat on the knees. Head tilted down, chin tucked, eyes fixed on the floor.\nPhase 2 (Transition): A gradual neck and spinal rotation. The head lifts and turns toward the upper right quadrant.\nPhase 3 (End): Ending with a steady gaze directed at a camera located at an elevated 45-degree angle to the right. Smooth joint transitions, no foot sliding.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1337582434,
+    "w3CTraceId": "f5eaf75d5d22f77c1a02f43ab5d9881e",
+    "feedback": 0,
+    "isTrimmed": false
+}

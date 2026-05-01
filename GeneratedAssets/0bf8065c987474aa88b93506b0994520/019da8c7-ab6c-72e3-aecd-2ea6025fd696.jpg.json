@@ -1,0 +1,27 @@
+{
+    "asset": "0bf8065c987474aa88b93506b0994520",
+    "fileName": "019da8c7-ab6c-72e3-aecd-2ea6025fd696.jpg",
+    "prompt": "Dark cinematic hospital hallway title screen background, horror game aesthetic, atmospheric lighting, misty, moody, high detail, 16:9 aspect ratio",
+    "negativePrompt": "",
+    "model": "f722aea3-8760-4eb1-a516-e2fce6476303",
+    "modelName": "Seedream 4",
+    "customSeed": -1,
+    "w3CTraceId": "b7425a6cef8e0cacf34b9135ee06bc54",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

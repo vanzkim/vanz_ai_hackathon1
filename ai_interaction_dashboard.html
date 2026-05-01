@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity AI 상호작용 분석 대시보드</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f5f5f3; color: #1a1a18; padding: 24px; font-size: 14px; line-height: 1.6; }
+  h1 { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+  .subtitle { color: #6b6b67; font-size: 13px; margin-bottom: 24px; }
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 28px; }
+  .metric { background: #ebebе8; background: #eeeeed; border-radius: 8px; padding: 14px 16px; }
+  .metric-label { font-size: 11px; color: #6b6b67; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .metric-value { font-size: 24px; font-weight: 500; color: #1a1a18; }
+  .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 12px; border: 0.5px solid rgba(0,0,0,0.12); padding: 20px; }
+  .card-title { font-size: 11px; font-weight: 500; color: #6b6b67; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+  .chart-wrap { position: relative; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; font-size: 11px; color: #6b6b67; }
+  .leg-item { display: flex; align-items: center; gap: 4px; }
+  .leg-sq { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .tab-bar { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+  .tab-btn { padding: 4px 11px; font-size: 11px; border-radius: 6px; border: 0.5px solid rgba(0,0,0,0.2); background: transparent; color: #6b6b67; cursor: pointer; transition: all 0.15s; }
+  .tab-btn:hover { background: #f0f0ee; }
+  .tab-btn.active { background: #ddeeff; color: #0c447c; border-color: transparent; font-weight: 500; }
+  .msg-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .msg-table th { text-align: left; padding: 7px 8px; font-weight: 500; color: #6b6b67; border-bottom: 0.5px solid rgba(0,0,0,0.1); font-size: 11px; }
+  .msg-table td { padding: 6px 8px; border-bottom: 0.5px solid rgba(0,0,0,0.07); vertical-align: top; }
+  .msg-table tr:hover td { background: #f8f8f6; }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 20px; font-size: 10px; font-weight: 500; }
+  .b-creation { background: #ddeeff; color: #0c447c; }
+  .b-query { background: #eaf3de; color: #27500a; }
+  .b-debug { background: #fcebeb; color: #791f1f; }
+  .b-modification { background: #faeeda; color: #633806; }
+  .b-config { background: #eeedfe; color: #3c3489; }
+  .b-optimization { background: #e1f5ee; color: #085041; }
+  .b-other { background: #eeeeec; color: #5f5e5a; }
+  .cross-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .cross-table th, .cross-table td { padding: 7px 14px; text-align: center; border: 0.5px solid rgba(0,0,0,0.1); }
+  .cross-table th { background: #f5f5f3; font-weight: 500; color: #6b6b67; font-size: 11px; }
+  .cross-table td:first-child { text-align: left; font-weight: 500; color: #1a1a18; }
+  .heat-0 { color: #bbb; }
+  .heat-1 { background: #e6f1fb; color: #0c447c; }
+  .heat-2 { background: #b5d4f4; color: #0c447c; }
+  .heat-3 { background: #85b7eb; color: #042c53; }
+  .heat-4 { background: #378add; color: #fff; }
+  .heat-5 { background: #185fa5; color: #fff; }
+  .full-card { background: #fff; border-radius: 12px; border: 0.5px solid rgba(0,0,0,0.12); padding: 20px; margin-bottom: 24px; }
+  @media (max-width: 640px) { .chart-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<h1>Unity AI 상호작용 분석</h1>
+<p class="subtitle">분석 기준일: 2026-04-23 &nbsp;|&nbsp; .ai/snapshot_mapping.json + GeneratedAssets/ 메타 JSON</p>
+
+<div class="metric-grid">
+  <div class="metric"><div class="metric-label">총 메시지</div><div class="metric-value">516</div></div>
+  <div class="metric"><div class="metric-label">사용자 턴</div><div class="metric-value">210</div></div>
+  <div class="metric"><div class="metric-label">대화 세션</div><div class="metric-value">72</div></div>
+  <div class="metric"><div class="metric-label">생성 에셋</div><div class="metric-value">186</div></div>
+  <div class="metric"><div class="metric-label">단발 해결 비율</div><div class="metric-value">59.7%</div></div>
+  <div class="metric"><div class="metric-label">최고난이도 대화</div><div class="metric-value">7건</div></div>
+</div>
+
+<div class="chart-row">
+  <div class="card">
+    <div class="card-title">요청 유형 분포</div>
+    <div class="legend" id="leg-req"></div>
+    <div class="chart-wrap" style="height:220px;"><canvas id="chartReq" role="img" aria-label="요청 유형별 도넛 차트"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-title">도메인 분포</div>
+    <div class="chart-wrap" style="height:260px;"><canvas id="chartDomain" role="img" aria-label="도메인별 수평 막대 차트"></canvas></div>
+  </div>
+</div>
+
+<div class="chart-row">
+  <div class="card">
+    <div class="card-title">해결 난이도</div>
+    <div class="legend" id="leg-diff"></div>
+    <div class="chart-wrap" style="height:220px;"><canvas id="chartDiff" role="img" aria-label="해결 난이도 도넛 차트"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-title">생성 에셋</div>
+    <div class="tab-bar" id="asset-tabs">
+      <button class="tab-btn active" onclick="showAssetTab('type',this)">에셋 유형</button>
+      <button class="tab-btn" onclick="showAssetTab('model',this)">모델</button>
+    </div>
+    <div class="chart-wrap" style="height:220px;"><canvas id="chartAsset" role="img" aria-label="에셋 유형 도넛 차트"></canvas></div>
+  </div>
+</div>
+
+<div class="full-card">
+  <div class="card-title">멀티턴 원인 분석</div>
+  <div class="chart-wrap" style="height:160px;"><canvas id="chartIter" role="img" aria-label="반복 원인 수평 막대"></canvas></div>
+</div>
+
+<div class="full-card">
+  <div class="card-title">요청유형 × 난이도 교차표 (히트맵)</div>
+  <table class="cross-table">
+    <thead><tr><th>요청 유형</th><th>easy (1-2턴)</th><th>medium (3-5턴)</th><th>hard (6+턴)</th></tr></thead>
+    <tbody id="cross-body"></tbody>
+  </table>
+</div>
+
+<div class="full-card">
+  <div class="card-title">메시지 탐색</div>
+  <div class="tab-bar" id="filter-bar">
+    <button class="tab-btn active" onclick="filterMsgs('all',this)">전체</button>
+    <button class="tab-btn" onclick="filterMsgs('creation',this)">creation</button>
+    <button class="tab-btn" onclick="filterMsgs('query',this)">query</button>
+    <button class="tab-btn" onclick="filterMsgs('debug',this)">debug</button>
+    <button class="tab-btn" onclick="filterMsgs('modification',this)">modification</button>
+    <button class="tab-btn" onclick="filterMsgs('other',this)">other</button>
+  </div>
+  <table class="msg-table">
+    <thead><tr><th>대화ID</th><th>유형</th><th>도메인</th><th>언어</th><th>내용</th></tr></thead>
+    <tbody id="msg-body"></tbody>
+  </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const REQ_DATA = [{"label":"other","count":120},{"label":"query","count":32},{"label":"creation","count":24},{"label":"debug","count":15},{"label":"modification","count":13},{"label":"config","count":5},{"label":"optimization","count":1}];
+const DOMAIN_DATA = [{"label":"scene","count":56},{"label":"animation","count":18},{"label":"camera","count":18},{"label":"ai_npc","count":13},{"label":"material_shader","count":9},{"label":"asset_gen","count":9},{"label":"lighting","count":8},{"label":"script","count":7},{"label":"physics","count":7},{"label":"ui","count":6},{"label":"vfx","count":5}];
+const DIFF_DATA = [{"label":"easy","count":43},{"label":"medium","count":22},{"label":"hard","count":7}];
+const ATYPE_DATA = [{"label":"audio","count":68},{"label":"animation","count":61},{"label":"unknown","count":41},{"label":"image","count":10},{"label":"model_3d","count":5},{"label":"material","count":1}];
+const MODEL_DATA = [{"label":"ElevenLabs SFX V2","count":54},{"label":"Text to Motion","count":41},{"label":"Meta MusicGen","count":9},{"label":"ElevenLabs V2","count":5},{"label":"Realistic Tex 3.0","count":3},{"label":"Standard","count":3},{"label":"Hunyuan 3D","count":2},{"label":"Rodin Hyper","count":2}];
+const ITER_DATA = [{"label":"sequential","count":49},{"label":"scope_expand","count":10},{"label":"error_fix","count":6},{"label":"spec_change","count":5},{"label":"clarification","count":2}];
+const CROSS = {req_types:["creation","query","modification","debug","config","optimization","other"],values:[[7,4,2],[5,6,1],[2,2,0],[6,2,0],[0,1,0],[0,1,0],[22,6,4]]};
+const MSGS = [{"conv":"2081f826","type":"creation","domain":"general","lang":"en","content":"Create a red sphere"},{"conv":"1477cafa","type":"query","domain":"scene","lang":"ko","content":"현재의 씬에 Buto 패키지를 통해서 안개효과를 넣는 방법은?"},{"conv":"1477cafa","type":"config","domain":"vfx","lang":"ko","content":"설정을 해봐도 안개가 너무 엷게만 보여진다. 좀더 짙게 할 수는 없나"},{"conv":"89071947","type":"modification","domain":"general","lang":"en","content":"I am not sure but editor is very slow now. is it related to this bug?"},{"conv":"a5e552f2","type":"debug","domain":"scene","lang":"en","content":"there is performance issue in this scene. how can I examine the origin of this problem?"},{"conv":"bd0523d3","type":"creation","domain":"general","lang":"en","content":"I don't like unity default skybox. Could you make a new one with night sky?"},{"conv":"dde2a46b","type":"query","domain":"general","lang":"en","content":"What is proper mesh count for 3D character in realistic environment game"},{"conv":"296c608f","type":"query","domain":"material_shader","lang":"ko","content":"이 디렉토리 용량이 너무 많이 차지해서 james 라는 캐릭터의 urp 소스만 남기고 싶다. URP 어셋이 참조하고 있는 소스는 지우지 말고 HDRP와 built in 어셋만 지우려면 어떻게 할까"},{"conv":"4d3a0f1d","type":"debug","domain":"general","lang":"ko","content":"지금 콘솔창의 에러들 현황에 대해 확인해줘. 고칠 가치가 있는 작업인지 판단하자"},{"conv":"09762a0c","type":"optimization","domain":"scene","lang":"ko","content":"이 씬에서 불필요한 라이트들은 모두 baked로 바꾸는것이 퍼포먼스상 좋을 것 같은데 맞나"},{"conv":"c9fa145e","type":"query","domain":"lighting","lang":"ko","content":"lightmode가 realtime으로 override 되어 있다고 한다. 어떤 스크립트가 그렇게 하는지 찾아달라"},{"conv":"654c61e3","type":"creation","domain":"general","lang":"ko","content":"이 폴더 안에 있는 프리팹으로 공포 탈출 게임을 위한 스테이지 만들어줘"},{"conv":"294c7782","type":"query","domain":"general","lang":"ko","content":"이 캐릭터의 걷기 모션을 바꾸고 싶다 어떻게 하면 되나"},{"conv":"6e7f2f4c","type":"debug","domain":"lighting","lang":"ko","content":"지금 카메라를 선택하면 directional light 에 pivot point 가 지정되는데 무슨 문제이지?"},{"conv":"5a201d5c","type":"debug","domain":"general","lang":"ko","content":"지금 새로운 walk_tired2를 적용해도 키보드를 누르면 원점에서 멀리 떨어진 모션이 출력되는 문제가 있다."},{"conv":"5db7b3d6","type":"other","domain":"physics","lang":"ko","content":"클로스 시뮬레이션을 통해서 지오메트리 메쉬 위에 물리적으로 자연스럽게 걸쳐져 있는 천을 시뮬레이션 하려면?"},{"conv":"b805d4df","type":"creation","domain":"scene","lang":"ko","content":"이 캐릭터 오브젝트에 있는 cinemachine 관련 어셋들이 outdated 되어 있다. 최신 버전으로 업데이트 해줘"},{"conv":"e7e6c501","type":"config","domain":"animation","lang":"ko","content":"이 캐릭터에 애니메이터 설정해서 walk 와 idle 이 동작할수 있게 해줘. Assets/Animation 아래에 있는 모션들을 사용해"},{"conv":"9669cf99","type":"creation","domain":"audio","lang":"ko","content":"BGM 만들어줘 어둡게"},{"conv":"fcf5e1f5","type":"debug","domain":"general","lang":"ko","content":"이 오류들 확인해줘"},{"conv":"2808abf9","type":"debug","domain":"general","lang":"ko","content":"이 오류는 뭐지"},{"conv":"2ca66fd1","type":"other","domain":"animation","lang":"ko","content":"애니메이션 블렌드 트리 설정 진행해줘"},{"conv":"110d4773","type":"creation","domain":"scene","lang":"ko","content":"이 씬에 공포 분위기에 맞게 조명 전체를 다시 셋업해줘"},{"conv":"9cd9d8ce","type":"other","domain":"vfx","lang":"ko","content":"Buto 안개 볼륨 설정을 최종 확인하고 씬에 적용해줘"},{"conv":"e3a45538","type":"query","domain":"physics","lang":"ko","content":"리지드바디 없이 캐릭터 콜리전 처리하는 방법은?"},{"conv":"24727347","type":"other","domain":"general","lang":"ko","content":"씬 전체 라이팅 베이크 완료했는데 퍼포먼스 확인해줘"}];
+
+const PALETTE = ['#378ADD','#1D9E75','#D85A30','#BA7517','#7F77DD','#639922','#888780','#D4537E','#0F6E56','#854F0B'];
+
+function makeDoughnut(id, labels, values, colors) {
+  const total = values.reduce((a,b)=>a+b,0);
+  return new Chart(document.getElementById(id), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}건 (${Math.round(ctx.raw/total*100)}%)` } }
+      },
+      cutout: '62%'
+    }
+  });
+}
+
+function makeHBar(id, labels, values, color) {
+  const h = Math.max(labels.length * 28 + 50, 120);
+  document.getElementById(id).parentElement.style.height = h + 'px';
+  return new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values, backgroundColor: color, borderRadius: 3 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw}건` } } },
+      scales: {
+        x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { size: 11 } } },
+        y: { ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+}
+
+const reqColors = ['#888780','#378ADD','#1D9E75','#E24B4A','#BA7517','#7F77DD','#639922'];
+const reqLeg = document.getElementById('leg-req');
+REQ_DATA.forEach((d,i) => {
+  reqLeg.innerHTML += `<span class="leg-item"><span class="leg-sq" style="background:${reqColors[i]}"></span>${d.label} ${d.count}</span>`;
+});
+makeDoughnut('chartReq', REQ_DATA.map(d=>d.label), REQ_DATA.map(d=>d.count), reqColors);
+
+makeHBar('chartDomain', DOMAIN_DATA.map(d=>d.label), DOMAIN_DATA.map(d=>d.count), '#378ADD99');
+
+const diffColors = ['#639922','#BA7517','#E24B4A'];
+const diffLeg = document.getElementById('leg-diff');
+DIFF_DATA.forEach((d,i) => {
+  diffLeg.innerHTML += `<span class="leg-item"><span class="leg-sq" style="background:${diffColors[i]}"></span>${d.label} ${d.count}건</span>`;
+});
+makeDoughnut('chartDiff', DIFF_DATA.map(d=>d.label), DIFF_DATA.map(d=>d.count), diffColors);
+
+let assetChart = makeDoughnut('chartAsset', ATYPE_DATA.map(d=>d.label), ATYPE_DATA.map(d=>d.count), PALETTE);
+
+window.showAssetTab = function(tab, btn) {
+  document.querySelectorAll('#asset-tabs .tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  assetChart.destroy();
+  assetChart = tab === 'type'
+    ? makeDoughnut('chartAsset', ATYPE_DATA.map(d=>d.label), ATYPE_DATA.map(d=>d.count), PALETTE)
+    : makeDoughnut('chartAsset', MODEL_DATA.map(d=>d.label), MODEL_DATA.map(d=>d.count), PALETTE);
+};
+
+makeHBar('chartIter', ITER_DATA.map(d=>d.label), ITER_DATA.map(d=>d.count), '#7F77DD99');
+
+const crossBody = document.getElementById('cross-body');
+CROSS.req_types.forEach((rt, i) => {
+  const vals = CROSS.values[i];
+  const hc = v => v===0?'heat-0':v<=2?'heat-1':v<=4?'heat-2':v<=6?'heat-3':v<=10?'heat-4':'heat-5';
+  crossBody.innerHTML += `<tr><td>${rt}</td>${vals.map(v=>`<td class="${hc(v)}">${v||'—'}</td>`).join('')}</tr>`;
+});
+
+const allMsgs = MSGS;
+window.filterMsgs = function(filter, btn) {
+  document.querySelectorAll('#filter-bar .tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const body = document.getElementById('msg-body');
+  body.innerHTML = '';
+  const filtered = filter==='all' ? allMsgs : allMsgs.filter(m=>m.type===filter);
+  filtered.slice(0,25).forEach(m => {
+    body.innerHTML += `<tr>
+      <td style="font-family:monospace;font-size:11px;color:#888;white-space:nowrap">${m.conv}</td>
+      <td><span class="badge b-${m.type}">${m.type}</span></td>
+      <td style="color:#888;white-space:nowrap;font-size:11px">${m.domain.split(',')[0]}</td>
+      <td style="color:#888;font-size:11px">${m.lang}</td>
+      <td style="max-width:320px;word-break:break-word">${m.content}</td>
+    </tr>`;
+  });
+};
+
+filterMsgs('all', document.querySelector('#filter-bar .tab-btn'));
+</script>
+</body>
+</html>

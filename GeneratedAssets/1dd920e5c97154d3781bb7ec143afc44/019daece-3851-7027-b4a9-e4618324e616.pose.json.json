@@ -1,0 +1,12 @@
+{
+    "asset": "1dd920e5c97154d3781bb7ec143afc44",
+    "fileName": "019daece-3851-7027-b4a9-e4618324e616.pose.json",
+    "prompt": "A grotesque creature stands in a disturbing, asymmetrical pose. Its spine is unnaturally contorted, with the upper body severely hunched and twisted to one side. The neck is hyper-extended at a sickening angle, causing the head to loll to the shoulder. Both arms hang limply with fingers twitching erratically. The creature exhibits constant, shallow spasms in the torso and limbs, creating a restless and predatory rhythm. The legs are bent at awkward angles, with the weight shifting slowly and unsteadily from one foot to the other as if struggling against gravity.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 400414783,
+    "w3CTraceId": "2d68d269a7009e517d8d6d0571d7fe1e",
+    "feedback": 0,
+    "isTrimmed": false
+}

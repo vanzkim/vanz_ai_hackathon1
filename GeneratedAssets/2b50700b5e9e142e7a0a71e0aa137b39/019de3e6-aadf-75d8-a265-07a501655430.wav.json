@@ -1,0 +1,14 @@
+{
+    "asset": "2b50700b5e9e142e7a0a71e0aa137b39",
+    "fileName": "019de3e6-aadf-75d8-a265-07a501655430.wav",
+    "prompt": "\"I am waiting. Right here.\" Speak this script in a distant slowly, echoing female voice in her early 20s. The tone is melancholic and breathy, sounding like a ghostly whisper from a far-off empty space. Apply heavy cinematic reverb and a high-pass filter to make the voice feel spatially remote and ethereal.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "4285b4029e93d00731ed8280cf8efd7d",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

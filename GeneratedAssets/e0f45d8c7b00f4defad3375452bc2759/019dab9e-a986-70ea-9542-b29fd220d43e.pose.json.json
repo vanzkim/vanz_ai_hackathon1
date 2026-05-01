@@ -1,0 +1,12 @@
+{
+    "asset": "e0f45d8c7b00f4defad3375452bc2759",
+    "fileName": "019dab9e-a986-70ea-9542-b29fd220d43e.pose.json",
+    "prompt": "a girl silently sit and looking distant",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1181619152,
+    "w3CTraceId": "7e844831c4ca947c05a8940d5eeceec1",
+    "feedback": 0,
+    "isTrimmed": false
+}

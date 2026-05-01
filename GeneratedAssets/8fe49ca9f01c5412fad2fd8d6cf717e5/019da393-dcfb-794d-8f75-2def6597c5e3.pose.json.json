@@ -1,0 +1,12 @@
+{
+    "asset": "8fe49ca9f01c5412fad2fd8d6cf717e5",
+    "fileName": "019da393-dcfb-794d-8f75-2def6597c5e3.pose.json",
+    "prompt": "A person expresses extreme refusal by violently and frantically snapping their head side to side at an erratic, superhuman speed. The motion is so powerful that it causes the shoulders and chest to jerk uncontrollably, as if trying to break free from invisible restraints.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1466440256,
+    "w3CTraceId": "76234c30e529f1e9c12b6a5ea02c895b",
+    "feedback": 0,
+    "isTrimmed": false
+}

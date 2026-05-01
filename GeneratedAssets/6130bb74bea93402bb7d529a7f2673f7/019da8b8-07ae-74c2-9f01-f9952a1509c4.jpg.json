@@ -1,0 +1,27 @@
+{
+    "asset": "6130bb74bea93402bb7d529a7f2673f7",
+    "fileName": "019da8b8-07ae-74c2-9f01-f9952a1509c4.jpg",
+    "prompt": "Clear vast desert landscape under a bright noon sun, realistic sand dunes, seamless blue sky, no text, no artifacts, high quality, 8k resolution",
+    "negativePrompt": "",
+    "model": "b6290c67-53d6-43cc-9186-ef81564a137b",
+    "modelName": "Standard",
+    "customSeed": -1,
+    "w3CTraceId": "3412f65daab07de2f8daa170da612fc3",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

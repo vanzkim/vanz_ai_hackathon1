@@ -1,0 +1,50 @@
+{
+  "Operations": [
+    {
+      "Operation": "AddComponent",
+      "TargetInstanceID": 319108,
+      "TypeName": "VanzAI.Triggers.TimedActivationTrigger"
+    },
+    {
+      "Operation": "AddComponent",
+      "TargetInstanceID": 319108,
+      "TypeName": "UnityEngine.AudioSource"
+    },
+    {
+      "Operation": "SetProperty",
+      "TargetInstanceID": 319108,
+      "PropertyPath": "targetObject",
+      "Value": {
+        "InstanceID": -114954
+      }
+    },
+    {
+      "Operation": "SetProperty",
+      "TargetInstanceID": 319108,
+      "PropertyPath": "impactSfx",
+      "Value": {
+        "InstanceID": 79450
+      }
+    },
+    {
+      "Operation": "SetProperty",
+      "TargetInstanceID": 319108,
+      "PropertyPath": "duration",
+      "Value": 2.5
+    },
+    {
+      "Operation": "SetProperty",
+      "TargetInstanceID": 319108,
+      "PropertyPath": "audioSource",
+      "Value": {
+        "ComponentType": "AudioSource"
+      }
+    },
+    {
+      "Operation": "SetProperty",
+      "TargetInstanceID": -114954,
+      "PropertyPath": "m_IsActive",
+      "Value": false
+    }
+  ]
+}

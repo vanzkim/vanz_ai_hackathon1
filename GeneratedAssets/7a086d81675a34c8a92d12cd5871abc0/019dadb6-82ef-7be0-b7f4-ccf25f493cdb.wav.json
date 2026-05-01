@@ -1,0 +1,14 @@
+{
+    "asset": "7a086d81675a34c8a92d12cd5871abc0",
+    "fileName": "019dadb6-82ef-7be0-b7f4-ccf25f493cdb.wav",
+    "prompt": "A sudden, sharp male yelp of shock upon snapping awake, followed immediately by sustained, heavy, and ragged breathing. The initial scream is short and explosive, giving way to a long sequence of labored panting and desperate gasps for air. The sound should emphasize the rhythmic, shaky exhales of someone suffering from extreme anxiety and disorientation.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "e571a88d5373d2069050c4e2e1f62395",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de22b-93f1-7cb2-b705-17e0ee2fb0d2.pose.json",
+    "prompt": "young girl sitting on a chair, leaning her body forward. Her hands are placed neatly on her knees\n",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 82148962,
+    "w3CTraceId": "c88bcae9da9d7b0abf396af1a5fcad3e",
+    "feedback": 0,
+    "isTrimmed": false
+}

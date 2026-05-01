@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de233-4ff8-78e3-8b87-23eb1af05c78.pose.json",
+    "prompt": "A young girl sitting hunched forward on front, both arms close tight, gaze fixed downward. Static for the first 3 seconds, then a fluid head rotation towards the top right",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1195016939,
+    "w3CTraceId": "b84fc25689ca39274999baa838ed4de3",
+    "feedback": 0,
+    "isTrimmed": false
+}

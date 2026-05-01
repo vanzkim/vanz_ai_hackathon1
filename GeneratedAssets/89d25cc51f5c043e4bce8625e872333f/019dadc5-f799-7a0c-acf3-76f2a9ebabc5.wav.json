@@ -1,0 +1,14 @@
+{
+    "asset": "89d25cc51f5c043e4bce8625e872333f",
+    "fileName": "019dadc5-f799-7a0c-acf3-76f2a9ebabc5.wav",
+    "prompt": "A haunting female voice echoing from a distance, speaking the phrase 'You were hiding here.' with a tone of chilling realization and bitter resentment. The delivery is no longer soft, but sharp and accusatory, as if she has finally found the person responsible. The sound is layered with vast, surreal reverb, yet the voice pierces through the atmosphere with a cold, vengeful edge and a sense of grim satisfaction.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "9c2f26bbdf579a9396cf68f6168e9447",
+    "feedback": 0,
+    "duration": 8.899999618530274,
+    "autoTrim": false,
+    "hasReference": false
+}

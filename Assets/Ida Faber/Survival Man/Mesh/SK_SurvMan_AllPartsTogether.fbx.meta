@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 5b8380addc778da478d07f557262d2db
+AssetOrigin:
+  serializedVersion: 1
+  productId: 202059
+  packageName: Customizable Survivors Pack
+  packageVersion: 1.0
+  assetPath: Assets/Ida Faber/Survival Man/Mesh/SK_SurvMan_AllPartsTogether.fbx
+  uploadId: 561683
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 24200
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -141,8 +148,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -165,6 +170,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -182,6 +188,9 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -192,6 +201,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -627,101 +637,6 @@ ModelImporter:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_JACKET_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_VEST_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_JACKET_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_TSHIRT_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_JACKET_03
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_TSHIRT_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PANTS_03
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PANTS_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PANTS_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_VEST_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_SHOES_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_SHOES_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_GLASSES_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_HAIR_SHORT_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_HAIR_SHORT_01_forHats
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_HAIR_SHORT_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_BACKPACK
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: -0.033941574}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_HAIR_LONG
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_HAIR_LONG_forHats
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: group1
       parentName: SK_SurvMan_AllPartsTogether(Clone)
       position: {x: -0, y: 0, z: 0.03672}
@@ -730,121 +645,6 @@ ModelImporter:
     - name: SK_SURVMAN_BODY_FULL
       parentName: group1
       position: {x: -0, y: 0, z: -0.036722854}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_BEARD_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_BEARD_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_BEARD_03
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_HAT_03
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0.001477642, y: 1.7831353, z: -0.009846902}
-      rotation: {x: -0.48833355, y: 0.5257877, z: 0.5095281, w: 0.474825}
-      scale: {x: 9.003561, y: 8.193242, z: 9.0035715}
-    - name: SK_SURVMAN_HAT_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0.0006043161, y: -0.027887646, z: -0.021869816}
-      rotation: {x: 0.035279773, y: -0, z: -0, w: 0.9993775}
-      scale: {x: 0.8249249, y: 0.8249249, z: 0.8249249}
-    - name: SK_SURVMAN_HAT_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: -0.029220078, z: -0.007631622}
-      rotation: {x: 0.028768715, y: -0, z: -0, w: 0.9995861}
-      scale: {x: 0.8409771, y: 0.8409771, z: 0.8409771}
-    - name: SK_SURVMAN_HEAD
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_08
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_12
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_01
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: -0.0000028562545}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_03
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: -0.0000028562545}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_02
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: -0.0000028562545}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_11
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_10
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_04
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_05
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_06
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_07
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_PART_09
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_HEAD_BLENDSHAPES
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_BEARD_01_BLENDSHAPES
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_BEARD_02_BLENDSHAPES
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: SK_SURVMAN_BEARD_03_BLENDSHAPES
-      parentName: SK_SurvMan_AllPartsTogether(Clone)
-      position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: root
@@ -907,6 +707,111 @@ ModelImporter:
       position: {x: -0.09750666, y: 0.001470719, z: -0.00020347799}
       rotation: {x: 5.514805e-17, y: -1.08293315e-16, z: -0.02425261, w: 0.9997059}
       scale: {x: 1, y: 1, z: 1}
+    - name: clavicle_l
+      parentName: spine_03
+      position: {x: -0.20804909, y: -0.07463033, z: -0.027020212}
+      rotation: {x: 0.1408629, y: -0.7403498, z: -0.04496566, w: 0.6557575}
+      scale: {x: 1, y: 1, z: 1}
+    - name: upperarm_l
+      parentName: clavicle_l
+      position: {x: -0.15341356, y: 0.010232747, z: 0.0155939255}
+      rotation: {x: 0.027623074, y: 0.042563867, z: 0.050362587, w: 0.9974412}
+      scale: {x: 1, y: 1, z: 1}
+    - name: lowerarm_l
+      parentName: upperarm_l
+      position: {x: -0.2911693, y: -0.047810555, z: 0.0065402607}
+      rotation: {x: -0.05710163, y: 0.040909406, z: 0.14561827, w: 0.98684406}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hand_l
+      parentName: lowerarm_l
+      position: {x: -0.26007134, y: 0.01911011, z: -0.0001443218}
+      rotation: {x: -0.6137104, y: 0.025703687, z: 0.031543616, w: 0.78848207}
+      scale: {x: 1, y: 1, z: 1}
+    - name: index_01_l
+      parentName: hand_l
+      position: {x: -0.1135021, y: 0.030014131, z: -0.02194938}
+      rotation: {x: 0.13364086, y: 0.0007585673, z: -0.109655, w: 0.98494434}
+      scale: {x: 1, y: 1, z: 1}
+    - name: index_02_l
+      parentName: index_01_l
+      position: {x: -0.040423244, y: 0.007616935, z: -0.0015871904}
+      rotation: {x: 0.0097882105, y: 0.09290721, z: 0.11420193, w: 0.98905534}
+      scale: {x: 1, y: 1, z: 1}
+    - name: index_03_l
+      parentName: index_02_l
+      position: {x: -0.0154763255, y: 0.008043013, z: -0.0043019685}
+      rotation: {x: 0.010611142, y: -0.007850868, z: 0.08285518, w: 0.9964742}
+      scale: {x: 1, y: 1, z: 1}
+    - name: middle_01_l
+      parentName: hand_l
+      position: {x: -0.11077452, y: 0.028777398, z: 0.0020891794}
+      rotation: {x: 0.024551973, y: 0.048389617, z: -0.114286736, w: 0.9919648}
+      scale: {x: 1, y: 1, z: 1}
+    - name: middle_02_l
+      parentName: middle_01_l
+      position: {x: -0.04877155, y: 0.008943492, z: -0.0034455054}
+      rotation: {x: -0.033713922, y: 0.044065688, z: 0.22999462, w: 0.97160906}
+      scale: {x: 1, y: 1, z: 1}
+    - name: middle_03_l
+      parentName: middle_02_l
+      position: {x: -0.016070412, y: 0.013708967, z: -0.0026739717}
+      rotation: {x: 0.00162142, y: 0.038867, z: 0.13362382, w: 0.99026835}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pinky_01_l
+      parentName: hand_l
+      position: {x: -0.10018253, y: 0.034732375, z: 0.042161934}
+      rotation: {x: -0.1477334, y: 0.14342907, z: -0.061565112, w: 0.97663337}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pinky_02_l
+      parentName: pinky_01_l
+      position: {x: -0.028044976, y: 0.008137482, z: -0.0030265795}
+      rotation: {x: -0.041411605, y: -0.053442728, z: 0.24025513, w: 0.96835244}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pinky_03_l
+      parentName: pinky_02_l
+      position: {x: -0.010494858, y: 0.011198137, z: 0.0006518947}
+      rotation: {x: 0.0035809635, y: -0.033796374, z: -0.008930303, w: 0.99938244}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ring_01_l
+      parentName: hand_l
+      position: {x: -0.10791977, y: 0.029545948, z: 0.02344037}
+      rotation: {x: -0.10528485, y: 0.086334705, z: -0.10282404, w: 0.98533684}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ring_02_l
+      parentName: ring_01_l
+      position: {x: -0.043268852, y: 0.008711137, z: -0.0021356083}
+      rotation: {x: -0.010684098, y: 0.0119982455, z: 0.11886996, w: 0.9927799}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ring_03_l
+      parentName: ring_02_l
+      position: {x: -0.014880823, y: 0.008106607, z: -0.0010468175}
+      rotation: {x: -0.00019882337, y: -0.02625777, z: 0.112213, w: 0.99333715}
+      scale: {x: 1, y: 1, z: 1}
+    - name: thumb_01_l
+      parentName: hand_l
+      position: {x: -0.02932856, y: 0.014035551, z: -0.01754734}
+      rotation: {x: 0.57302237, y: -0.3351915, z: 0.26174918, w: 0.7005565}
+      scale: {x: 1, y: 1, z: 1}
+    - name: thumb_02_l
+      parentName: thumb_01_l
+      position: {x: -0.058983218, y: 0.013302901, z: -0.00818075}
+      rotation: {x: 0.0025856777, y: -0.085910134, z: -0.12811232, w: 0.9880284}
+      scale: {x: 1, y: 1, z: 1}
+    - name: thumb_03_l
+      parentName: thumb_02_l
+      position: {x: -0.024510289, y: 0.0009483781, z: 0.00006625173}
+      rotation: {x: 0.021399075, y: -0.001883369, z: 0.107937604, w: 0.9939256}
+      scale: {x: 1, y: 1, z: 1}
+    - name: lowerarm_twist_01_l
+      parentName: lowerarm_l
+      position: {x: -0.14000362, y: 0.009952874, z: 0.00019333915}
+      rotation: {x: -0.11762727, y: 4.8235062e-17, z: 5.713422e-18, w: 0.9930578}
+      scale: {x: 1, y: 1, z: 1}
+    - name: upperarm_twist_01_l
+      parentName: upperarm_l
+      position: {x: -0.00500481, y: -0.00000026248856, z: -0.000003045509}
+      rotation: {x: -0.1732348, y: 4.838787e-18, z: -6.255763e-17, w: 0.98488057}
+      scale: {x: 1, y: 1, z: 1}
     - name: clavicle_r
       parentName: spine_03
       position: {x: -0.20805138, y: -0.07463076, z: 0.027020266}
@@ -965,7 +870,7 @@ ModelImporter:
     - name: pinky_02_r
       parentName: pinky_01_r
       position: {x: 0.0280461, y: -0.00813772, z: 0.0030264165}
-      rotation: {x: -0.041411903, y: -0.053442456, z: 0.2402777, w: 0.96834683}
+      rotation: {x: -0.041411906, y: -0.05344246, z: 0.24027771, w: 0.9683469}
       scale: {x: 1, y: 1, z: 1}
     - name: pinky_03_r
       parentName: pinky_02_r
@@ -975,7 +880,7 @@ ModelImporter:
     - name: ring_01_r
       parentName: hand_r
       position: {x: 0.107919216, y: -0.02954559, z: -0.023439936}
-      rotation: {x: -0.10528602, y: 0.08632689, z: -0.10281575, w: 0.9853382}
+      rotation: {x: -0.105286025, y: 0.0863269, z: -0.102815755, w: 0.9853383}
       scale: {x: 1, y: 1, z: 1}
     - name: ring_02_r
       parentName: ring_01_r
@@ -1022,110 +927,35 @@ ModelImporter:
       position: {x: -0.14732875, y: -0.010313998, z: 4.995683e-16}
       rotation: {x: 2.6144228e-17, y: -1.2653215e-16, z: -0.1335421, w: 0.99104315}
       scale: {x: 1, y: 1, z: 1}
-    - name: clavicle_l
-      parentName: spine_03
-      position: {x: -0.20804909, y: -0.07463033, z: -0.027020212}
-      rotation: {x: 0.14086291, y: -0.7403499, z: -0.044965662, w: 0.65575755}
+    - name: thigh_l
+      parentName: pelvis
+      position: {x: 0.002213214, y: -0.0071841455, z: -0.07820339}
+      rotation: {x: 0.073704936, y: 0.062138934, z: 0.008584328, w: 0.9953053}
       scale: {x: 1, y: 1, z: 1}
-    - name: upperarm_l
-      parentName: clavicle_l
-      position: {x: -0.15341356, y: 0.010232747, z: 0.0155939255}
-      rotation: {x: 0.027623074, y: 0.042563867, z: 0.050362587, w: 0.9974412}
+    - name: calf_l
+      parentName: thigh_l
+      position: {x: 0.4633595, y: 0.0050315675, z: 0.0011844159}
+      rotation: {x: -0.04888427, y: -0.018863913, z: 0.06552232, w: 0.99647444}
       scale: {x: 1, y: 1, z: 1}
-    - name: lowerarm_l
-      parentName: upperarm_l
-      position: {x: -0.2911693, y: -0.047810555, z: 0.0065402607}
-      rotation: {x: -0.057101626, y: 0.040909402, z: 0.14561826, w: 0.986844}
+    - name: calf_twist_01_l
+      parentName: calf_l
+      position: {x: 0.20498024, y: -0.013835453, z: -0.00007806091}
+      rotation: {x: 0.07950923, y: -0.011063515, z: 0.031191178, w: 0.9962846}
       scale: {x: 1, y: 1, z: 1}
-    - name: hand_l
-      parentName: lowerarm_l
-      position: {x: -0.26007134, y: 0.01911011, z: -0.0001443218}
-      rotation: {x: -0.6137104, y: 0.025703687, z: 0.031543616, w: 0.78848207}
+    - name: foot_l
+      parentName: calf_l
+      position: {x: 0.45998526, y: -0.03100898, z: 0.004164946}
+      rotation: {x: -0.0058857696, y: -0.031991273, z: -0.07035481, w: 0.9969916}
       scale: {x: 1, y: 1, z: 1}
-    - name: index_01_l
-      parentName: hand_l
-      position: {x: -0.1135021, y: 0.030014131, z: -0.02194938}
-      rotation: {x: 0.13364086, y: 0.0007585673, z: -0.109655, w: 0.98494434}
+    - name: ball_l
+      parentName: foot_l
+      position: {x: 0.08353277, y: -0.14048505, z: -0.018203221}
+      rotation: {x: 0.00008008883, y: -0.000029605244, z: 0.7186337, w: 0.6953888}
       scale: {x: 1, y: 1, z: 1}
-    - name: index_02_l
-      parentName: index_01_l
-      position: {x: -0.040423244, y: 0.007616935, z: -0.0015871904}
-      rotation: {x: 0.0097882105, y: 0.09290721, z: 0.11420193, w: 0.98905534}
-      scale: {x: 1, y: 1, z: 1}
-    - name: index_03_l
-      parentName: index_02_l
-      position: {x: -0.0154763255, y: 0.008043013, z: -0.0043019685}
-      rotation: {x: 0.010611142, y: -0.007850868, z: 0.08285518, w: 0.9964742}
-      scale: {x: 1, y: 1, z: 1}
-    - name: middle_01_l
-      parentName: hand_l
-      position: {x: -0.11077452, y: 0.028777398, z: 0.0020891794}
-      rotation: {x: 0.024551973, y: 0.048389617, z: -0.114286736, w: 0.9919648}
-      scale: {x: 1, y: 1, z: 1}
-    - name: middle_02_l
-      parentName: middle_01_l
-      position: {x: -0.04877155, y: 0.008943492, z: -0.0034455054}
-      rotation: {x: -0.033713922, y: 0.044065688, z: 0.22999462, w: 0.97160906}
-      scale: {x: 1, y: 1, z: 1}
-    - name: middle_03_l
-      parentName: middle_02_l
-      position: {x: -0.016070412, y: 0.013708967, z: -0.0026739717}
-      rotation: {x: 0.00162142, y: 0.038867, z: 0.13362382, w: 0.99026835}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pinky_01_l
-      parentName: hand_l
-      position: {x: -0.10018253, y: 0.034732375, z: 0.042161934}
-      rotation: {x: -0.14773339, y: 0.14342906, z: -0.06156511, w: 0.9766333}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pinky_02_l
-      parentName: pinky_01_l
-      position: {x: -0.028044976, y: 0.008137482, z: -0.0030265795}
-      rotation: {x: -0.041411605, y: -0.053442728, z: 0.24025513, w: 0.96835244}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pinky_03_l
-      parentName: pinky_02_l
-      position: {x: -0.010494858, y: 0.011198137, z: 0.0006518947}
-      rotation: {x: 0.0035809635, y: -0.033796374, z: -0.008930303, w: 0.99938244}
-      scale: {x: 1, y: 1, z: 1}
-    - name: ring_01_l
-      parentName: hand_l
-      position: {x: -0.10791977, y: 0.029545948, z: 0.02344037}
-      rotation: {x: -0.10528484, y: 0.0863347, z: -0.10282403, w: 0.9853368}
-      scale: {x: 1, y: 1, z: 1}
-    - name: ring_02_l
-      parentName: ring_01_l
-      position: {x: -0.043268852, y: 0.008711137, z: -0.0021356083}
-      rotation: {x: -0.010684098, y: 0.0119982455, z: 0.11886996, w: 0.9927799}
-      scale: {x: 1, y: 1, z: 1}
-    - name: ring_03_l
-      parentName: ring_02_l
-      position: {x: -0.014880823, y: 0.008106607, z: -0.0010468175}
-      rotation: {x: -0.00019882337, y: -0.02625777, z: 0.112213, w: 0.99333715}
-      scale: {x: 1, y: 1, z: 1}
-    - name: thumb_01_l
-      parentName: hand_l
-      position: {x: -0.02932856, y: 0.014035551, z: -0.01754734}
-      rotation: {x: 0.57302237, y: -0.3351915, z: 0.26174918, w: 0.7005565}
-      scale: {x: 1, y: 1, z: 1}
-    - name: thumb_02_l
-      parentName: thumb_01_l
-      position: {x: -0.058983218, y: 0.013302901, z: -0.00818075}
-      rotation: {x: 0.0025856777, y: -0.085910134, z: -0.12811232, w: 0.9880284}
-      scale: {x: 1, y: 1, z: 1}
-    - name: thumb_03_l
-      parentName: thumb_02_l
-      position: {x: -0.024510289, y: 0.0009483781, z: 0.00006625173}
-      rotation: {x: 0.021399075, y: -0.001883369, z: 0.107937604, w: 0.9939256}
-      scale: {x: 1, y: 1, z: 1}
-    - name: lowerarm_twist_01_l
-      parentName: lowerarm_l
-      position: {x: -0.14000362, y: 0.009952874, z: 0.00019333915}
-      rotation: {x: -0.11762727, y: 4.8235062e-17, z: 5.713422e-18, w: 0.9930578}
-      scale: {x: 1, y: 1, z: 1}
-    - name: upperarm_twist_01_l
-      parentName: upperarm_l
-      position: {x: -0.00500481, y: -0.00000026248856, z: -0.000003045509}
-      rotation: {x: -0.1732348, y: 4.838787e-18, z: -6.255763e-17, w: 0.98488057}
+    - name: thigh_twist_01_l
+      parentName: thigh_l
+      position: {x: 0.22093625, y: 0.0022923197, z: -0.00021845015}
+      rotation: {x: -0.047445264, y: -0.000021898266, z: 0.000491179, w: 0.9988738}
       scale: {x: 1, y: 1, z: 1}
     - name: thigh_r
       parentName: pelvis
@@ -1157,35 +987,215 @@ ModelImporter:
       position: {x: -0.22094014, y: -0.0022922303, z: 0.00021824868}
       rotation: {x: -0.047445264, y: -0.000021898266, z: 0.000491179, w: 0.9988738}
       scale: {x: 1, y: 1, z: 1}
-    - name: thigh_l
-      parentName: pelvis
-      position: {x: 0.002213214, y: -0.0071841455, z: -0.07820339}
-      rotation: {x: 0.073704936, y: 0.062138934, z: 0.008584328, w: 0.9953053}
+    - name: SK_SURVMAN_BACKPACK
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: -0.033941574}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: calf_l
-      parentName: thigh_l
-      position: {x: 0.4633595, y: 0.0050315675, z: 0.0011844159}
-      rotation: {x: -0.04888427, y: -0.018863913, z: 0.06552232, w: 0.99647444}
+    - name: SK_SURVMAN_BEARD_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: calf_twist_01_l
-      parentName: calf_l
-      position: {x: 0.20498024, y: -0.013835453, z: -0.00007806091}
-      rotation: {x: 0.07950923, y: -0.011063515, z: 0.031191178, w: 0.9962846}
+    - name: SK_SURVMAN_BEARD_01_BLENDSHAPES
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: foot_l
-      parentName: calf_l
-      position: {x: 0.45998526, y: -0.03100898, z: 0.004164946}
-      rotation: {x: -0.0058857696, y: -0.031991273, z: -0.07035481, w: 0.9969916}
+    - name: SK_SURVMAN_BEARD_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: ball_l
-      parentName: foot_l
-      position: {x: 0.08353277, y: -0.14048505, z: -0.018203221}
-      rotation: {x: 0.00008008883, y: -0.000029605244, z: 0.7186337, w: 0.6953888}
+    - name: SK_SURVMAN_BEARD_02_BLENDSHAPES
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: thigh_twist_01_l
-      parentName: thigh_l
-      position: {x: 0.22093625, y: 0.0022923197, z: -0.00021845015}
-      rotation: {x: -0.047445264, y: -0.000021898266, z: 0.000491179, w: 0.9988738}
+    - name: SK_SURVMAN_BEARD_03
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_BEARD_03_BLENDSHAPES
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_GLASSES_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_HAIR_LONG
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_HAIR_LONG_forHats
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_HAIR_SHORT_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_HAIR_SHORT_01_forHats
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_HAIR_SHORT_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_HAT_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: -0.029220078, z: -0.007631622}
+      rotation: {x: 0.028768715, y: -0, z: -0, w: 0.9995861}
+      scale: {x: 0.8409771, y: 0.8409771, z: 0.8409771}
+    - name: SK_SURVMAN_HAT_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0.0006043161, y: -0.027887646, z: -0.021869816}
+      rotation: {x: 0.035279773, y: -0, z: -0, w: 0.9993775}
+      scale: {x: 0.8249249, y: 0.8249249, z: 0.8249249}
+    - name: SK_SURVMAN_HAT_03
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0.001477642, y: 1.7831353, z: -0.009846902}
+      rotation: {x: -0.48833355, y: 0.5257877, z: 0.5095281, w: 0.474825}
+      scale: {x: 9.003561, y: 8.193242, z: 9.0035715}
+    - name: SK_SURVMAN_HEAD
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_HEAD_BLENDSHAPES
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_JACKET_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_JACKET_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_JACKET_03
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PANTS_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PANTS_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PANTS_03
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: -0.0000028562545}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: -0.0000028562545}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_03
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: -0.0000028562545}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_04
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_05
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_06
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_07
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_08
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_09
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_10
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_11
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_PART_12
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_SHOES_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_SHOES_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_TSHIRT_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_TSHIRT_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_VEST_01
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_SURVMAN_VEST_02
+      parentName: SK_SurvMan_AllPartsTogether(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
@@ -1205,15 +1215,9 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 202059
-  packageName: Customizable Survivors Pack
-  packageVersion: 1.0
-  assetPath: Assets/Ida Faber/Survival Man/Mesh/SK_SurvMan_AllPartsTogether.fbx
-  uploadId: 561683

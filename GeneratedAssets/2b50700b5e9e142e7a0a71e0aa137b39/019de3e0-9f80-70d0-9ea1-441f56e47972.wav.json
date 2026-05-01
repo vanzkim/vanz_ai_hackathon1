@@ -1,0 +1,14 @@
+{
+    "asset": "2b50700b5e9e142e7a0a71e0aa137b39",
+    "fileName": "019de3e0-9f80-70d0-9ea1-441f56e47972.wav",
+    "prompt": "\"A distant, echoing voice of a woman in her 20s. Somber and melancholic tone. The audio should have a heavy cinematic reverb, sounding as if she is calling from a great distance in a vast, empty space. Breathy delivery, slow tempo, with a ghostly and ethereal atmosphere. No background music, only the haunting resonance of the vocal.\"",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "567d14dc23d4cb0228581de992da0e02",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

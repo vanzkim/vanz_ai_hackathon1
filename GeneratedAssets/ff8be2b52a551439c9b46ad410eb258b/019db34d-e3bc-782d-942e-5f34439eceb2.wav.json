@@ -1,0 +1,14 @@
+{
+    "asset": "ff8be2b52a551439c9b46ad410eb258b",
+    "fileName": "019db34d-e3bc-782d-942e-5f34439eceb2.wav",
+    "prompt": "Aggressive sul ponticello string ensemble, chaotic cluster chords, screeching violins playing at the bridge, piercing high frequencies, sudden orchestral hit, 1960s vintage horror aesthetic, screeching tension, dissonant microtonal layers, sharp attack and fast decay",
+    "negativePrompt": "",
+    "model": "7df9b85a-1695-49f7-89bf-988208d5a3bc",
+    "modelName": "Meta MusicGen",
+    "customSeed": -1,
+    "w3CTraceId": "3eb507d1d8c7bc13a29854271306d790",
+    "feedback": 0,
+    "duration": 4.300000190734863,
+    "autoTrim": false,
+    "hasReference": false
+}

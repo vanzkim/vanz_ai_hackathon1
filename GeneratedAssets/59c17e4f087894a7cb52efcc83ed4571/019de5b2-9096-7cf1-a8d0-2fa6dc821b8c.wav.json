@@ -1,0 +1,15 @@
+{
+    "asset": "59c17e4f087894a7cb52efcc83ed4571",
+    "fileName": "019de5b2-9096-7cf1-a8d0-2fa6dc821b8c.wav",
+    "prompt": "a mans's scream in terror, echo, far away\n",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 2.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}

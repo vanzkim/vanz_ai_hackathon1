@@ -1,0 +1,12 @@
+{
+    "asset": "ec6017355665a4987ba244fb09cfe5e1",
+    "fileName": "019daed0-ab63-7c66-bbac-3dea93aa0fc8.pose.json",
+    "prompt": "A grotesque creature moves forward with a heavy, dragging gait. Each step is agonizingly slow and asymmetrical; one leg lunges forward at an awkward, outward angle while the other foot drags limply behind on the floor. The torso lunges violently with every stride, the contorted spine snapping forward and then recoiling. The arms are used like uneven crutches, with one hand clawing at the air and the other trailing on the ground. The head lolls and twitches with every heavy thud of the feet, creating a terrifying, predatory movement that defies normal human biomechanics.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1072098587,
+    "w3CTraceId": "f79f0e9b0d4395b293f402cc34a4b995",
+    "feedback": 0,
+    "isTrimmed": false
+}

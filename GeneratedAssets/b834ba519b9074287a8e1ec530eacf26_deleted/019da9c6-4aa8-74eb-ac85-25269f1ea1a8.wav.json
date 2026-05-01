@@ -1,0 +1,14 @@
+{
+    "asset": "b834ba519b9074287a8e1ec530eacf26",
+    "fileName": "019da9c6-4aa8-74eb-ac85-25269f1ea1a8.wav",
+    "prompt": "A woman sobbing in a distance in a large hall \"No, It can't be!\"",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "fff1b45c7570a752f168b27b7da5ecef",
+    "feedback": 0,
+    "duration": 6.199999809265137,
+    "autoTrim": false,
+    "hasReference": false
+}

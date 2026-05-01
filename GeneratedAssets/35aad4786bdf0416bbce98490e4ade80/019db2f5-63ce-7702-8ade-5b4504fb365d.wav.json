@@ -1,0 +1,14 @@
+{
+    "asset": "35aad4786bdf0416bbce98490e4ade80",
+    "fileName": "019db2f5-63ce-7702-8ade-5b4504fb365d.wav",
+    "prompt": "Dark atmospheric ambient music, suspenseful, horror game theme, slow dark piano and low drones",
+    "negativePrompt": "",
+    "model": "7df9b85a-1695-49f7-89bf-988208d5a3bc",
+    "modelName": "Meta MusicGen",
+    "customSeed": -1,
+    "w3CTraceId": "e372e0eb664f5ed19c1524f033a4046b",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

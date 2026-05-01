@@ -1,0 +1,14 @@
+{
+    "asset": "d6e13f647eeb84e988e114a49d1e565c",
+    "fileName": "019db2f4-62ca-7f72-af04-eb55bac3d230.wav",
+    "prompt": "Intermittent ragged breath, scared person, suspenseful silence between breaths",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "fe34dd3121fb4e8a442b74fddbd9c678",
+    "feedback": 0,
+    "duration": 3.0,
+    "autoTrim": false,
+    "hasReference": false
+}

@@ -1,0 +1,14 @@
+{
+    "asset": "8f41a4dd4090c483eb034049ec3f4c91",
+    "fileName": "019de3f4-4510-7e16-9f9f-3328416f6f83.wav",
+    "prompt": "걸어가면서 추워서 몸을 떠는 남자의 숨소리 ",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "06524384d8c54416b56fbd6127efd7a7",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

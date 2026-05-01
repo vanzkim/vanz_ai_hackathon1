@@ -1,0 +1,14 @@
+{
+    "asset": "34f7f0bae29ec4b15947d3000c0c2f5f",
+    "fileName": "019db354-1d10-7c38-a316-c27d866f77f2.wav",
+    "prompt": "Fierce howling blizzard outside, roaring wind gusts, blowing snow hitting the window pane, distant whistling sounds, deep rumbling, intense white noise, cold atmosphere, muffled indoor perspective.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "94e33a6e5a0ae507efcfb12e7ecf94b1",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

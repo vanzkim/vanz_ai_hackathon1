@@ -1,0 +1,12 @@
+{
+    "asset": "127a1ca6b088c4ba3b8823b159a18436",
+    "fileName": "019de3d2-a80f-7126-92f5-1a278c2dfff7.pose.json",
+    "prompt": "a man walking in cold weather\n\n",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1185070327,
+    "w3CTraceId": "79ed5b2c64e9d850672895da3aa170eb",
+    "feedback": 0,
+    "isTrimmed": false
+}

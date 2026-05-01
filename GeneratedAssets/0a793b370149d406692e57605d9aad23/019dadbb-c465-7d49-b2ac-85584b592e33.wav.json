@@ -1,0 +1,14 @@
+{
+    "asset": "ca9a9159dd0cd43baa16f0bf1dac34a1",
+    "fileName": "019dadbb-c465-7d49-b2ac-85584b592e33.wav",
+    "prompt": "A woman voice crying out in bitter resentment, shouting the words 'It’s all because of you!' with a voice cracking from emotional pain. The tone is a mix of intense anger and deep sorrow, characterized by a raw, tearful edge and a desperate, wavering delivery. The sound ends with heavy, shaky breaths that capture a sense of total collapse and despair.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "5c75643e04a9306fdae477d0a1a63700",
+    "feedback": 0,
+    "duration": 6.699999809265137,
+    "autoTrim": false,
+    "hasReference": false
+}

@@ -1,0 +1,14 @@
+{
+    "asset": "fa76b3f7189ed492aaec0fc9ef98c06f",
+    "fileName": "019db2e3-956a-7779-bf87-a6ef9193b7fe.wav",
+    "prompt": "A jingle of metallic keys shaking and rattling.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "4fdbddc053127f6bd39d2b901ae17dc8",
+    "feedback": 0,
+    "duration": 2.0,
+    "autoTrim": false,
+    "hasReference": false
+}

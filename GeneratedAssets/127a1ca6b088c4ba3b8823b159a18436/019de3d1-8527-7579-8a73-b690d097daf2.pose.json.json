@@ -1,0 +1,12 @@
+{
+    "asset": "127a1ca6b088c4ba3b8823b159a18436",
+    "fileName": "019de3d1-8527-7579-8a73-b690d097daf2.pose.json",
+    "prompt": "walk in cold weather, shivering\n",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1497466062,
+    "w3CTraceId": "0ea201bef11aceee433f2bb2cb88cd26",
+    "feedback": 0,
+    "isTrimmed": false
+}

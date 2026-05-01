@@ -1,0 +1,14 @@
+{
+    "asset": "ff8be2b52a551439c9b46ad410eb258b",
+    "fileName": "019db34d-e036-7832-958b-a7d9326ae854.wav",
+    "prompt": "High-pitched, dissonant orchestral string screeches, sharp violin stabs with heavy vibrato, Hitchcock-inspired psycho thriller SFX, jarring metallic texture, piercing staccato hits, analog tape hiss, dry acoustics, suspenseful jump scare",
+    "negativePrompt": "",
+    "model": "7df9b85a-1695-49f7-89bf-988208d5a3bc",
+    "modelName": "Meta MusicGen",
+    "customSeed": -1,
+    "w3CTraceId": "af68a30c14efb610068598fa76ae0db4",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

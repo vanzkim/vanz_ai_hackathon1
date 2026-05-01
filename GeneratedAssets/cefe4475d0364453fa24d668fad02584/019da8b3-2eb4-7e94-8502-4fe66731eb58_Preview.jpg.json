@@ -1,0 +1,12 @@
+{
+    "asset": "cefe4475d0364453fa24d668fad02584",
+    "fileName": "019da8b3-2eb4-7e94-8502-4fe66731eb58_Preview.jpg",
+    "prompt": "Seamless desert sand texture, golden sand, wind ripples, fine grains, high detail, realistic, URP material",
+    "negativePrompt": "",
+    "model": "1a149e0e-3482-46a2-be9b-de997b8829fb",
+    "modelName": "Realistic Textures 3.0",
+    "customSeed": 1673303073,
+    "w3CTraceId": "c6ffc27b1ca532a5ed440536f99d894f",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

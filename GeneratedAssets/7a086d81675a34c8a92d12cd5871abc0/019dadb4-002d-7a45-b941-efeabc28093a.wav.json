@@ -1,0 +1,14 @@
+{
+    "asset": "7a086d81675a34c8a92d12cd5871abc0",
+    "fileName": "019dadb4-002d-7a45-b941-efeabc28093a.wav",
+    "prompt": "A piercing, high-intensity male scream of pure terror upon waking up, The sound captures a visceral sense of panic, with deep, shaky inhales and rapid, shuddering exhales. Every breath sounds strained and desperate, reflecting a state of extreme shock and disorientation.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "b9949f515cf217c74b7fe24936cbcc2e",
+    "feedback": 0,
+    "duration": 7.0,
+    "autoTrim": false,
+    "hasReference": false
+}

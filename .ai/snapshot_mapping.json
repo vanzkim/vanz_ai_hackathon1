@@ -3455,6 +3455,12 @@
       "conversation_id": "6acb3b03-dc0a-47af-8be1-5a0de9c80772",
       "content": "EndingSequenceTriggern 에 닿았는데 다음 컷씬이 안나오는 이유",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "068cf2a3-1f27-453f-95b1-6b7d97232a65",
+      "conversation_id": "6acb3b03-dc0a-47af-8be1-5a0de9c80772",
+      "content": "`EndingSequenceTrigger`에 닿았을 때 다음 컷씬이 나오지 않는 원인을 분석한 결과, **컷씬을 재생하는 `PlayableDirector`의 설정 문제**로 확인되었습니다.\n\n### **원인 분석**\n1.  **트리거는 정상 작동 중:** 콘솔 로그를 확인한 결과, 플레이어가 트리거에 닿았을 때 `\"Trigger hit by: Player_Model\"`과 `\"Starting Cutscene 2\"` 메시지가 정상적으로 출력되고 있습니다.\n2.  **컷씬 스킵 현상:** 로그 상에서 `Starting Cutscene 2`와 `Cutscene 2 Finished`가 **동일한 시간(00:59:51)**에 발생했습니다. 이는 컷씬이 시작되자마자 종료된 것으로 처리되었음을 의미합니다.\n3.  **컴포넌트 설정 오류:** `Cutscene_Ending` 오브젝트의 `PlayableDirector` 설정을 확인해보니, **Initial State(초기 상태)가 `Paused`**로 되어 있습니다.\n    *   `EndingSequenceManager` 스크립트는 컷씬 오브젝트를 활성화한 후, `director.state != PlayState.Playing`(재생 중이 아님) 상태가 될 때까지 기다립니다.\n    *   하지만 `Initial State`가 `Paused`이면 활성화 직후에도 재생 상태가 아니기 때문에, 스크립트는 컷씬이 이미 끝났다고 판단하고 즉시 다음 단계(크레딧 화면)로 넘어가 버립니다.\n\n### **해결 방법**\n이 문제를 해결하려면 유니티 에디터에서 다음 설정을 변경해야 합니다.\n\n1.  **Hierarchy** 창에서 `Cutscene_Ending` 오브젝트를 선택합니다.\n2.  **Inspector** 창의 **Playable Director** 컴포넌트를 찾습니다.\n3.  **Initial State** 설정을 `Paused`에서 **`Playing`**으로 변경합니다. (또는 버전마다 표기가 다를 수 있으나 **Play On Awake** 체크박스가 있다면 체크합니다.)\n\n### **추가 확인 사항**\n*   첫 번째 컷씬인 `Cutscene_Escape`는 `Initial State`가 `Playing`으로 되어 있어 정상적으로 재생되었습니다. 두 번째 컷씬도 이와 동일하게 설정되어야 합니다.\n*   설정 변경 후 다시 트리거에 닿으면, 컷씬이 재생되는 동안 `EndingSequenceManager`가 대기하게 되어 정상적인 시퀀스를 보실 수 있습니다.\n\n콘솔 로그에 따르면 컷씬 2가 스킵된 직후 바로 `\"Showing Credits and playing music\"` 단계로 넘어갔으므로, 컷씬 설정만 수정하면 바로 해결될 것입니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

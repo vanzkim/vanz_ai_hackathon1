@@ -3251,6 +3251,12 @@
       "conversation_id": "ec75e9a0-40e2-4a82-8642-b8191b024ece",
       "content": "검은 화면이 나오는 기존의 `Reloading` 시스템을 무시하고, `MonsterCaughtHandler`에서 즉시 사용 가능한 새로운 **컷씬 더미(MonsterCaughtCutscene_New)**를 생성하여 연결했습니다.\n\n### **새로운 컷씬 설정 사항**\n\n1.  **새로운 오브젝트 생성**: \n    *   `MonsterCaughtCutscene_New`: 컷씬의 루트 오브젝트이며 `PlayableDirector`가 포함되어 있습니다.\n    *   `Vcam_MonsterCaught_New`: 영안실(Morgue)의 구석(`-19.5, -10.5, 0.5`)에서 중앙을 바라보도록 설정된 시네머신 카메라입니다. 바닥 위로 충분히 올라와 있어 검은 화면이 나오지 않습니다.\n\n2.  **타임라인 에셋 생성 및 연결**:\n    *   `Assets/Timeline/MonsterCaughtCutscene_New.playable` 에셋을 새로 생성했습니다.\n    *   이 타임라인은 5초 동안 영안실 구석을 비추는 샷으로 구성되어 있습니다.\n    *   `Main Camera`의 `CinemachineBrain`에 자동으로 바인딩되도록 설정했습니다.\n\n3.  **몬스터 핸들러(MonsterCaughtHandler) 연결**:\n    *   `Monster_GreyLady` 오브젝트에 있는 `MonsterCaughtHandler` 스크립트의 `cutsceneDirector` 필드에 이 새로운 컷씬을 직접 연결했습니다.\n    *   이제 플레이어가 몬스터에게 잡히면 자동으로 이 새로운 카메라 뷰가 재생됩니다.\n\n4.  **기존 시스템 비활성화**:\n    *   혼선을 방지하기 위해 문제가 있던 기존의 `Reloading` 오브젝트는 비활성화 처리했습니다.\n\n### **확인 방법**\n*   게임 플레이 중 `Monster_GreyLady`에게 잡혔을 때, 화면이 영안실 구석을 비추는 컷씬으로 전환되는지 확인해 주세요.\n*   카메라의 위치나 각도를 변경하고 싶으시다면 `Vcam_MonsterCaught_New` 오브젝트를 Scene 뷰에서 자유롭게 이동시키면 됩니다. (현재 제어권을 독점하던 이전의 애니메이터 등이 없어 실시간 반영이 잘 될 것입니다.)",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "f32c25b3-8c58-40e0-9b64-74205ea1746a",
+      "content": "지금 씬에서 엔딘 시퀀스는 어떤 조건에서 발동 되는가",
+      "snapshot_message_type": 0
     }
   ]
 }

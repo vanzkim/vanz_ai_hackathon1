@@ -3473,6 +3473,12 @@
       "conversation_id": "6acb3b03-dc0a-47af-8be1-5a0de9c80772",
       "content": "현재 현상은 **\"Play on Awake\" 설정과 오브젝트의 활성화(Active) 상태가 결합되어 발생**하는 전형적인 문제입니다.\n\n### **원인 분석**\n1.  **동시 시작:** `Cutscene_Escape`(컷씬 1)와 `Cutscene_Ending`(컷씬 2) 오브젝트가 씬에서 이미 켜져(Active) 있습니다. \"Play On Awake\"가 켜져 있으면 씬이 로드되자마자 두 컷씬이 **동시에** 재생을 시작합니다. (그래서 연속으로 보이거나 겹쳐 보일 수 있습니다.)\n2.  **트리거 시점엔 이미 종료됨:** 플레이어가 게임을 시작하고 첫 번째 컷씬을 본 뒤 트리거까지 이동하는 동안, `Cutscene_Ending`은 이미 백그라운드에서 재생을 끝마치고 정지(`Paused`) 상태가 됩니다.\n3.  **스크립트의 오판:** 플레이어가 트리거를 밟으면 매니저는 `Cutscene_Ending`을 켜려고 하지만 이미 켜져 있으므로 아무 일도 일어나지 않습니다. 그 후 \"재생 중인지\" 체크하는데, 이미 아까 다 재생되어 멈춘 상태이므로 컷씬이 끝났다고 판단하고 즉시 스킵해 버리는 것입니다.\n\n---\n\n### **해결 방법 (반드시 다음 단계를 따르세요)**\n\n가장 중요한 것은 **컷씬 오브젝트들을 에디터에서 미리 꺼두는 것**입니다.\n\n1.  **Hierarchy 창에서 오브젝트 비활성화:**\n    *   `Cutscene_Escape` 오브젝트를 선택하고 Inspector 맨 위 체크박스를 해제합니다. (비활성)\n    *   `Cutscene_Ending` 오브젝트를 선택하고 Inspector 맨 위 체크박스를 해제합니다. (비활성)\n    *   **결과:** Hierarchy에서 두 오브젝트 이름이 **회색**으로 보여야 합니다.\n\n2.  **Play on Awake 유지:**\n    *   두 오브젝트의 `PlayableDirector` 컴포넌트에서 **Play on Awake**는 **체크된 상태**로 둡니다.\n    *   오브젝트가 꺼져 있으면 \"Awake\"가 발생하지 않으므로 시작하자마자 재생되지 않습니다.\n\n### **작동 원리**\n이렇게 설정하면 다음과 같이 정상적으로 작동합니다:\n1.  게임 시작 시 컷씬들이 꺼져 있으므로 아무것도 재생되지 않습니다.\n2.  `EndingSequenceManager`가 컷씬 1을 `SetActive(true)` 하는 순간, **그때서야** 컷씬 1의 \"Play on Awake\"가 작동하며 시작됩니다.\n3.  컷씬 1이 끝나고 플레이어가 트리거를 밟으면, 매니저가 컷씬 2를 `SetActive(true)` 합니다.\n4.  **이 시점에** 컷씬 2의 \"Play on Awake\"가 작동하여 처음부터 정상적으로 재생됩니다.\n\n**요약:** `Play on Awake`는 켜두되, **오브젝트(GameObject) 자체는 인스펙터에서 꺼두세요.**",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "52c3df25-22c7-4e6e-978e-8cbceb69bd5f",
+      "content": "컷씬에 오디오를 넣으려면?",
+      "snapshot_message_type": 0
     }
   ]
 }

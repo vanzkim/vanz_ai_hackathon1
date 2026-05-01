@@ -3275,6 +3275,12 @@
       "conversation_id": "f32c25b3-8c58-40e0-9b64-74205ea1746a",
       "content": "타임라인 컨씬을 만들려고 하는데 CM Third person camera 와 별도로 카메라를 추가해야 하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "b4db2744-fd3a-47e0-9c20-473b77170204",
+      "conversation_id": "f32c25b3-8c58-40e0-9b64-74205ea1746a",
+      "content": "타임라인으로 컷신을 만들 때, 기존에 사용 중인 **CM Third Person Camera(Virtual Camera)와 별개로 새로운 'Cinemachine Camera(Virtual Camera)'를 추가하는 것이 정석**입니다.\n\n그 이유는 다음과 같습니다:\n\n### 1. 카메라의 역할 분리\n*   **Main Camera:** 실제로 화면을 렌더링하는 본체입니다. `Cinemachine Brain` 컴포넌트가 붙어 있으며 하나만 있으면 됩니다.\n*   **Virtual Camera (CM Camera):** 카메라의 \"설정값(위치, 각도, 줌 등)\"을 가지고 있는 유령 카메라입니다.\n    *   **Gameplay Camera:** 플레이어를 따라다니는 3인칭 설정.\n    *   **Cutscene Camera:** 컷신에서 연출하고 싶은 특정 구도 설정.\n\n### 2. 타임라인에서의 활용 (Cinemachine Track)\n타임라인에 **Cinemachine Track**을 만들고, 여기에 `Main Camera`를 바인딩합니다. 그 후:\n1.  트랙 위에 **Cinemachine Shot** 클립을 배치합니다.\n2.  각 클립에 `Gameplay Camera`와 새롭게 만든 `Cutscene Camera`를 각각 할당합니다.\n3.  클립을 겹치면 두 카메라 사이의 **블렌딩(부드러운 전환)**이 자동으로 이루어집니다.\n\n### 3. 왜 기존 카메라를 그냥 쓰면 안 되나요?\n기존 3인칭 카메라의 위치나 설정을 타임라인에서 직접 수정해버리면, **컷신이 끝난 후 다시 게임플레이로 돌아왔을 때 카메라가 원래대로 복구되지 않거나 로직이 꼬일 수 있습니다.** \n\n### 추천 작업 순서:\n1.  `GameObject > Cinemachine > Cinemachine Camera`를 새로 생성합니다. (이름을 `Cutscene_Cam_01` 등으로 변경)\n2.  원하는 구도를 잡습니다.\n3.  타임라인에서 `Cinemachine Track`을 생성합니다.\n4.  새로 만든 카메라를 타임라인 클립으로 넣어서 연출합니다.\n\n**결론:** 물리적인 Unity Camera 컴포넌트는 추가할 필요 없지만, **Cinemachine Virtual Camera 오브젝트는 연출용으로 따로 만드시는 것이 훨씬 관리하기 쉽고 안전합니다.**",
+      "snapshot_message_type": 1
     }
   ]
 }

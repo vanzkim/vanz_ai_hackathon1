@@ -3491,6 +3491,12 @@
       "conversation_id": "f27711a3-f4cf-4ae1-9e13-d4ba12782168",
       "content": "엔딩 크레딧은 검은색 배경에 페이드 인 되게 고치고 싶다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_3",
+      "conversation_id": "f27711a3-f4cf-4ae1-9e13-d4ba12782168",
+      "content": "크레딧 화면은 검은색 배경에 글자가 페이드인 되고 지정된 시간이 지나거나 클릭 혹은 키보드 인풋이 감지되면 타이틀 화면으로 돌아가게 만들어야 한다.",
+      "snapshot_message_type": 0
     }
   ]
 }

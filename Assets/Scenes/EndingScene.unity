@@ -352,6 +352,8 @@ MonoBehaviour:
   creditsUI: {fileID: 1633445987}
   endingMusic: {fileID: 116642288}
   openingSceneName: OpeningScene
+  creditFadeDuration: 2
+  creditDisplayDuration: 10
 --- !u!4 &116642290
 Transform:
   m_ObjectHideFlags: 0
@@ -2178,31 +2180,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 97.05513
+      value: 99.3486
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.716061
+      value: 9.82206
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -48.8483
+      value: -45.8363
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.96666723
+      value: -0.99971724
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.0041005774
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.25603628
+      value: -0.023423271
       objectReference: {fileID: 0}
     - target: {fileID: 900793728811961057, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.000052870302
       objectReference: {fileID: 0}
     - target: {fileID: 2247472489044142637, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -2270,7 +2272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331464867356991928, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: field of view
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5324318061848895758, guid: 2db36b5cc89e843ed8c3141681ec97d9, type: 3}
       propertyPath: m_Enabled
@@ -4295,6 +4297,7 @@ GameObject:
   - component: {fileID: 1633445990}
   - component: {fileID: 1633445989}
   - component: {fileID: 1633445988}
+  - component: {fileID: 1633445991}
   m_Layer: 0
   m_Name: Credits_UI
   m_TagString: Untagged
@@ -4315,7 +4318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4360,6 +4363,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1633445991
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633445987}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1703140002
 GameObject:
   m_ObjectHideFlags: 0

@@ -3335,6 +3335,12 @@
       "conversation_id": "6d3ff097-9baf-4920-bb93-8da09b5913af",
       "content": "15분 가까이 생각할 정도로 복잡한 질문인가? 어려우면 어떤 점이 어려운지 말해달라. 그럼 더 쉬운 길을 함께 찾을 수 있다.",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "7bf06f33-960c-4dab-be41-122d129eeae1",
+      "conversation_id": "6d3ff097-9baf-4920-bb93-8da09b5913af",
+      "content": "기다려 주셔서 감사합니다. 단순히 \"예/아니오\"로 답하기보다, **현재 프로젝트의 코드 구조상 왜 컷씬용 캐릭터가 사라지지 않는지** 정확한 원인을 파악하기 위해 여러 스크립트(`EndingSequenceManager`, `CutsceneManager`, `CutsceneTrigger`)를 교차 분석하느라 시간이 다소 소요되었습니다.\n\n결론부터 말씀드리면, **해당 기능(모델 스왑 및 관리)은 `CutsceneManager`에 이미 구현되어 있지만, 현재 엔딩 씬을 담당하는 `EndingSequenceManager`가 이 기능을 사용하지 않고 수동으로 처리하고 있어** 문제가 발생하고 있습니다.\n\n### 분석된 문제의 원인\n\n1.  **통합 관리 시스템의 부재**:\n    *   프로젝트에는 `CutsceneManager`라는 잘 짜여진 시스템이 있습니다. 이 스크립트의 `EndCutscene()` 메서드는 컷씬 모델을 숨기고, 그 위치를 플레이어 모델로 복사한 뒤 플레이어를 활성화하는 기능을 완벽히 갖추고 있습니다.\n    *   하지만 엔딩 씬의 `EndingSequenceManager`는 이 시스템을 쓰지 않고 직접 `gameObject.SetActive(false)`를 호출하여 관리하고 있습니다.\n\n2.  **계층 구조의 불일치**:\n    *   현재 `EndingSequenceManager`는 `cutscene1UI`(Cutscene_Escape 오브젝트)를 비활성화하면 컷씬이 끝난다고 판단합니다.\n    *   확인 결과, **`Player_Cutscene` 모델은 `Cutscene_Escape`의 자식이 아닌 별개의 독립된 오브젝트**로 존재합니다. 따라서 `Cutscene_Escape`만 끈다고 해서 `Player_Cutscene`이 자동으로 사라지지 않습니다.\n\n3.  **코드 로직의 한계**:\n    *   `EndingSequenceManager.cs` 코드를 보면 플레이어를 끄고 켜는 로직은 있지만, 컷씬 전용 모델(`Player_Cutscene`)을 명시적으로 찾아 비활성화하는 로직이 빠져 있습니다.\n\n---\n\n### 해결을 위한 제안 (더 쉬운 길)\n\n가장 깔끔한 방법은 **기존의 `CutsceneManager` 시스템을 활용하도록 엔딩 시퀀스 코드를 수정**하는 것입니다.\n\n**방법 1: `EndingSequenceManager` 코드 수정 (권장)**\n`EndingSequenceManager.cs`에서 `CutsceneManager`를 호출하도록 수정하면 위치 동기화까지 자동으로 처리됩니다.\n\n```csharp\n// ExecuteSequence 코루틴 내부 수정 예시\n// 1. 컷씬 시작 시\nVanzAI.Managers.CutsceneManager.Instance.StartCutscene(playerCutsceneObject); \n\n// ... 타임라인 대기 ...\n\n// 2. 컷씬 종료 시\nVanzAI.Managers.CutsceneManager.Instance.EndCutscene(playerCutsceneObject);\n```\n\n**방법 2: 에디터에서 수동 설정 (코드 수정 없이)**\n만약 코드를 건드리기 어렵다면, `EndingSequenceManager`의 `OnFinished` 이벤트나 타임라인의 `Signal` 기능을 사용하여 컷씬이 끝나는 시점에 `Player_Cutscene` 오브젝트를 비활성화하도록 이벤트를 연결해야 합니다.\n\n**요약하자면:**\n기능은 이미 프로젝트 내(`CutsceneManager.cs`)에 준비되어 있으나, 엔딩 씬 구현 방식이 이를 누락하고 있습니다. **에이전트 모드로 전환해 주시면 제가 직접 이 두 시스템을 연결하여 컷씬 종료 후 모델이 정상적으로 교체되도록 수정해 드릴 수 있습니다.**",
+      "snapshot_message_type": 1
     }
   ]
 }

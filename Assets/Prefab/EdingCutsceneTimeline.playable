@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineShot
   DisplayName: 
   VirtualCamera:
-    exposedName: 
+    exposedName: a157b615fb14a4fe18b37d6cba68f324
     defaultValue: {fileID: 0}
 --- !u!114 &-1224337214640143411
 MonoBehaviour:
@@ -105,7 +105,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CinemachineShot
+    m_DisplayName: CinemachineCamera
   m_Markers:
     m_Objects: []
   TrackPriority: 0

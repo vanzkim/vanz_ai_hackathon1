@@ -3485,6 +3485,12 @@
       "conversation_id": "52c3df25-22c7-4e6e-978e-8cbceb69bd5f",
       "content": "컷씬(Cutscene)에 오디오를 추가하는 방법은 크게 3가지가 있습니다. 현재 프로젝트에서 **Timeline**과 **AudioManager** 시스템을 사용하고 있으므로, 이를 활용한 최적의 방법을 안내해 드립니다.\n\n### 1. 타임라인(Timeline)의 오디오 트랙 사용 (가장 추천)\n프로젝트에 이미 `New_Cutscene.playable`과 같은 타임라인 에셋이 존재합니다. 타임라인 내에서 시각적으로 오디오를 배치하고 동기화할 수 있어 가장 직관적입니다.\n\n*   **방법:**\n    1.  **Timeline Window**를 엽니다.\n    2.  빈 공간을 우클릭하여 **Audio Track**을 생성합니다.\n    3.  `Assets/Audio` 폴더에 있는 오디오 파일(예: `Intro_Music.wav`, `Scream.wav`)을 해당 트랙으로 드래그 앤 드롭합니다.\n    4.  컷씬의 연출에 맞춰 오디오 클립의 위치와 길이를 조절합니다.\n*   **장점:** 컷씬의 영상/애니메이션 타이밍과 오디오를 0.1초 단위로 완벽하게 맞출 수 있습니다.\n\n### 2. 타임라인 시그널(Signal)과 AudioManager 연동\n특정 시점에 BGM을 바꾸거나 전역적인 효과음을 재생해야 할 때 유용합니다. 프로젝트의 `AudioManager.cs`에는 `PlayMusic`, `PlaySFXGlobal` 등의 기능이 이미 구현되어 있습니다.\n\n*   **방법:**\n    1.  타임라인에서 **Signal Track**을 생성합니다.\n    2.  특정 프레임에 **Signal Emitter**를 추가합니다.\n    3.  씬에 있는 `AudioManager` 오브젝트의 메서드(예: `PlayMusic`)를 시그널 수신기로 연결하여 호출합니다.\n*   **활용 예시:** 컷씬이 시작될 때 긴장감 넘치는 `Meet_White_Music.wav`를 재생하도록 설정할 수 있습니다.\n\n### 3. 애니메이션 이벤트(Animation Event) 활용\n캐릭터의 특정 동작(예: 발소리, 소리 지르기)에 맞춰 소리를 내야 할 때 사용합니다.\n\n*   **방법:**\n    1.  컷씬에서 사용되는 캐릭터의 애니메이션 클립을 선택합니다.\n    2.  **Animation Window**에서 소리가 나야 하는 프레임에 이벤트를 추가합니다.\n    3.  이벤트 함수 이름에 `PlaySFX`와 같은 이름을 입력하고, 스크립트에서 `AudioManager.Instance.PlaySFX`를 호출하도록 연결합니다.\n\n---\n\n### 추천 작업 흐름\n현재 프로젝트 구조를 바탕으로 다음과 같이 시도해 보세요:\n\n1.  **배경음악(BGM):** 타임라인의 **Audio Track**에 배치하거나, 시작 시점에 **Signal**을 보내 `AudioManager.Instance.PlayMusic`으로 실행하세요.\n2.  **효과음(SFX):** `Assets/Audio/SFX`에 있는 파일들을 타임라인의 별도 **Audio Track**에 배치하여 연출 타이밍을 잡으세요.\n\n**도움이 필요하시면:** 특정 컷씬(예: `Cutscene_Ending`)에 특정 소리(예: `Scream.wav`)를 넣는 구체적인 단계가 필요하시다면 말씀해 주세요! 직접 스크립트 작성이 필요할 경우 가이드를 드릴 수 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "f27711a3-f4cf-4ae1-9e13-d4ba12782168",
+      "content": "엔딩 크레딧은 검은색 배경에 페이드 인 되게 고치고 싶다",
+      "snapshot_message_type": 0
     }
   ]
 }

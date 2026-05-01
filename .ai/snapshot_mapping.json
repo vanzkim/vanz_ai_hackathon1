@@ -3395,6 +3395,12 @@
       "conversation_id": "dc7a31d0-685b-400d-b8eb-72cbfc716694",
       "content": "이 씬에서만 카메라가 캐릭터를 따라가지 않고 고정되게 하려면?",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "dc7a31d0-685b-400d-b8eb-72cbfc716694",
+      "content": "이 씬에서만 카메라가 캐릭터를 따라가지 않고 고정되게 하려면?",
+      "snapshot_message_type": 0
     }
   ]
 }

@@ -3389,6 +3389,12 @@
       "conversation_id": "a015077f-33a7-41a0-889b-9f2a0663246c",
       "content": "오버라이드 컨트롤러를 만들었더라도, 이를 **프로젝트 폴더에 있는 프리팹 에셋(Asset)**에 적용하면 모든 씬에서 바뀌게 됩니다. \n\n**현재 씬에서만** 사용되게 하려면 반드시 **하이어라키(Hierarchy)에 있는 인스턴스**에 직접 할당해야 합니다. 방법은 다음과 같습니다:\n\n### 1. 하이어라키(Hierarchy)에서 작업하기\n*   **Project** 창이 아닌 **Hierarchy** 창에서 `Player_Model` 오브젝트를 선택합니다.\n*   인스펙터(Inspector) 창의 **Animator** 컴포넌트를 찾습니다.\n*   **Controller** 칸에 방금 만든 **Override Controller**를 드래그해서 넣습니다.\n\n### 2. 프리팹 오버라이드(Prefab Override) 상태 확인\n*   컨트롤러를 교체하면 인스턴스의 컴포넌트 이름 옆에 **파란색 선**이 생기거나, 글자가 **굵게** 변합니다. 이것이 \"이 씬의 이 오브젝트만 원본 프리팹과 다르게 설정되었다\"는 표시입니다.\n*   **주의:** 인스턴스 상단의 **Overrides** 드롭다운 메뉴에서 **Apply All**을 절대 누르지 마세요. Apply를 누르면 이 변경사항이 프리팹 원본에 저장되어 모든 씬에 적용됩니다.\n\n### 3. 더 확실한 방법 (스크립트 활용)\n만약 실수로 프리팹을 수정할까 봐 걱정된다면, 해당 씬에서만 작동하는 간단한 스크립트를 `Player_Model`에 붙여 실행 시에만 교체하게 할 수도 있습니다.\n\n```csharp\nusing UnityEngine;\n\npublic class SceneSpecificAnimator : MonoBehaviour\n{\n    public AnimatorOverrideController overrideController;\n\n    void Awake()\n    {\n        // 게임이 시작될 때만 이 씬의 애니메이터를 교체합니다.\n        GetComponent<Animator>().runtimeAnimatorController = overrideController;\n    }\n}\n```\n\n**요약:** \n별도의 설정 메뉴가 있는 것이 아니라, **\"하이어라키의 오브젝트에 직접 할당하고 프리팹에 Apply 하지 않는 것\"** 자체가 해당 씬에서만 사용하겠다는 지정이 됩니다. 유니티는 씬 파일을 저장할 때 이 \"차이점(Override)\"을 해당 씬 데이터에만 기록하기 때문입니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "dc7a31d0-685b-400d-b8eb-72cbfc716694",
+      "content": "이 씬에서만 카메라가 캐릭터를 따라가지 않고 고정되게 하려면?",
+      "snapshot_message_type": 0
     }
   ]
 }

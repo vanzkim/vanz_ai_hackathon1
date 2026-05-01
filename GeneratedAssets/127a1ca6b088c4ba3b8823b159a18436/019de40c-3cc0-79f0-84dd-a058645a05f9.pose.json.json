@@ -1,0 +1,12 @@
+{
+    "asset": "127a1ca6b088c4ba3b8823b159a18436",
+    "fileName": "019de40c-3cc0-79f0-84dd-a058645a05f9.pose.json",
+    "prompt": "a tired man walking fast in cold weather\n\n",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 191883218,
+    "w3CTraceId": "5300910c704aee1aa37a70d90459427d",
+    "feedback": 0,
+    "isTrimmed": false
+}

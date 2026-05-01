@@ -3533,6 +3533,12 @@
       "conversation_id": "e91d0da3-518d-4825-9417-ef8f3c82777b",
       "content": "키프레임을 넣었는데 플레이하면 벌어진다",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "23e42ebf-ce68-40bf-ae37-83677c85c2a8",
+      "conversation_id": "e91d0da3-518d-4825-9417-ef8f3c82777b",
+      "content": "키프레임을 넣었음에도 플레이 시 턱이 다시 벌어지는 이유는 크게 두 가지 가능성이 높습니다. 현재 프로젝트 상태를 분석한 결과, **Humanoid 리깅의 특성**과 **애니메이터 컴포넌트 간의 충돌**이 원인으로 보입니다.\n\n### 1. 원인 분석\n*   **애니메이터 중복 충돌**: 현재 `jaw` 오브젝트(ID: -2106) 자체에 `Animator` 컴포넌트가 붙어 있고, 동시에 부모인 `SK_SurvGirl_Combination09 Variant`에도 `Animator`가 있습니다.\n    *   캐릭터가 **Humanoid** 타입이기 때문에, 부모 애니메이터가 이미 '턱(Jaw)' 뼈를 제어하고 있습니다.\n    *   타임라인에서 `jaw` 오브젝트를 별도의 트랙으로 제어하려고 하면, 부모 애니메이터의 Humanoid 근육(Muscle) 값과 타임라인의 트랙 값이 서로 충돌하여 부모 애니메이션의 값이 우선순위를 점하게 됩니다.\n*   **Humanoid Muscle 우선순위**: Humanoid 캐릭터는 개별 뼈의 Transform 값보다 'Jaw Open'과 같은 근육(Muscle) 값이 우선시됩니다. 메인 애니메이션(`sit_wait2 1`)이 재생되면서 턱을 약간 벌리는 기본 값을 가지고 있을 수 있습니다.\n\n### 2. 해결 방법 (추천 순서)\n\n#### 방법 A: 오버라이드 트랙(Override Track) 사용 (가장 추천)\n별도의 `jaw` 트랙을 만들지 말고, 캐릭터 메인 트랙 아래에 '오버라이드 트랙'을 추가하여 관리하는 것이 가장 깔끔합니다.\n1.  타임라인에서 캐릭터 본체(`SK_SurvGirl_Combination09 Variant`)가 할당된 **Animation Track**을 마우스 오른쪽 버튼으로 클릭합니다.\n2.  **Add Override Track**을 선택합니다.\n3.  새로 생성된 `Override Track`의 녹화 버튼(빨간 동그라미)을 누릅니다.\n4.  `jaw` 오브젝트를 선택하고 입이 다물어지도록 회전값을 수정한 뒤 키프레임을 찍습니다.\n    *   이렇게 하면 메인 애니메이션의 턱 움직임을 무시하고 오버라이드 트랙의 값이 최종적으로 적용됩니다.\n\n#### 방법 B: Jaw 오브젝트의 Animator 컴포넌트 제거\n현재 `jaw` 오브젝트에 있는 `Animator` 컴포넌트는 불필요하며 충돌을 일으킬 수 있습니다.\n1.  Hierarchy에서 `jaw` 오브젝트를 선택합니다.\n2.  인스펙터 창에서 **Animator** 컴포넌트를 마우스 오른쪽 버튼으로 클릭하여 **Remove Component** 합니다. (부모에 이미 있으므로 자식에 있을 필요가 없습니다.)\n3.  그 후 타임라인의 `Animation Track (3)`에 `jaw` 오브젝트를 다시 바인딩(Transform으로 바인딩됨)하여 제어해 보세요.\n\n#### 방법 C: 블렌드셰이프(BlendShape) 확인\n뼈(jaw)를 닫아도 입이 벌어져 보인다면, 얼굴 메시의 블렌드셰이프가 원인일 수 있습니다.\n1.  `SK_SurvGirl_Head` 오브젝트를 선택합니다.\n2.  **Skinned Mesh Renderer** 컴포넌트의 **BlendShapes** 목록에서 `blendShape1.mouth_open` 값이 0인지 확인합니다.\n3.  만약 이 값이 애니메이션에 의해 변하고 있다면, 타임라인에 이 오브젝트를 끌어다 놓고 **Animation Track**을 만든 뒤, `mouth_open` 값을 **0**으로 고정하는 키프레임을 추가해야 합니다.\n\n**팁**: 현재 `jaw` 트랙에 기록된 X축 회전값이 `-10` 정도로 확인되는데, 이는 기본 자세(`78`도)와 차이가 큽니다. **방법 A**를 통해 메인 애니메이션 위에서 직접 값을 수정하는 것이 가장 확실한 해결책입니다.",
+      "snapshot_message_type": 1
     }
   ]
 }

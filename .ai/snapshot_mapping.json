@@ -3347,6 +3347,12 @@
       "conversation_id": "6d3ff097-9baf-4920-bb93-8da09b5913af",
       "content": "이 제안을 수행하기 위한 계획을 짜줘",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_4",
+      "conversation_id": "6d3ff097-9baf-4920-bb93-8da09b5913af",
+      "content": "execute",
+      "snapshot_message_type": 0
     }
   ]
 }

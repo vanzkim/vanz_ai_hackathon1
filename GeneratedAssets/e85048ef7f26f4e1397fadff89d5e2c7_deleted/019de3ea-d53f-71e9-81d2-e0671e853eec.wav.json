@@ -1,0 +1,14 @@
+{
+    "asset": "e85048ef7f26f4e1397fadff89d5e2c7",
+    "fileName": "019de3ea-d53f-71e9-81d2-e0671e853eec.wav",
+    "prompt": "\"I am wating. Righ here\" Speak this script in a distant slowly, echoing female voice in her early 20s. The tone is melancholic and breathy, sounding like a ghostly whisper from a far-off empty space. Apply heavy cinematic reverb and a high-pass filter to make the voice feel spatially remote and ethereal.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "48971fceb5f318e0dd3824fb422dbe4a",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

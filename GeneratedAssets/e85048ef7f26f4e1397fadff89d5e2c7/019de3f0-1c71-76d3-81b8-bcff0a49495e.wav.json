@@ -1,0 +1,14 @@
+{
+    "asset": "e85048ef7f26f4e1397fadff89d5e2c7",
+    "fileName": "019de3f0-1c71-76d3-81b8-bcff0a49495e.wav",
+    "prompt": "Cinematic blizzard ambience on a vast snowy plain. High-pitched whistling wind blowing through frozen air. Soft, muffled white noise of falling snow hitting the ground. Occasional deep, low-frequency rumbles of distant wind gusts. Cold, desolate, and lonely atmosphere. No music, no human voices, pure environmental sound effects.",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "a5891c4ea23bdea1411e08872ca85733",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

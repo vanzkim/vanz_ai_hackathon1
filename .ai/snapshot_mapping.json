@@ -3365,6 +3365,12 @@
       "conversation_id": "a015077f-33a7-41a0-889b-9f2a0663246c",
       "content": "지금씬에서만 player model의 걷기 애니메이션을 바꿔야 한다.",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_2",
+      "conversation_id": "a015077f-33a7-41a0-889b-9f2a0663246c",
+      "content": "지금씬에서만 player model의 걷기 애니메이션을 바꿔야 한다. 어떤 방법이 좋은가?",
+      "snapshot_message_type": 0
     }
   ]
 }

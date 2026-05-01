@@ -3299,6 +3299,12 @@
       "conversation_id": "f32c25b3-8c58-40e0-9b64-74205ea1746a",
       "content": "컷신이 5초로 설정되어 있음에도 불구하고 그전에 끝나는 가장 유력한 원인은 현재 씬에 있는 **`EndingSequenceManager` 스크립트의 하드코딩된 시간** 때문입니다.\n\n분석 결과, 다음과 같은 충돌이 발생하고 있습니다:\n\n### 1. 원인 분석\n*   **스크립트 로직 (`EndingSequenceManager.cs`):** 이 스크립트는 컷신 UI(현재 `EdingCutscene` 오브젝트로 할당됨)를 켠 뒤, **정확히 3초(`WaitForSeconds(3f)`)만 기다리고 다시 꺼버리도록** 작성되어 있습니다.\n*   **타임라인의 종료:** 타임라인이 있는 오브젝트(`EdingCutscene`) 자체가 3초 후에 비활성화(`SetActive(false)`)되면서, 5초 길이의 타임라인이 끝까지 재생되지 못하고 중단되는 것입니다.\n\n### 2. 해결 방법\n두 가지 방법 중 선택하여 수정할 수 있습니다.\n\n#### 방법 A: 스크립트의 대기 시간 수정 (추천)\n`EndingSequenceManager.cs` 파일에서 3초로 되어 있는 대기 시간을 타임라인 길이에 맞춰 **5초 이상**으로 수정하세요.\n\n```csharp\n// EndingSequenceManager.cs 내의 ExecuteSequence 코루틴\nyield return new WaitForSeconds(5.5f); // 타임라인 길이(5.13s)보다 넉넉하게 수정\n```\n\n#### 방법 B: 타임라인 종료 이벤트 활용\n하드코딩된 시간을 사용하는 대신, 타임라인이 실제로 끝났을 때 다음 단계로 넘어가도록 로직을 개선하는 것이 가장 정확합니다.\n\n```csharp\n// PlayableDirector를 가져와서 재생이 끝날 때까지 대기\nvar director = cutscene1UI.GetComponent<PlayableDirector>();\nif (director != null)\n{\n    yield return new WaitUntil(() => director.state != PlayState.Playing);\n}\n```\n\n### 추가 확인 사항\n만약 위 스크립트 문제가 아니라면, 다음도 확인해 보세요:\n*   **Cinemachine Brain의 Ease In/Out:** 카메라 전환 시 블렌딩 시간이 길게 잡혀 있어 실제 연출 구간이 짧게 느껴질 수 있습니다.\n*   **Timeline의 End Marker:** 타임라인 창 우측 상단의 파란색 마커(End Marker)가 5초보다 앞에 배치되어 있는지 확인해 보세요.\n\n현재 프로젝트 구조상 **`EndingSequenceManager`의 3초 제한**이 범인일 확률이 매우 높습니다. 이 부분을 먼저 확인해 보시기 바랍니다!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "ff3ead69-a77a-4de4-bfdd-05d14b728c88",
+      "conversation_id": "f32c25b3-8c58-40e0-9b64-74205ea1746a",
+      "content": "`EndingSequenceManager.cs` 스크립트를 수정했습니다.\n\n이제 하드코딩된 3초를 기다리는 대신, **`PlayableDirector`의 상태를 체크하여 타임라인 재생이 실제로 끝날 때까지 대기**합니다. 타임라인이 5초면 5초 동안, 10초면 10초 동안 끝까지 재생된 후에 다음 단계로 넘어가게 됩니다.\n\n**수정된 로직 요약:**\n1.  `UnityEngine.Playables` 네임스페이스를 추가했습니다.\n2.  `ExecuteSequence` 코루틴에서 `cutscene1UI`와 `cutscene2UI` 오브젝트에 있는 `PlayableDirector`를 찾습니다.\n3.  디렉터가 존재하면 `director.state != PlayState.Playing`이 될 때까지 대기합니다.\n4.  만약 디렉터가 없는 경우를 대비해 기존의 3초 대기 로직을 예외 처리(Fallback)로 남겨두었습니다.\n\n이제 타임라인에서 설정한 5초 길이 그대로 끝까지 재생될 것입니다. 추가로 확인이 필요하신 부분이 있다면 말씀해 주세요!",
+      "snapshot_message_type": 1
     }
   ]
 }

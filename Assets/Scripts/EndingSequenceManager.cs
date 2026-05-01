@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 using System.Collections;
 
 public class EndingSequenceManager : MonoBehaviour
@@ -29,7 +30,17 @@ public class EndingSequenceManager : MonoBehaviour
         if (player != null) player.SetActive(false);
         if (cutscene1UI != null) cutscene1UI.SetActive(true);
         
-        yield return new WaitForSeconds(3f); // Dummy duration
+        // Wait for Cutscene 1 Timeline if director exists
+        var director1 = cutscene1UI != null ? cutscene1UI.GetComponent<PlayableDirector>() : null;
+        if (director1 != null)
+        {
+            yield return null; // Wait one frame for state to update
+            yield return new WaitUntil(() => director1.state != PlayState.Playing);
+        }
+        else
+        {
+            yield return new WaitForSeconds(3f); // Fallback
+        }
         
         if (cutscene1UI != null) cutscene1UI.SetActive(false);
         Debug.Log("Cutscene 1 Finished");
@@ -49,7 +60,17 @@ public class EndingSequenceManager : MonoBehaviour
         if (player != null) player.SetActive(false);
         if (cutscene2UI != null) cutscene2UI.SetActive(true);
 
-        yield return new WaitForSeconds(3f); // Dummy duration
+        // Wait for Cutscene 2 Timeline if director exists
+        var director2 = cutscene2UI != null ? cutscene2UI.GetComponent<PlayableDirector>() : null;
+        if (director2 != null)
+        {
+            yield return null;
+            yield return new WaitUntil(() => director2.state != PlayState.Playing);
+        }
+        else
+        {
+            yield return new WaitForSeconds(3f); // Fallback
+        }
 
         if (cutscene2UI != null) cutscene2UI.SetActive(false);
         Debug.Log("Cutscene 2 Finished");

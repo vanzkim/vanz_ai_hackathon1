@@ -119,6 +119,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &17788058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17788060}
+  - component: {fileID: 17788059}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &17788059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17788058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d913597fddcb84a238697ace1bf7b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VanzAI.Managers.AudioManager
+  fadeDuration: 1
+  whisperClips:
+  - {fileID: 8300000, guid: e85048ef7f26f4e1397fadff89d5e2c7, type: 3}
+  whisperMinInterval: 1
+  whisperMaxInterval: 2
+  whisperVolume: 1
+  whispersEnabled: 0
+--- !u!4 &17788060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17788058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 102.59966, y: 10.55318, z: -38.80112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &95860170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,7 +2070,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.35, y: 1, z: 1}
+  m_Size: {x: 2.63, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &200569796
 MeshFilter:
@@ -2037,13 +2088,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200569794}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 37.67, y: 9.061, z: -67.85}
+  m_LocalRotation: {x: -0, y: 0.48277217, z: -0, w: 0.875746}
+  m_LocalPosition: {x: 42.14, y: 9.061, z: -64.91}
   m_LocalScale: {x: 14.9, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 57.733, z: 0}
 --- !u!114 &200569798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4768,3 +4819,4 @@ SceneRoots:
   - {fileID: 1120705847}
   - {fileID: 493773827}
   - {fileID: 2117496014}
+  - {fileID: 17788060}

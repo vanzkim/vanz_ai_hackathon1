@@ -9944,6 +9944,8 @@ PlayableDirector:
     value: {fileID: 56045193}
   - key: {fileID: -1272036306067788461, guid: 49ab205acd1864d79a3746458703cf6a, type: 2}
     value: {fileID: 1702046963}
+  - key: {fileID: -2357740825374944530, guid: 49ab205acd1864d79a3746458703cf6a, type: 2}
+    value: {fileID: 1292277224}
   m_ExposedReferences:
     m_References:
     - f109c61a-5b93-4f77-b14b-c5282d4106e3: {fileID: 1292277222}
@@ -61094,6 +61096,7 @@ GameObject:
   - component: {fileID: 1292277220}
   - component: {fileID: 1292277222}
   - component: {fileID: 1292277223}
+  - component: {fileID: 1292277224}
   m_Layer: 0
   m_Name: CinemachineCamera_reloading
   m_TagString: Untagged
@@ -61109,13 +61112,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292277219}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15220717, y: -0.4296791, z: -0.07373179, w: 0.887002}
+  m_LocalRotation: {x: -0.15220709, y: -0.42967924, z: -0.07373178, w: 0.88700193}
   m_LocalPosition: {x: 1.3109083, y: -20.480335, z: -7.616205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 186864243}
-  m_LocalEulerAnglesHint: {x: 18.438, y: -163.1, z: -0.016}
+  m_LocalEulerAnglesHint: {x: 0.02164101, y: 0.00001152571, z: 0.000004572855}
 --- !u!114 &1292277222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61188,6 +61191,28 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
+--- !u!95 &1292277224
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292277219}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1295589050 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 39a8b7f3fd901d24e9ca310eb8b54bec, type: 3}

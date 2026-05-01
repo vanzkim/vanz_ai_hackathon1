@@ -3,12 +3,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
 using System.Collections;
+using VanzAI.Managers;
 
 public class EndingSequenceManager : MonoBehaviour
 {
-    [Header("Cutscenes (Dummy)")]
+    [Header("Cutscenes (Directors)")]
     public GameObject cutscene1UI;
     public GameObject cutscene2UI;
+
+    [Header("Cutscene Actors")]
+    public GameObject cutscene1Player;
+    public GameObject cutscene2Player;
 
     [Header("Sequence Settings")]
     public GameObject player;
@@ -27,7 +32,17 @@ public class EndingSequenceManager : MonoBehaviour
     {
         // 1. Start with Cutscene 1
         Debug.Log("Starting Cutscene 1");
-        if (player != null) player.SetActive(false);
+        
+        // Use CutsceneManager for proper swapping
+        if (CutsceneManager.Instance != null)
+        {
+            CutsceneManager.Instance.StartCutscene(cutscene1Player);
+        }
+        else if (player != null)
+        {
+            player.SetActive(false);
+        }
+
         if (cutscene1UI != null) cutscene1UI.SetActive(true);
         
         // Wait for Cutscene 1 Timeline if director exists
@@ -43,10 +58,19 @@ public class EndingSequenceManager : MonoBehaviour
         }
         
         if (cutscene1UI != null) cutscene1UI.SetActive(false);
+        
+        if (CutsceneManager.Instance != null)
+        {
+            CutsceneManager.Instance.EndCutscene(cutscene1Player);
+        }
+        else if (player != null)
+        {
+            player.SetActive(true);
+        }
+        
         Debug.Log("Cutscene 1 Finished");
 
-        // 2. Enable Player movement
-        if (player != null) player.SetActive(true);
+        // 2. Player movement enabled via EndCutscene or fallback
         Debug.Log("Player can now walk to the trigger");
 
         // Wait for trigger
@@ -57,7 +81,16 @@ public class EndingSequenceManager : MonoBehaviour
 
         // 3. Play Cutscene 2
         Debug.Log("Starting Cutscene 2");
-        if (player != null) player.SetActive(false);
+        
+        if (CutsceneManager.Instance != null)
+        {
+            CutsceneManager.Instance.StartCutscene(cutscene2Player);
+        }
+        else if (player != null)
+        {
+            player.SetActive(false);
+        }
+
         if (cutscene2UI != null) cutscene2UI.SetActive(true);
 
         // Wait for Cutscene 2 Timeline if director exists
@@ -73,6 +106,16 @@ public class EndingSequenceManager : MonoBehaviour
         }
 
         if (cutscene2UI != null) cutscene2UI.SetActive(false);
+        
+        if (CutsceneManager.Instance != null)
+        {
+            CutsceneManager.Instance.EndCutscene(cutscene2Player);
+        }
+        else if (player != null)
+        {
+            player.SetActive(true);
+        }
+
         Debug.Log("Cutscene 2 Finished");
 
         // 4. Show Credits and Play Music

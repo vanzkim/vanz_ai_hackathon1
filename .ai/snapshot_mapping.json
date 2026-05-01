@@ -3269,6 +3269,12 @@
       "conversation_id": "f32c25b3-8c58-40e0-9b64-74205ea1746a",
       "content": "타임라인 컨씬을 만들려고 하는데 CM Third person camera 와 별도로 카메라를 추가해야 하나",
       "snapshot_message_type": 0
+    },
+    {
+      "message_id": "INT_3",
+      "conversation_id": "f32c25b3-8c58-40e0-9b64-74205ea1746a",
+      "content": "타임라인 컨씬을 만들려고 하는데 CM Third person camera 와 별도로 카메라를 추가해야 하나",
+      "snapshot_message_type": 0
     }
   ]
 }

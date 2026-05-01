@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de227-51e2-746f-ab94-a7b99d100fc8.pose.json",
+    "prompt": "A cinematic shot of a young girl sitting calmly on a wooden chair, her hands resting neatly on her knees. She starts by looking down at the floor with a pensive expression for 3 seconds. Then, she slowly and gracefully turns her head toward the upper right, making direct eye contact with the camera. High-quality humanoid animation, realistic skin textures, soft lighting, 4k resolution.",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 148618483,
+    "w3CTraceId": "418c199de9533120a08274fa35add001",
+    "feedback": 0,
+    "isTrimmed": false
+}

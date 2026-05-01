@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de22c-7bcb-7a3c-b00b-d57a644b698b.pose.json",
+    "prompt": "A young girl sitting hunched forward on a chair",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 1931319456,
+    "w3CTraceId": "3fef526d289bdad542f975d1129df5f7",
+    "feedback": 0,
+    "isTrimmed": false
+}

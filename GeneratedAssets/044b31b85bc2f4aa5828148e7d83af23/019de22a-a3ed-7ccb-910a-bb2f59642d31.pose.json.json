@@ -1,0 +1,12 @@
+{
+    "asset": "044b31b85bc2f4aa5828148e7d83af23",
+    "fileName": "019de22a-a3ed-7ccb-910a-bb2f59642d31.pose.json",
+    "prompt": "young girl sitting on a chair, leaning her body forward. Her hands are placed neatly on her knees, and she is looking down with a contemplative expression. After 3 seconds of staying still, she slowly turns her head toward the upper right to look directly into the camera lens. High-quality humanoid animation\n",
+    "negativePrompt": "",
+    "model": "9e46c009-67d8-4254-a3a0-32e3168247ee",
+    "modelName": "Text to Motion",
+    "customSeed": 548795110,
+    "w3CTraceId": "c137d5c368700f69dccc6b3fce6dbc31",
+    "feedback": 0,
+    "isTrimmed": false
+}

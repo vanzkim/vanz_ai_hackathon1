@@ -3377,6 +3377,12 @@
       "conversation_id": "a015077f-33a7-41a0-889b-9f2a0663246c",
       "content": "현재 씬에서만 특정 애니메이션을 변경하고 싶다면, 원본 `Animator Controller` 에셋을 직접 수정하는 대신 **Animator Override Controller**를 사용하는 것이 가장 효율적이고 안전한 방법입니다.\n\n현재 `Player_Model`은 `Assets/Animation/CharacterController.controller`를 사용하고 있으며, 걷기 애니메이션은 `Walk` 상태의 `walk_staggered` 클립으로 설정되어 있습니다.\n\n### 추천 방법: Animator Override Controller 사용\n\n이 방법은 원본 컨트롤러의 로직(트랜지션, 파라미터 등)은 그대로 유지하면서 특정 애니메이션 클립만 교체할 수 있게 해줍니다. 씬에 있는 인스턴스에만 적용하므로 다른 씬의 플레이어에게는 영향을 주지 않습니다.\n\n**수동 작업 단계:**\n\n1.  **Project 창**에서 우클릭 후 `Create > Animator Override Controller`를 선택하여 새 에셋을 생성합니다. (이름 예: `Player_SceneSpecific_Override`)\n2.  생성한 오버라이드 컨트롤러의 인스펙터 창에서 **Controller** 필드에 `Assets/Animation/CharacterController.controller`를 드래그하여 할당합니다.\n3.  그러면 아래에 기존 애니메이션 목록이 나타납니다. `walk_staggered` 옆의 슬롯에 새로 사용하고 싶은 걷기 애니메이션 클립을 할당합니다.\n4.  **Hierarchy 창**에서 `Player_Model`을 선택합니다.\n5.  **Animator 컴포넌트**의 **Controller** 필드에 방금 만든 `Player_SceneSpecific_Override`를 드래그하여 교체합니다.\n\n### 이 방법의 장점\n*   **비파괴적 작업:** 원본 에셋을 수정하지 않으므로 다른 씬에 미치는 영향이 없습니다.\n*   **관리 용이:** 해당 씬에서만 특별한 애니메이션이 필요한 경우(예: 부상당한 상태, 특정 컷씬 직후 등) 명확하게 구분하여 관리할 수 있습니다.\n\n**팁:** 만약 제가 직접 오버라이드 컨트롤러를 생성하고 할당하기를 원하신다면, **에이전트 모드(Agent Mode)**로 전환해 주세요. 그러면 제가 새 애니메이션 클립을 찾아 연결하는 것까지 자동으로 처리해 드릴 수 있습니다. (사용자가 새 애니메이션 파일명을 알려주시면 더욱 정확합니다) 있습니다.",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_3",
+      "conversation_id": "a015077f-33a7-41a0-889b-9f2a0663246c",
+      "content": "오버라이드를 만들었는데 이 오버라이드가 이씬에서만 쓰이는 것을 어떻게 지정하지?",
+      "snapshot_message_type": 0
     }
   ]
 }

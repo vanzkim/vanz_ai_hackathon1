@@ -3359,6 +3359,12 @@
       "conversation_id": "6d3ff097-9baf-4920-bb93-8da09b5913af",
       "content": "제안드린 계획에 따라 모든 수정을 완료했습니다. 이제 컷씬이 끝난 후 컷씬용 모델(`Player_Cutscene`)이 자동으로 감춰지고, 게임플레이용 모델(`Player_Model`)이 해당 위치로 이동하여 활성화됩니다.\n\n### 수행된 작업:\n1.  **`EndingSequenceManager.cs` 수정**:\n    *   기존에 수동으로 `SetActive`를 조절하던 방식을 프로젝트의 통합 관리 시스템인 `CutsceneManager`를 사용하는 방식으로 변경했습니다.\n    *   이를 통해 컷씬이 끝날 때 **모델 숨김 + 위치 동기화 + 카메라 복구**가 한 번에 이루어집니다.\n2.  **인스펙터 참조 업데이트**:\n    *   `EndingScene`에 있는 `EndingSequenceManager` 오브젝트에 컷씬용 캐릭터(`Player_Cutscene`)를 자동으로 할당했습니다.\n3.  **시스템 연결**:\n    *   `CutsceneManager`가 없는 경우를 대비한 예외 처리를 추가하여 안정성을 높였습니다.\n\n### 확인 방법:\n*   엔딩 씬을 재생하면 컷씬 시작 시 `Player_Model`이 사라지고 `Player_Cutscene`이 나타납니다.\n*   컷씬(타임라인)이 종료되는 즉시 `Player_Cutscene`은 비활성화되며, `Player_Model`이 컷씬이 끝난 위치에서 다시 나타나게 됩니다.\n\n이제 컷씬 종료 후 모델이 중복으로 보이거나 사라지지 않는 문제가 해결되었습니다. 추가로 조정이 필요한 부분이 있으면 말씀해 주세요!",
       "snapshot_message_type": 1
+    },
+    {
+      "message_id": "INT_1",
+      "conversation_id": "a015077f-33a7-41a0-889b-9f2a0663246c",
+      "content": "지금씬에서만 player model의 걷기 애니메이션을 바꿔야 한다.",
+      "snapshot_message_type": 0
     }
   ]
 }

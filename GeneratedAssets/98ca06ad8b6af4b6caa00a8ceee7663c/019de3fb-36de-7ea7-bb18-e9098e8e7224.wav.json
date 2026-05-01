@@ -1,0 +1,14 @@
+{
+    "asset": "98ca06ad8b6af4b6caa00a8ceee7663c",
+    "fileName": "019de3fb-36de-7ea7-bb18-e9098e8e7224.wav",
+    "prompt": "바람이 세게 부는 설원의 음향 효과 ",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "9c34f3676cb0175fbe83cb8be43effb5",
+    "feedback": 0,
+    "duration": 4.900000095367432,
+    "autoTrim": false,
+    "hasReference": false
+}

@@ -1,0 +1,14 @@
+{
+    "asset": "8f41a4dd4090c483eb034049ec3f4c91",
+    "fileName": "019de3f7-a9ce-76d5-b82c-62a96c8c84c5.wav",
+    "prompt": "slow Sound of a man shivering and breathing heavily in cold weather.  ",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "c7438a81eddf7151eaed81dafdeb4441",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false
+}

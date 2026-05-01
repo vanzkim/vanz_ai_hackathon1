@@ -1,0 +1,14 @@
+{
+    "asset": "98ca06ad8b6af4b6caa00a8ceee7663c",
+    "fileName": "019de3fa-15f7-7684-9aa4-86c500135ded.wav",
+    "prompt": "\"저는 여기서 기다리고 있어요.\" Speak this script in a distant, echoing female voice in her early 20s. ",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "ae266afbdc25365749b9489ff664016d",
+    "feedback": 0,
+    "duration": 4.900000095367432,
+    "autoTrim": false,
+    "hasReference": false
+}
